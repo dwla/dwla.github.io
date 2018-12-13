@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>JWen</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://dwla.github.io/"/>
+  <updated>2018-12-13T07:03:08.779Z</updated>
+  <id>https://dwla.github.io/</id>
+  
+  <author>
+    <name>JWen</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo拓展用法</title>
+    <link href="https://dwla.github.io/posts/20262/"/>
+    <id>https://dwla.github.io/posts/20262/</id>
+    <published>2018-11-03T07:34:00.000Z</published>
+    <updated>2018-12-13T07:03:08.779Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇博客介绍了如何使用Hexo built-in方法、icarus主题附带的用法以及一些插件的用法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://dwla.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Html" scheme="https://dwla.github.io/tags/Html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mdx-deck制作幻灯片</title>
+    <link href="https://dwla.github.io/posts/37106/"/>
+    <id>https://dwla.github.io/posts/37106/</id>
+    <published>2018-09-19T13:14:00.000Z</published>
+    <updated>2018-12-11T16:16:07.795Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;该项目的Github地址为：&lt;a href=&quot;https://github.com/jxnblk/mdx-deck&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;jxnblk/mdx-deck&lt;/a&gt;&lt;br&gt;可以使用Markdown编写幻灯片，并编译成html/pdf文件。&lt;br&gt;下面介绍这个工具的用法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://dwla.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Markdown" scheme="https://dwla.github.io/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>暨南大学教务处排课选课表爬取</title>
+    <link href="https://dwla.github.io/posts/33416/"/>
+    <id>https://dwla.github.io/posts/33416/</id>
+    <published>2018-07-22T10:14:00.000Z</published>
+    <updated>2018-12-13T07:14:17.788Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这段代码是寒假的时候写的，没想到现在还能运行，可以整理好教务处的排课选课列表然后做一些有趣的数据分析。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网站爬取" scheme="https://dwla.github.io/categories/%E7%BD%91%E7%AB%99%E7%88%AC%E5%8F%96/"/>
+    
+    
+      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何在Stata绘图中自定义文本旋转角度？</title>
+    <link href="https://dwla.github.io/posts/7485/"/>
+    <id>https://dwla.github.io/posts/7485/</id>
+    <published>2018-04-16T09:30:00.000Z</published>
+    <updated>2018-12-11T16:16:07.887Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在进入今天的正题之前，我们可以简单了解一下Stata绘图的文本添加：&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="推文" scheme="https://dwla.github.io/categories/%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
+    
+  </entry>
+  
+</feed>
