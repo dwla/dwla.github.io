@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>Data Mining with Rattle and R(一) - JWen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="JWen+Google“半自动翻译”  Data Mining with Rattle and R ——为知识发现而挖掘数据的艺术Graham Williams">
+<meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Mining with Rattle and R(一)">
+<meta property="og:url" content="https://dwla.github.io/posts/27327/index.html">
+<meta property="og:site_name" content="JWen">
+<meta property="og:description" content="JWen+Google“半自动翻译”  Data Mining with Rattle and R ——为知识发现而挖掘数据的艺术Graham Williams">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030501.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030502.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030503.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030504.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030505.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030506.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030507.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030601.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030602.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030603.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030604.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030605.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030606.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030607.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030609.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030701.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030702.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030703.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030704.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030705.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030706.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030707.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030708.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030709.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030710.png?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018030711.png?raw=true">
+<meta property="og:updated_time" content="2018-12-16T04:54:52.594Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data Mining with Rattle and R(一)">
+<meta name="twitter:description" content="JWen+Google“半自动翻译”  Data Mining with Rattle and R ——为知识发现而挖掘数据的艺术Graham Williams">
+<meta name="twitter:image" content="https://github.com/dwla/BP/blob/master/2018030501.png?raw=true">
+
+
+
+
+
+<link rel="icon" href="/images/虎.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 添加赞赏的css -->
+<link rel="stylesheet" href="/css/vdonate.css">
+<!-- 添加赞赏的css -->
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/虎.svg" alt="Data Mining with Rattle and R(一)" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/about">关于</a>
+                
+                <a class="navbar-item" href="/mymusic">音乐</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="我的GitHub" href="http://github.com/dwla">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><!-- about页面的时间轴 -->
+
+             
+
+<!-- about页面的时间轴 -->
+
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-03-07T10:00:00.000Z">2018-03-07</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/杂货铺/">杂货铺</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Data Mining with Rattle and R(一)
+            
+        </h1>
+
+        <div class="content">
+            <h6 align="center"><a href="https://dwla.github.io/">JWen</a>+Google“半自动翻译”</h6>
+
+<p></p><h1><a href="http://www.springer.com/us/book/9781441998897" target="_blank" rel="noopener">Data Mining with Rattle and R</a></h1><p></p>
+<h2>——为知识发现而挖掘数据的艺术</h2><br><h3 align="right">Graham Williams</h3><br><br><a id="more"></a><br><br><div id="aplayer-IyzzHwyF" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+				<pre class="aplayer-lrc-content">[00:01.58]纯音乐，请欣赏</pre>
+			</div>
+			<script>
+				var ap = new APlayer({
+					element: document.getElementById("aplayer-IyzzHwyF"),
+					narrow: false,
+					autoplay: true,
+					showlrc: 2,
+					music: {
+						title: "歌に形はないけれど",
+						author: "まらしぃ",
+						url: "https://github.com/dwla/BM/blob/master/2018070914.mp3?raw=true",
+						pic: "https://github.com/dwla/BM/blob/master/2018070914.jpg?raw=true",
+					}
+				});
+				window.aplayers || (window.aplayers = []);
+				window.aplayers.push(ap);
+			</script><br><br><h2>目录：</h2>
+
+<ol>
+<li><a href="#前言">前言</a></li>
+<li><a href="#第一部分 探索">第一部分 探索</a><ul>
+<li style="list-style: none"><input type="checkbox" checked> <a href="#第1章 介绍">第1章 介绍</a><ol>
+<li><a href="#1.1 数据挖掘的开端">1.1 数据挖掘的开端</a></li>
+<li><a href="#1.2 数据挖掘团队">1.2 数据挖掘团队</a></li>
+<li><a href="#1.3 灵活的数据挖掘">1.3 灵活的数据挖掘</a></li>
+<li><a href="#1.4 数据挖掘的过程">1.4 数据挖掘的过程</a></li>
+<li><a href="#1.5 一个典型的旅程">1.5 一个典型的旅程</a></li>
+<li><a href="#1.6 对数据挖掘的见解">1.6 对数据挖掘的见解</a></li>
+<li><a href="#1.7 记录数据挖掘">1.7 记录数据挖掘</a></li>
+<li><a href="#1.8 数据挖掘的工具：R">1.8 数据挖掘的工具：R</a></li>
+<li><a href="#1.9 数据挖掘的工具：Rattle">1.9 数据挖掘的工具：Rattle</a></li>
+<li><a href="#1.10 为什么选择R和Rattle？">1.10 为什么选择R和Rattle？</a></li>
+<li><a href="#1.11 隐私">1.11 隐私</a></li>
+<li><a href="#1.12 资源">1.12 资源</a></li>
+</ol>
+</li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="#第2章 入门指南">第2章 入门指南</a><ol>
+<li><a href="#2.1 开始R">2.1 开始R</a></li>
+<li><a href="#2.2 退出Rattle和R">2.2 退出Rattle和R</a></li>
+<li><a href="#2.3 第一次接触">2.3 第一次接触</a></li>
+<li><a href="#2.4 加载数据集">2.4 加载数据集</a></li>
+<li><a href="#2.5 建立一个模型">2.5 建立一个模型</a></li>
+<li><a href="#2.6 理解我们的数据">2.6 理解我们的数据</a></li>
+<li><a href="#2.7 评估模型：混淆矩阵">2.7 评估模型：混淆矩阵</a></li>
+<li><a href="#2.8 与Rattle交互">2.8 与Rattle交互</a></li>
+<li><a href="#2.9 与R交互">2.9 与R交互</a></li>
+<li><a href="#2.10 摘要">2.10 摘要</a></li>
+<li><a href="#2.11 命令摘要">2.11 命令摘要</a></li>
+</ol>
+</li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="#第3章 使用数据">第3章 使用数据</a><ol>
+<li><a href="#3.1 数据术语">3.1 数据术语</a></li>
+<li><a href="#3.2 采购数据">3.2 采购数据</a></li>
+<li><a href="#3.3 数据质量">3.3 数据质量</a></li>
+<li><a href="#3.4 数据匹配">3.4 数据匹配</a>        </li>
+<li><a href="#3.5 数据仓库">3.5 数据仓库</a></li>
+<li><a href="#3.6 使用R与数据进行交互">3.6 使用R与数据进行交互</a></li>
+<li><a href="#3.7 记录数据">3.7 记录数据</a></li>
+<li><a href="#3.8 摘要">3.8 摘要</a></li>
+<li><a href="#3.9 命令摘要">3.9 命令摘要</a></li>
+</ol>
+</li>
+<li style="list-style: none"><input type="checkbox" checked> <a href="#第4章 加载数据">第4章 加载数据</a><ol>
+<li><a href="#4.1 CSV数据">4.1 CSV数据</a></li>
+<li><a href="#4.2 属性关系文件格式数据">4.2 属性关系文件格式数据</a></li>
+<li><a href="#4.3 ODBC源数据">4.3 ODBC源数据</a></li>
+<li><a href="#4.4 R的数据集—其他数据来源">4.4 R的数据集—其他数据来源</a>        </li>
+<li><a href="#4.5 R的数据">4.5 R的数据</a></li>
+<li><a href="#4.6 Library">4.6 Library</a></li>
+<li><a href="#4.7 数据选项">4.7 数据选项</a></li>
+<li><a href="#4.8 命令摘要">4.8 命令摘要</a></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="前言">前言</h2>
+
+<p>  知识导致智慧和更好的理解。 数据挖掘通过信息构建知识，为当今不断增加的电子数据存储增加价值。 在20世纪80年代后期从数据库社区涌现出来的数据挖掘迅速增长，包括来自机器学习，高性能计算，可视化和统计学的研究人员和技术，并认识到增加数据价值的不断增长的机会。 今天，这项多学科和跨学科的工作继续为分析非常大的数据集提供新的技术和工具。 处理现在以太字节和PB为单位的数据库，数据挖掘提供了可以改进组织业务方式的发现。 数据挖掘使企业能够在这个现代化，数据丰富，信息贫乏，知识匮乏和智慧稀缺的世界中保持竞争力。 数据挖掘提供知识来推动获得智慧。</p>
+<p>  数据挖掘中使用了广泛的技术和算法。 在执行数据挖掘时，需要对方法，数据，工具和算法的选择做出许多决定。</p>
+<p>  在本书中，我们将介绍数据挖掘的基本概念和算法。 我们使用基于R统计软件包（R开发核心团队，2011）之上的免费开源软件Rattle（Williams，2009）。 作为免费软件，Rattle和R的源代码可供所有人使用，不受限制。 每个人都被允许并确实鼓励读取源代码来学习，理解验证并扩展它。 R得到了世界上一些主要统计人员的全球网络的支持，并实现了数据挖掘的所有关键算法。</p>
+<p>  本书将指导读者了解Rattle提供的各种选项，并通过使用Rattle来指导新的数据挖掘工具。 介绍了许多使用R本身的游览，其目的是鼓励读者直接使用R作为脚本语言。 通过编写脚本来实现专业数据挖掘所需的完整性和可重复性。</p>
+<h3>本书特点</h3>
+
+<p>  本书的一个重要特征是与数据挖掘方面的许多其他优秀教科书不同，它着重于数据挖掘的实践端到端流程。 我们涵盖数据理解，数据准备，模型构建，模型评估，数据细化和实际部署。 大多数数据挖掘教科书主要关注模型构建，即数据挖掘算法。 另一方面，本书与数据以及模型评估和部署共同关注。</p>
+<p>  除了介绍使用现代工具进行数据挖掘的方法和技术之外，我们还提供了一个使用Rattle的实际示例的实用资源。 Rattle易于使用，并且构建于R之上。如上所述，我们还提供游览命令行，提供了与R直接交互的大量示例。读者将学习如何使用获得的软件快速提供数据挖掘项目 免费上网。 Rattle和R提供了非常复杂的数据挖掘环境。</p>
+<p>  本书鼓励用数据编程的概念，这个主题依赖于对计算机编程的一些熟悉。 但是，没有这种背景的学生仍然可以通过使用Rattle应用程序来从材料中受益。 但是，所有读者都会被鼓励去考虑熟悉一些编写命令来处理和分析数据。</p>
+<p>  本书面向众多读者，不一定只是那些具有计算机科学或统计学背景的人。 有时候，我们会引入更复杂的统计，数学和计算机科学符号，但通常旨在简化它。 有时候这意味着过分简化了概念，但只有在不丧失概念意图的情况下，并且只有在保持其基本准确性的地方。</p>
+<p>  在其他时候，演示会留下更为统计复杂的想法。 与材料一样重要的是，它并不总是很容易覆盖在一本小书的内容中。 其他资源更详细地涵盖了这些材料。 读者是针对Hastie等人的广泛的数学处理。（2009年）。 有关使用R进行统计的更多入门，请参见Dalgaard（2008）。 有关使用R的更广泛视角，包括对R中用于数据挖掘的工具的简要介绍，建议使用Adler（2010）。 有关案例研究方向的数据挖掘介绍，请参阅Torgo（2010）。</p>
+<h3>组织</h3>
+
+<p>  第1章为我们的数据挖掘设置了上下文。 它概述了数据挖掘，数据挖掘过程以及与数据挖掘相关的问题。 它还研究开源数据挖掘软件。</p>
+<p>  第2章随后将Rattle介绍为开发用于简化数据挖掘项目的图形用户界面（GUI）。 这涵盖了与R和Rattle交互的基础知识，提供了数据挖掘的快速入门指南。</p>
+<p>  第3章到第7章讨论数据 - 我们讨论数据挖掘过程的数据，探索和转换步骤。 我们在第3章介绍了数据以及如何选择变量和数据分区。第4章介绍了将数据加载到Rattle和R。第5章和第6章中，回顾了探索数据的各种方法，以便获得我们的初始 关于数据的见解。 我们还了解数据的分布以及如何评估任何分析的合适性。 通常，我们对数据的探索将导致我们识别数据中的各种问题。 因此，我们开始清理数据，处理丢失的数据，转换数据并减少数据，正如我们在第7章中所描述的那样。</p>
+<p>  第8章到第14章涵盖了模型的构建。 这是数据挖掘的下一步，我们开始代表所发现的知识。 第8章介绍了建模的概念，介绍了描述性和预测性数据挖掘。 第9章（集群）和第10章（关联规则）介绍了具体的描述性数据挖掘方法。 第11章（决策树），第12章（随机森林），第13章（增强）和第14章（支持向量机）中介绍了预测性数据挖掘方法。 并非所有的预测性数据挖掘方法都包含在内，将一些精心设计的主题（包括线性回归和神经网络）留给其他书籍。</p>
+<p>  建立模型后，我们需要考虑如何评估其性能。 这是第15章的主题。然后，我们将在第16章中考虑部署模型的任务。</p>
+<p>  附录A可以参考安装R和Rattle。 R和Rattle都是开源软件，都可以在多个平台上免费使用。 附录B详细描述了整本书中使用的数据集是如何从它们的来源获得的，以及它们是如何转化为通过Rattle提供的数据集的。</p>
+<h3>生产和印刷公约</h3>
+
+<p>  本书已由作者使用LATEX和R的Sweave（）排版。 书中包含的所有R代码片段都在排版书时运行，并且显示的结果可直接从R本身获得。 当书被排版时，Rattle屏幕截图也会自动生成。</p>
+<p>  由于所有R代码和屏幕截图都是自动生成的，因此我们在书中看到的输出应该可以被读者重现。 所有代码都运行在Ubuntu GNU / Linux系统上的R的64位部署上。 在其他系统上运行相同的代码（特别是在32位系统上）可能会导致R执行的数值计算结果略有变化。</p>
+<p>  关于线的宽度和数字的舍入会发生其他细微差异。 排版图书时设置以下选项。 我们可以看到width =被设置为58来限制发布的线宽。 scipen =和digits =两个选项影响数字的呈现方式。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; options(width = <span class="hljs-number">58</span>, scipen = <span class="hljs-number">5</span>, digits = <span class="hljs-number">4</span>, continue = <span class="hljs-string">" "</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  用于说明使用R的交互式会话的示例代码将包含R提示符，默认情况下是>“。但是，我们通常不包括通常的继续提示符，默认情况下它包含\ +”。 当单个命令延伸到多行以指示R仍在等待来自用户的输入时，R使用继续提示。 出于我们的目的，包括继续提示在内的电子版本的示例中更难以剪切和粘贴。 上面的options（）例子包含对延续提示的这种改变.</p>
+<p>  R代码示例将以代码块的形式出现，如下例所示（尽管下面示例中显示的延续提示不会包含在本书的代码块中）.<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">library</span>(rattle)</span><br><span class="line">Rattle: A free graphical interface <span class="hljs-keyword">for</span> data mining with R.</span><br><span class="line">Version <span class="hljs-number">2.6</span><span class="hljs-number">.7</span> Copyright (c) <span class="hljs-number">2006</span>-<span class="hljs-number">2011</span> Togaware Pty Ltd.</span><br><span class="line">Type <span class="hljs-string">'rattle()'</span> to shake, rattle, and roll your data.</span><br><span class="line">&gt; rattle()</span><br><span class="line">Rattle timestamp: <span class="hljs-number">2011</span>-<span class="hljs-number">06</span>-<span class="hljs-number">13</span> <span class="hljs-number">09</span>:<span class="hljs-number">57</span>:<span class="hljs-number">52</span></span><br><span class="line">&gt; cat(<span class="hljs-string">"Welcome to Rattle"</span>,</span><br><span class="line">+ <span class="hljs-string">"and the world of Data Mining.\n"</span>)</span><br><span class="line">Welcome to Rattle and the world of Data Mining.</span><br></pre></td></tr></table></figure></p>
+<p>  在提供命令输出示例时，有时我们会截断列表并用[…]指示缺少的组件。 尽管大多数例子都会像R中出现的那样精确地说明输出，但有些时候格式会略微修改以适应发布的限制。 这可能涉及静静地删除或添加空白行。</p>
+<p>  在描述Rattle的功能时，我们将使用sans serif字体来识别Rattle小部件（我们与之交互的图形用户界面组件，例如按钮或菜单）。 Rattle中使用的小部件包括用于打开和关闭选项的复选框，用于从备选项列表中选择选项的单选按钮，用于识别将数据加载或保存到文件的文件选择器，组合框 用于进行选择，按钮可以点击以获得更多的图表或信息，旋转按钮用于设置数字选项以及文本视图，其中将显示R命令的输出。</p>
+<p>  R提供了非常多的软件包，它们共同为数据挖掘提供了广泛的工具包。 Rattle本身就是一个R包 - 我们使用粗体字来表示R包。 当我们讨论我们可以在R提示符下输入的函数或命令时，我们会在括号中加上函数名，以便它明确指向R函数。 例如，命令rattle（）将启动Rattle的用户界面。 许多函数和命令也可以带参数，我们通过用等号后面的参数表示参数。 例如，rattle（）命令可以接受命令参数csvfile =。</p>
+<h3>实施Rattle</h3>
+
+<p>  Rattle是使用Gnome（1997）工具包与Glade（1998）图形用户界面（GUI）构建器开发的。 Gnome独立于任何编程语言，并且Rattle的GUI方面开始使用Python（1989）编程语言。 我很快就搬到了R，一旦<strong>RGtk2</strong>（Lawrence和Temple Lang，2010）可用，就可以从R访问Gnome。移动到R让我们避免了连接多种语言的特性。</p>
+<p>  Glade图形界面构建器用于生成描述独立于编程语言的接口的XML文件。 该文件可以加载到任何支持的编程语言中以显示GUI。 然后使用任何支持的语言编写应用程序的实际功能，其中包括Java，C，C ++，Ada，Python，Ruby和R！ 通过使用Glade，我们可以在需要时快速更改语言。</p>
+<p>  R本身是用过程式编程语言C编写的。在计算需求很大的情况下，R代码通常被翻译成C代码，这通常会更快地执行。 这里的细节对我们来说并不重要，但是这允许R在需要的时候出人意料地快，而R的用户实际上不需要意识到他们正在使用的功能是如何实现的。</p>
+<h3>流通</h3>
+
+<p>  R的新版本每年在四月和十月发布两次。R是免费的，所以一个明智的做法是尽可能地升级。这将确保我们跟上错误修复和新发展，并且我们不会让开发人员对已经修复的问题提出疑问。</p>
+<p>  本书中的示例来自R的2.13.0版和Rattle的2.6.7版。Rattle是一个不断发展的软件包，随着时间的推移，虽然概念依然存在，但细节将会改变。例如，<strong>ggplot2</strong>（Wickham，2009）的出现提供了显着发展其图形功能的机会。同样，<strong>caret</strong>（Kuhn et al。，2011）提供了一种更新的方法来连接各种数据挖掘算法，我们可以看到Rattle利用这一点。 新的数据挖掘算法不断出现，并可能随着时间的推移而被合并。</p>
+<p>  同样，本书中的屏幕截图仅适用于本书排版时可用的Rattle版本。 预计各种窗口和文本视图会有一些细微的变化，并且偶尔会有一些主要的改变，增加新的功能。</p>
+<p>  附录A包括指向安装Rattle的指南。 我们还列出了Rattle使用的主要软件包的版本，至少在排版本书时是如此。</p>
+<h3>致谢</h3>
+
+<p>  本书从分享数据挖掘工具和技术使用和部署经验的愿望发展而来。 相当比例的材料借鉴了超过20年的教学数据挖掘本科生和研究生和运行行业为基础的课程。 目标是提供易于理解和部署的配方类型材料，以及涵盖数据挖掘者可能遇到的概念和术语的参考资料。</p>
+<p>  非常感谢来自澳大利亚国立大学，堪培拉大学和其他地方的学生，这些学生多年来一直是我收集数据挖掘思想和经验的原因，并将他们融入本书。 我从他们对如何学习最好的见解中受益匪浅。 他们还以多种方式提供了建议和示例应用程序。 多年来，我也对我的同事负有责任，特别是Peter Milne，Joshua Huang，Warwick Graco，John Maindonald和Stuart Hamilton对澳大利亚数据挖掘发展的支持和贡献。</p>
+<p>  在各种组织中部署或开发数据挖掘技能的同事也为本书提供了重要的反馈和动机。 安东尼诺兰特别值得一提的是他的热情和对本书内容有所帮助的想法的持续贡献。</p>
+<p>  许多其他人也提供了见解和评论。 使用R的说明性示例也来自R邮件列表，并且我已经使用其中的许多指导了本书中包含的各种示例。 这些名单的许多贡献者需要被感谢。</p>
+<p>  还要感谢评论者，他们对本书的可读性和可用性做出了很大的贡献。 其中包括罗伯特慕尼黑，彼得克里斯滕，彼得赫尔姆斯特德，布鲁斯麦卡洛和巴拉兹巴拉尼。 同时感谢John Garden对他的选择鼓励和见解。</p>
+<p>  我特别感谢我的妻子凯塔琳娜和孩子们，肖恩和阿妮塔，他们一直忍着让我沉迷于将这本书放在一起。</p>
+<h5 align="right">Canberra     Graham J. Williams</h5>
+
+
+<h2 align="left" id="第一部分 探索">第一部分 探索</h2>
+
+<h3 align="center" id="第1章 介绍">第1章 介绍</h3>
+
+<p>  对于敏锐的数据挖掘者来说，第2章提供了Rattle数据挖掘的快速入门指南，通过加载数据集和构建模型的示例过程。</p>
+<p>  数据挖掘是智能数据分析的艺术和科学。 目的是从数据中发现有意义的见解和知识。 发现通常表示为<strong>模型</strong>，我们经常将数据挖掘描述为构建模型的过程。 一个模型在一些公式中捕获了所发现知识的本质。 模型可以用来帮助我们<strong>理解</strong>世界。 模型也可以用来做出<strong>预测</strong>。</p>
+<p>  对于数据挖掘者来说，发现新知识和建立可以很好地预测未来的模型可能是相当有益的。 事实上，当我们从数据中看到新的见解和知识时，数据挖掘应该是令人兴奋和有趣的。 随着热情的增长，我们通过我们的数据分析蜿蜒而行，遵循我们的直觉，并始终发现新的发现，这些发现将继续帮助改变我们的世界。</p>
+<p>  数据挖掘已经应用于大部分领域。 有数据挖掘团队在商业，政府，金融服务，生物，医学，风险和智能，科学和工程方面工作。 在我们收集数据的任何地方，数据挖掘正在被应用，并为人类的努力提供新的知识。</p>
+<p>  我们生活在一个以前所未有的数据收集和存储数据的时代。 大型和小型政府机构，商业企业和非商业组织收集有关其业务，客户，人力资源，产品，制造工艺，供应商，业务合作伙伴，本地和国际市场以及竞争对手的数据。 数据是我们注入数据挖掘引擎的燃料.</p>
+<p>  将数据转化为信息，然后将这些信息转化为知识仍然是“成功”的关键因素。 数据包含有价值的信息，可以支持管理人员在其业务决策中有效地运行业务。 在数据中可以隐藏有关犯罪分子欺诈活动的线索。 数据为理解我们在世界上观察到的科学过程提供了基础。 将数据转化为信息是识别导致发现新知识的新机会的基础，这是我们社会的关键。</p>
+<p>  数据挖掘是关于从数据构建模型。 我们建立模型来深入了解世界以及世界如何运作，以便我们可以预测事物的表现。 数据挖掘者在构建模型时会部署许多不同的数据分析和模型构建技术。 我们的选择取决于要解决的业务问题。 尽管数据挖掘并不是唯一的方法，但它正在得到广泛的应用，因为它非常适合我们在当今企业中找到的数据环境。 这是以可用数据量为特征的，通常以千兆字节和兆兆字节为单位，并快速接近PB。 它的特点还在于数据的复杂性，无论是在等待数据发现的关系以及当前可用的数据类型（包括文本，图像，音频和视频）方面。 商业环境也在迅速变化，需要定期进行分析，并定期更新模型以跟上当今充满活力的世界。</p>
+<p>  建模是人们在考虑数据挖掘时经常想到的。 建模是将数据转化为某种结构化形式或模型的过程，它以某种有用的方式反映所提供的数据。 总体而言，我们的目标是通过对世界进行建模来探索我们的数据，通常是为了解决特定的问题。 从这些模型中，我们获得新的见解并更好地理解世界。</p>
+<p>  实际上，<strong>数据挖掘远不止是建模</strong>。 这也是关于理解我们部署它的业务环境。 它是关于理解和收集整个企业和外部数据的数据。 然后是关于建立模型和评估它们。 而且，最重要的是，它需要部署这些模型来实现优势。</p>
+<p>  数据挖掘工具有一系列令人眼花缭乱的工具和技术，可以深入了解数据和构建模型。 本书介绍了其中的一些内容，作为成为实践数据挖掘者的漫长旅程的起点。</p>
+<h4 align="left" id="1.1 数据挖掘的开端">1.1 数据挖掘的开端</h4>
+
+<p>  数据挖掘作为一项著名的尝试，在20世纪80年代末出现在数据库社区，该社区想知道下一步将会发生的重大进展。 关系数据库理论已经开发并成功部署，因此开始了收集大量数据的时代。 我们如何为我们庞大的数据存储增加价值？</p>
+<p>  在20世纪90年代初的前几个数据挖掘研讨会吸引了数据库社区研究人员。 不久之后，其他计算机科学，特别是人工智能，研究人员开始感兴趣。 值得注意的是，“智能”的一个关键要素是学习能力，机器学习研究多年来一直在为此开发技术。 机器学习是关于通过与世界互动并从这些数据构建世界模型来收集观测数据。 这几乎是数据挖掘也正在设定的。 自然，机器学习和数据挖掘社区开始走到一起。</p>
+<p>  然而，统计数据是数据分析的基本工具之一，并且已经存在了一百多年。 统计数据为我们提供了关于不确定性的基本概念，以及如何在我们构建的模型中为它提供补贴。 统计数据为理解我们可能从数据建立的模型的“强度”或准确性提供了一个框架。 发现需要在统计学上有统计学意义，并且需要了解与建模相关的任何不确定因素。 统计数据在今天的数据挖掘中起着关键作用。</p>
+<p>  今天，数据挖掘是一门利用计算机科学，机器学习和统计学的复杂技能的学科。 但是，数据挖掘者将与数据和领域专家一起在一个团队中工作。</p>
+<h4 align="left" id="1.2 数据挖掘团队">1.2 数据挖掘团队</h4>
+
+<p>  许多数据挖掘项目都有不明确和模糊的目标。 虽然对这种观察的第一反应是我们应该更好地界定问题，但实际情况是，随着数据挖掘项目的进展，需要解决的问题经常被识别和完善。 这很自然。</p>
+<p>  数据挖掘项目的启动会议通常涉及数据挖掘者，领域专家和数据专家。 数据挖掘者带来统计和算法理解，编程技巧以及任何分析基础之下的关键调查能力。 领域专家知道正在处理的实际问题，并且经常是在该领域工作多年的业务专家。 数据专家了解数据，如何收集数据，如何存储数据，如何访问和合并分析所需的数据以及等待数据挖掘者的任何特质和数据陷阱。</p>
+<p>  一般来说，领域专家和数据专家都不了解数据挖掘者的需求。 特别是，作为一名数据挖掘者，我们经常会发现我们鼓励数据专家提供（或提供）所有数据，而不仅仅是数据专家认为可能有用的数据。 作为数据挖掘者，我们经常会将自己视为我们可以掌握的所有数据的“贪婪”消费者。</p>
+<p>  所有三位专家共同提供数据挖掘项目至关重要。 他们对待解决问题的不同理解需要融合，为数据挖掘项目提供一条共同途径。 具体而言，数据挖掘人员需要了解问题领域的视角，并了解与问题相关的可用数据以及如何获取该数据，以及在建模之前确定需要哪些数据处理。</p>
+<h4 align="left" id="1.3 灵活的数据挖掘">1.3 灵活的数据挖掘</h4>
+
+<p>  构建模型只是数据挖掘人员执行的任务之一。 还有很多其他重要的任务，我们会发现自己参与其中。这些任务包括确保我们的数据挖掘活动正在解决正确的问题; 理解可用的数据，将噪声数据转换为可用于构建稳健模型的数据; 评估和展示我们模型的性能; 并确保我们模型的有效部署。</p>
+<p>  虽然我们可以很容易地描述这些步骤，但重要的是要意识到数据挖掘是一项敏捷的活动。 敏捷性的概念来自<strong>敏捷软件工程</strong>原则，其中包括问题需求的演变或增量式开发，对常规客户端输入或反馈的需求，我们正在开发的模型的测试以及频繁重建模型 改善他们的表现。</p>
+<p>  联合方面是结对编程的概念，其中两位数据挖掘者以友好，竞争和合作的方式共同处理相同的数据以建立模型。 敏捷方法还强调了面对面沟通的重要性，超出了通常花在书面文档上的所有努力，而且经常被浪费掉。 这不是为了消除编写文档的需要，而是为了确定真正需要记录的内容。</p>
+<p>  我们现在确定数据挖掘项目中的常见步骤，并指出本书的以下章节一次一步地引导我们完成这些步骤。</p>
+<h4 align="left" id="1.4 数据挖掘的过程">1.4 数据挖掘的过程</h4>
+
+<p>  数据挖掘的跨行业流程（CRISP-DM，1996）为交付数据挖掘项目提供了一个通用且完善的框架。 CRISP-DM确定了典型数据挖掘项目中的六个步骤：</p>
+<ol>
+<li><p>理解问题</p>
+</li>
+<li><p>理解数据</p>
+</li>
+<li><p>数据预处理</p>
+</li>
+<li><p>建模</p>
+</li>
+<li><p>评估</p>
+</li>
+<li><p>部署</p>
+<p>本书中的章节基本上遵循这个数据挖掘项目的分步过程，而且Rattle基于这些相同的步骤。 使用基于选项卡的界面，每个选项卡代表了其中一个步骤，并且在我们通过数据挖掘项目进行工作时，我们会继续执行选项卡。 一个明显的例外是第一步，问题的理解。 这是需要学习，讨论，思考和脑力的东西。 在这个过程中帮助的实用工具并不常见。</p>
+</li>
+</ol>
+<h4 align="left" id="1.5 一个典型的旅程">1.5 一个典型的旅程</h4>
+
+<p>  许多组织都在寻求建立数据挖掘功能，通常称为分析团队。 在组织内部，数据挖掘项目可由业务部门或分析团队发起。 通常，为了获得最佳的商业参与，商业发起的项目效果最佳，但业务并不总是能够理解数据挖掘的应用场合。 这往往是一个相互的旅程。</p>
+<p>  数据挖掘者本身很少拥有业务本身的专业人员对业务的深入了解。 然而，企业所有者往往对数据挖掘的内容知之甚少，事实上，由于炒作，可能会有错误的想法。 直到他们开始看到一些实际的业务数据挖掘模型时，他们才开始了解项目，可能性以及潜在结果的一瞥。</p>
+<p>  我们将把六个月以上的实际经验与业务团队和分析团队的六次重要会议联系起来。 我们在这里描绘的图片有点简化和理想化，但并不太离实际。</p>
+<p>  <strong>会议一</strong>，数据采矿者坐在角落里倾听和学习。 业务团队很少了解数据挖掘者可能能够提供什么。 他们讨论他们目前的业务问题以及正在采取的改进流程的步骤。 数据挖掘者尚未提供，但他们正在寻找可供他们学习的数据。</p>
+<p>  <strong>会议二</strong>，数据采矿者现在经常会对他们最初分析的数据进行一些观察。 虽然分析可能以图形方式很好地呈现，并且可能有趣，但它们尚未提供对业务的任何新见解。 就业务团队而言，至少数据挖掘者开始意识到业务。</p>
+<p>  <strong>会议三</strong>，数据采矿者开始展示一些最初的建模结果。 结果开始让业务团队看起来很有趣。 他们正在参与，提出问题并了解数据挖掘团队发现了一些有趣的见解。</p>
+<p>  <strong>会议四</strong>，数据采矿者是主要的议题。 他们的分析开始响起。 他们从业务团队（领域和数据专家）提供的数据中做出了一些非常有趣的发现。 这些发现并不明显，有时也很有趣。 有时他们也很明显。</p>
+<p>  <strong>会议五</strong>，提供模型进行评估。 数据挖掘团队已经评估了模型的执行情况，并解释了部署模型的上下文。 业务团队现在热衷于评估真实案例的模型并在一段时间内监控其性能。</p>
+<p>  <strong>会议六</strong>，这些模型已经部署到企业中，并且每天都在运行，以匹配客户和产品进行市场营销，确定可能具有欺诈性的保险理赔或信用卡交易，或者纳税人的纳税申报可能需要恢复。 程序已经到位，可以随着时间的推移监测模型的性能，并在模型开始偏离预期时发出警报铃声。</p>
+<p>  除了通信的重要性之外，这里描述的大部分数据挖掘工作的关键是对数据的依赖和关注。 这使我们能够确定数据挖掘的一些关键原则。</p>
+<h4 align="left" id="1.6 对数据挖掘的见解">1.6 对数据挖掘的见解</h4>
+
+<p>  所有数据挖掘的出发点都是数据。 我们需要获得与我们希望了解和改进的流程相关的良好数据。 没有数据，我们只是猜测。</p>
+<p>  花费大量时间和精力来完成我们的数据是数据挖掘项目成功的关键因素。 在很多情况下，一旦我们掌握了正确的挖掘数据，其余的都很简单。 正如许多其他人所指出的，<strong>数据收集和数据准备工作实际上可能是数据挖掘项目中最重要的组成部分</strong>。</p>
+<p>  我对数据挖掘的见解列表没有特别的顺序，包括：</p>
+<ol>
+<li><p>关注数据并了解业务。</p>
+</li>
+<li><p>使用培训/验证/测试数据集来构建/调整/评估模型。</p>
+</li>
+<li><p>构建多个模型：大多数表现非常相似。</p>
+</li>
+<li><p>对“完美”模式提出质疑，太好了，不可能是真的。</p>
+</li>
+<li><p>不要忽视模型的部署方式。</p>
+</li>
+<li><p>压力重复性和效率，对一切都使用脚本。</p>
+</li>
+<li><p>让数据跟你说话，但不要误导你。</p>
+</li>
+<li><p>有效和直观地沟通发现。</p>
+</li>
+</ol>
+<h4 align="left" id="1.7 记录数据挖掘">1.7 记录数据挖掘</h4>
+
+<p>  数据挖掘是过程记录的一项重要任务。 我们需要警惕记录所有已完成的事情。 这通常最好通过我们编写的用于执行分析的代码完成，而不是单独记录该过程。 有一个单独的过程来记录数据挖掘通常意味着它很少完成。 这意味着我们经常将过程捕获为透明的可执行代码，而不是使用GUI的指令列表。</p>
+<p>  确保我们通过编码数据分析来记录项目有许多重要的优点。 有时我们需要将项目交给另一个数据挖掘工。 或者我们可能在一段时间内停止一个项目的工作，并在稍后阶段返回。 或者我们已经进行了一系列分析，并且一年之后需要再次重复相同的过程。 无论出于何种原因，当我们返回一个项目时，我们通过编码找到文档，这对于成为高效和有效的数据采矿者至关重要。</p>
+<p>  各种各样的事情应该被记录下来，并且大多数可以通过代码和评论的组合来记录。 我们需要记录我们对源数据的访问，数据如何转换和清理，构建了哪些新变量以及为了理解数据而生成了哪些摘要。 然后我们还需要记录我们如何构建模型以及选择和考虑哪些模型。 最后，我们记录评估以及我们如何收集数据以支持我们建议从模型中获得的收益。</p>
+<p>  通过文档，理想情况下通过开发可以讲述数据挖掘项目和实际过程的文档化代码，我们将与其他人交流如何挖掘数据。 我们的流程可以轻松查看，改进和自动化。 我们可以透明地站在数据挖掘的结果背后，公开提供导致结果的流程和数据。</p>
+<h4 align="left" id="1.8 数据挖掘的工具：R">1.8 数据挖掘的工具：R</h4>
+
+<p>  <strong>R在本书中用于说明数据挖掘过程</strong>。 它是用于实现用于数据挖掘的Rattle图形用户界面的编程语言。 如果你从SAS或SPSS转向R，那么你会发现Muenchen（2008）是一个很好的资源（可以从<a href="http://r4stats.com" target="_blank" rel="noopener">http://r4stats.com</a>获得早期版本）。</p>
+<p>  R是一个复杂的统计软件包，易于安装，具有教学和先进性，它是免费的开源软件。 它提供了所有常见的，大多数不太常见的以及所有新的数据挖掘方法。</p>
+<p>  使用R的基本操作方式是使用R语言编写脚本。 过了一段时间，您不仅需要发布单个简单命令，而且还要编写适合您自己数据挖掘的常见任务的程序和系统。 因此，将我们的命令保存到R脚本文件（通常使用.R filename扩展名）非常重要。 然后，我们可以重新运行脚本，将源数据随意自动转换为信息和知识。 在我们阅读本书时，我们将熟悉可能结合到脚本中的常见R函数和命令。</p>
+<p>  <strong>虽然为了数据挖掘的目的，我们将重点介绍如何使用鼠标GUI</strong>，更高级的用户可能更喜欢功能强大的Emacs编辑器，并增加ESS包，直接开发R代码。 两者都在GNU / Linux，Mac / OSX和Microsoft Windows下运行。</p>
+<p>  我们还注意到与R的直接交互比使用基于GUI的系统具有更陡峭的学习曲线，但是一旦通过障碍，使用其编程语言接口对相同或相似数据集执行操作变得非常容易。</p>
+<p>  <strong>本书鼓励的范例是通过示例学习或通过实例编程（Cypher，1993）。 目的是让任何人都能够轻松地复制书中的例子，然后对它们进行微调以适应自己的需求。 这是Rattle的基本原理之一，在图形用户界面下使用的所有R命令也暴露给用户。 这使其成为学习R用于数据挖掘特定任务的有用教学工具，同时也是一种很好的记忆辅助工具</strong>。</p>
+<h4 align="left" id="1.9 数据挖掘的工具：Rattle">1.9 数据挖掘的工具：Rattle</h4>
+
+<p>  <strong>Rattle建立在统计语言R之上</strong>，但是为了使用它，不需要了解R。 Rattle易于使用，部署速度快，并且使我们能够快速完成数据挖掘项目的数据处理，建模和评估阶段。 另一方面，R为执行数据挖掘提供了一种非常强大的语言，远远超出了任何图形用户界面中所体现的限制，并因此提供了数据挖掘的预处理方法。 当我们需要微调和进一步开发我们的数据挖掘项目时，我们可以从Rattle迁移到R。</p>
+<p>  Rattle可以将数据挖掘任务的当前状态保存为Rattle项目。 然后可以在稍后加载Rattle项目或与其他用户共享。 项目可以被加载，修改和保存，允许检查指向和并行探索。 项目还保留所有R代码的透明度和可重复性。 这是任何科学和部署努力的重要方面，能够重复我们的实验。</p>
+<p>  虽然Rattle的用户不需要学习R，但Rattle公开了所有底层R代码，以允许它直接部署在R Console中，并保存在R脚本中供将来参考。 R代码可以加载到R（在Rattle之外）重复任何数据挖掘任务。</p>
+<p>  Rattle本身可能足以满足用户的所有需求，特别是在引入数据挖掘的情况下。 不过，它也为R本身的更复杂的处理和建模提供了一块踏脚石。 值得强调的是，用户不限于Ratlele如何操作。 对于复杂和不受约束的数据挖掘，有经验的用户将会直接与R进行交互。</p>
+<p>  上面介绍了数据挖掘项目的典型工作。 在拉特尔的背景下，可以概括为：</p>
+<ol>
+<li><p>加载/<strong>数据集</strong>/。</p>
+</li>
+<li><p>/<strong>选择</strong>/用于探索和挖掘的变量和实体。</p>
+</li>
+<li><p>/<strong>探索</strong>/数据以了解其分布或传播方式。</p>
+</li>
+<li><p>/<strong>转换</strong>/数据以适合我们的数据挖掘目的。</p>
+</li>
+<li><p>建立我们的/<strong>模型</strong>/。</p>
+</li>
+<li><p>/<strong>评估</strong>/其他数据集上的模型。</p>
+</li>
+<li><p>/<strong>导出</strong>/模型进行部署。</p>
+<p>值得注意的是，在任何阶段，下一步都可能是前一阶段的一步。 另外，我们可以将Rattle的Log选项卡的内容保存为数据挖掘过程的可重复记录。</p>
+<p>我们举例说明了一个典型的工作方式，体现在图1.1中的Rattle界面中。<br><img src="https://github.com/dwla/BP/blob/master/2018030501.png?raw=true" alt="数据挖掘项目的典型工作由Rattle支持"></p>
+<blockquote>
+<p>图1.1：数据挖掘项目的典型工作由Rattle支持</p>
+</blockquote>
+</li>
+</ol>
+<h4 align="left" id="1.10 为什么选择R和Rattle？">1.10 为什么选择R和Rattle？</h4>
+
+<p>  R和Rattle是免费软件，允许任何人随意自由地做任何事情。 这也被称为开源软件，以区别于不提供源代码的闭源软件。 封闭源码软件通常具有相当严格的许可证，旨在限制我们使用它的自由。 这与软件是否可以免费获得（这通常但不一定是开源软件的情况）或必须购买的问题是分开的。 R和Rattle可以免费获得。</p>
+<p>  2009年1月7日，纽约时报刊登了一篇关于R的头版技术文章，其中引用了供应商代表：</p>
+<blockquote>
+<p>我认为它为高端数据分析师提供了一个利基市场，该分析师需要免费的，随时可用的代码。 …我们有为飞机制造发动机的客户。 我很高兴他们没有使用免费软件，当我坐飞机时。</p>
+</blockquote>
+<p>  这是对免费和开源软件概念的常见误解。 R是免费的开放源代码软件，实际上是一个同行评议的软件产品，许多世界顶尖的统计师已经开发出来并且其他人已经审查过。 事实上，任何人都可以查看R源代码。 多年来，许多错误和问题已被大型开发人员和用户群体所识别和推广。</p>
+<p>  另一方面，封闭的源代码软件产品不能如此容易和独立地被其他人随意验证或查看。 需要将错误和增强请求报告给供应商。 客户需要依赖一组由供应商选择的人来确保软件的安全，纠正其中的任何错误，并用新算法加以改进。 错误修复和增强可能需要几个月或几年时间，而且一般客户需要购买新版本的软件。</p>
+<p>  这两种情况（开源和封闭源代码）都看到他们的软件质量付出了很多努力。 尽管开放源码，我们都分享它，但我们可以分享和学习关于我们从闭源软件使用的算法的很少。</p>
+<p>  值得强调在免费和商业软件环境中使用R的另一个原因。 在获得任何软件时，评估可用内容时需要尽职调查。 然而，最终交付的内容可能与软件承诺甚至可能的内容完全不同，无论是开源还是封闭源代码，免费或商业版本。 使用免费的开源软件，我们可以自由使用它，而不受任何限制。 如果我们发现它不符合我们的目的，我们可以以最小的成本继续前进。 在封闭源代码的商业采购中，一旦承诺购买软件，结果不符合我们的要求，我们一般会坚持下去，做出财务承诺，并且必须做。</p>
+<p>  特别回到R，许多人已经确定了使用这个统计软件包的优缺点。 我们列举了使用R的一些优点：</p>
+<ul>
+<li><p>R是最全面的统计分析软件包。 它包含所有标准的统计测试，模型和分析，并提供用于管理和操作数据的综合语言。 新技术和想法经常在R中首次出现。</p>
+</li>
+<li><p>R是统计学家和研究人员的统计分析开发的编程语言和环境。 它很好地反映了计算统计学家非常称职的社区。</p>
+</li>
+<li><p>R现在由大约19位开发人员的核心团队维护，其中包括一些非常高级的统计人员。</p>
+</li>
+<li><p>R的图形功能非常出色，提供了完全可编程的图形语言，超越了大多数其他统计和图形软件包。</p>
+</li>
+<li><p>R软件的有效性通过美国食品和药物管理局（R Foundation for Statistical Computing，2008）记载的公开验证和综合治理来确保。 由于R是开源的，与闭源软件不同，它已经被许多国际知名的统计学家和计算科学家审查过。</p>
+</li>
+<li><p>R是免费的开源软件，允许任何人使用，重要的是修改它。 R是根据GNU通用公共许可证颁发的，版权由The R Foundation for Statistical Computing持有。</p>
+</li>
+<li><p>R没有许可限制（除了确保我们自由使用它的自由之外），因此我们可以随时随地运行它，甚至可以在许可证的条件下销售它。</p>
+</li>
+<li><p>欢迎任何人提供bug xes，代码增强功能和新软件包，并且为R提供的大量优质软件包证明了这种软件开发和共享方法。</p>
+</li>
+<li><p>R拥有来自多个知识库的4800多个软件包，专门提供计量经济学，数据挖掘，空间分析和生物信息学等主题。</p>
+</li>
+<li><p>R是跨平台的。 R可以在许多操作系统和不同的硬件上运行。 它在GNU / Linux，Macintosh和Microsoft Windows上广泛使用，可在32位和64位处理器上运行。</p>
+</li>
+<li><p>R可与其他工具很好地协作，例如从CSV文件，SAS和SPSS中导入数据，或直接从Microsoft Excel，Microsoft Access，Oracle，MySQL和SQLite导入数据。 它还可以生成PDF，JPG，PNG和SVG格式的图形输出，以及LATEX和HTML的表格输出。</p>
+</li>
+<li><p>R有活跃的用户群体，可以提出问题并经常被开发环境的人员快速响应，这种支持是首屈一指的。 你有没有试过从商业供应商的核心开发人员获得支持？</p>
+</li>
+<li><p>R（Springer Use R！系列）的新书正在出现，现在有一本非常好的书籍库可供使用R。</p>
+<p>尽管笔的优点可能会带来很大的热情，但是注意到R的一些缺点或弱点是有用的，即使它们可能是短暂的！</p>
+</li>
+<li><p>R有一个陡峭的学习曲线 - 它需要一段时间才能适应R的力量 - 但不会比其他统计语言更陡峭。</p>
+</li>
+<li><p>R对于初学者来说并不是那么容易使用。 R有几个简单的图形用户界面（GUI），它们包含点击 - 点击交互，但它们通常没有商业产品的抛光。</p>
+</li>
+<li><p>文件有时是不完整和简洁的，对非统计人员来说是难以逾越的。 然而，一些非常高标准的书籍越来越堵塞了文档空白。</p>
+</li>
+<li><p>一些软件包的质量并不尽如人意，尽管如果软件包对许多人有用，它将通过协作努力迅速发展成为一款非常强大的产品。</p>
+</li>
+<li><p>一般来说，如果有什么不起作用，没有人抱怨。 R是一个软件应用程序，许多人可以自由地将自己的时间用于开发。 在开放邮件列表中，问题通常会得到快速处理，并且错误以闪电般的速度消失。 需要它的用户可以从国际上的许多供应商那里购买支持。</p>
+</li>
+<li><p>许多R命令很少考虑内存管理，所以R可以很快消耗所有可用的内存。 在进行数据挖掘时这可能是一个限制。 有各种解决方案，包括使用64位操作系统，可以访问比32位更多的内存。</p>
+</li>
+</ul>
+<h4 align="left" id="1.11 隐私">1.11 隐私</h4>
+
+<p>  在结束我们的数据挖掘和工具介绍之前，我们需要谈谈隐私问题。 许多国家的法律可以直接影响数据挖掘，因此了解它们及其处罚通常是非常值得的。</p>
+<p>  我们应该遵守有关保护隐私的基本原则。 有些被国际经济合作与发展组织（OECD）（经济合作与发展组织（OECD），1980）制定的隐私原则所捕获。 他们包括：</p>
+<ul>
+<li><p>收集限制</p>
+<blockquote>
+<p>数据应该合法和公平地获得，而一些非常敏感的数据根本不应该被保留。</p>
+</blockquote>
+</li>
+<li><p>数据质量</p>
+<blockquote>
+<p>数据应与规定的目的相关，准确，完整和最新; 应采取适当的预防措施来确保准确性。</p>
+</blockquote>
+</li>
+<li><p>目的说明</p>
+<blockquote>
+<p>应该识别数据的用途，如果数据不再符合既定目的，则应该销毁数据。</p>
+</blockquote>
+</li>
+<li><p>使用限制</p>
+<blockquote>
+<p>禁止将数据用于指定以外的目的。</p>
+</blockquote>
+<p>作为数据挖掘者，我们有社会责任来保护我们的社会和个人，使其为全社会的利益和利益而努力。 请认真对待这个责任。 经常仔细想想你在做什么.</p>
+</li>
+</ul>
+<h4 align="left" id="1.12 资源">1.12 资源</h4>
+
+<p>  本书并不试图全面地介绍如何使用R.通过使用Rattle界面进行数据挖掘以及对R进行一些游览，可以获得对R的一些基本熟悉。在这方面，大部分我们需要了解的内容 R包含在书中。 但是还有更多要了解R及其相关软件包。 我们在这里列出并评论许多书籍，这些书籍为R提供了一个入口。</p>
+<p>  在R中处理数据的一个好的起点是Data Manipulation with R (Spector, 2008)。 本书涵盖了基本的数据结构，读写数据，下标，操作，聚合和重塑数据。</p>
+<p>  如前所述，Introductory Statistics with R (Dalgaard, 2008)是使用R对统计学的一个很好的介绍。Modern Applied Statistics with S (Venables and Ripley, 2002)对于使用R的统计学有相当广泛的介绍。到数据挖掘，Data Analysis and Graphics Using R (Maindonald and Braun, 2007)为使用R探索和建模数据的许多方面提供了极好的实践覆盖。The Elements of Statistical Learning (Hastie et al., 2009)是一门更加数学的论文 ，涵盖了本书中讨论的所有机器学习技术，这些技术在一定程度上是数学上的。如果您是从SAS或SPSS背景来到R，那么R for SAS and SPSS Users (Muenchen, 2008)是一个很好的选择。即使您不是SAS或SPSS用户，本书也提供了使用R的简单介绍。</p>
+<p>  现在已经有很多使用R的专业书籍可供使用，包括Lat- tice: Multivariate Data Visualization with R (Sarkar, 2008)，其中涵盖了R可用的图形/绘图包之一的广泛功能。ggplot2: Elegant Graphics for Data Analysis (Wickham, 2009)中提供了一个更新的图形框架。Bivand等人(2008)涵盖了应用空间数据分析，Kleiber和Zeileis(2008)涵盖了应用计量经济学，以及Cowpertwait和Metcalfe(2009)覆盖时间序列，在R库中仅列出几本书。</p>
+<p>  从R本身到数据挖掘，有很多一般的介绍可供选择。 Han和Kamber(2006)是计算机科学中常用的一种教学方法。 它为数据挖掘工具所使用的大多数算法提供了一个全面的通用介绍。 它呈现在适合信息技术和数据库毕业生的水平。</p>
+<h3 align="center" id="第2章 入门指南">第2章 入门指南</h3>
+
+<p>  新的想法往往通过实际上对他们做些事情而得到最有效的理解和欣赏。 所以这是数据挖掘。 从根本上说，数据挖掘是关于研究人员在人工智能，机器学习，计算机科学和统计学中开发的算法的实际应用。 本章是关于数据挖掘的入门。</p>
+<p>  我们在本书中的目标是提供数据挖掘的实践练习，为此我们需要一些计算机软件。 有数据挖掘软件包可供选择。 这些包括商业封闭源码软件（这通常也相当昂贵）以及免费的开源软件。 开源软件（无论是免费还是商用）总是最好的选择，因为它使我们可以自由地做任何我们喜欢的事情，如第1章所述。这包括扩展它，验证它，调整它以适合我们的 需求，甚至出售它。 由于其开放性，这种软件通常比商业封闭源软件的质量更高。</p>
+<p>  对于我们的目的，我们需要一些免费提供给每个人的好工具，并且可以由任何人自由修改和扩展。 因此，我们使用开源免费数据挖掘工具Rattle，它基于开放源代码和免费的统计软件环境R.请参阅附录A获取软件说明。 现在是安装R的好时机。本书的其余部分，特别是本章的大部分内容都依赖于与R和Rattle进行交互。</p>
+<p>  在Rattle的支持下，我们可以很快开始我们的第一个数据挖掘项目。 目标是建立一个模型，捕捉从我们的数据中发现的知识的本质。 不过要小心 - 在获取数据的过程中需要付出很多努力。 一旦我们获得了高质量的数据，Rattle就可以只需点击4次鼠标就可以建立一个模型，但这些努力是在准备数据和理解，然后微调模型。</p>
+<p>  在本章中，我们使用Rattle构建我们的第一个数据挖掘模型 - 一个简单的决策树模型，它是数据挖掘中最常见的模型之一。 我们介绍了开始（和退出）R，我们如何与Rattle进行交互的概述，以及如何加载数据集并构建模型。 一旦建立模型的热情得到满足，我们就会回顾理解数据和评估模型的更大任务。 然后在完成Rattle的用户界面的每个元素之前，先介绍一些与直接和写入R指令相关的基本概念。</p>
+<h4 align="left" id="2.1 开始R">2.1 开始R</h4>
+
+<p>  R是一个命令行工具，通过在命令行窗口（例如，GNU / Linux中的终端）中输入字母R（大写R-R区分大小写）或通过从桌面图标（例如， ，在Microsoft Windows和Mac / OSX中）。 这假定我们已经安装了R，详见附录A.</p>
+<p>  无论如何，我们应该看到一个显示R提示符（&gt;）的窗口（图2.1），表明R正在等待我们的命令。 我们通常将其称为R Console。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030502.png?raw=true" alt="图2.11"><br>  <img src="https://github.com/dwla/BP/blob/master/2018030503.png?raw=true" alt="图2.12"></p>
+<blockquote>
+<p>图2.1：用于GNU/Linux和Microsoft Windows的R Console。提示符表示R正在等待用户命令。</p>
+</blockquote>
+<p>  Microsoft Windows R控制台提供了专门用于R的其他菜单。这些菜单包括用于处理脚本文件，管理软件包和获取帮助的选项。</p>
+<p>  我们通过使用<code>library()</code>将Rattle加载到R库中来启动Rattle。 我们提供要加载的包的名称作为命令的参数。 然后，使用空参数列表输入<code>rattle()</code>命令，如下所示。 然后我们会看到显示的Rattle GUI，如图2.2所示。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">library</span>(rattle)</span><br><span class="line">&gt; rattle()</span><br></pre></td></tr></table></figure></p>
+<p>  <img src="https://github.com/dwla/BP/blob/master/2018030504.png?raw=true" alt="图2.2"></p>
+<blockquote>
+<p>图2.2：最初的Rattle窗口显示欢迎信息并对Rattle和R稍作介绍。</p>
+</blockquote>
+<p>  Rattle用户界面是一个简单的基于选项卡的界面，其想法是从最左边的选项卡到最右边的选项卡，模仿典型的数据挖掘过程。</p>
+<blockquote>
+<p>提示：在启动Rattle的状态栏中暗示使用Rattle的关键是为特定选项卡提供适当的信息，然后单击Execute按钮执行操作。 在继续下一步之前，请确保您已经点击了Execute按钮。</p>
+</blockquote>
+<h4 align="left" id="2.2 退出Rattle和R">2.2 退出Rattle和R</h4>
+
+<p>  在深入细节之前，一条相当重要的信息是如何退出应用程序。 要从Rattle退出，我们只需点击Quit按钮。 一般来说，这不会终止R Console。 对于R，启动消息（图2.1）告诉我们输入<code>q()</code>退出。 我们在R Console中输入这个命令，包括括号，以便调用该命令而不是简单地列出其定义。 按Enter键会要求R退出<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; q()</span><br><span class="line">Save workspace image? [y/n/c]:</span><br></pre></td></tr></table></figure></p>
+<p>  系统会提示我们保存我们的工作区图像。 工作空间是指所有数据集以及我们在当前R会话中创建的任何其他对象。 我们可以将工作区中当前可用的所有对象保存在R的不同调用之间。我们通过选择y选项来完成此操作。 我们可能正在进行一些复杂的分析，希望稍后恢复它，所以这个选项很有用。</p>
+<p>  许多用户通常每次都回答n，已经将他们的分析捕获到脚本文件中。 脚本文件允许我们根据需要自动重新生成结果，并且可能避免保存和管理非常大的工作区文件。</p>
+<p>  如果我们实际上不想退出，我们可以回答c取消操作并返回到R Console。</p>
+<h4 align="left" id="2.3 第一次接触">2.3 第一次接触</h4>
+
+<p>  在第1章中，<strong>我们确定数据挖掘项目中的大量工作将用于将数据处理为适合数据挖掘的形式</strong>。 这种努力的数量不应低估，但我们现在确实跳过这一步。</p>
+<p>  一旦我们处理完了我们的数据，我们就可以建立一个模型了 - 只需点击几下鼠标就可以构建模型。 使用其他人已经为我们准备的样本数据集，我们只需简单地使用Rattle。</p>
+<ol>
+<li><p>点击执行<code>Execute</code>按钮。</p>
+<blockquote>
+<p>Rattle会注意到没有数据集被识别出来，所以它会采取行动，就像下一步一样，以确保我们有一些数据。 这在第2.4节和第4章中有详细介绍。</p>
+</blockquote>
+</li>
+<li><p>在弹出的结果中点击是<code>yes</code>按钮。</p>
+<blockquote>
+<p>天气数据集随Rattle一起提供，作为一个小而简单的数据集来探索数据挖掘的概念。 数据集在第3章中详细介绍。</p>
+</blockquote>
+</li>
+<li><p>点击Model选项卡<code>Model tab</code>。</p>
+<blockquote>
+<p>这将改变Rattle的主窗口的内容，以显示与建立模型相关的选项和信息。 这是我们告诉Rattle我们想要建立什么样的模型以及它应该如何建立的模型。 “模型”选项卡在第2.5节中有更详细的描述，第8章到第14章将详细讨论模型构建。</p>
+</blockquote>
+</li>
+<li><p>点击执行<code>Execute</code>按钮。</p>
+<blockquote>
+<p>一旦我们指定了我们想要完成的任务，我们就要求Rattle通过点击Execute按钮来完成。 对于用于小型数据集的简单模型构建器，Rattle只需要一两秒钟，然后我们就可以在文本视图窗口中看到结果。</p>
+</blockquote>
+<p>在Rattle的文本视图中以文本形式显示的最终决策树模型基于历史上每日天气观测的样本数据集（好奇可以略过几页来查看第30页图2.5中的实际决策树）。</p>
+<p>数据来自位于澳大利亚堪培拉的气象监测站，通过<strong>澳大利亚气象局</strong>。 每个观察结果都是特定日子的天气情况摘要。 它已经被处理以包括目标变量，该目标变量指示特定观察之后的下一天是否下雨。 利用这些历史数据，我们建立了一个模型来预测明天是否会下雨。 天气数据通常是可用的，您可以根据您所在地区的数据构建相似的模型。</p>
+<p>只需再点击一次或两次，即可构建更多模型。 再次点击几下，我们就会看到一个评估图表，显示模型的性能。 然后，只需点击一两次，我们就会将模型应用于新的数据集，以便为新的观察结果生成分数。</p>
+<p>现在到细节。 我们将继续使用Rattle以及简单的命令行工具。 命令行在使用Rattle时并不是绝对必要的，但是随着我们开发数据挖掘功能，它将变得有用。 我们会将数据加载到Rattle中，并解释我们构建的模型。 我们将建立第二个模型并比较他们的表现。 然后我们将这个模型应用到一个新的数据集中，为新的观测数据提供评分（即预测明天下雨的可能性）。</p>
+</li>
+</ol>
+<h4 align="left" id="2.4 加载数据集">2.4 加载数据集</h4>
+
+<p>  使用Rattle，我们可以加载一个样本数据集，为建模做准备，就像我们刚刚完成的一样。 现在我们要说明如何将任何数据（也许是我们自己的数据）加载到Rattle中。</p>
+<p>  如果我们遵循2.3节中的四个步骤，那么现在我们需要重置Rattle。 只需点击工具栏中的新建按钮。 我们被要求确认我们想要清除当前的项目。 或者，我们可能已经退出了第2.1节中所述的Rattle和R，并且需要重新启动一切，如第2.1节所述。 无论哪种方式，我们都需要准备好新的Rattle，以便我们可以按照下面的示例进行操作。</p>
+<p>  在启动Rattle时，我们可以在没有任何其他操作的情况下单击工具栏中的“执行”<code>Execute</code>按钮。 Rattle会注意到没有指定CSV文件（默认数据格式）（请注意Filename：chooser中的“(<code>none</code>)”），并询问我们是否希望使用包中提供的一个示例数据集。 点击Yes来完成，查看列出的数据，如图2.3所示。</p>
+<p>  <img src="https://github.com/dwla/BP/blob/master/2018030505.png?raw=true" alt="图2.3"></p>
+<blockquote>
+<p>图2.3：示例weather.csv文件已作为准备开采的数据集加载到内存中。 数据集由366个观察值和24个变量组成，如状态栏中所示。 第一个变量具有默认输入角色以外的角色。 Rattle使用启发式来初始化角色</p>
+</blockquote>
+<p>  文件weather.csv将默认加载为Rattle作为其数据集。 在R中，数据集实际上被称为数据框架，我们会经常看到这个术语。</p>
+<p>  数据集总结（图2.3）提供了变量，它们的数据类型，默认角色和其他有用信息的列表。 类型通常是数字（如果数据由数字组成，如温度，降雨量和风速）或分类（如果数据由字母表中的字符组成，如风向，可能是N或S等）。），尽管我们也可以看到一个<code>Ident</code>（标识符）。 一个<code>Ident</code>通常是数据中唯一标识数据的每个观测值（行）的变量（列）之一。 评论栏包括一般信息，如变量具有的唯一（或不同）值的数量以及有多少观测值具有变量缺失值。</p>
+<h4 align="left" id="2.5 建立一个模型">2.5 建立一个模型</h4>
+
+<p>  使用Rattle，我们点击Model选项卡，并显示Model选项（图2.4）。 要构建决策树模型（最常用的数据挖掘模型之一），请单击“执行”按钮（决策树是缺省值）。 图2.4显示了该模型的文本表示。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030506.png?raw=true" alt="图2.4"></p>
+<blockquote>
+<p>图2.4：天气数据集已经被加载，并且已经建立了决策树模型。</p>
+</blockquote>
+<p>  目标变量（存储我们想要建模或预测的结果）是RainTomorrow，正如我们在图2.3的Data选项卡窗口中看到的那样。 Rattle自动选择这个变量作为目标，因为它是数据文件中的最后一个变量，并且是二进制（即二值）分类。 使用天气数据集，我们的建模任务是根据我们今天所了解的情况，了解明天下雨的前景。</p>
+<p>  图2.4中的模型的文本表示需要花费一点努力才能理解，并会在第11章中进一步解释。现在，我们可以单击Rattle提供的Draw按钮来获得图2.5中所示的绘图。 情节提供了一个更好的概念，为什么它被称为决策树。 这只是代表相同模型的不同方式。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030507.png?raw=true" alt="图2.5"></p>
+<blockquote>
+<p>图2.5：决策树用Rattle“out of the box”构建。 我们通过跟踪每个节点上与测试对应的分支来遍历树。 根（顶部）节点上的&gt; = &lt;符号表示如果Pressure3pm大于1011.9，则向左移动，如果小于或等于1011.9，则向右移动。 &lt;=&gt;类似，但相反。 叶子节点包括一个节点号供参考，决定是否或是以表明它是否会下雨，训练观察的数目以及决定的强度或置信度。</p>
+</blockquote>
+<p>  单击规则<code>Rules</code>按钮将显示直接从决策树派生的规则列表（我们需要滚动“模型”选项卡中包含的面板以查看它们）。 这是代表相同模型的另一种方式。 这些规则在这里列出，我们接下来会详细解释它们。</p>
+  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Rule number: <span class="hljs-number">7</span> [RainTomorrow=Yes cover=<span class="hljs-number">27</span> (<span class="hljs-number">11</span>%) prob=<span class="hljs-number">0.74</span>]</span><br><span class="line">Pressure3pm&lt; <span class="hljs-number">1012</span></span><br><span class="line">Sunshine&lt; <span class="hljs-number">8.85</span></span><br><span class="line">Rule number: <span class="hljs-number">5</span> [RainTomorrow=Yes cover=<span class="hljs-number">9</span> (<span class="hljs-number">4</span>%) prob=<span class="hljs-number">0.67</span>]</span><br><span class="line">Pressure3pm&gt;=<span class="hljs-number">1012</span></span><br><span class="line">Cloud3pm&gt;=<span class="hljs-number">7.5</span></span><br><span class="line">Rule number: <span class="hljs-number">6</span> [RainTomorrow=No cover=<span class="hljs-number">25</span> (<span class="hljs-number">10</span>%) prob=<span class="hljs-number">0.20</span>]</span><br><span class="line">Pressure3pm&lt; <span class="hljs-number">1012</span></span><br><span class="line">Sunshine&gt;=<span class="hljs-number">8.85</span></span><br><span class="line">Rule number: <span class="hljs-number">4</span> [RainTomorrow=No cover=<span class="hljs-number">195</span> (<span class="hljs-number">76</span>%) prob=<span class="hljs-number">0.05</span>]</span><br><span class="line">Pressure3pm&gt;=<span class="hljs-number">1012</span></span><br><span class="line">Cloud3pm&lt; <span class="hljs-number">7.5</span></span><br></pre></td></tr></table></figure>
+<p>  模型的决策树表示的一个公认优点是，通过决策树的路径可以被解释为一组规则，如上所述。 规则可能是模型的可读性更强。 它们按照我们在每条规则中列出的概率（概率）顺序列出。 概率的解释将在第11章中更详细地解释，但我们在这里提供了一个直观的读物。</p>
+<p>  图2.4中的规则编号7（对应于图7中的“7”）和图2.5中的叶节点编号7）是预测雨水的最强规则（对于是的概率最高）。 我们可以这样理解，如果下午3点的大气压力（下降到平均海平面）小于1012百帕，而今天的日照量少于8.85小时，那么明天下雨的可能性似乎有74％ （yval = yes和prob = 0:74）。 也就是说，在我们以前见过这些情况的大多数日子里（如数据中所表示的），第二天下雨了。</p>
+<p>  进入规则清单的另一端，我们发现在下一天下雨的可能性很小的条件下。 4号规则有两个条件：下午3点的大气压力大于或等于1012百帕斯卡，下午3点的云层盖度小于7.5。 当这些条件成立时，历史数据告诉我们明天不太可能下雨。 在这个特例中，它表明明天只有5％的概率（概率= 0.05）。</p>
+<p>  我们现在有我们的第一个模型。 我们已经数据挖掘了我们对天气的历史观察，以帮助我们了解明天下雨的可能性。</p>
+<h4 align="left" id="2.6 理解我们的数据">2.6 理解我们的数据</h4>
+
+<p>  我们已经回顾了上面的数据挖掘的建模部分，但很少关注数据。 然而，一个现实的数据挖掘项目，除了理解业务，了解哪些数据可用以及将这些数据转换为适合建模的形式之外，还将在建模之前进行相当广泛的数据探索。 除了建立模型之外，还有更多的涉及。 我们现在着眼于探索我们的数据，以更好地理解它，并确定我们可能想要做的事情.</p>
+<p>  <code>Rattle的Explore</code>标签提供一些常见的地块以及通过<code>latticists</code>（Andrews，2010）和<code>rggobi</code>（Lang等人，2011）的广泛的数据探索可能性。 我们将在第5章和第6章中详细介绍探索性数据分析。我们在这里给出了初步的探索性数据分析。</p>
+<p>  我们可能想知道的第一件事情是目标变量（RainTomorrow）的值是如何分布的。 直方图可能对此有用。 创建一个最简单的方法是转到数据<code>Data</code>选项卡，单击RainTomorrow的输入<code>Input</code>角色，然后单击执行<code>Execute</code>按钮。 然后转到“探索”<code>Explore</code>选项卡，选择“分布”<code>Distributions</code>选项，然后选择“<code>Rain Tomorrow</code>”的条形图<code>Bar Plot</code>。 将显示图2.6的情节。</p>
+<p>  <img src="https://github.com/dwla/BP/blob/master/2018030601.png?raw=true" alt="图2.6"></p>
+<blockquote>
+<p>图2.6：目标变量RainTomorrow是倾斜的，而Yes是相当不足的。</p>
+</blockquote>
+<p>  从图2.6可以看出，目标变量高度偏斜。 超过80％的日子没有下雨。 这是数据挖掘的典型特征，更大的偏度并不罕见。 例如，在评估我们建立的任何模型时，我们需要了解偏差 - 一个简单地预测它永不下雨的模型将准确地超过80％，但是很没用。</p>
+<p>  通过选择分布<code>Distributions</code>选项，我们可以从“探索”<code>Explore</code>选项卡显示其他简单的图。 在<code>Box Plot</code>和<code>Histogram</code>列下，选择<code>MaxTemp</code>和<code>Sunshine</code>（如图2.7所示）。 然后点击执行<code>Execute</code>以显示图2.8中的图。 情节开始讲述关于数据的故事。 我们在这里勾画故事，将细节留给第5章。</p>
+<p>  <img src="https://github.com/dwla/BP/blob/master/2018030602.png?raw=true" alt="图2.7"></p>
+<blockquote>
+<p>图2.7：天气数据集已经加载并且已经构建了决策树模型。</p>
+</blockquote>
+<p>  <img src="https://github.com/dwla/BP/blob/master/2018030603.png?raw=true" alt="图2.8"></p>
+<blockquote>
+<p>图2.8：两个变量的分布图样本。</p>
+</blockquote>
+<p>  前两个地块被称为盒须图<code>box-and-whisker plots</code>。 左上角的图表告诉我们，在下雨前一天（x轴标签上方的图是高），最高气温通常比不下雨的时间早（在No以上）。</p>
+<p>  右上角的图表显示，预测前一天的日照量更加剧烈。 通常我们会看到，如果前一天阳光较少，那么下雨的机会（是）似乎会增加。</p>
+<p>  这两个方块图还给出了关于目标变量值分布的另一个线索。 箱形图中箱子的宽度提供了这种分布的可视指示。</p>
+<p>  每个底图覆盖三个独立的图，以进一步洞察观察的分布。 每幅图中的三幅图分别是柱状图<code>Histogram</code>（条形图），密度图<code>density plot</code>（线）和地毯图<code>rug plot</code>（x轴上的短尖峰），我们现在简要描述。</p>
+<p>  直方图已将数字数据分区为等宽的分段，显示每个分段的频率。 我们再次看到，与最高温度相比，阳光（右下角）相当偏斜。</p>
+<p>  密度图倾向于传达更准确的数据分布图。 由于密度图是一条简单的线，因此我们也可以显示每个目标类的密度图（是和否）。</p>
+<p>  沿着x轴是<code>rug plot</code>。 简短的垂直线表示实际的观察结果。 这可以让我们知道任何极端值的位置，并且密集的部分显示更多的观察所在。</p>
+<p>  这些图对于理解数字数据的分布很有用。 Rattle同样为分类变量提供了许多简单的标准图。 选择如图2.9所示。 正如我们现在描述的那样，所有三个图都显示了一个变量WindDir9am的不同视图。</p>
+<p>  <img src="https://github.com/dwla/BP/blob/master/2018030604.png?raw=true" alt="图2.9"></p>
+<blockquote>
+<p>图2.9：一个分类变量的三个分布图的样本。</p>
+</blockquote>
+<p>  图2.9的顶部图表显示了一个非常简单的条形图，条形图对应于感兴趣的分类变量（WindDir9am）的每个级别（或值）。 条形图已经从最常见的整体分类到总体最不频繁的分类值。 我们注意到，变量的每个值（例如，表示东南风向的值“SE”）具有三个条。 第一栏是上午9点的风向来自东南方向的整体频率（即天数）。 第二和第三栏显示分类目标变量的各个值的值的分解（即，对于否和是）。 我们可以看到，每个风向的分布在三组之间是不同的，其中一些比另一些更多。 回想一下，这三组对应于所有的观测值（全部），第二天没有下雨的观测值（否），以及观测到的地点（是）。</p>
+<p>  较低的两幅图以不同的形式显示基本相同的信息。 左下方的图是一个点图。 它与条形图相似，侧面表示条形图的“顶部”。 目标变量水平的细分显示为同一行内的点。</p>
+<p>  右下图是一个马赛克图，所有bar都有相同的高度。 WindDir9am的值之间的相对频率现在由条的宽度表示。 因此，SE是最宽的，WSW是最薄的。 清楚地显示了每个栏中“否”和“是”之间的比例。</p>
+<p>  马赛克图允许我们轻松识别与目标变量水平相关的比例非常不同的水平。 我们可以看到，北风方向在第二天下雨的观测比例较高。 也就是说，如果今天有偏北风，那么明天下雨的机会似乎会增加。</p>
+<p>  这些例子表明数据可视化（或探索性数据分析）是理解我们数据的强大工具 - 一张图片胜过千言万语。 甚至在我们开始具体建模之前，我们实际上对我们的数据有相当多的了解。 许多数据挖掘者开始通过提供这样的洞察力为他们的客户带来显着的好处。 我们在第5章深入研究数据。</p>
+<h4 align="left" id="2.7 评估模型：混淆矩阵">2.7 评估模型：混淆矩阵</h4>
+
+<p>  我们经常通过探索数据来开始数据挖掘项目，以获得我们最初的见解。 很可能，我们也会以各种方式转换和清理数据。 我们已经在上面阐述了如何构建我们的第一个模型。 现在是评估模型性能或质量的时候了。</p>
+<p>  评估是任何数据挖掘过程中的一个关键步骤，而且经常会被搁置。 为了开始，我们将看一个简单的评估工具。 <strong>混淆矩阵</strong>（也称为误差矩阵）是评估模型性能的常用机制。</p>
+<p>  在构建我们的模型时，我们使用了所有可用数据的70％子集。 图2.3（第27页）显示了70/15/15的默认采样策略。 我们称70％为训练数据集样本。 其余部分被平分为验证数据集（15％）和测试数据集（15％）。</p>
+<p>  验证数据集用于测试不同的参数设置或不同的变量选择，而我们是数据挖掘。 值得注意的是，这个数据集不应该被用来提供数据挖掘最终结果的任何误差估计，因为它已经被用作构建模型过程的一部分。</p>
+<p>  测试数据集仅用于预测最终结果的无偏差错。 不要以任何方式使用此测试数据集来构建甚至微调我们构建的模型。 否则，它不再提供模型性能的无偏估计。</p>
+<p>  测试数据集以及我们构建模型时使用的验证数据集用于测试我们构建的模型的性能。这通常涉及计算模型错误率。混淆矩阵只是将模型的决策与实际决策进行比较。这将使我们了解模型在模型对新的，以前未见的数据执行情况方面的准确性水平。</p>
+<p>  图2.10显示了使用我们先前在图2.4和图2.5中看到的树模型的测试数据集的错误矩阵<code>Error Matrix</code>（混淆矩阵）的评估<code>Evaluate</code>选项卡。 展示了两张tables。 第一个列出观察的实际数量，第二个列出百分比。 我们可以观察到，对于62％的预测，模型正确地预测它不会下雨（称为真正的负面<code>true negatives</code>）。 也就是说，56天中的35天正确预测为不下雨。 同样，我们看到该模型在18％的时间里正确地预测了降雨（称为真正的积极因素<code>true positives</code>）。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030605.png?raw=true" alt="图2.10"></p>
+<blockquote>
+<p>图2.10：显示将模型应用于测试数据集的混淆矩阵。</p>
+</blockquote>
+<p>  就模型的正确性而言，我们观察到它正确地预测了实际下雨的15天内的10天的降雨。 预测降雨的准确率为67％。 我们称之为真正的阳性率<code>true positive rate</code>，但它也被称为回忆<code>recall</code>和模型的敏感度<code>sensitivity of the model</code>。 同样，真正的负面率<code>true negative rate</code>（也称为模型的特异性<code>specificity of the model</code>）是85％。</p>
+<p>  我们还会看到六天我们正在等待下雨并且没有发生任何事情（称为误报<code>false positives</code>）。 如果我们使用这种模式来帮助我们决定是否在明天的旅行中带上雨伞或雨衣，那么在这种情况下可能不是一个严重的损失 - 我们不得不随身携带一把雨伞。 也许更严重的是，有五天的时间，我们的模型告诉我们，下雨还没有下雨（称为假阴性<code>false negatives</code>）。 没有我们的雨伞，我们可能会变得不方便。 第15章将进一步介绍真假正面和负面的概念。</p>
+<p>  这里的性能指标告诉我们，我们会比我们想要的更频繁地弄湿。 这是一个重要的问题 - 事实是不同类型的错误对我们有不同的后果。 在第15章中我们也会看到更多关于这个的内容。</p>
+<p>  将使用验证和测试数据集测量的性能与使用训练数据集测量的性能进行比较是有用的。 为此，我们可以从评估<code>Evaluate</code>选项卡的数据<code>Data</code>行中选择验证<code>Validation</code>，然后选择培训<code>Training</code>选项（以及完整性<code>Full</code>选项），然后分别执行<code>Execute</code>。 报告结果的性能。 我们在这里重现所有四个用于比较，包括计数和百分比。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030606.png?raw=true" alt="图"></p>
+<p>  我们可以看到，训练数据集中的错误少于验证或测试数据集中的错误。 这并不奇怪，因为树是使用训练数据集构建的，所以它应该更加精确地描述它已经看到的内容。 这提供了一个暗示，为什么我们不在训练数据集上验证我们的模型 - 评估将提供对模型性能的乐观估计。 通过将模型应用于验证和测试数据集（该模型以前未见过），我们希望获得对新数据的模型性能的更现实的估计。</p>
+<p>  请注意，训练数据集的整体准确度为90％（即添加对角线百分比，80％加上10％），这非常出色。 验证和测试数据集大约为80％。 当我们将模型应用于新的观测数据时，模型的长期准确度可能更高。</p>
+<h4 align="left" id="2.8 与Rattle交互">2.8 与Rattle交互</h4>
+
+<p>  我们现在已经介绍了一些数据挖掘的过程。 我们加载了一些数据，探索它，清理并转换它，建立模型并评估模型。 该模型现在已准备好部署。 当然，我们刚刚完成的工作比我们在这里提到的要多得多。 本书的其余部分提供了大部分这些细节。 但在详细介绍之前，我们可以回顾一下我们如何与<code>Rattle</code>和<code>R</code>进行互动。</p>
+<p>  在本章中我们已经看到了<code>Rattle</code>接口，现在我们更系统地介绍它。 该界面基于一组标签，在我们通过数据挖掘项目进行工作时，我们可以通过这些标签来进步。 对于任何选项卡，一旦我们设置了所需的信息，我们将单击执行<code>Execute</code>按钮来执行操作。 花一点时间来探索一下界面。 注意“帮助”<code>Help</code>菜单，并且帮助布局模仿了标签布局。</p>
+<p>  <code>Rattle</code>界面被设计为一个简单的界面，用于强大的数据挖掘底层工具套件。 一般的过程是从左到右逐个执行相应的操作。 对于任何选项卡，我们配置选项，然后单击执行按钮（或<code>F2</code>）执行相应的任务。 请务必注意，只有单击<code>Execute</code>按钮（或<code>F2</code>或工具下的<code>Execute</code>菜单项）才能执行任务。</p>
+<p>  窗口底部的状态栏将指示动作何时完成。 来自R的消息（例如，错误消息）可以出现在启动Rattle的R控制台中。 由于Rattle是一个简单的图形界面，它位于R本身之上，所以记住R在加载数据时遇到的一些错误（事实上在由Rattle执行的任何操作期间）可能会显示在R Console中。</p>
+<p>  在日志<code>Log</code>选项卡中记录了Rattle传递给R以在界面下执行的R代码。 这使我们可以查看执行相应数据挖掘任务的R命令。 R代码片段可以从日志选项卡中作为文本复制并粘贴到运行Rattle的R控制台中直接执行。 这使我们可以将Rattle部署到基本任务，但仍然可以让我们根据需要部署R的全部功能，也许通过使用比通过Rattle界面暴露的更多命令选项。 这也使我们有机会将整个会话导出为R脚本文件。</p>
+<p>  日志充当所采取行动的记录，并允许这些行为在稍后通过R本身直接自动重复。 只需选择（显示）日志选项卡，然后单击导出按钮。 这会将日志导出到具有R扩展名的文件。 我们可以选择包含或排除日志中提供的广泛评论<code>comments</code>，并重新命名内部的Rattle变量（从“<code>crs$</code>”到我们自己选择的字符串）</p>
+<p>  我们现在遍历Rattle用户界面的主要元素，特别是工具栏和菜单。 我们从一个基本概念开始 - 一个项目。</p>
+<h5 align="left">项目<code>Projct</code></h5>
+
+<p>  一个项目是数据集的封装，变量选择，探索和数据构建的模型。 Rattle允许保存项目以便以后恢复工作或与其他用户共享数据挖掘项目。</p>
+<p>  一个项目通常会保存到一个文件中，并带有扩展名。 实际上，该文件是R用来以更紧凑的二进制形式存储对象的标准二进制RData文件。 任何R系统都可以加载这样的文件，因此可以访问这些对象，即使没有运行Rattle。</p>
+<p>  将rattle文件载入Rattle（使用“打开”按钮）可将该项目载入Rattle，还原与项目相关的数据，模型和其他信息，包括日志和摘要信息。 然后我们可以从这一点恢复我们的数据挖掘。</p>
+<p>  从文件系统的角度来看，我们可以在不影响项目文件本身的情况下重命名文件（以及文件扩展名，尽管不推荐），也就是说，文件名对内容没有正式影响，所以使用它 是描述性的。 最好避免文件名中的空格和不寻常的字符。</p>
+<p>  使用工具栏上的适当按钮或从项目<code>Project</code>菜单中打开和保存项目</p>
+<h5 align="left">工具栏<code>Toolbar</code></h5>
+
+<p>  工具栏<code>Toolbar</code>上最重要的按钮（图2.11）是执行<code>Execute</code>按钮。 所有操作都是通过<code>Execute</code>按钮启动的，通常只需单击<code>Execute</code>按钮即可。 执行的键盘快捷键是F2功能键。 <code>Execute</code>的菜单项也可用。 值得重申的是，Rattle中使用的用户界面范例是在选项卡上设置参数，然后执行<code>Execute</code>选项卡。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030607.png?raw=true" alt="图2.11"></p>
+<blockquote>
+<p>图2.11：Rattle的菜单和工具栏。</p>
+</blockquote>
+<p>  工具栏上的下几个按钮与Rattle中的项目概念相关。 项目在上面讨论过。</p>
+<p>  点击New按钮可以将Rattle恢复到未加载数据集的原始启动状态。 当源数据集被外部修改时（Rattle和R外部），这可能很有用。 例如，我们可能会在电子表格或数据库程序中操作我们的数据，并将数据重新导出为CSV文件。 要将这个文件重新加载到Rattle中，如果我们之前已经将它加载到当前的Rattle会话中，我们需要按下New按钮清除Rattle。 然后我们可以指定文件名并重新加载它。</p>
+<p>  “报告”<code>Report</code>按钮将根据当前选项卡生成格式化的报告。 Rattle提供了许多报告模板，并将为开放标准ODT格式生成一个文档，用于支持LibreOffce的开放源代码和开放标准。 尽管对用户生成报告的支持有限，但日志<code>log</code>提供了用于生成ODT文件的必要命令。 因此，我们可以创建我们自己的ODT模板，并在当前的Rattle会话环境中应用它们。</p>
+<p>  导出<code>Export</code>按钮可用于导出来自Rattle的各种对象和实体。 有关详细信息与以下章节中的特定部分一起提供。 导出的性质取决于哪个选项卡处于活动状态，并且在选项卡内哪个选项处于活动状态。 例如，如果显示模型选项卡，则导出会将当前模型保存为PMML（预测建模标记语言 - 请参见第16章）。 导出按钮不适用于所有选项卡和选项。</p>
+<h5 align="left">菜单<code>Menus</code></h5>
+
+<p>  菜单（图2.11）提供了接口许多功能的替代访问。 引入菜单的一个关键点是可以从键盘导航并包含键盘快捷键，以便我们可以使用键盘更轻松地通过Rattle进行导航。</p>
+<p>  通过“项目”<code>Project</code>菜单可以访问“打开”<code>Open</code>和“保存”<code>Save</code>选项，以便从文件加载和保存项目。 工具菜单提供了对其他一些工具栏功能的访问以及对特定选项卡的访问。 <code>Settings</code>（设置）菜单允许我们控制Rattle的一些可选特性。 这包括工具提示和使用更现代的开罗图形设备<code>Modern Cairo graphics device</code>。</p>
+<p>  通过帮助菜单可以获得广泛的帮助。 菜单结构遵循主界面选项卡的结构。 在选择帮助主题时，简短的文本弹出窗口将显示一些基本信息。 然后，许多弹出窗口可以选择显示更多信息，这些信息将显示在Web浏览器中。 此附加文档直接来自R或相关R软件包提供的文档。</p>
+<h5 align="left">与Plot互动<code>Interacting with Plots</code></h5>
+
+<p>  了解我们如何与Rattle的plots互动是有用的。 我们经常会生成plots，并希望将它们包含在我们自己的报告中。 绘图是从Rattle界面中的各个位置生成的。</p>
+<p>  Rattle可选择使用Cairo设备，这是一个矢量图形引擎，用于显示高质量的图形图。 如果Cairo设备在您的安装中不可用，那么Rattle使用操作系统的默认窗口设备（x11（）用于GNU / Linux，窗口（）用于Microsoft Windows）。 设置菜单还允许控制图形设备的选择（允许我们通过禁用对开罗的支持来使用默认设置）。 Cairo设备具有许多优点，其中一个优点是它可以封装在其他窗口中，就像Rattle一样。 这使得Rattle能够提供一些与操作系统无关的功能和一个通用接口。 如果我们选择不使用开罗设备，我们将拥有默认设备，这些设备仍然可以正常工作，但功能不太明显。</p>
+<p>  图2.8（第34页）显示了一个典型的<code>Rattle Plot</code>窗口。 在窗口的底部，我们看到一系列按钮，允许我们将绘图保存<code>Save</code>到文件，打印<code>Print</code>并关闭<code>Close</code>它。</p>
+<p>  “保存”<code>Save</code>按钮允许我们将图形以一种支持的格式保存到文件中。 支持的格式包括pdf（用于高分辨率图片），png（用于矢量图像和文本），jpg（用于彩色图像），svg（用于常规可缩放矢量图形），以及在Microsoft Windows中，wmf（用于Windows图元文件，Microsoft Windows - 特定的矢量图形）。 弹出窗口将请求保存到的文件名。 默认是保存为PDF格式，保存为文件扩展名为.pdf的文件。 只需指定适当的文件扩展名，您就可以选择以其他格式保存。</p>
+<p>  “打印”<code>Print</code>按钮将把图发送到打印机。 这要求底层的R应用程序已正确设置以访问所需的打印机。 这应该是默认情况。</p>
+<p>  一旦我们完成了绘图，我们可以点击关闭按钮来关闭那个特定的绘图窗口。</p>
+<h5 align="left">键盘导航<code>Keyboard Navigation</code></h5>
+
+<p>  菜单的键盘导航通常通过F10功能键启动。 然后可以使用键盘箭头键进行导航。 按下键盘上的Enter键，然后选择高亮显示的菜单项。</p>
+<p>  明智地使用键盘（特别是箭头键，Tab和Shift-Tab键，Enter键以及F2和F10）可以让我们在需要或需要时从键盘完全控制Rattle。</p>
+<h4 align="left" id="2.9 与R交互">2.9 与R交互</h4>
+
+<p>  R是一个命令行工具。 我们在第2.1节看到如何与R进行交互来启动Rattle。 本质上，R会显示一个提示，表明它正在等待我们发出命令。 两个这样的命令是<code>library()</code>和<code>rattle()</code>。 在本节中，我们将介绍一些直接与R进行交互的基本概念和命令。</p>
+<h5 align="left">基本功能<code>Basic Functionality</code></h5>
+
+<p>  通常我们指示R评估用于描述返回结果的数学对象的技术术语。 R中的所有函数都会返回一个结果，并且可以将该结果传递给其他函数以执行其他操作。 <strong>这个简单的想法实际上是一个非常强大的概念，它允许函数完成他们设计要完成的任务（如构建模型）并将其输出传递给其他函数以对其执行某些操作（例如格式化以便于读取）</strong>。</p>
+<p>  我们在2.1节看到了两个函数调用，我们在下面重复。 第一个是调用函数<code>library()</code>，在那里我们要求R加载。 然后我们通过调用<code>rattle()</code>函数来启动Rattle：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">library</span>(rattle)</span><br><span class="line">&gt; rattle()</span><br></pre></td></tr></table></figure></p>
+<p>  无论函数的用途如何，对于每个函数调用，我们通常会提供改进函数行为的参数。 我们在调用<code>library()</code>的时候做了上面的事情，那里的参数<code>argument</code>是<code>rattle</code>。 另一个简单的例子是使用参数<code>weather</code>调用<code>dim()</code>（维度）。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; dim(weather)</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">366</span> <span class="hljs-number">24</span></span><br></pre></td></tr></table></figure></p>
+<p>  这里，<code>weather</code>是一个对象<code>object</code>名称。 我们可以简单地把它看作是对某个对象（包含数据的东西）的引用。 本例中的对象是本章中使用的天气数据集。 它按行和列组织。 <code>dim()</code>函数报告行数和列数。</p>
+<p>  如果我们在R提示符处输入名称（例如，<code>weather</code>或<code>dim</code>），R会通过向我们显示对象来做出响应。 输入<code>weather</code>（然后按Enter键）将导致实际数据。 我们将看到屏幕上滚动的所有366行数据。 如果我们输入<code>dim</code>并按<code>Enter</code>，我们将看到函数的定义（在这种情况下，它是一个原始函数，编码到R的核心中）.<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; dim</span><br><span class="line"><span class="hljs-keyword">function</span> (x) .Primitive(<span class="hljs-string">"dim"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  新用户犯的一个常见错误是单独键入一个函数名（不带参数），并最终对输出结果有些困惑。 为了实际调用该函数，我们需要提供参数列表，这可能是一个空列表。 因此，我们至少在命令行上添加（）到函数调用：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; dim()</span><br><span class="line">Error <span class="hljs-keyword">in</span> dim: <span class="hljs-number">0</span> arguments passed to <span class="hljs-string">'dim'</span> which requires <span class="hljs-number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>  正如我们看到的，执行这个函数会产生一个错误信息。 我们注意到dim（）实际上需要一个参数，并且没有参数传递给它。 一些函数可以在没有参数的情况下被调用，例如，<code>rattle</code>。</p>
+<p>  上面的例子说明了我们将如何展示与R的交互。“&gt;”是R的提示，并且当我们看到我们知道R正在等待命令时。 我们输入字符串dim（weather）作为命令 - 在这种情况下调用dim函数。 然后，我们按Enter键将命令发送给R.R用来自该函数的结果作出响应。 在上面的情况下，它返回结果[1] 366 24。</p>
+<p>  从技术上讲，<code>dim()</code>返回长度为2的向量（一系列元素或值）。[1]简单地告诉我们，我们从向量（366）看到的第一个数字是向量的第一个元素。 第二个元素是24。</p>
+<p>  上例中由R列出的两个数字（即由dim（）返回的向量）分别是天气数据集中的行数和列数，即它的维数。</p>
+<p>  对于非常长的矢量，矢量元素的列表将被打包以适合整个屏幕，并且每一行将以方括号内的数字开始，以指示我们正在处理的矢量的元素。 我们可以用<code>seq()</code>来说明这一点，它生成一个数字序列：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; seq(<span class="hljs-number">1</span>, <span class="hljs-number">50</span>)</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">10</span> <span class="hljs-number">11</span> <span class="hljs-number">12</span> <span class="hljs-number">13</span> <span class="hljs-number">14</span> <span class="hljs-number">15</span> <span class="hljs-number">16</span> <span class="hljs-number">17</span> <span class="hljs-number">18</span></span><br><span class="line">[<span class="hljs-number">19</span>] <span class="hljs-number">19</span> <span class="hljs-number">20</span> <span class="hljs-number">21</span> <span class="hljs-number">22</span> <span class="hljs-number">23</span> <span class="hljs-number">24</span> <span class="hljs-number">25</span> <span class="hljs-number">26</span> <span class="hljs-number">27</span> <span class="hljs-number">28</span> <span class="hljs-number">29</span> <span class="hljs-number">30</span> <span class="hljs-number">31</span> <span class="hljs-number">32</span> <span class="hljs-number">33</span> <span class="hljs-number">34</span> <span class="hljs-number">35</span> <span class="hljs-number">36</span></span><br><span class="line">[<span class="hljs-number">37</span>] <span class="hljs-number">37</span> <span class="hljs-number">38</span> <span class="hljs-number">39</span> <span class="hljs-number">40</span> <span class="hljs-number">41</span> <span class="hljs-number">42</span> <span class="hljs-number">43</span> <span class="hljs-number">44</span> <span class="hljs-number">45</span> <span class="hljs-number">46</span> <span class="hljs-number">47</span> <span class="hljs-number">48</span> <span class="hljs-number">49</span> <span class="hljs-number">50</span></span><br></pre></td></tr></table></figure></p>
+<p>  我们在上面看到，我们可以通过在命令提示符处键入对象<code>object</code>的名称（天气<code>weather</code>）来查看存储在对象中的实际数据。</p>
+<p>  通常这会打印太多行（尽管在天气数据集中只有366行）。 一个有用的检查我们的数据的函数是<code>head()</code>和<code>tail()</code>。 这些将根据数据框中显示的顺序，默认列出顶部和底部六个观察值（或数据行）。 在这里，我们通过函数的参数来请求列出前两个观察值（并且我们也使用索引，稍后会介绍，仅列出前九个变量）。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; head(weather[<span class="hljs-number">1</span>:<span class="hljs-number">9</span>], <span class="hljs-number">2</span>)</span><br><span class="line">Date Location MinTemp MaxTemp Rainfall</span><br><span class="line"><span class="hljs-number">1</span> <span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">01</span> Canberra <span class="hljs-number">8</span> <span class="hljs-number">24.3</span> <span class="hljs-number">0.0</span></span><br><span class="line"><span class="hljs-number">2</span> <span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">02</span> Canberra <span class="hljs-number">14</span> <span class="hljs-number">26.9</span> <span class="hljs-number">3.6</span></span><br><span class="line">Evaporation Sunshine WindGustDir WindGustSpeed</span><br><span class="line"><span class="hljs-number">1</span> <span class="hljs-number">3.4</span> <span class="hljs-number">6.3</span> NW <span class="hljs-number">30</span></span><br><span class="line"><span class="hljs-number">2</span> <span class="hljs-number">4.4</span> <span class="hljs-number">9.7</span> ENE <span class="hljs-number">39</span></span><br></pre></td></tr></table></figure></p>
+<p>  同样，我们可以请求数据集的底部三行。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; tail(weather[<span class="hljs-number">1</span>:<span class="hljs-number">9</span>], <span class="hljs-number">3</span>)</span><br><span class="line">Date Location MinTemp MaxTemp Rainfall</span><br><span class="line"><span class="hljs-number">364</span> <span class="hljs-number">2008</span>-<span class="hljs-number">10</span>-<span class="hljs-number">29</span> Canberra <span class="hljs-number">12.5</span> <span class="hljs-number">19.9</span> <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-number">365</span> <span class="hljs-number">2008</span>-<span class="hljs-number">10</span>-<span class="hljs-number">30</span> Canberra <span class="hljs-number">12.5</span> <span class="hljs-number">26.9</span> <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-number">366</span> <span class="hljs-number">2008</span>-<span class="hljs-number">10</span>-<span class="hljs-number">31</span> Canberra <span class="hljs-number">12.3</span> <span class="hljs-number">30.2</span> <span class="hljs-number">0</span></span><br><span class="line">Evaporation Sunshine WindGustDir WindGustSpeed</span><br><span class="line"><span class="hljs-number">364</span> <span class="hljs-number">8.4</span> <span class="hljs-number">5.3</span> ESE <span class="hljs-number">43</span></span><br><span class="line"><span class="hljs-number">365</span> <span class="hljs-number">5.0</span> <span class="hljs-number">7.1</span> NW <span class="hljs-number">46</span></span><br><span class="line"><span class="hljs-number">366</span> <span class="hljs-number">6.0</span> <span class="hljs-number">12.6</span> NW <span class="hljs-number">78</span></span><br></pre></td></tr></table></figure></p>
+<p>  天气<code>weather</code>数据集比我们上面看到的简单向量更复杂。 实际上，它是一种称为数据框的特殊列表，它是用于存储我们数据集的R中最常用的数据结构之一。 数据框本质上是一列列表。 天气数据集有24列。 对于数据集，每列是一个向量，每个长度相同。</p>
+<p>  如果我们只想查看数据框的某些行或列，我们可以索引数据集名称。 索引只是使用方括号来列出我们感兴趣的行号和列号：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; weather[<span class="hljs-number">4</span>:<span class="hljs-number">8</span>, <span class="hljs-number">2</span>:<span class="hljs-number">4</span>]</span><br><span class="line">Location MinTemp MaxTemp</span><br><span class="line"><span class="hljs-number">4</span> Canberra <span class="hljs-number">13.3</span> <span class="hljs-number">15.5</span></span><br><span class="line"><span class="hljs-number">5</span> Canberra <span class="hljs-number">7.6</span> <span class="hljs-number">16.1</span></span><br><span class="line"><span class="hljs-number">6</span> Canberra <span class="hljs-number">6.2</span> <span class="hljs-number">16.9</span></span><br><span class="line"><span class="hljs-number">7</span> Canberra <span class="hljs-number">6.1</span> <span class="hljs-number">18.2</span></span><br><span class="line"><span class="hljs-number">8</span> Canberra <span class="hljs-number">8.3</span> <span class="hljs-number">17.0</span></span><br></pre></td></tr></table></figure></p>
+<p>  注意一系列数字的符号。 字符串4：8实际上相当于用两个参数4和8调用seq（）。该函数返回一个包含从4到8的整数的向量。这与将它们全部列出并使用<code>c()</code>：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-number">4</span>:<span class="hljs-number">8</span></span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span></span><br><span class="line">&gt; seq(<span class="hljs-number">4</span>, <span class="hljs-number">8</span>)</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span></span><br><span class="line">&gt; c(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>)</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span></span><br></pre></td></tr></table></figure></p>
+<h5 align="left">获取帮助<code>Getting Help</code></h5>
+
+<p>  了解我们如何学习更多关于使用R的知识是很重要的。从命令行，我们通过调用<code>help()</code>来获得有关命令的帮助。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; help(dim)</span><br></pre></td></tr></table></figure></p>
+<p>  速记是在参数之前加上一个<code>?</code>如：<code>?dim</code>。 这会自动转换为<code>help()</code>的调用。</p>
+<p>  <code>help.search()</code>函数将搜索文档以列出可能与我们作为参数提供的主题相关的函数：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; help.search(<span class="hljs-string">"dimensions"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  这里的简写是在字符串前面加上两个问号，如<code>??dimensions</code>。</p>
+<p>  用于搜索主题帮助的第三个命令是<code>RSiteSearch()</code>。 这将向互联网上的R项目搜索引擎提交查询：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; RSiteSearch(<span class="hljs-string">"dimensions"</span>)</span><br></pre></td></tr></table></figure></p>
+<h5 align="left">退出R<code>Quitting R</code></h5>
+
+<p>  回想一下，要退出R，正如我们在2.1节看到的那样，我们发出<code>q()</code>：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; q()</span><br></pre></td></tr></table></figure></p>
+<p>  我们与R的第一次会议现在已经完成。 正如我们在这里介绍的那样，命令行是我们访问R的全部力量的地方。但并不是每个人都想学习和记住命令，所以Rattle会让我们很快开始数据挖掘，只需要我们对命令的最少了解。</p>
+<h5 align="left">R和Rattle的交互<code>R and Rattle Interactions</code></h5>
+
+<p>  Rattle生成的R命令在我们与Rattle交互期间的不同时间传递给R。 特别是，无论何时点击Execute按钮，Rattle都会构造适当的R命令，然后将它们发送到R并等待R的响应。</p>
+<p>  我们还可以直接与R本身交互，甚至将交互与Rattle和R交错。例如，在第2.5节中，我们看到了在Rattle的文本视图中以文本方式表示的决策树模型。 使用<code>print()</code>也可以在R Console中查看。 一旦我们构建了第2.5节中所述的决策树模型，我们就可以在这里复制该模型。</p>
+<p>  R Console窗口是我们可以直接输入R命令的地方。 我们首先需要使窗口处于活动状态，通常通过单击该窗口内的鼠标。 对于下面的例子，我们假设我们已经在天气数据集上运行了Rattle来构建决策树，如2.5节所述。</p>
+<p>  然后我们可以在提示符下输入<code>print()</code>命令。 我们在下面的代码框中看到了这一点。 该命令本身包含我们希望调用的R函数的名称（在这种情况下为<code>print()</code>），后面跟着我们传递给函数的参数列表。 这些参数提供了我们希望函数执行的信息。 我们在这里看到的参考文件<code>crs$rpart</code>标识了模型本身由<code>Rattle</code>在内部保存的位置。 参数<code>digits =</code>指定打印号码的精度。 在这种情况下，我们选择一个数字。</p>
+<p>  输入完整的命令（包括函数名称和参数）后，我们按下Enter键。 这具有将命令传递给R的效果.R将完全按照如下所示来响应文本。 文本以观察次数的指示开始（256）。 接下来是我们在第2.5节中看到的相同的文本表述。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; print(crs$rpart, digits=<span class="hljs-number">1</span>)</span><br><span class="line">n= <span class="hljs-number">256</span></span><br><span class="line">node), split, n, loss, yval, (yprob)</span><br><span class="line">* denotes terminal node</span><br><span class="line"><span class="hljs-number">1</span>) root <span class="hljs-number">256</span> <span class="hljs-number">40</span> No (<span class="hljs-number">0.84</span> <span class="hljs-number">0.16</span>)</span><br><span class="line"><span class="hljs-number">2</span>) Pressure3pm&gt;=<span class="hljs-number">1e+03</span> <span class="hljs-number">204</span> <span class="hljs-number">20</span> No (<span class="hljs-number">0.92</span> <span class="hljs-number">0.08</span>)</span><br><span class="line"><span class="hljs-number">4</span>) Cloud3pm&lt; <span class="hljs-number">8</span> <span class="hljs-number">195</span> <span class="hljs-number">10</span> No (<span class="hljs-number">0.95</span> <span class="hljs-number">0.05</span>) *</span><br><span class="line"><span class="hljs-number">5</span>) Cloud3pm&gt;=<span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">3</span> Yes (<span class="hljs-number">0.33</span> <span class="hljs-number">0.67</span>) *</span><br><span class="line"><span class="hljs-number">3</span>) Pressure3pm&lt; <span class="hljs-number">1e+03</span> <span class="hljs-number">52</span> <span class="hljs-number">20</span> No (<span class="hljs-number">0.52</span> <span class="hljs-number">0.48</span>)</span><br><span class="line"><span class="hljs-number">6</span>) Sunshine&gt;=<span class="hljs-number">9</span> <span class="hljs-number">25</span> <span class="hljs-number">5</span> No (<span class="hljs-number">0.80</span> <span class="hljs-number">0.20</span>) *</span><br><span class="line"><span class="hljs-number">7</span>) Sunshine&lt; <span class="hljs-number">9</span> <span class="hljs-number">27</span> <span class="hljs-number">7</span> Yes (<span class="hljs-number">0.26</span> <span class="hljs-number">0.74</span>) *</span><br></pre></td></tr></table></figure></p>
+<h5 align="left">命令和功能<code>Commands versus Functions</code></h5>
+
+<p>  我们已经在上面提到了R命令行，我们输入要执行的命令。 我们还讨论了在命令行上输入的构成要执行的命令的函数。 在本书中，我们将采用关于函数和命令的特定术语，我们在这里描述。</p>
+<p>  在其真正的数学意义上，函数是一些操作，它会消耗一些数据并返回一些结果。 像<code>dim()</code>，<code>seq()</code>和<code>head()</code>这样的函数，正如我们所见，这样做。 函数也可能有我们经常称之为副作用的东西，也就是说，它们可能不仅仅是返回一些结果。 事实上，一些函数的目的实际上是执行一些其他操作，而不必返回结果。 我们将倾向于调用这些函数。 例如，函数<code>rattle()</code>不会将任何结果返回给命令行。 相反，它的目的是启动GUI并允许我们开始数据挖掘。 虽然<code>rattle()</code>仍然是一个功能，但我们通常将其称为命令而不是函数。 这两个术语可以互换使用。</p>
+<h5 align="left">R的编程风格<code>Programming Styles for R</code></h5>
+
+<p>  R是支持不同编程风格的编程语言。 我们可以使用R编写程序来分析数据，我们对数据分析进行编程。 请注意，如果我们只使用Rattle，那么我们不需要直接编程。 尽管如此，对于我们可能编写的程序，我们可以利用R提供的众多编程风格来开发以一致，简单，可重用，透明和无差错的方式分析数据的代码。</p>
+<p>  错误地，我们经常被训练认为用编程语言编写句子主要是为了让计算机为我们执行一些活动。 相反，我们应该把这个任务想象成真正的写给别人的句子，这个故事是关于分析我们数据的故事。 巧合的是，我们还希望计算机执行一些活动。</p>
+<p>  牢记这个简单的信息，每当写入R时，都有助于确保我们写作的方式让其他人可以轻松理解我们正在做的事情，并且我们也可以理解我们在六个月后回到原来所做的事情或更多。</p>
+<h5 align="left">在R中作为containers的环境<code>Environments as Containers in R</code></h5>
+
+<p>  对于特定的项目，我们通常会分析一组数据，可能会对其进行转换并存储有关它的不同信息。 将我们所有的数据和我们了解的数据打包到一个容器中是很方便的，我们可以将它们保存为二进制R对象，并在以后更有效地重新加载。 我们将为此使用R的环境概念。</p>
+<p>  作为一种编程风格，我们可以创建一个存储空间并给它一个名称（即它看起来像一个编程语言变量）作为一个容器。 该容器是一个R环境，并使用<code>new.env()</code>（新环境）进行初始化。 在这里，我们创建一个新的环境，并给它一个名字en：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; en &lt;- new.env()</span><br></pre></td></tr></table></figure></p>
+<p>  该对象<code>en</code>现在用作单个容器，我们可以在其中放置与数据集关联的所有相关信息，并且这些信息也可以在多个模型中共享。 我们将存储和访问此容器中的相关信息。</p>
+<p>  使用<code>$</code>符号和赋值运算符将数据放入容器中，如下例所示：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; en$obs &lt;- <span class="hljs-number">4</span>:<span class="hljs-number">8</span></span><br><span class="line">&gt; en$obs</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span></span><br><span class="line">&gt; en$vars &lt;- <span class="hljs-number">2</span>:<span class="hljs-number">4</span></span><br><span class="line">&gt; en$vars</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span></span><br></pre></td></tr></table></figure></p>
+<p>  变量<code>obs</code>和<code>vars</code>现在包含在引用为en的环境中。</p>
+<p>  我们可以在一个环境中对变量进行操作，而无需使用<code>$</code>符号（这会变得非常麻烦），方法是将这些命令封装在<code>evalq()</code>中：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; evalq(</span><br><span class="line">&#123;</span><br><span class="line">nobs &lt;- length(obs)</span><br><span class="line">nvars &lt;- length(vars)</span><br><span class="line">&#125;, en)</span><br><span class="line">&gt; en$nobs</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">5</span></span><br><span class="line">&gt; en$nvars</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">3</span></span><br></pre></td></tr></table></figure></p>
+<p>  使用<code>evalq()</code>变得非常方便，因为我们有多个语句可供编写。</p>
+<p>  在任何时候，我们都可以使用<code>ls()</code>列出容器的内容：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; ls(en)</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-string">"nobs"</span> <span class="hljs-string">"nvars"</span> <span class="hljs-string">"obs"</span> <span class="hljs-string">"vars"</span></span><br></pre></td></tr></table></figure></p>
+<p>  gdata（Warnes，2011）提供的另一个有用函数是<code>ll()</code>，它提供了更多信息：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">library</span>(gdata)</span><br><span class="line">&gt; ll(en)</span><br><span class="line">Class KB</span><br><span class="line">nobs integer <span class="hljs-number">0</span></span><br><span class="line">nvars integer <span class="hljs-number">0</span></span><br><span class="line">obs integer <span class="hljs-number">0</span></span><br><span class="line">vars integer <span class="hljs-number">0</span></span><br></pre></td></tr></table></figure></p>
+<p>  我们也可以使用<code>as.list()</code>将环境转换为列表：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; as.list(en)</span><br><span class="line">$nvars</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">3</span></span><br><span class="line">$nobs</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">5</span></span><br><span class="line">$vars</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span></span><br><span class="line">$obs</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span></span><br></pre></td></tr></table></figure></p>
+<p>  通过将与项目有关的所有数据放在一起，我们可以通过这一个对象保存和加载项目。 我们还避免用许多物体<code>objects</code>“污染”全局环境，并且忽略它们全部相关的事情，可能会让我们自己和其他人感到困惑。</p>
+<p>  我们现在也可以很容易地使用相同的变量名称，但在不同的容器中。 然后，当我们编写脚本来构建模型时，例如，我们经常可以使用完全相同的脚本，只更改容器的名称。 这鼓励我们的代码重用并提高效率。</p>
+<p>  这种方法也同情面向对象编程的概念。 容器是面向对象编程环境中的基本“对象”。</p>
+<p>  当我们开始构建模型时，我们将使用这种将所有数据和信息封装在容器中的方法。 以下提供了基本模板：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">library</span>(rpart)</span><br><span class="line">&gt; weatherDS &lt;- new.env()</span><br><span class="line">&gt; evalq(&#123;</span><br><span class="line">data &lt;- weather</span><br><span class="line">nobs &lt;- nrow(data)</span><br><span class="line">vars &lt;- c(<span class="hljs-number">2</span>:<span class="hljs-number">22</span>, <span class="hljs-number">24</span>)</span><br><span class="line">form &lt;- formula(RainTomorrow ~ .)</span><br><span class="line">target &lt;- all.vars(form)[<span class="hljs-number">1</span>]</span><br><span class="line">train &lt;- sample(nobs, <span class="hljs-number">0.7</span>*nobs)</span><br><span class="line">&#125;, weatherDS)</span><br><span class="line">&gt; weatherRPART &lt;- new.env(parent=weatherDS)</span><br><span class="line">&gt; evalq(&#123;</span><br><span class="line">model &lt;- rpart(formula=form, data=data[train, vars])</span><br><span class="line">predictions &lt;- predict(model, data[-train, vars])</span><br><span class="line">&#125;, weatherRPART)</span><br></pre></td></tr></table></figure></p>
+<p>  这里我们创建了两个容器，一个用于数据，另一个用于模型。 模型容器（weatherRPART）的父数据容器（weatherDS）通过指定<code>parent =</code>参数来实现。 这使得数据容器中定义的变量在模型容器中可用。</p>
+<p>  要将容器保存到文件以供稍后使用，或者在数据挖掘项目中记录阶段，请使用<code>save()</code>：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; save(weatherDS, file=<span class="hljs-string">"weatherDS.Rdata"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  它可以稍后使用<code>load()</code>加载：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; load(<span class="hljs-string">"weatherDS.Rdata"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  将代码封装在容器中有时会变得很烦人。 虽然我们保留了使用容器的规则，但我们也可以快速地与容器中的变量进行交互，而不必每次都指定容器。 我们使用attach和detach将容器添加到R所使用的所谓的搜索路径中以查找变量。 因此我们可以做如下的事情：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">attach</span>(weatherRPART)</span><br><span class="line">&gt; print(model)</span><br><span class="line">&gt; <span class="hljs-keyword">detach</span>(weatherRPART)</span><br></pre></td></tr></table></figure></p>
+<p>  但是，创建新变量以在环境中存储将不会以相同的方式工作。 从而：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">attach</span>(weatherRPART)</span><br><span class="line">&gt; new.model &lt;- model</span><br><span class="line">&gt; <span class="hljs-keyword">detach</span>(weatherRPART)</span><br></pre></td></tr></table></figure></p>
+<p>  不会将变量new.model放置到weatherRPART环境中。 相反，它会进入全局环境。</p>
+<p>  一个方便的功能，特别是上面<code>evalq()</code>例子中使用的布局以及本书的一般情况，我们可以忽略启动代码块的字符串（即包含“<code>evalq({</code>”）和字符串 结束一段代码（这是包含“<code>}, weatherDS)</code>”的行），并简单地将其他命令直接复制并粘贴到R控制台中。 然后在全局环境中创建变量（数据，nobs等），并且访问它们不需要任何特殊的东西。 例如，这对于快速测试创意非常有用，并且如果您不想自己使用容器概念，则可以作为选择提供。 然而，容器确实能提供有用的好处。</p>
+<p>  Rattle在内部使用容器来收集所需的数据。 Rattle容器被称为crs（当前的rattle store）。 例如，一旦将数据集加载到Rattle中，它就会以<code>crs$dataset</code>的形式存储。 我们看到上面的<code>crs$rpart</code>指的是我们上面构建的决策树。</p>
+<h4 align="left" id="2.10 摘要">2.10 摘要</h4>
+
+<p>  在本章中，我们已经熟悉用R进行数据挖掘的Rattle接口。我们还构建了第一个数据挖掘模型，尽管使用了已经准备好的数据集。 我们还介绍了一些与R语言交互的基础知识。</p>
+<p>  我们现在准备深入研究数据挖掘的细节。 下面的每一章都将介绍数据挖掘过程的一个特定方面，并说明如何在Rattle内完成这个过程，然后用R中的直接编码进一步扩展。</p>
+<p>  在继续之前，如果您尚未这样做，建议您阅读第1章作为整体数据挖掘过程的介绍。</p>
+<h4 align="left" id="2.11 命令摘要">2.11 命令摘要</h4>
+
+<p>  本章引用了以下R包，命令，函数和数据集：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&lt;-</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">将一个值分配给命名引用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>c()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">将值连成一个向量</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dim()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">返回数据集的维度</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>evalq()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">访问存储数据的环境</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>head()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">返回数据集的前几行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>help()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">显示特定功能的帮助</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>help.search()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">搜索特定主题的帮助</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>latticist</code></td>
+<td style="text-align:left">包</td>
+<td style="text-align:left">数据的交互可视化</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>library()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">将一个R包加载到R库中</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ll()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">一个环境的长列表</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>load()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">从一个文件加载R的对象</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ls()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">列出一个环境的内容</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>new.env()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">创建一个新的对象来存储数据</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>nrow()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">数据集的行数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>print()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">显示R对象的表示形式</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>q()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">从R退出</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>R</code></td>
+<td style="text-align:left">shell</td>
+<td style="text-align:left">启动R统计环境</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rattle()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">开启Rattle GUI</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rggobi</code></td>
+<td style="text-align:left">包</td>
+<td style="text-align:left">数据的交互可视化</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rpart()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">构建决策树预测模型</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rpart</code></td>
+<td style="text-align:left">包</td>
+<td style="text-align:left">提供了决策树的功能</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>RSiteSearch()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">搜索R网站寻求帮助</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>sample()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">对第一个参数随机选取</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>save()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">将R对象保存进一个文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>seq()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">返回一个数字序列</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>table()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">根据一些变量构建表格</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>tail()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">返回一个数据集的后几行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>weather</code></td>
+<td style="text-align:left">数据集</td>
+<td style="text-align:left">rattle的示例数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>window()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">在Microsoft Windows中开启一个新作图窗口</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>x11()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">在Unix/Linux中开启一个新作图窗口</td>
+</tr>
+</tbody>
+</table>
+<h3 align="center" id="第3章 使用数据">第3章 使用数据</h3>
+
+<p>  如果没有今天，没有什么数据不足，但将这些数据转化为信息，知识，甚至智慧并不是一件简单的事情。 数据通常只处理数字和类别。 通常，如果我们希望使用我们现在介绍的方法分析数据，其他形式的数据可以映射到数字和类别中。</p>
+<p>  虽然现代数据比比皆是，但我们仍需要仔细研究以获取我们需要的数据。 当今的许多组织都维护着大量的数据仓库。 这为采购数据提供了肥沃的土壤，但也让我们在通过大规模景观时非常头痛。</p>
+<p>  数据挖掘项目的早期步骤是将所有需要的数据汇总在一起。 这个看似简单的任务可能成为数据挖掘预算资源的重要负担，可能会耗费高达70％（90％）的项目耗时。 它不应该被低估。</p>
+<p>  将数据汇总在一起时，需要考虑一些问题。 这些包括数据的来源（来源和目的）和质量（准确性和可靠性）。 为不同目的收集的数据可能以不同的方式存储不同的信息。 此外，某些数据需要适当的许可才能使用，并且需要考虑与数据相关的任何人的隐私。 在此阶段花费的时间了解您的数据将花费时间。</p>
+<p>  在本章中，我们将介绍数据，首先用我们用来描述和讨论数据的语言。</p>
+<h4 align="left" id="3.1 数据术语">3.1 数据术语<h4><br><br>  数据挖掘者有许多术语，通常使用许多不同的术语来描述相同的概念。 术语混淆很多是由于数据挖掘的历史，它源自许多不同的学科，包括数据库，机器学习和统计。 在本书中，我们将使用一致且普遍接受的术语，我们在这里介绍。<br><br>  我们将数据集合称为数据集。 这可以用数学术语称为矩阵或用数据库术语称为表。 图3.1说明了用我们选择的术语注释的数据集。<br><br>  <img src="https://github.com/dwla/BP/blob/master/2018030609.png?raw=true" alt="图3.1"><br>  &gt; 一个简单的数据集，显示使用的术语。 每一列都是一个变量，每一行都是一个观察值。<br><br>  我们经常将一个数据集视为由行组成，我们称之为观测数据，这些观测数据是以变量形式记录的，这些变量形成了数据集的列。 观察也被称为实体，行，记录和对象。 变量也称为字段，列，属性，特性和功能。 数据集的维度是指观察值（行）的数量和变量的数量（列）。<br><br>  变量可以扮演不同的角色：作为输入变量或输出变量。 输入变量是测量的或预设的数据项目。 它们也可能被称为预测变量，协变量，自变量，观测变量和描述变量。 输出变量可以在数据中被识别。 这些变量通常是由输入变量“启动”的。 它们也可能被称为目标，响应或因变量。 在数据挖掘中，我们常常建立模型来预测输入变量而言的输出变量。 在数据挖掘项目早期，我们可能无法确定哪些变量（如果有的话）是输出变量。 对于某些数据挖掘任务（例如聚类），我们可能没有任何输出变量。<br><br>  一些变量可能只能用于唯一识别观察值。 常见的例子包括社会保障和其他这样的政府身份号码。 即使日期可能是特定观察的唯一标识符。 我们将这些变量称为标识符。 标识符通常不用于建模，特别是基本上随机生成的标识符。<br><br>  变量可以存储不同类型的数据。 这些值可能是对象的名称或质量，用字符串表示。 或者这些值可能是定量的并且因此以数字表示。 在高层次上，我们通常只需要区分这两种广泛类型的数据，就像我们在这里所做的那样。<br><br>  一个分类变量（我们使用分类而不是分类和数字而不是数字）是从一组固定的可能值中为一个特定的观察获得单个值的分类变量。 例子包括眼睛颜色（可能的值包括蓝色，绿色和棕色），年龄组（可能的年龄，中年和老年值）和明天的降雨（只有两个可能的值，是和否）。 分类变量总是离散的（即它们只能取特定的值）。<br><br>  像眼睛颜色这样的分类变量也称为名义变量，定性变量或因素。 可能的值对它们没有任何顺序。 也就是说，蓝色不小于或大于绿色。<br><br>  另一方面，像年龄组这样的分类变量也被称为序数变量。 可能的价值观对他们来说是自然而然的，所以年轻人在某种程度上低于中年，而中年人又低于中年。<br><br>  像明天下雨的分类变量，只有两个可能的值，也被称为二元变量。<br><br>  数值变量的值是整数或实数，如人的年龄或体重或收入或银行余额。 数字变量也称为定量变量。 数字变量可以是离散（整数）或连续（实数）。<br><br>  数据集（或特别是数据集的不同随机选择的子集）可以具有不同的角色。 例如，为了构建预测模型，我们经常将数据集划分为三个独立的数据集：训练数据集，验证数据集和测试数据集。 分区是随机完成的，以确保每个数据集都代表整个观测的集合。 典型的分割可能是40/30/30或70/15/15。 验证数据集也被称为设计数据集（因为它有助于模型的设计）。<br><br>  我们使用训练数据集建立我们的模型。 验证数据集用于评估模型的性能。 这将导致我们调整模型，也许通过设置不同的模型参数。 一旦我们对该模型感到满意，我们就可以使用测试数据集评估其未来的预期性能。<br><br>  了解测试数据集的重要性非常重要。 这个数据集必须是一个所谓的坚持或超出样本的数据集。 它由从整个数据集中随机选择的观测数据组成，这些观测数据在模型构建过程中没有任何使用。 也就是说，它不包含与训练或验证数据集相同的观察结果。 这对于确保我们获得对以前看不见的新观察结果模型真实性能的无偏估计非常重要。<br><br>  我们可以用一句话总结我们的通用术语：<br>  &gt; 数据集由使用变量记录的观察数据组成，变量由输入变量和输出变量的混合组成，其中任一个可以是分类或数字。<br><br>  在介绍了我们的通用术语之后，我们还需要将相同的概念与它们在实际系统中的实现方式联系起来，例如R.我们简单地在这里。<br><br>  R具有表示数据集的数据框的概念。 从技术上说，数据框是一个变量列表。 列表中的每个变量表示一列数据 - 一个变量存储所有相同类型的数据项集合。 例如，这可能是记录客户年龄的整数集合。 从技术上讲，R指的是我们称之为数据集内的一个变量作为一个向量。<br><br>  每个变量都会记录相同数量的数据项，因此我们可以将数据集描绘成矩形矩阵，如图3.1所示。 数据框很像数据库中的表格或电子表格中的页面。 它由行，我们称之为观察，和列，我们称之为变量。<br><br><h4 align="left" id="3.2 采购数据">3.2 采购数据<h4><br><br>  要开始数据挖掘项目，我们必须首先认识并理解要解决的问题。 虽然这可能非常明显，但我们需要解决一些细微问题，如第1章所讨论的。我们也需要重新提供数据，这点很明显。 但正如我们上面所建议的那样，采购我们的数据通常不是一件微不足道的事情。 在我们深入研究数据的某些技术方面之前，我们讨论一般数据问题。<br><br>  在一个理想的世界中，我们需要的用于数据挖掘的数据将很好地存储在数据仓库或数据库中，或者可能是电子表格。 但是，我们生活在一个不太理想的世界。 数据以许多不同的形式存储在许多不同的系统中，具有许多不同的含义。 数据无处不在，当然，但我们需要找到它，了解它，并将它整合在一起。<br><br>  多年来，组织实施了管理良好的数据仓库系统。 它们充当整个组织的数据存储库。 尽管如此，尽管如此，数据总是会在数据仓库之外出现，并且在数据源和数据质量方面，数据仓库周围没有任何谨慎的控制措施。 最终，该组织的数据保管人将重新将有用的新“山寨行业”存储库重新存入数据仓库，新的“山寨行业”循环将再次开始。 我们将一直面临着从组织内多个来源查找数据的挑战。<br><br>  组织数据通常不是我们在数据挖掘项目中访问的唯一数据。 数据可以来自组织外部。 这可能包括公开提供的数据，商业收集的数据或立法获得的数据。 数据将以各种格式和不同的质量。 对我们来说，早期的任务是评估数据是否对业务问题有用，以及我们将如何将新数据与其他数据结合起来。 我们深入了解第5章中的数据。我们现在考虑数据质量。<br><br><h4 align="left" id="3.3 数据质量">3.3 数据质量<h4><br><br>  没有真实世界的数据被完全收集。 尽管组织付出了大量的努力来确保他们收集的数据的质量，但总会出现错误。 我们需要理解与一致性，准确性，完整性，可解释性，可访问性和及时性等相关的问题。<br><br>  我们必须认识并理解我们的数据质量各不相同。 我们需要妥善处理（即转换）我们的数据，并且要意识到我们对其执行的任何分析的局限性（不确定性）。 第7章涵盖了数据质量的许多方面以及我们如何努力提高可用数据的质量。 下面我们总结一些问题。<br><br>  过去，很多数据是通过数据录入登录的。 从表单工作或直接与客户交谈。 不同的数据录入人员通常不同地解释不同的数据字段（变量）。 这种不一致可能包括在同一领域使用不同的日期格式或不同的货币记录费用，而没有识别货币的信息。<br><br>  通常在收集数据时，一些数据比其他数据更仔细（或准确）收集。 例如，对于银行交易，美元金额必须非常准确。 一个人姓名或地址的精确拼写可能不需要非常准确。 在数据必须准确的情况下，将提供额外资源以确保数据质量。 在精确度不那么严格的情况下，可以节省资源。 在分析数据时，理解准确性的这些方面很重要。<br><br>  与准确性有关的是完整性问题。 一些较不重要的数据可能只能被选择性收集，因此我们最终会在数据集中丢失很多数据。 或者，某些数据可能难以收集，因此对于某些观察数据将会丢失。 在分析数据时，我们需要了解丢失数据的原因并适当处理数据。 我们在第7章详细介绍了这一点。<br><br>  数据挖掘机面临的另一个主要问题是对数据的解释。 彻底了解数据的含义至关重要。 知道身高是以英尺或米为单位来衡量的，会对分析产生影响。 我们可能会发现有些数据是以英尺和其他数据形式输入的（一致性问题）。 我们可能会有多年的美元金额，我们的分析可能需要根据其当前相对价值来解释金额。 代码也经常使用，我们需要了解每个代码的含义以及不同代码之间的相互关系。 随着数据的老化，不同变量的含义往往会改变或完全丧失。 我们需要了解和处理这一点。<br><br>  用于分析的正确数据的可访问性通常也是一个问题。 数据收集的典型过程包括检查所提供数据中的明显数据错误并纠正这些错误。 例如，在收集纳税人的纳税申报数据时，将进行基本检查以确保数据正确（例如，检查输入数据为3450的错误意味着3450美元，而其意图为34.50美元）。 有时检查可能涉及与供应商讨论数据并适当修改。 通常，这是存储在系统中的“更干净”的数据，而不是所提供的原始数据。 原始数据通常被归档，但通常是我们实际需要分析的数据 - 我们想要分析最初提供的数据。 访问存档数据通常是有问题的。<br><br>  访问最新的数据有时会成为一个挑战。 在一个在线数据处理环境中，性能的关键指标是交易周转时间，为其他系统及时提供数据访问可能成为一个问题。 在许多环境中，数据只能在有时很复杂的提取/转换/加载（ETL）过程之后才能访问。 这可能意味着数据可能仅在一天左右后才可用，这可能对其及时分析带来挑战。 通常情况下，业务流程需要改变，以便更及时的访问是可能的。<br><br><h4 align="left" id="3.4 数据匹配">3.4 数据匹配<h4><br><br>  在收集来自多个来源的数据时，我们最终会遇到一个主要问题，因为我们需要将来自一个数据集的观测值与来自另一个数据集的观测值进行匹配。 也就是说，我们需要识别来自不同数据源的相同实体（例如，人员或公司）。 这些不同的来源可以是例如来自医生和医院的患者医疗数据。 医生的数据可能包含有关患者一般就诊，基本检查结果，诊断和处方的信息。 医生可能有一个唯一的号码来识别他或她自己的患者，以及他们的姓名，出生日期和地址。 医院还会记录有关患者入院的数据，包括入院原因，治疗计划和药物。 医院可能会有自己独特的号码来识别每个患者，以及患者的姓名，出生日期和地点以及住址。<br><br>  数据匹配过程可能非常简单，只需根据两个数据库中每个数据库使用的共享标识符将两个数据集连接在一起即可。 如果医生和医院共享相同的唯一号码以识别患者，则简化数据匹配过程。<br><br>  但是，数据匹配任务通常要复杂得多。 数据匹配通常涉及例如姓名，地址，出生日期和地点的匹配，所有这些匹配对于同一事物都将具有不准确性和替代性。 在医生的咨询室输入的数据通常将由不同的接待员在不同的日子输入，所述日期与在可能执行手术的医院的入院时输入的数据。<br><br>  甚至在单个数据库中发现一个人的姓名记录不同，更不用说，更不用说处理来自不同来源的数据。 一个数据源可能标识“John L. Smith”，另一个数据源可能标识该人为“J.L. Smith”，第三个数据源可能有一两个错误，但将该人员标识为“Jon Leslie Smyth”。<br><br>  数据匹配的任务是以可靠和可支持的方式将不同的数据源汇集在一起，以便我们获得关于合适人员的正确数据。 可以提高数据匹配质量的想法是可信数据匹配局。 许多与组织内部的数据匹配的机构几乎从头开始每个新的数据匹配工作。 然而，随着时间的推移，有机会建立一个数据匹配数据库，记录有关所有先前数据匹配的相关信息。<br><br>  在这种情况下，每次进行新的数据匹配工作时，都会使用此数据库中的身份及其相关信息来改进新的数据匹配。 重要的是，新数据匹配的结果反馈到数据匹配数据库中，以提高匹配实体的质量，从而甚至改进先前匹配的数据。<br><br>  数据匹配本身就是一个相当广泛的话题，值得一本单独的书。 许多商用工具可协助完成基本任务。 开源的<a href="http://sourceforge.net/projects/febrl/" target="_blank" rel="noopener">Febrl2</a>系统还提供数据匹配功能。 它们都旨在确定所有数据源中的相同实体。<br><br><h4 align="left" "3.5="" 数据仓库"="">3.5 数据仓库<h4><br><br>  将数据集中到一个统一且经过仔细管理的存储库中的过程称为数据仓库（类似于用于存储货物的大型建筑物）。 我们在仓库中存储的是数据。 数据仓库在20世纪90年代成为热门话题，主要由供应商驱动，为服务于管理数据之上的真正机会提供服务。 Inmon（1996）提供了详细的介绍。<br><br>  我们可以将数据仓库视为大型数据库管理系统。 它旨在整合来自多个不同来源的数据并支持针对不同目标的分析。 在任何组织中，数据仓库都可以成为商业智能的基础，为整个组织提供单一的，集成的数据源。<br><br>  通常情况下，数据仓库将包含从多个来源收集的数据，但侧重于组织的功能。 数据源通常是运行组织日常职能的操作系统（如事务处理系统）。 例如，在银行业务中，交易处理系统包括当今最普遍的ATM和EFTPOS机器。 事务处理系统收集定期上传到数据仓库的数据（例如，每天，但可能更频繁）。<br><br>  至少从数据挖掘的角度来看，组织良好的数据仓库也是非易失性的。 存储在我们数据仓库中的数据将定期捕获数据，而旧数据不会被删除。 即使数据更新是为了纠正现有数据项目，也必须维护这些数据，从而创建一个大量的历史数据库，可用于仔细跟踪随时间的变化。<br><br>  考虑一下我们各个税务机关持有的纳税申报表。 随着时间的推移，对个人纳税申报进行了许多更正。 在提交纳税申报表时，许多对准确性的检查可能会导致简单的更改（例如纠正拼写错误的地址）。 随着纳税人更正最初提供的数据，稍后可能会作出进一步的修改。 变化也可能是审计结果导致收入当局进行更正，或者纳税人可能通知当局更改地址。<br><br>  保持数据更改的历史对于数据挖掘至关重要。 从欺诈的角度来看，很可能很重要的一点是，很多客户在短时间内以一种常见的方式改变他们的细节。 同样，从理解客户行为的角度来看，客户在过去12个月中有10个不同的地址可能是重要的。 纳税人每年总是按时提交他或她的纳税申报表，然后每年都会进行相同的两项调整，这可能是有趣的。 所有这些历史数据对于构建我们感兴趣的实体的图像都很重要。虽然操作系统在数据存档之前可能只存储了一到两个月的数据，但在数据仓库中为数据存储此数据多年 采矿很重要。<br><br>  在构建数据仓库的过程中，数据仓库的结构会有很多努力。 必须将其设计为便于对大部分数据进行操作的查询。 将所有数据公开给需要的人员的仔细设计将有助于数据挖掘过程。<br><br>  随着收集更多的数据，数据仓库迅速变得不实。 这通常会导致开发特定的数据集市，这可以被认为是为特定目的创建数据仓库的调整子集。 例如，一个组织可能有一个财务数据集市，一个营销数据集市和一个销售数据集市。 每个数据集市将从仓库中收集的各种其他数据中提取信息。 仓库内的不同数据源将由不同的数据集市共享，并以不同的方式呈现数据。<br><br>  数据仓库（实际上是任何数据存储）的一个关键方面是维护有关数据的信息|所谓的元数据。 元数据有助于使数据易于理解，从而有用。 我们可能会谈论两种类型的元数据：技术元数据<code>technical matadata</code>和业务元数据<code>business metadata</code>。<br><br>  技术元数据捕获有关从中获取数据的操作系统的数据，如何从源系统中提取数据，如何转换数据，如何将数据加载到仓库中，仓库中存储的数据以及存储的结构 在仓库里。<br><br>  提取<code>extracting</code>，转换<code>transforming</code>和加载<code>loading</code>数据的实际过程通常称为ETL（提取，转换，加载）。 许多供应商提供ETL工具，并且还有使用开源软件（包括R）自动化ETL的广泛功能。<br><br>  另一方面，业务元数据提供了有助于理解数据的信息。 它将包括对数据中包含的变量的描述以及数据质量的度量。 它还可以包括谁拥有数据，谁有权访问数据，访问数据的成本，数据上次更新的时间，数据更新的频率以及数据的使用方式等。<br><br>  在数据挖掘成为广泛采用的技术之前，数据仓库通过商业智能（BI）技术支持分析。 最简单的分析构建报告，以多种不同方式汇总仓库内的数据。 通过这项技术，一个组织能够确保其管理人员了解其活动。 BI技术中的在线分析处理（OLAP）支持仓库中包含的数据的用户驱动和多维分析。 如商业智能一样，扩展了以人为驱动和通常手动分析数据的概念，数据挖掘为分析数据提供了一种数据驱动的方法。<br><br>  理想情况下，数据仓库是数据挖掘的主要数据源。 整合来自多个来源的数据，数据仓库应该包含捕获组织所有活动的广泛资源。 此外，理想情况下，数据将保持一致，高质量，并记录有非常好的元数据。 如果这是真的，那么数据挖掘将非常简单。 这很少是真的。 尽管如此，从数据仓库挖掘数据可以显着缩短准备时间，并跨多个数据挖掘和报告项目共享数据。<br><br>  数据仓库通常会通过通用结构化查询语言（SQL）进行访问。 我们的数据通常会分布在仓库内的多个位置，SQL查询将用于将它们放在一起。 当我们提取数据时，对SQL的一些基本熟悉将会很有用。 否则，我们需要确保我们能够随时获得数据分析师为我们提取数据的技能。<br><br><h4 align="left" id="3.6 使用R与数据进行交互">3.6 使用R与数据进行交互</h4>
+
+<p>  一旦我们对数据进行了扫描，找到匹配的公共实体并将这些数据放在一起，我们需要将数据结构化为适合数据挖掘的形式。 更具体地说，我们需要构建数据以适应我们打算使用的数据挖掘工具。 在我们的例子中，这涉及到使用Rattle将数据放入一个可以轻松加载到R中的表单，在那里我们将以各种方式探索，测试和转换数据，为采矿做准备。</p>
+<p>  一旦我们通过第四章介绍的机制（或直接通过R本身）将一个数据集加载到Rattle中，我们可能需要修改数据，清理数据并将其转换为我们需要的结构。 我们可能已经熟悉了各种处理数据的工具（如SQL或电子表格）。 这些工具对于我们需要进行的操作可能是相当充足的。 我们可以轻松地准备好数据，然后在准备好之后将其加载到Rattle中。 但是R本身也是一个非常强大的数据操纵语言。</p>
+<p>  包括Spector（2008），Muenchen（2008）和Chambers（2008）在内的其他书籍都涵盖了R的大部分数据管理功能。 Rattle提供了在Transform选项卡下的一些数据清理操作，如第7章所述。我们在这里提供了使用R本身进行数据挖掘数据准备时有限的一组操作的基本说明。 我们不一定涵盖细节，也不提供通过其他方式提供的R的系统覆盖。</p>
+<p>  最基本的操作之一是访问数据集内的数据。 我们使用方括号的记号为数据集编制索引，在方括号内我们确定观察值的索引和我们感兴趣的变量，用逗号分隔它们。 我们在2.9节中简要地看到了这一点。</p>
+<p>  使用与第2章中相同的天气数据集（可从rattle中获得，我们可以将其加载到R的<code>library()</code>中），我们可以通过索引数据集来访问观察值100到105和变量5到6。 如果任一指数（观察值或变量）留空，则结果将分别为所有观察值或所有变量，而不仅仅是它们的一个子集。 使用<code>dim()</code>报告数据集的结果大小（维度），我们可以看到索引的效果。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">library</span>(rattle)</span><br><span class="line">&gt; weather[<span class="hljs-number">100</span>:<span class="hljs-number">105</span>, <span class="hljs-number">5</span>:<span class="hljs-number">6</span>]</span><br><span class="line">Rainfall Evaporation</span><br><span class="line"><span class="hljs-number">100</span> <span class="hljs-number">16.2</span> <span class="hljs-number">5.4</span></span><br><span class="line"><span class="hljs-number">101</span> <span class="hljs-number">0.0</span> <span class="hljs-number">4.0</span></span><br><span class="line"><span class="hljs-number">102</span> <span class="hljs-number">0.0</span> <span class="hljs-number">5.8</span></span><br><span class="line"><span class="hljs-number">103</span> <span class="hljs-number">0.0</span> <span class="hljs-number">5.0</span></span><br><span class="line"><span class="hljs-number">104</span> <span class="hljs-number">4.4</span> <span class="hljs-number">6.6</span></span><br><span class="line"><span class="hljs-number">105</span> <span class="hljs-number">11.0</span> <span class="hljs-number">3.2</span></span><br><span class="line">&gt; dim(weather)</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">366</span> <span class="hljs-number">24</span></span><br><span class="line">&gt; dim(weather[<span class="hljs-number">100</span>:<span class="hljs-number">105</span>, <span class="hljs-number">5</span>:<span class="hljs-number">6</span>])</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">6</span> <span class="hljs-number">2</span></span><br><span class="line">&gt; dim(weather[<span class="hljs-number">100</span>:<span class="hljs-number">105</span>,])</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">6</span> <span class="hljs-number">24</span></span><br><span class="line">&gt; dim(weather[,<span class="hljs-number">5</span>:<span class="hljs-number">6</span>])</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">366</span> <span class="hljs-number">2</span></span><br><span class="line">&gt; dim(weather[<span class="hljs-number">5</span>:<span class="hljs-number">6</span>])</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">366</span> <span class="hljs-number">2</span></span><br><span class="line">&gt; dim(weather[,])</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">366</span> <span class="hljs-number">24</span></span><br></pre></td></tr></table></figure></p>
+<p>  请注意，符号100：105实际上是对<code>seq()</code>的调用的简写，它会生成一个数字列表。 另一种生成数字列表的方法是使用<code>c()</code>（用于组合）并明确列出每个数字。 这些表达式可以替代上例中的“100：105”，以达到相同的效果。 我们可以在下面的代码块中看到它。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-number">100</span>:<span class="hljs-number">105</span></span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">100</span> <span class="hljs-number">101</span> <span class="hljs-number">102</span> <span class="hljs-number">103</span> <span class="hljs-number">104</span> <span class="hljs-number">105</span></span><br><span class="line">&gt; seq(<span class="hljs-number">100</span>, <span class="hljs-number">105</span>)</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">100</span> <span class="hljs-number">101</span> <span class="hljs-number">102</span> <span class="hljs-number">103</span> <span class="hljs-number">104</span> <span class="hljs-number">105</span></span><br><span class="line">&gt; c(<span class="hljs-number">100</span>, <span class="hljs-number">101</span>, <span class="hljs-number">102</span>, <span class="hljs-number">103</span>, <span class="hljs-number">104</span>, <span class="hljs-number">105</span>)</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">100</span> <span class="hljs-number">101</span> <span class="hljs-number">102</span> <span class="hljs-number">103</span> <span class="hljs-number">104</span> <span class="hljs-number">105</span></span><br></pre></td></tr></table></figure></p>
+<p>  变量可以通过它们的位置号来引用，如上所述，也可以通过变量名来引用。 在下面的例子中，我们提取了只有两个变量的六个观察值。 请注意使用vars对象列出感兴趣的变量，然后从该索引中列出数据集。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; vars &lt;- c(<span class="hljs-string">"Evaporation"</span>, <span class="hljs-string">"Sunshine"</span>)</span><br><span class="line">&gt; weather[<span class="hljs-number">100</span>:<span class="hljs-number">105</span>, vars]</span><br><span class="line">Evaporation Sunshine</span><br><span class="line"><span class="hljs-number">100</span> <span class="hljs-number">5.4</span> <span class="hljs-number">5.6</span></span><br><span class="line"><span class="hljs-number">101</span> <span class="hljs-number">4.0</span> <span class="hljs-number">8.9</span></span><br><span class="line"><span class="hljs-number">102</span> <span class="hljs-number">5.8</span> <span class="hljs-number">9.6</span></span><br><span class="line"><span class="hljs-number">103</span> <span class="hljs-number">5.0</span> <span class="hljs-number">10.7</span></span><br><span class="line"><span class="hljs-number">104</span> <span class="hljs-number">6.6</span> <span class="hljs-number">5.9</span></span><br><span class="line"><span class="hljs-number">105</span> <span class="hljs-number">3.2</span> <span class="hljs-number">0.4</span></span><br></pre></td></tr></table></figure></p>
+<p>  我们可以使用<code>names()</code>列出数据集中包含的变量名称：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; head(names(weather))</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-string">"Date"</span> <span class="hljs-string">"Location"</span> <span class="hljs-string">"MinTemp"</span></span><br><span class="line">[<span class="hljs-number">4</span>] <span class="hljs-string">"MaxTemp"</span> <span class="hljs-string">"Rainfall"</span> <span class="hljs-string">"Evaporation"</span></span><br></pre></td></tr></table></figure></p>
+<p>  在这个例子中，我们只列出前六个名字，使用<code>head()</code>。 这个例子还说明了R的“功能”性质。注意我们如何直接将一个函数（<code>names()</code>）的输出提供给另一个函数（<code>head()</code>）。</p>
+<p>  我们也可以使用索引来获得相同的结果：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; names(weather)[<span class="hljs-number">1</span>:<span class="hljs-number">6</span>]</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-string">"Date"</span> <span class="hljs-string">"Location"</span> <span class="hljs-string">"MinTemp"</span></span><br><span class="line">[<span class="hljs-number">4</span>] <span class="hljs-string">"MaxTemp"</span> <span class="hljs-string">"Rainfall"</span> <span class="hljs-string">"Evaporation"</span></span><br></pre></td></tr></table></figure></p>
+<p>  当我们使用单括号为数据集编制索引时，例如weather [2]或weather [4：7]，我们检索数据集的“子集” - 具体而言，我们检索一部分变量。 结果本身是另一个数据集，即使它只包含一个变量。 将其与天气[[2]]进行比较，该天气返回变量的实际值。 差异可能看起来很微妙，但随着我们获得R经验，它们变得重要。 不过，我们不在此详述。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; head(weather[<span class="hljs-number">2</span>])</span><br><span class="line">Location</span><br><span class="line"><span class="hljs-number">1</span> Canberra</span><br><span class="line"><span class="hljs-number">2</span> Canberra</span><br><span class="line"><span class="hljs-number">3</span> Canberra</span><br><span class="line"><span class="hljs-number">4</span> Canberra</span><br><span class="line"><span class="hljs-number">5</span> Canberra</span><br><span class="line"><span class="hljs-number">6</span> Canberra</span><br><span class="line">&gt; head(weather[[<span class="hljs-number">2</span>]])</span><br><span class="line">[<span class="hljs-number">1</span>] Canberra Canberra Canberra Canberra Canberra Canberra</span><br><span class="line"><span class="hljs-number">46</span> Levels: Adelaide Albany Albury <span class="hljs-keyword">...</span> Woomera</span><br></pre></td></tr></table></figure></p>
+<p>  我们可以使用<code>$</code>符号来访问数据集中的特定变量。 表达式<code>weather$MinTemp</code>表示天气数据集的<code>MinTemp</code>变量：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; head(weather$MinTemp)</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-number">8.0</span> <span class="hljs-number">14.0</span> <span class="hljs-number">13.7</span> <span class="hljs-number">13.3</span> <span class="hljs-number">7.6</span> <span class="hljs-number">6.2</span></span><br></pre></td></tr></table></figure></p>
+<h4 align="left" id="3.7 记录数据">3.7 记录数据</h4>
+
+<p>  例如，天气数据集虽然在观测数量上非常小，但在数据挖掘方面有些典型。 我们已经从一个已知的来源获得了数据集，并且已经处理它来构建数据集，为我们的数据挖掘做好准备。 要做到这一点，我们必须研究变量的含义并阅读与收集数据相关的任何特质。 这些信息需要在数据挖掘报告中捕获。 报告应记录我们的数据来自何处，我们对其完整性的理解以及变量的含义。 这些信息来自各种来源，通常来自多个领域的专家。 我们需要了解和记录数据的来源：收集数据的方式，收集数据的方式以及他们如何理解收集的数据。</p>
+<p>  以下摘要将很有用。 它是通过处理<code>str()</code>的输出而获得的。 该输出通常只在控制台中显示，首先使用<code>capture.output()</code>捕获到一个变量中：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; sw &lt;- capture.output(str(weather, vec.len=<span class="hljs-number">1</span>))</span><br><span class="line">&gt; cat(sw[<span class="hljs-number">1</span>])</span><br><span class="line"><span class="hljs-string">'data.frame'</span>: <span class="hljs-number">366</span> obs. of <span class="hljs-number">24</span> variables:</span><br></pre></td></tr></table></figure></p>
+<p>  然后处理输出以添加一个可变数字并适当地适合页面。 处理首先使用<code>sprintf()</code>生成一个变量数列表，每个数字以一个宽度为2的字符串形式存储（“％2d”）：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; swa &lt;- sprintf(<span class="hljs-string">"%2d"</span>, <span class="hljs-number">1</span>:length(sw[-<span class="hljs-number">1</span>]))</span><br></pre></td></tr></table></figure></p>
+<p>  然后将每个数字粘贴到输出的每一行，折叠单独的行以形成一个用新行（“\ n”）分隔每行的长字符串:<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; swa &lt;- paste(swa, sw[-<span class="hljs-number">1</span>], sep=<span class="hljs-string">""</span>, collapse=<span class="hljs-string">"\n"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  <code>gsub()</code>函数然后用于通过用“..”代替点和数字的特定图案来截短太长的线。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; swa &lt;- gsub(<span class="hljs-string">"\\.\\.: [0-9]+ [0-9]+ \\.\\.\\."</span>, <span class="hljs-string">".."</span>, swa)</span><br></pre></td></tr></table></figure></p>
+<p>  最后的替换删除了一些不必要的字符，再次节省空间。 在这个阶段这有点复杂，但说明了R处理字符串处理的能力（以及统计）：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; swa &lt;- gsub(<span class="hljs-string">"( \\$|:|)"</span>, <span class="hljs-string">""</span>, swa)</span><br></pre></td></tr></table></figure></p>
+<p>  我们使用<code>cat()</code>来显示这个处理的结果。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&gt; cat(swa)</span><br><span class="line"><span class="hljs-number">1</span> Date Date, format <span class="hljs-string">"2007-11-01"</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">2</span> Location Factor w/ <span class="hljs-number">46</span> levels <span class="hljs-string">"Adelaide"</span>,<span class="hljs-string">"Albany"</span>,..</span><br><span class="line"><span class="hljs-number">3</span> MinTemp num <span class="hljs-number">8</span> <span class="hljs-number">14</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">4</span> MaxTemp num <span class="hljs-number">24.3</span> <span class="hljs-number">26.9</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">5</span> Rainfall num <span class="hljs-number">0</span> <span class="hljs-number">3.6</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">6</span> Evaporation num <span class="hljs-number">3.4</span> <span class="hljs-number">4.4</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">7</span> Sunshine num <span class="hljs-number">6.3</span> <span class="hljs-number">9.7</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">8</span> WindGustDir Ord.factor w/ <span class="hljs-number">16</span> levels <span class="hljs-string">"N"</span>&lt;<span class="hljs-string">"NNE"</span>&lt;<span class="hljs-string">"NE"</span>&lt;..</span><br><span class="line"><span class="hljs-number">9</span> WindGustSpeed num <span class="hljs-number">30</span> <span class="hljs-number">39</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">10</span> WindDir9am Ord.factor w/ <span class="hljs-number">16</span> levels <span class="hljs-string">"N"</span>&lt;<span class="hljs-string">"NNE"</span>&lt;<span class="hljs-string">"NE"</span>&lt;..</span><br><span class="line"><span class="hljs-number">11</span> WindDir3pm Ord.factor w/ <span class="hljs-number">16</span> levels <span class="hljs-string">"N"</span>&lt;<span class="hljs-string">"NNE"</span>&lt;<span class="hljs-string">"NE"</span>&lt;..</span><br><span class="line"><span class="hljs-number">12</span> WindSpeed9am num <span class="hljs-number">6</span> <span class="hljs-number">4</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">13</span> WindSpeed3pm num <span class="hljs-number">20</span> <span class="hljs-number">17</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">14</span> Humidity9am int <span class="hljs-number">68</span> <span class="hljs-number">80</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">15</span> Humidity3pm int <span class="hljs-number">29</span> <span class="hljs-number">36</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">16</span> Pressure9am num <span class="hljs-number">1020</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">17</span> Pressure3pm num <span class="hljs-number">1015</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">18</span> Cloud9am int <span class="hljs-number">7</span> <span class="hljs-number">5</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">19</span> Cloud3pm int <span class="hljs-number">7</span> <span class="hljs-number">3</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">20</span> Temp9am num <span class="hljs-number">14.4</span> <span class="hljs-number">17.5</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">21</span> Temp3pm num <span class="hljs-number">23.6</span> <span class="hljs-number">25.7</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">22</span> RainToday Factor w/ <span class="hljs-number">2</span> levels <span class="hljs-string">"No"</span>,<span class="hljs-string">"Yes"</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">23</span> RISK_MM num <span class="hljs-number">3.6</span> <span class="hljs-number">3.6</span> <span class="hljs-keyword">...</span></span><br><span class="line"><span class="hljs-number">24</span> RainTomorrow Factor w/ <span class="hljs-number">2</span> levels <span class="hljs-string">"No"</span>,<span class="hljs-string">"Yes"</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-keyword">...</span></span><br></pre></td></tr></table></figure></p>
+<h4 align="left" id="3.8 摘要">3.8 摘要</h4>
+
+<p>  在本章中，我们介绍了数据和数据集的概念。 我们描述了我们如何获得与用于数据挖掘的数据相关的数据和问题。 我们还介绍了一些使用R的基本数据操作。我们将在本书中重新审视天气，weatherAUS和审计数据集。 附录B详细描述了如何获得这些数据集并将其处理成用于数据挖掘的表单。 这里提供的细节数量和R代码可能对学习更多关于操作R中的数据很有用。</p>
+<h4 align="left" id="3.9 命令摘要">3.9 命令摘要</h4>
+
+<p>  本章引用了以下R包，命令，函数和数据集：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&lt;-</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">将一个值分配给命名引用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">从数据集中提取变量</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>audit</code></td>
+<td style="text-align:left">数据集</td>
+<td style="text-align:left">rattle的示例数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>c()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">组合项目以形成一个集合</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>cat()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">将参数显示在屏幕上</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dim()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">报告数据集的行和列</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>gsub()</code></strong></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left"><strong>全局的用一个字符串替换另外一个</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>head()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">显示数据集的顶部观察</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>library()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">将一个包加载到R库中</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>names()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">显示数据集中包含的变量</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>paste()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">将字符串组合成一个字符串</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rattle</code></td>
+<td style="text-align:left">包</td>
+<td style="text-align:left">提供<code>weather</code>和<code>audit</code>数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>seq()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">生成一系列数字</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>sprintf</code></strong></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left"><strong>用替换的方式格式化字符串</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>str()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">显示对象的结构</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>weather</code></td>
+<td style="text-align:left">数据集</td>
+<td style="text-align:left">rattle的示例数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>weatherAUS</code></td>
+<td style="text-align:left">数据集</td>
+<td style="text-align:left">rattle中的大数据集</td>
+</tr>
+</tbody>
+</table>
+<h3 align="center" id="第4章 加载数据">第4章 加载数据</h3>
+
+<p>  数据可以来自许多不同来源的许多不同格式。 通过使用R的广泛功能，Rattle可以直接访问这些数据。 事实上，我们对R系统感到幸运，因为它是一个开放的系统，因此在与其他应用程序共享和合作方面很有实力。 R支持以多种格式导入数据。</p>
+<p>  用于应用程序之间数据交换的最常用格式之一是逗号分隔值（CSV）文件。 这些文件通常具有csv文件扩展名。 这是一种简单的文本文件格式，以行和列为导向，使用逗号分隔文件中的列。 这些文件可用于通过电子表格，数据库，天气监测站和许多其他应用程序之间的导出和导入来传输数据。 这个想法的一个变种是将列与其他标记分开，例如标签字符，这通常与具有txt文件扩展名的文件相关联。</p>
+<p>  这些简单的数据文件（CSV和TXT文件）不包含明确的元数据信息，也就是说，没有数据可以描述文件中包含的数据的结构。 这些信息通常需要由读取数据的软件来猜测。</p>
+<p>  其他类型的数据源确实提供了有关数据的信息，因此我们的软件无需对其正在阅读的内容进行猜测。 属性关系文件格式文件（第4.2节）具有一个arff文件扩展名并将元数据添加到CSV格式。</p>
+<p>  直接从数据库中提取数据通常会随着数据本身一起提供元数据。 开放数据库连接<code>Open Database Connectivity</code>（ODBC）标准提供了一种开放访问方法，用于访问存储在各种数据库中的数据，并受R支持。这允许直接连接到大量数据源，包括Microsoft Excel，Microsoft Access，SQL Server， Oracle，MySQL，Postgres和SQLite。 4.3节涵盖RODBC包装。</p>
+<p>  R的加载数据的能力的种类不一定直接在Rattle中提供。 但是，我们可以使用底层的R命令加载数据，然后在Rattle中访问它，如4.4节所述。</p>
+<p>  R包本身也提供了大量的样本数据集。 虽然许多数据集与我们的具体任务无关，但可用于使用R实验数据挖掘.R数据库中包含的数据集列表可通过在“数据”选项卡上选择“库”作为源，通过Rattle界面提供。 我们在第4.6节进一步讨论这一点。</p>
+<p>  通过某种机制将我们的数据加载到Rattle之后，我们需要确定数据集中每个变量所扮演的角色。 我们还需要决定数据集中的观测结果将如何用于采矿。 我们通过Rattle界面记录这些决定，而Rattle本身提供了有用的默认设置。</p>
+<p>  一旦识别出数据集源并执行数据选项卡，数据概览将显示在文本视图中。 图4.1显示了加载weather.csv文件后的Rattle应用程序，该文件作为示例数据集提供给Rattle软件包。 我们通过启动R然后加载rattle，启动rattle，然后单击执行<code>Execute</code>按钮以获取加载天气数据集的报价来到此处：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">library</span>(rattle)</span><br><span class="line">&gt; rattle()</span><br></pre></td></tr></table></figure></p>
+<p>  <img src="https://github.com/dwla/BP/blob/master/2018030701.png?raw=true" alt="图4.1"></p>
+<blockquote>
+<p>图4.1：加载weather.csv数据集。</p>
+</blockquote>
+<p>  在本章中，我们将回顾不同的源数据格式，并讨论如何加载它们以进行数据挖掘。 然后，我们回顾一下Rattle提供的用于识别数据如何用于数据挖掘的选项。</p>
+<h4 align="left" id="4.1 CSV数据">4.1 CSV数据</h4>
+
+<p>  今天共享数据的最简单和最常见的方式之一是通过逗号分隔值（CSV）格式。 CSV已成为用于在许多不同应用程序之间交换数据的标准文件格式。 通常具有csv扩展名的CSV文件可以通过电子表格和数据库（包括LibreOffice Calc，Gnumeric，Microsoft Excel，SAS / Enterprise Miner，Teradata，Netezza和许多其他应用程序）导出和导入。 由于这些原因，CSV是将数据导入Rattle的好选择。 缺点是CSV文件不包含明确的元数据（即有关数据的数据 - 包括数据是数字还是分类）。 没有这个元数据，R有时会为特定的列确定错误的数据类型。 这通常不是致命的，我们可以在使用R加载数据时帮助R。</p>
+<h5 align="left">查找和加载数据<code>Locating and Loading Data</code></h5>
+
+<p>  使用Rattle的Data选项卡的Spreadsheet选项，我们可以直接从CSV文件加载数据。 点击Filename按钮（图4.2）来显示文件选择器对话框（图4.3）。 我们可以浏览到我们希望加载的CSV文件，突出显示它，然后单击“打开”<code>Open</code>按钮<br>  <img src="https://github.com/dwla/BP/blob/master/2018030702.png?raw=true" alt="图4.2"></p>
+<blockquote>
+<p>图4.2：“数据”<code>Data</code>选项卡的“电子表格”<code>Spreadsheet</code>选项突出显示“文件名”<code>Filename</code>按钮。  点击此按钮打开文件选择器。</p>
+</blockquote>
+<p>  <img src="https://github.com/dwla/BP/blob/master/2018030703.png?raw=true" alt="图4.3"></p>
+<blockquote>
+<p>图4.3：CSV文件选择器仅显示文件夹中扩展名为.csv的文件。 我们还可以选择仅显示.txt文件（例如，通常用于制表符分隔文件的扩展名），或者通过从右下角的下拉菜单中选择来显示所有文件。</p>
+</blockquote>
+<p>  我们现在需要从文件中将数据实际加载到Rattle中。 与往常一样，我们只需单击Execute按钮（或按F2键）即可完成此操作。 这会将文件的内容从硬盘加载到计算机的内存中，以便由Rattle作为数据集进行处理。</p>
+<p>  Rattle提供了大量示例CSV文件，特别提供了weather.csv数据文件。 数据文件将在安装rattle时安装。 我们可以让R用<code>system.file()</code>告诉我们文件的实际位置，我们可以在R Console中输入该文件。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; system.file(<span class="hljs-string">"csv"</span>, <span class="hljs-string">"weather.csv"</span>, package=<span class="hljs-string">"rattle"</span>)</span><br><span class="line">[<span class="hljs-number">1</span>] <span class="hljs-string">"/usr/local/lib/R/site-library/rattle/csv/weather.csv"</span></span><br></pre></td></tr></table></figure></p>
+<p>  报告的位置取决于您的特定安装和操作系统。 这里的位置与Ubuntu GNU / Linux系统的标准安装相关：</p>
+<blockquote>
+<p>提示：我们也可以通过点击两次鼠标（Execute和Yes）将这个文件加载到一个新的Rattle实例中。 然后，我们可以点击Filename按钮（显示weather.csv）打开一个文件浏览器，在窗口顶部显示文件路径。</p>
+</blockquote>
+<p>  我们可以使用<code>file.show()</code>来查看文件的内容。 这将弹出一个窗口显示文件的内容。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; fn &lt;- system.file(<span class="hljs-string">"csv"</span>, <span class="hljs-string">"weather.csv"</span>, package=<span class="hljs-string">"rattle"</span>)</span><br><span class="line">&gt; file.show(fn)</span><br></pre></td></tr></table></figure></p>
+<p>  使用任何简单的文本编辑器可以直接在R和Rattle外面查看文件内容。 如果您对CSV文件不熟悉，则可以这样做。 我们将看到文件的顶部开始。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Date,Location,MinTemp,MaxTemp,Rainfall,Evaporation...</span><br><span class="line"><span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">01</span>,Canberra,<span class="hljs-number">8</span>,<span class="hljs-number">24.3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3.4</span>,<span class="hljs-number">6.3</span>,NW,<span class="hljs-number">30</span>,SW,NW...</span><br><span class="line"><span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">02</span>,Canberra,<span class="hljs-number">14</span>,<span class="hljs-number">26.9</span>,<span class="hljs-number">3.6</span>,<span class="hljs-number">4.4</span>,<span class="hljs-number">9.7</span>,ENE,<span class="hljs-number">39</span>,E,W...</span><br><span class="line"><span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">03</span>,Canberra,<span class="hljs-number">13.7</span>,<span class="hljs-number">23.4</span>,<span class="hljs-number">3.6</span>,<span class="hljs-number">5.8</span>,<span class="hljs-number">3.3</span>,NW,<span class="hljs-number">85</span>,N,NNE...</span><br></pre></td></tr></table></figure></p>
+<p>  CSV文件只是一个普通的文本文件，通常以标题行开头，列出变量的名称，每个变量都用逗号分隔。 标题行之后的文件的其余部分预计由记录观察结果的数据行组成。 对于每个观察，这些字段用逗号分隔，分隔实际观察每个变量。</p>
+<p>  将数据从CSV文件加载到Rattle使用read.csv（）。 我们可以通过查看日志选项卡的内容来看到这一点。 从日志选项卡中，我们会看到如下所示的内容。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; crs$dataset &lt;- read.csv(<span class="hljs-string">"file:.../weather.csv"</span>,</span><br><span class="line">na.strings=c(<span class="hljs-string">"."</span>, <span class="hljs-string">"NA"</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"?"</span>),</span><br><span class="line">strip.white=<span class="hljs-literal">TRUE</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  weather.csv文件的完整路径在此处为简明起见而被截断，因此上面的命令无法通过复制粘贴来获得成功。 相反，将日志选项卡中的相应行复制到R控制台。 执行此函数的结果是数据集本身被加载到内存中，并使用名称<code>crs\$dataset</code>进行引用。</p>
+<p>  上面函数调用中的第二个参数（<code>na.strings =</code>）列出了四个字符串，如果作为变量的值被找到，它们将被转换为R的缺失值（<code>NA</code>）表示。 这里使用的字符串列表捕获了表示缺失值的最常用方法。 例如，SAS使用点（“<code>.</code>”）表示缺失值，而R使用特殊字符串“<code>NA</code>”。 其他应用程序只使用空字符串，而其他应用程序（包括C4.5等机器学习应用程序）使用问号（“<code>?</code>”）。</p>
+<p>  我们还使用<code>strip.white =</code>参数，将其设置为<code>TRUE</code>，这会导致剥离空白区域（即空格和/或制表符）。 这允许源CSV文件使逗号对齐，以便于人工查看，并仍然适当地支持缺失值。</p>
+<p>  read.csv（）函数不需要太复杂。 如果我们有一个CSV文件加载到R中（再次用文件的实际路径替换“…”），我们通常可以简单地键入以下命令：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ds &lt;- read.csv(<span class="hljs-string">".../weather.csv"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  我们也可以直接从Internet加载数据。 例如，天气数据集可从togaware.com获得：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ds &lt;- read.csv(<span class="hljs-string">"http://rattle.togaware.com/weather.csv"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  正如我们在第2章中看到的，如果没有通过Filename按钮指定其他数据文件，Rattle将提供加载所提供的样本数据文件（weather.csv）。 这是将样本数据加载到Rattle中最简单的方法，对于学习Rattle界面非常有用。</p>
+<p>  在识别要加载的文件后，我们确实需要记住单击Execute按钮以实际将数据加载到Rattle中。 “数据”<code>Data</code>选项卡的主文本面板随后将更改为列出变量及其类型和角色以及一些其他有用的信息，如图4.1所示。</p>
+<p>  将文件中的数据加载到Rattle中，从而创建数据集后，我们可以开始探索它。 正如我们在第2章中看到的那样，可以在R Console中查看文件的顶部。在这里，我们将显示限制为前五个变量，并只请求六个观察值：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; head(crs$dataset[<span class="hljs-number">1</span>:<span class="hljs-number">5</span>], <span class="hljs-number">6</span>)</span><br><span class="line">Date Location MinTemp MaxTemp Rainfall</span><br><span class="line"><span class="hljs-number">1</span> <span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">01</span> Canberra <span class="hljs-number">8.0</span> <span class="hljs-number">24.3</span> <span class="hljs-number">0.0</span></span><br><span class="line"><span class="hljs-number">2</span> <span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">02</span> Canberra <span class="hljs-number">14.0</span> <span class="hljs-number">26.9</span> <span class="hljs-number">3.6</span></span><br><span class="line"><span class="hljs-number">3</span> <span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">03</span> Canberra <span class="hljs-number">13.7</span> <span class="hljs-number">23.4</span> <span class="hljs-number">3.6</span></span><br><span class="line"><span class="hljs-number">4</span> <span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">04</span> Canberra <span class="hljs-number">13.3</span> <span class="hljs-number">15.5</span> <span class="hljs-number">39.8</span></span><br><span class="line"><span class="hljs-number">5</span> <span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">05</span> Canberra <span class="hljs-number">7.6</span> <span class="hljs-number">16.1</span> <span class="hljs-number">2.8</span></span><br><span class="line"><span class="hljs-number">6</span> <span class="hljs-number">2007</span>-<span class="hljs-number">11</span>-<span class="hljs-number">06</span> Canberra <span class="hljs-number">6.2</span> <span class="hljs-number">16.9</span> <span class="hljs-number">0.0</span></span><br></pre></td></tr></table></figure></p>
+<p>  正如我们前面所描述的（第50页第2.9节），Rattle将数据集存储在一个名为crs的环境中，因此我们可以在R中直接引用它作为<code>crs$dataset</code>。</p>
+<p>  通过Rattle界面，一旦我们加载了数据集，我们也可以通过单击View按钮将其视为电子表格，该按钮使用来自<code>RGtk2Extras</code>的<code>dfedit()</code>（Taverner et al., 2010）。</p>
+<h5 align="left">数据的变化<code>Data Variations</code></h5>
+
+<p>  Rattle界面提供了用于调整我们如何从CSV文件读取数据的选项。 如图4.2所示，选项包括分隔符<code>Separator</code>和标题<code>Header</code>。</p>
+<p>  我们可以通过分隔条目选择字段分隔符。 逗号是默认值。 要加载使用选项卡作为字段分隔符的TXT文件，我们用特殊代码<code>\\t</code>（即两个斜杠后跟一个t）替换逗号以表示选项卡。 我们也可以将条目留空，任何空格（即任意数量的空格和/或制表符）将用作分隔符。</p>
+<p>  从<code>read.csv()</code>的角度来看，分隔符条目的作用是在调用函数时包含适当的参数（使用<code>sep =</code>）。 在这个例子中，如果我们碰巧有一个名为“mydata.txt”的文件包含制表符分隔的数据，那么我们将包括<code>sep =</code>：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ds &lt;- read.csv(<span class="hljs-string">"mydata.txt"</span>, sep=<span class="hljs-string">"\t"</span>)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>提示：请注意，当在R中直接指定选项卡作为分隔符时，<strong>我们使用单斜杠而不是通过Rattle界面的双斜杠</strong>。</p>
+</blockquote>
+<p>  加载数据集时另一个感兴趣的选项是Header复选框。 通常，CSV文件将具有列名称列表作为其第一行。</p>
+<p>  这些名称将被R和Rattle用作变量的名称。 但是，并非所有的CSV文件都包含标题。 对于这样的文件，取消选中标题复选框。 在加载不包含标题的CSV文件时，R将为列生成变量名称。 复选框转换为对read.csv（）的调用中的header =参数。 将header =的值设置为FALSE将导致第一行读取为数据而不是标题行。 如果我们有这样的文件，也许称为“mydata.csv”，那么对read.csv（）的调用将是：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ds &lt;- read.csv(<span class="hljs-string">"mydata.csv"</span>, header=<span class="hljs-literal">FALSE</span>)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>提示：数据可以在不同行中包含不同数量的列，并且行末尾的缺失列用NAs填充。 这是使用read.csv（）的fill =参数处理的，默认为TRUE。</p>
+</blockquote>
+<h5 align="left">基本数据摘要<code>Basic Data Summary</code></h5>
+
+<p>  一旦数据集被加载到Rattle中，我们就可以从显示的简单摘要中获得数据形状的概念。 例如，在图4.1中，第一个变量Date被识别为每个观察值的唯一标识符。 它具有366个唯一值，这与观察值的数量相同。</p>
+<p>  变量位置在数据集中的所有观测值中只有一个值。 因此，它被确定为一个常数，并且在建模中不起作用。 它被忽略。</p>
+<p>  图4.1中的接下来的五个变量都标记为数字，然后是分类WindGustDir，依此类推。 “评论”<code>Comment</code>列标识每个变量的唯一值数量和缺失观察值的数量。 例如，阳光<code>Sunshine</code>有114个唯一值和3个缺失值。 第7章介绍了如何处理缺失值。</p>
+<h4 align="left" id="4.2 属性关系文件格式数据">4.2 属性关系文件格式数据</h4>
+
+<p>  属性关系文件格式<code>Attribute-Relation File Format</code>（ARFF）是一种文本文件格式，基本上是一个CSV文件，在文件顶部有许多行包含元数据。 ARFF格式是为在Weka（Witten and Frank，2005）机器学习软件中使用而开发的，并且有许多数据集可用于此格式。 我们可以通过ARFF选项将ARFF数据集加载到Rattle中（图4.4），指定加载数据的文件名。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030704.png?raw=true" alt="图4.4"></p>
+<blockquote>
+<p>图4.4：选择ARFF单选按钮来加载ARFF文件。</p>
+</blockquote>
+<p>  Rattle提供样本ARFF数据集。 要访问它们，启动Rattle并加载样本天气数据集（2.4节）后，选择ARFF选项，然后单击Filename选择器。 浏览至父文件夹，然后浏览至arff文件夹以选择要加载的数据集。</p>
+<p>  CSV和ARFF之间的关键区别在于文件的顶部，其中包含有关数据中每个变量的信息 - 这是数据描述部分。 下面显示了我们的天气数据集的ARFF格式示例。 请注意，ARFF将变量称为属性。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@relation weather</span><br><span class="line">@attribute Date date</span><br><span class="line">@attribute Location &#123;Adelaide, Albany, <span class="hljs-keyword">...</span>&#125;</span><br><span class="line">@attribute MinTemp numeric</span><br><span class="line">@attribute MaxTemp numeric</span><br><span class="line"><span class="hljs-keyword">...</span></span><br><span class="line">@attribute RainTomrrow &#123;No, Yes&#125;</span><br><span class="line">@data</span><br><span class="line"><span class="hljs-number">2010</span>-<span class="hljs-number">11</span>-<span class="hljs-number">01</span>,Canberra,<span class="hljs-number">8</span>,<span class="hljs-number">24.3</span>,<span class="hljs-number">0</span>,<span class="hljs-keyword">...</span>,Yes</span><br><span class="line"><span class="hljs-number">2010</span>-<span class="hljs-number">11</span>-<span class="hljs-number">02</span>,Canberra,<span class="hljs-number">14</span>,<span class="hljs-number">26.9</span>,<span class="hljs-number">3.6</span>,<span class="hljs-keyword">...</span>,Yes</span><br><span class="line"><span class="hljs-number">2010</span>-<span class="hljs-number">11</span>-<span class="hljs-number">03</span>,Canberra,?,<span class="hljs-number">23.4</span>,<span class="hljs-number">3.6</span>,<span class="hljs-keyword">...</span>,Yes</span><br><span class="line"><span class="hljs-keyword">...</span></span><br></pre></td></tr></table></figure></p>
+<p>  数据描述部分很简单，首先是数据集的名称（或ARFF术语中关系的名称）。 然后用于描述每个观察的每个变量与其数据类型一起被识别。 每个变量定义出现在一行上（我们已经截断了上面例子中的行）。 数字变量被标识为数字，实数或整数。 对于分类变量，列出了可能的值。</p>
+<p>  由ARFF识别的另外两种数据类型是字符串和日期。 字符串数据类型表示该变量可以有一个字符串（一系列字符）作为其值。 日期数据类型也可以选择指定记录日期的格式。 日期的默认值是ISO-8601标准格式，即“yyyy-MM-dd’T’HH：mm：ss”。</p>
+<p>  遵循元数据规范，然后列出实际的观察结果，每个观察结果都在一行中，并用逗号分隔，正如CSV文件一样。</p>
+<p>  ARFS数据文件对CSV数据文件的重要优势是元数据信息。 这在Rattle中特别有用，对于分类数据，可能的值是在读取CSV文件时根据数据确定的。 当然，数据中不存在的分类变量的任何可能值都是不可知的。 从ARFF文件读取数据时，元数据将列出分类变量的所有可能值，即使其中一个值可能未在实际数据中使用。 我们会将这个问题看作一个问题，特别是当我们构建和部署随机森林模型时，如第12章所述。</p>
+<p>  注释也可以包含在注释行开头的带有“％”的ARFF文件中。 在数据文件中包含注释允许我们记录有关数据集的额外信息，包括数据集的派生方式，来源以及可能的引用方式。</p>
+<p>  缺少ARFF数据文件中的值使用问号“？”进行标识。 这些由R的<code>read.arff()</code>标识，我们将它们视为Rattle中的通常的NAs。</p>
+<p>  总体而言，ARFF格式虽然简单，但对于CSV文件来说是相当先进的。 尽管如此，CSV仍然是更常见的数据文件。</p>
+<h4 align="left" id="4.3 ODBC源数据">4.3 ODBC源数据</h4>
+
+<p>  许多数据存储在数据库和数据仓库中。 开放数据库连接（ODBC）标准已经作为从数据库（因此数据仓库）访问数据的通用方法而开发。 该技术基于用于查询关系数据库的结构化查询语言（SQL）。 我们在这里讨论如何直接从这些数据库访问数据。</p>
+<p>  通过使用Rattle的ODBC选项，Rattle可以从任何通过ODBC访问的数据库中获取数据集（图4.5）。 在GUI下面，RODBC（Ripley和Lapsley，2010）提供了ODBC数据源的实际接口。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030705.png?raw=true" alt="图4.5"></p>
+<blockquote>
+<p>图4.5：通过ODBC数据库连接加载数据。</p>
+</blockquote>
+<p>  通过ODBC访问数据的关键是通过所谓的数据源名称（或DSN）来标识数据源。 不同的操作系统提供了不同的机制来设置DSN。 例如，在GNU / Linux操作系统下，使用unixodbc应用程序时，系统DSN通常在/etc/odbcinst.ini和/etc/odbc.ini中定义。 在Microsoft Windows下，控制面板提供对ODBC数据源工具的访问。</p>
+<p>  使用Rattle，我们通过在DSN文本条目中输入名称来识别配置的DSN（图4.5）。 一旦DSN被指定，Rattle将尝试建立连接。 许多ODBC驱动程序会在建立连接之前提示输入用户名和密码。 图4.6显示了一个典型的输入这种数据的弹出窗口，在这种情况下用于连接到Netezza数据仓库。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030706.png?raw=true" alt="图4.6"></p>
+<blockquote>
+<p>图4.6：Netezza ODBC连接。</p>
+</blockquote>
+<p>  要直接使用R建立连接，我们使用<strong>RODBC</strong>的<code>odbcConnect()</code>。 该功能建立了我们可能认为的连接到远程数据源的通道。<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">library</span>(RODBC)</span><br><span class="line">&gt; channel &lt;- odbcConnect(<span class="hljs-string">"myDWH"</span>, uid=<span class="hljs-string">"kayon"</span>, pwd=<span class="hljs-string">"toga"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  建立到数据源的连接后，Rattle将查询数据库中可用表的名称，并通过图4.5的表格<strong>Table</strong>组合框提供对该列表的访问。 我们需要选择要加载的特定表。</p>
+<p>  R中可用的有限数量的选项通过Rattle公开，用于微调ODBC连接。 一个选项允许我们限制从所选表中检索的行数。 如果行限制设置为0，则检索表中的所有行。 不幸的是，没有限制从查询返回的行数的SQL标准。 对于某些数据库系统（例如Teradata和Netezza），SQL关键字是LIMIT，这是Rattle使用的。</p>
+<p>  由RODBC提供的各种R功能可用于与数据库进行交互。 例如，可用表的列表是使用<code>sqlTables()</code>获取的。 我们传递给我们上面创建的与数据库进行通信的渠道：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; tables &lt;- sqlTables(channel)</span><br></pre></td></tr></table></figure></p>
+<p>  如果在连接的数据库中有一个名为例如客户端的表，我们可以使用sqlColumns（）获取列名列表：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; columns &lt;- sqlColumns(channel, <span class="hljs-string">"clients"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  通常，我们只想从数据库中加载一个表的特定子集。 我们可以直接制定一个SQL查询来检索我们想要的数据。 例如：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; query &lt;- <span class="hljs-string">"SELECT * FROM clients WHERE cost &gt; 2500"</span></span><br><span class="line">&gt; myds &lt;- sqlQuery(channel, query)</span><br></pre></td></tr></table></figure></p>
+<p>  直接使用R提供了更多的空间来仔细识别我们希望加载的数据。 任何SQL查询都可以替代上面使用的简单SELECT语句。 对于那些具有编写SQL查询技能的人来说，这提供了一个强大的机制，用于在加载之前完善要加载的数据。</p>
+<p>  通过直接向通道发送SQL查询加载数据，将如上所述将数据存储在R中作为数据集，我们可以将其引用为myds（如上定义）。 可以使用我们现在介绍的R数据集选项在Rattle中访问此数据集。</p>
+<h4 align="left" id="4.4 R的数据集—其他数据来源">4.4 R的数据集—其他数据来源</h4>
+
+<p>  数据可以从任何来源以某种方式加载到R中。我们已经涵盖了从数据文件加载数据（如加载CSV或TXT文件）或直接从数据库加载数据。 但是，R支持从多种来源导入数据的更多选项。</p>
+<p>  Rattle可以使用已加载到R中的任何数据集（技术上，任何数据集）作为要开采的数据集。 在选择数据选项卡的R数据集选项（图4.7）时，数据名称框将列出可作为数据集放入Rattle的每个可用数据框。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030707.png?raw=true" alt="图4.7"></p>
+<blockquote>
+<p>图4.7：将已定义的R数据框加载为Rattle中使用的数据集。</p>
+</blockquote>
+<p>  例如，使用外部函数（DebRoy和Bivand，2011），可以使用R读取SPSS数据集（read.spss（）），SAS XPORT格式数据集（read.xport（））和DBF数据库文件（read.dbf（））。 但是，一个值得注意的例外是专有的SAS数据集格式，除非我们有SAS的授权副本才能读取我们的数据，否则无法加载。</p>
+<h5 align="left">加载SPSS数据集<code>Loading SPSS Datasets</code></h5>
+
+<p>  作为一个例子，假设我们有一个从SPSS保存或导出的SPSS数据文件。 我们可以使用<code>read.spss()</code>将它读入R中：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">library</span>(foreign)</span><br><span class="line">&gt; mydataset &lt;- read.spss(file=<span class="hljs-string">"mydataset.sav"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  然后，如图4.7所示，我们可以将数据框名称mydataset列为可用的R数据集。</p>
+<p>  我们希望与Rattle一起使用的数据集需要构建或加载到运行Rattle的同一R会话中（即，我们加载了Rattle包的R控制台）。</p>
+<h5 align="left">从剪切板读取数据<code>Reading Data from the Clipboard</code></h5>
+
+<p>  有时候可能非常方便的一个有趣的变化是可以通过系统剪贴板直接复制和粘贴选择。 通过这种机制，我们可以将电子表格中的数据“复制”（如“复制和粘贴”）到剪贴板中。 然后，在R中，我们可以使用read.table（）将数据“粘贴”到数据集中。</p>
+<p>  假设我们已经用我们在图4.8中看到的数据打开了一个电子表格。 如果我们以通常的方式选择16行（包括头部），我们可以非常简单地使用R加载数据：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; expenses &lt;- read.table(file(<span class="hljs-string">"clipboard"</span>), header=<span class="hljs-literal">TRUE</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  <img src="https://github.com/dwla/BP/blob/master/2018030708.png?raw=true" alt="图4.8"></p>
+<blockquote>
+<p>图4.8：选定的电子表格区域复制到剪贴板。</p>
+</blockquote>
+<p>  费用数据框然后可供Rattle使用。</p>
+<h5 align="left">转换日期<code>Converting Dates</code></h5>
+
+<p>  默认情况下，上例中的Date变量作为分类加载。 在我们将它加载到Rattle之前，我们可以将它转换为日期类型，如下图4.9所示：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; expenses$Date &lt;- as.Date(expenses$Date,</span><br><span class="line">format=<span class="hljs-string">"%d-%b-%Y"</span>)</span><br><span class="line">&gt; head(expenses)</span><br><span class="line">Date Expense Total</span><br><span class="line"><span class="hljs-number">1</span> <span class="hljs-number">2005</span>-<span class="hljs-number">11</span>-<span class="hljs-number">17</span> <span class="hljs-number">19.5</span> <span class="hljs-number">19.5</span></span><br><span class="line"><span class="hljs-number">2</span> <span class="hljs-number">2005</span>-<span class="hljs-number">11</span>-<span class="hljs-number">23</span> -<span class="hljs-number">15.0</span> <span class="hljs-number">4.5</span></span><br><span class="line"><span class="hljs-number">3</span> <span class="hljs-number">2005</span>-<span class="hljs-number">12</span>-<span class="hljs-number">10</span> <span class="hljs-number">30.0</span> <span class="hljs-number">34.5</span></span><br><span class="line"><span class="hljs-number">4</span> <span class="hljs-number">2006</span>-<span class="hljs-number">01</span>-<span class="hljs-number">23</span> -<span class="hljs-number">110.0</span> -<span class="hljs-number">75.5</span></span><br><span class="line"><span class="hljs-number">5</span> <span class="hljs-number">2006</span>-<span class="hljs-number">01</span>-<span class="hljs-number">28</span> -<span class="hljs-number">20.0</span> -<span class="hljs-number">95.5</span></span><br><span class="line"><span class="hljs-number">6</span> <span class="hljs-number">2006</span>-<span class="hljs-number">02</span>-<span class="hljs-number">14</span> -<span class="hljs-number">10.0</span> -<span class="hljs-number">105.5</span></span><br></pre></td></tr></table></figure></p>
+<p>  <img src="https://github.com/dwla/BP/blob/master/2018030709.png?raw=true" alt="图4.9"></p>
+<blockquote>
+<p>图4.9：从电子表格中加载通过剪贴板从复制粘贴中获取的R数据框。</p>
+</blockquote>
+<h5 align="left">从万维网读取数据<code>Reading Data from the World Wide Web</code></h5>
+
+<p>  WorldWideWeb上的HTML格式今天提供了大量数据。 XML（Lang，2011）提供了将这些数据直接读入R的功能，因此可以将这些数据用于Rattle（当然还有R）的分析。 举例来说，我们可以从Google访问量最大的网站列表中读取数据，将其转换为数据框，从而使其可供Rattle使用。 我们通过加载<code>XML</code>并设置一些位置来开始这个过程：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">library</span>(XML)</span><br><span class="line">&gt; google &lt;- <span class="hljs-string">"http://www.google.com/"</span></span><br><span class="line">&gt; path &lt;- <span class="hljs-string">"adplanner/static/top1000/"</span></span><br><span class="line">&gt; top1000urls &lt;- paste(google, path, sep=<span class="hljs-string">""</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  现在我们可以使用readHTMLTable（）读取数据，提取相关表并设置列名：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; tables &lt;- readHTMLTable(top1000urls)</span><br><span class="line">&gt; top1000 &lt;- tables[[<span class="hljs-number">2</span>]]</span><br><span class="line">&gt; colnames(top1000) &lt;- c(<span class="hljs-string">'Rank'</span>, <span class="hljs-string">'Site'</span>, <span class="hljs-string">'Category'</span>,</span><br><span class="line"><span class="hljs-string">'Users'</span>, <span class="hljs-string">'Reach'</span>, <span class="hljs-string">'Views'</span>,</span><br><span class="line"><span class="hljs-string">'Advertising'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>  可以使用head（）来查看表中前几行的数据：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; head(top1000)</span><br><span class="line">Rank Site Category</span><br><span class="line"><span class="hljs-number">1</span> <span class="hljs-number">1</span> facebook.com Social Networks</span><br><span class="line"><span class="hljs-number">2</span> <span class="hljs-number">2</span> youtube.com Online Video</span><br><span class="line"><span class="hljs-number">3</span> <span class="hljs-number">3</span> yahoo.com Web Portals</span><br><span class="line"><span class="hljs-number">4</span> <span class="hljs-number">4</span> live.com Search Engines</span><br><span class="line"><span class="hljs-number">5</span> <span class="hljs-number">5</span> wikipedia.org Dictionaries &amp; Encyclopedias</span><br><span class="line"><span class="hljs-number">6</span> <span class="hljs-number">6</span> msn.com Web Portals</span><br><span class="line">Users Reach Views Advertising</span><br><span class="line"><span class="hljs-number">1</span> <span class="hljs-number">880</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> <span class="hljs-number">47.2</span>% <span class="hljs-number">910</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> Yes</span><br><span class="line"><span class="hljs-number">2</span> <span class="hljs-number">800</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> <span class="hljs-number">42.7</span>% <span class="hljs-number">100</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> Yes</span><br><span class="line"><span class="hljs-number">3</span> <span class="hljs-number">660</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> <span class="hljs-number">35.3</span>% <span class="hljs-number">77</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> Yes</span><br><span class="line"><span class="hljs-number">4</span> <span class="hljs-number">550</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> <span class="hljs-number">29.3</span>% <span class="hljs-number">36</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> Yes</span><br><span class="line"><span class="hljs-number">5</span> <span class="hljs-number">490</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> <span class="hljs-number">26.2</span>% <span class="hljs-number">7</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> No</span><br><span class="line"><span class="hljs-number">6</span> <span class="hljs-number">450</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> <span class="hljs-number">24</span>% <span class="hljs-number">15</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span>,<span class="hljs-number">000</span> Yes</span><br></pre></td></tr></table></figure></p>
+<h4 align="left" id="4.5 R的数据">4.5 R的数据</h4>
+
+<p>  使用RData File选项（图4.10），可以直接从本地二进制R数据文件（通常使用RData文件扩展名）加载数据。 这样的文件可能包含多个数据集（通常是压缩格式），并且之前会从R中保存（使用save（））。</p>
+<p>  可以通过首先识别包含数据的文件来加载RData。 一旦文件被识别，数据将被加载，并且我们将被给予选择仅仅一个可用数据集被加载为Rattle的数据集的选项。 我们通过数据名称组合框指定，然后单击执行使数据集在Rattle中可用。</p>
+<p>  图4.10说明了选择一个RData文件。 该文件被称为cardiac.RData。 识别出该文件后，Rattle将用数据名称组合框填充该文件中找到的每个数据集的名称。 我们可以从数据文件中选择风险数据集，将其加载到Rattle中。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030710.png?raw=true" alt="图4.10"></p>
+<blockquote>
+<p>图4.10：从二进制R数据文件加载数据集。</p>
+</blockquote>
+<h4 align="left" id="4.6 Library">4.6 Library</h4>
+
+<p>  几乎每个R软件包都提供了一个用于说明软件包功能的示例数据集。 正如我们所看到的，Rattle提供了天气，weatherAUS和审计数据集。 我们可以通过我们已安装的R库中包含的软件包，探索可用于我们的丰富数据集。</p>
+<p>  “数据”<code>Data</code>选项卡的“库”<code>Library</code>选项可访问这些大量示例数据集。 单击单选按钮将生成可用数据集的列表，然后可以从数据名称<code>Data Name</code>组合框中访问该列表。 数据集名称，提供该数据集的数据包以及数据集的简短说明将包含在列表中。 请注意，该列表可能很长，其内容将取决于所安装的软件包。 我们可以在这里看到列表的一个示例，说明了Rattle用来生成列表的R代码：<br>  <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt; da &lt;- data(package=.packages(all.available=<span class="hljs-literal">TRUE</span>))</span><br><span class="line">&gt; sort(paste(da$results[, <span class="hljs-string">"Item"</span>], <span class="hljs-string">" : "</span>,</span><br><span class="line">da$results[, <span class="hljs-string">"Package"</span>], <span class="hljs-string">" : "</span>,</span><br><span class="line">da$results[, <span class="hljs-string">"Title"</span>], sep=<span class="hljs-string">""</span>))</span><br><span class="line"><span class="hljs-keyword">...</span></span><br><span class="line">[<span class="hljs-number">10</span>] <span class="hljs-string">"Adult : arules : Adult Data Set"</span></span><br><span class="line"><span class="hljs-keyword">...</span></span><br><span class="line">[<span class="hljs-number">12</span>] <span class="hljs-string">"Affairs : AER : Fair's Extramarital Affairs Data"</span></span><br><span class="line"><span class="hljs-keyword">...</span></span><br><span class="line">[<span class="hljs-number">14</span>] <span class="hljs-string">"Aids2 : MASS : Australian AIDS Survival Data"</span></span><br><span class="line"><span class="hljs-keyword">...</span></span><br><span class="line">[<span class="hljs-number">19</span>] <span class="hljs-string">"airmay : robustbase : Air Quality Data"</span></span><br><span class="line"><span class="hljs-keyword">...</span></span><br><span class="line">[<span class="hljs-number">23</span>] <span class="hljs-string">"ais : DAAG : Australian athletes data set"</span></span><br><span class="line"><span class="hljs-keyword">...</span></span><br><span class="line">[<span class="hljs-number">66</span>] <span class="hljs-string">"audit : rattle : Sample dataset for data mining"</span></span><br><span class="line"><span class="hljs-keyword">...</span></span><br><span class="line">[<span class="hljs-number">74</span>] <span class="hljs-string">"Baseball : vcd : Baseball Data"</span></span><br><span class="line"><span class="hljs-keyword">...</span></span><br><span class="line">[<span class="hljs-number">1082</span>] <span class="hljs-string">"weather : rattle : Sample dataset for ..."</span></span><br><span class="line"><span class="hljs-keyword">...</span></span><br></pre></td></tr></table></figure></p>
+<p>  要访问由特定包提供的数据集，首先需要使用<code>library()</code>来加载实际包（Rattle将自动完成）。 对于许多包（特别是那些声明数据集被延迟加载 - 即在被引用时加载的数据包），只需输入数据集名称即可从R Console获得数据集。 否则，需要在访问数据集之前运行<code>data()</code>。 我们需要提供<code>data()</code>以及要提供的数据集的名称。 Rattle负责为我们确保采取适当的行动来获取数据集。</p>
+<h4 align="left" id="4.7 数据选项">4.7 数据选项</h4>
+
+<p>  我们上面描述的所有Rattle的数据加载选项都会共享一组与数据集相关的其他选项。 附加选项涉及抽样数据以及决定每个变量所起的作用。 我们在数据挖掘的上下文中审查这些选项。</p>
+<h5 align="left">分区数据<code>Partitioning Data</code></h5>
+
+<p>  正如我们在第2.7节中首次看到的那样，分区选项允许我们将数据集划分为训练数据集，验证数据集和测试数据集。 第3.1节进一步定义了划分数据集的概念。 这些概念主要面向预测性数据挖掘。 通常我们将使用训练数据集建立一个模型。</p>
+<p>  为了评估（第15章）模型的性能，我们可以将它应用到评估数据集中。 该数据集尚未用于构建模型，因此提供了在提供新观察数据时模型的性能如何。 根据性能的不同，我们可能会调整模型构建参数，以改善模型性能。</p>
+<p>  一旦我们有一个看起来表现良好的模型，或者就验证数据集而言，我们可能会评估其在第三个分区即测试数据集上的表现。该模型以前未暴露于测试数据集中包含的观察值。因此，模型在这个数据集上的表现可能是一个非常好的指示，表明模型在新观测数据可用时将如何执行。</p>
+<p>  尽管如此，分区或抽样的概念比简单地用于预测性数据挖掘目的的分区机制更普遍。统计学家已经将抽样理解为分析小数据集以对整个人口作出结论的机制。因此，统计界有许多文献可以确保对任何数据分析结果的不确定性有很好的理解。这种理解很重要，尽管在数据挖掘的背景下经常被忽视。</p>
+<p>  Rattle使用<code>sample()</code>创建随机分区/样本。 随机抽样通常有很好的机会反映整个人口的分布情况。 因此，如同我们在第5章中所做的那样，探索数据时，将非常大的数据集采样到更小的数据集时会更容易。 探索10,000个观测值往往比探索1,000,000个观测值更具互动性和实用性。 抽样的其他优点包括允许对不同样本重复分析或绘图以评估结果的稳定性和统计准确性。 我们将在建造随机森林（第12章）时特别看到建模模型，可以利用这一点。</p>
+<p>  如果模型可用的数据集非常大以至于模型构建可能需要相当长的时间（数小时或数天），那么以这种方式使用采样对于数据挖掘也是必要的。 采样到小比例的数据集将使我们能够更多地交互式地构建模型。 一旦我们确信数据需要如何从最初的交互中清除和转换，我们才能开始试验模型。 在我们掌握了基本的模型参数之后，我们可以对数据的大部分进行清理，转换和建模。 我们可以让模型构建在可能经常需要的几个小时内完成。</p>
+<p>  抽样的缺点，特别是在数据挖掘方面，与罕见事件相对应的观察结果可能会从样本中消失。 尽管在很多数据挖掘项目中，我们最感兴趣的项目可能会丢失罕见疾病或数百万电子资金转账中的少数几例欺诈案例。 这个问题通常被称为类不平衡问题<code>cladd imbalance problem</code>。</p>
+<p>  Rattle提供了一个数据集的默认随机分区，其中70％的数据进入了训练数据集，15％进入了验证数据集，15％进入了测试数据集（见图4.11）。 根据我们的需要，我们可以覆盖这些选择。 可能需要非常小的采样来对一些非常大的数据集进行一些探索。 较小的样本也可能需要使用一些更昂贵的计算算法（如支持向量机）来构建模型。<br>  <img src="https://github.com/dwla/BP/blob/master/2018030711.png?raw=true" alt="图4.11"></p>
+<blockquote>
+<p>图4.11：采样天气数据集。</p>
+</blockquote>
+<p>  随机数字用于选择样本。 任何随机数序列必须以所谓的种子开始。 如果我们每次使用相同的种子，我们将得到相同的随机数序列。 因此这个过程是可重复的。 通过改变种子，我们可以选择不同的随机样本。 当我们希望探索我们模型对不同数据样本的敏感性时，这通常很有用。</p>
+<p>  在Rattle内部总是使用默认种子。 这确保了例如可重复建模。 种子被传递给R函数set.seed（）来为下一个生成的随机数序列设置一个种子。 因此，每次我们可以确保获得相同的样本时，通过将种子设置为相同的数字。</p>
+<p>  相反，我们可能希望在一系列模型构建练习中将种子设置为不同的数字，然后比较每个模型的性能。 每个模型都将根据数据集的不同随机样本构建。 如果我们发现不同模型之间存在显着差异，我们可能会关注我们正在采用的方法的稳健性。 我们将在第15章中进一步讨论。</p>
+<h5 align="left">可变角色<code>Variable Roles</code></h5>
+
+<p>  建立模型时，每个变量都会扮演一个特定的角色。 大多数变量都是模型的输入，而一个变量通常被确定为我们正在建模的目标。</p>
+<p>  变量也可以被识别为所谓的风险变量。 风险变量可能不会用于建模。 一般来说，它会记录一些与风险或结果相关的数量级。 例如，在审计数据集中，它记录了审计产生的调整金额，这是衡量与该案例相关的风险规模。 在天气数据集中，风险变量是第二天记录的降雨量 - 降雨量可以被认为是风险的大小。 有关在Rattle中使用风险变量的示例，请参见第15.4节，具体用于模型评估。</p>
+<p>  最后，我们还可以确定一些在建模中被忽略的变量。</p>
+<p>  在将数据加载到Rattle中时，我们需要确保我们的变量对于建模有正确的作用。 大多数变量的默认角色是输入变量的默认角色。 通常，这些变量将用于预测目标变量的值。</p>
+<p>  从预测建模的角度来看，目标变量（如果有一个与数据集关联）通常是感兴趣的变量。 也就是说，它是一个记录历史数据结果的变量。 在天气数据集的情况下，这是RainTomrrow，而对于审计数据集，目标是<code>Adjusted</code>。</p>
+<p>  Rattle使用简单的启发式方法来猜测具有目标<code>Target</code>角色的变量。 主要启发式是具有少量不同值（例如，小于5）的变量被视为候选目标变量。 数据集中的最后一个变量通常被认为是目标变量的候选对象，因为在许多公共数据集中，最后一个变量通常是目标变量。 如果它有超过5个不同的值，Rattle将从第一个变量开始，直到找到一个小于5的变量（如果有的话）。 只有一个变量可以被标记为目标<code>Target</code>。</p>
+<p>  在类似的情况下，每个观测具有唯一值的整数变量通常会自动识别为一个Ident（一个标识符）。 任何数量的变量都可以被标记为一个Ident。 所有的Ident变量在建模时都会被忽略，但在对数据集进行评分时使用，当它被写入分数文件时，可以识别得分的观察值。</p>
+<p>  并非我们数据集中的所有变量可能都需要用于特定的建模任务。 使用忽略单选按钮可以忽略这些变量。</p>
+<p>  将数据加载到Rattle时，会使用某些特殊字符串来标识可变角色。 例如，如果变量名以ID开头，那么该变量将自动标记为具有Ident的角色。 用户可以覆盖重写这个。</p>
+<p>  同样，名称以IGNORE开头的变量将具有忽略的默认角色。 RISK和TARGET也是一样。</p>
+<p>  在任何时候，目标都被视为分类或数字。 对于选作目标的数值变量，如果它具有10个或更少的唯一值，那么Rattle会自动将其作为分类变量（默认情况下）。 出于建模目的，结果是只有分类型预测模型可用。 要构建回归类型预测模型，我们需要通过选择“数据”<code>Data</code>选项卡的“数值”<code>Numeric</code>单选按钮来覆盖启发式<code>heuristic</code>。</p>
+<h5 align="left">衡量计算和角色<code>Weights Calculator and Role</code></h5>
+
+<p>  “数据”选项卡的最终数据配置选项是“权重计算器”和相关的“权重”角色。 单个变量可以被识别为表示与每个观察相关的一些权重。 权重计算器允许我们提供一个可能涉及多个变量的公式，以及一些缩放来给每个观察权重。 例如，对于审计数据集，我们可以输入一个使用调整量的公式，这将给予那些具有较大调整的观察值更多的权重。</p>
+<h4 align="left" id="4.8 命令摘要">4.8 命令摘要</h4>
+
+<p>  本章引用了以下R包，命令，函数和数据集：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>archetypes</code></td>
+<td style="text-align:left">包</td>
+<td style="text-align:left">典型分析</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>audit</code></td>
+<td style="text-align:left">数据集</td>
+<td style="text-align:left">rattle示例数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>clients</code></td>
+<td style="text-align:left">数据集</td>
+<td style="text-align:left">一个虚构的数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>data()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">为R提供一个数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dfedit()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">在电子表格中编辑数据框</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>file.show()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">展示一个数据框</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>foreign</code></td>
+<td style="text-align:left">包</td>
+<td style="text-align:left">访问多个数据格式</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>library()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">加载一个包到R库</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>file.show()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">显示文件的内容</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>odbcConnect()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">连接到一个数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>paste()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">将字符串组合成一个字符串</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rattle</code></td>
+<td style="text-align:left">包</td>
+<td style="text-align:left">提供示例数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>read.arff()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">读取ARFF数据文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>read.csv()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">读取一个逗号分隔的数据文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>read.dbf()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">从一个DBF数据集读取数据</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>read.delim()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">读取一个制表符分隔的数据文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>read.spss()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">从一个SPSS数据文件读取数据</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>read.table()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">从文本文件中读取数据</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>read.xport()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">从SAS导出的数据文件读取数据</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>readHTMLTable</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">从万维网读取数据</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>risk</code></td>
+<td style="text-align:left">数据集</td>
+<td style="text-align:left">一个虚构的数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>RODBC</code></td>
+<td style="text-align:left">包</td>
+<td style="text-align:left">提供数据库链接</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>sample()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">取一个数据集的随机样本</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>save()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">将R的对象保存为二进制文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>set.seed()</code></td>
+<td style="text-align:left">命令</td>
+<td style="text-align:left">重置随机数序列</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>skel</code></td>
+<td style="text-align:left">数据集</td>
+<td style="text-align:left">archetypes包的数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>sqlColumns()</code></strong></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left"><strong>列出数据表的列</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>sqlTables()</code></strong></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left"><strong>列出数据库中可用的表</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>system.file()</code></td>
+<td style="text-align:left">函数</td>
+<td style="text-align:left">定位R或包的文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>weather</code></td>
+<td style="text-align:left">数据集</td>
+<td style="text-align:left">rattle的示例数据集</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>XML</code></strong></td>
+<td style="text-align:left">包</td>
+<td style="text-align:left"><strong>访问并生成类似HTML的XML</strong></td>
+</tr>
+</tbody>
+</table>
+</h4></h4></h4></h4></h4></h4></h4></h4></h4></h4>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/R/">R</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/33933/">
+                <i class="level-item material-icons">←</i>
+                <span class="level-item">2018最高检工作报告词云记</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/63254/">
+                <span class="level-item">杂谈录（一）</span>
+                <i class="level-item material-icons">→</i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!-- about页面的时间轴 -->
+
+<!-- about页面的时间轴 -->
+
+
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'Nnd1E5DgoLY80jdfYHWpIeGP-gzGzoHsz',
+        app_key: 'Dkrf5Yuul64yJUJXN3iMXIvl',
+        placeholder: '在这里评论～'
+    });
+</script>
+
+    </div>
+</div>
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        <div class="card widget">
+
+
+  <article class="message is-success">
+    <div class="message-header">
+      敲黑板了！！！
+    </div>
+    <div class="message-body">
+      本博客是在icarus基础上，振兴怒改，JWen小改后完成的。
+    </div>
+  </article>
+
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/虎.svg" alt="JWen">
+                    
+                    <p class="is-size-4 is-block">
+                        JWen
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        求生中
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>中国 · 广州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        87
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/dwla">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/dwla">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-github-alt"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="微信" href="/wechat">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-weixin"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fas fa-rss"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+<div class="content">
+	<div id="aplayer-ynoJwXXs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+		<script>
+
+			var options = {
+				"narrow": false,
+				"autoplay": true,
+				"showlrc":3,
+				"mode": "circulation",
+				"mutex": true,
+				"theme": "#e6d0b2",
+				"preload":"metadata",
+				"listmaxheight": "1013px",
+				"music":[
+
+			<!-- 循环添加音乐 -->
+			
+			
+				{"title":"Dear friends","author":"TRIPLANE","url":"https://dwla.github.io/BM/Dear friends-TRIPLANE.mp3","pic":"https://dwla.github.io/BM/Dear friends-TRIPLANE.jpg","lrc":"https://dwla.github.io/BM/Dear friends-TRIPLANE.lrc"},
+			
+			
+				{"title":"風になる","author":"つじあやの","url":"https://dwla.github.io/BM/風になる-つじあやの.mp3","pic":"https://dwla.github.io/BM/風になる-つじあやの.jpg","lrc":"https://dwla.github.io/BM/風になる-つじあやの.lrc"},
+			
+			
+				{"title":"赴鸿门","author":"CRITTY","url":"https://czxb.github.io/musics/赴鸿门.mp3","pic":"https://czxb.github.io/musics/赴鸿门.jpeg","lrc":"https://czxb.github.io/musics/赴鸿门.lrc"},
+			
+			<!-- 循环添加音乐 -->
+			
+			]};
+					options.element = document.getElementById("aplayer-ynoJwXXs");
+					var ap = new APlayer(options);
+			    	window.aplayers || (window.aplayers = []);
+					window.aplayers.push(ap);
+		</script>
+	</div>
+	</div>
+
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            我的好朋友
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="http://www.czxa.top/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">振兴</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">http://www.czxa.top/</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/振兴/">
+            <span class="level-start">
+                <span class="level-item">振兴</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/明诚堂/">
+            <span class="level-start">
+                <span class="level-item">明诚堂</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/杂货铺/">
+            <span class="level-start">
+                <span class="level-item">杂货铺</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">73</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/杂货铺/网站爬取/">
+            <span class="level-start">
+                <span class="level-item">网站爬取</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/Stata/" style="font-size: 10px;">Stata</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">1</span>
+        <span>Data Mining with Rattle and R</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">1.1</span>
+        <span>——为知识发现而挖掘数据的艺术</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">1.1.1</span>
+        <span>Graham Williams</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">1.2</span>
+        <span>目录：</span>
+        </a></li><li>
+        <a class="is-flex" href="#前言">
+        <span class="has-mr-6">1.3</span>
+        <span>前言</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">1.3.1</span>
+        <span>本书特点</span>
+        </a></li><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">1.3.2</span>
+        <span>组织</span>
+        </a></li><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">1.3.3</span>
+        <span>生产和印刷公约</span>
+        </a></li><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">1.3.4</span>
+        <span>实施Rattle</span>
+        </a></li><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">1.3.5</span>
+        <span>流通</span>
+        </a></li><li>
+        <a class="is-flex" href="#undefined">
+        <span class="has-mr-6">1.3.6</span>
+        <span>致谢</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#第一部分 探索">
+        <span class="has-mr-6">1.4</span>
+        <span>第一部分 探索</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#第1章 介绍">
+        <span class="has-mr-6">1.4.1</span>
+        <span>第1章 介绍</span>
+        </a></li><li>
+        <a class="is-flex" href="#第2章 入门指南">
+        <span class="has-mr-6">1.4.2</span>
+        <span>第2章 入门指南</span>
+        </a></li><li>
+        <a class="is-flex" href="#第3章 使用数据">
+        <span class="has-mr-6">1.4.3</span>
+        <span>第3章 使用数据</span>
+        </a></li><li>
+        <a class="is-flex" href="#第4章 加载数据">
+        <span class="has-mr-6">1.4.4</span>
+        <span>第4章 加载数据</span>
+        </a></li></ul></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/虎.svg" alt="" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2018 JWen&nbsp;
+                <a href="https://www.jnu.edu.cn/" target="_blank">暨南大学</a> & <a href="https://ec.jnu.edu.cn/" target="_blank">经济学院·经济统计学</a><br>
+                主题：<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Github" href="http://github.com/dwla">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-github"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="微信" href="/wechat">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-weixin"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="RSS" href="/atom.xml">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fas fa-rss"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

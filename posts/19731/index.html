@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>腾讯漫画爬取记&amp;休刊 - JWen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="腾讯漫画爬取记&amp;休刊">
+<meta property="og:url" content="https://dwla.github.io/posts/19731/index.html">
+<meta property="og:site_name" content="JWen">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018080701.jpg?raw=true">
+<meta property="og:updated_time" content="2018-12-16T05:04:40.770Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="腾讯漫画爬取记&amp;休刊">
+<meta name="twitter:image" content="https://github.com/dwla/BP/blob/master/2018080701.jpg?raw=true">
+
+
+
+
+
+<link rel="icon" href="/images/虎.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 添加赞赏的css -->
+<link rel="stylesheet" href="/css/vdonate.css">
+<!-- 添加赞赏的css -->
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/虎.svg" alt="腾讯漫画爬取记&amp;休刊" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/about">关于</a>
+                
+                <a class="navbar-item" href="/mymusic">音乐</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="我的GitHub" href="http://github.com/dwla">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><!-- about页面的时间轴 -->
+
+             
+
+<!-- about页面的时间轴 -->
+
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-08-06T15:00:00.000Z">2018-08-06</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/杂货铺/">杂货铺</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/杂货铺/网站爬取/">网站爬取</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                腾讯漫画爬取记&amp;休刊
+            
+        </h1>
+
+        <div class="content">
+            <p><img src="https://github.com/dwla/BP/blob/master/2018080701.jpg?raw=true" alt=""></p>
+<a id="more"></a>
+<div id="aplayer-OqznOIMy" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+				<pre class="aplayer-lrc-content">[ti:怀念青春][ar:刘刚(旭日阳刚)][al:这些年][by:][offset:0][00:00.10]怀念青春 - 刘刚（旭日阳刚）[00:00.20][00:02.73]词：高进[00:03.52]曲：高进[00:04.43][00:38.25]那时的我们拥有[00:40.67][00:41.87]没有污染过的清晨[00:44.54][00:46.04]嘀嘀嗒嗒的秒针[00:48.57][00:49.78]却留不住一个黄昏[00:52.35][00:54.04]曾经的爱很简单[00:56.67][00:57.86]不需要费力的眼神[01:00.72][01:01.74]牵手走过无人山岗[01:04.62][01:05.81]想时间再慢几分[01:10.64][01:11.15]怀念啊我们的青春啊[01:14.47][01:15.20]昨天在记忆里生根发芽[01:18.36][01:19.08]爱情滋养心中那片土地[01:22.36][01:23.21]绽放出美丽不舍的泪花[01:26.43][01:27.03]怀念啊我们的青春啊[01:30.35][01:31.18]留下的脚印拼成一幅画[01:34.46][01:35.08]最美的风景是你的笑容[01:38.53][01:39.16]那一句再见有太多的放不下[01:45.23][02:20.19]那时的我们拥有[02:22.67][02:23.76]没有污染过的清晨[02:26.48][02:28.11]嘀嘀嗒嗒的秒针[02:30.51][02:31.81]却留不住一个黄昏[02:34.45][02:36.08]曾经的爱很简单[02:38.58][02:39.82]不需要费力的眼神[02:42.56][02:43.81]牵手走过无人山岗[02:46.58][02:47.80]想时间再慢几分[02:52.60][02:53.23]怀念啊我们的青春啊[02:56.50][02:57.15]昨天在记忆里生根发芽[03:00.40][03:01.12]爱情滋养心中那片土地[03:04.31][03:05.19]绽放出美丽不舍的泪花[03:08.44][03:09.07]怀念啊我们的青春啊[03:12.43][03:13.14]留下的脚印拼成一幅画[03:16.41][03:17.11]最美的风景是你的笑容[03:20.28][03:21.02]那一句再见有太多的放不下[03:27.03][03:29.16]怀念啊我们的青春啊[03:32.48][03:33.09]昨天在记忆里生根发芽[03:36.33][03:37.04]爱情滋养心中那片土地[03:40.27][03:41.11]绽放出美丽不舍的泪花[03:44.52][03:45.16]怀念啊我们的青春啊[03:48.52][03:49.24]留下的脚印拼成一幅画[03:52.50][03:53.16]最美的风景是你的笑容[03:56.98]那一句再见有太多的放不下</pre>
+			</div>
+			<script>
+				var ap = new APlayer({
+					element: document.getElementById("aplayer-OqznOIMy"),
+					narrow: false,
+					autoplay: true,
+					showlrc: 2,
+					music: {
+						title: "怀念青春",
+						author: "刘刚（旭日阳刚）",
+						url: "https://github.com/dwla/BM/blob/master/2018080701.mp3?raw=true",
+						pic: "https://github.com/dwla/BM/blob/master/2018080701.jpg?raw=true",
+					}
+				});
+				window.aplayers || (window.aplayers = []);
+				window.aplayers.push(ap);
+			</script>
+<p>这歌是兴安识别出来的，有种久违的“烂大街”的感觉，也挺舒服的。</p>
+<p>这是漫画爬取的封闭之作了，真正的离开都不怎么说话的吧。从开始到现在，只剩下网易漫画尚未爬取，其他所有的漫画，实现振兴所言<code>可见即可爬</code>。</p>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># cmd运行：java -Dwebdriver.chrome.driver="D:\Scripts\chromedriver.exe" -jar "D:\Scripts\selenium-server-standalone-3.13.0.jar"</span></span><br><span class="line">rm(list = ls())</span><br><span class="line"><span class="hljs-keyword">library</span>(rvest)</span><br><span class="line"><span class="hljs-keyword">library</span>(RSelenium)</span><br><span class="line"><span class="hljs-keyword">library</span>(dplyr)</span><br><span class="line"><span class="hljs-keyword">library</span>(curl)</span><br><span class="line">setwd(<span class="hljs-string">"F:/腾讯动漫/航海王"</span>)</span><br><span class="line">special_characters &lt;- <span class="hljs-keyword">function</span>(text) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span> (j <span class="hljs-keyword">in</span> c(<span class="hljs-string">'/'</span>, <span class="hljs-string">':'</span>, <span class="hljs-string">'*'</span>, <span class="hljs-string">'?'</span>, <span class="hljs-string">'"'</span>, <span class="hljs-string">'&lt;'</span>, <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'|'</span>, <span class="hljs-string">'•'</span>, <span class="hljs-string">"！"</span>, <span class="hljs-string">"▪"</span>, <span class="hljs-string">"♪"</span>, <span class="hljs-string">"·"</span>)) &#123;</span><br><span class="line">    text &lt;- gsub(pattern = j, replacement = <span class="hljs-string">'_'</span>, text, fixed = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span>(text)</span><br><span class="line">&#125;</span><br><span class="line">get_picture &lt;- <span class="hljs-keyword">function</span>(url) &#123;</span><br><span class="line">  remDr &lt;- remoteDriver(browserName = <span class="hljs-string">"chrome"</span>)</span><br><span class="line">  remDr$open()</span><br><span class="line">  remDr$navigate(url)</span><br><span class="line">  dpage &lt;- remDr$findElement(using = <span class="hljs-string">"id"</span>, value = <span class="hljs-string">"crossPage"</span>)</span><br><span class="line">  dpage$clickElement()</span><br><span class="line">  webpage &lt;- read_html(remDr$getPageSource()[[<span class="hljs-number">1</span>]][<span class="hljs-number">1</span>])</span><br><span class="line">  urls &lt;- webpage %&gt;% html_nodes(<span class="hljs-string">"#mainView #comicContainCross li img"</span>) %&gt;%</span><br><span class="line">    html_attr(<span class="hljs-string">"src"</span>)</span><br><span class="line">  <span class="hljs-keyword">while</span> (sum(is.na(urls)) != <span class="hljs-number">0</span>) &#123;</span><br><span class="line">    pageArrow &lt;- remDr$findElement(using = <span class="hljs-string">"id"</span>, value = <span class="hljs-string">"crossLeft"</span>)</span><br><span class="line">    pageArrow$clickElement()</span><br><span class="line">    webpage &lt;- read_html(remDr$getPageSource()[[<span class="hljs-number">1</span>]][<span class="hljs-number">1</span>])</span><br><span class="line">    urls &lt;- webpage %&gt;% html_nodes(<span class="hljs-string">"#mainView #comicContainCross li img"</span>) %&gt;%</span><br><span class="line">      html_attr(<span class="hljs-string">"src"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  n &lt;- length(urls)</span><br><span class="line">  <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> n:<span class="hljs-number">1</span>) &#123;</span><br><span class="line">    picture_name &lt;- paste(<span class="hljs-string">"第"</span>, (n - i + <span class="hljs-number">1</span>), <span class="hljs-string">"页.jpg"</span>, sep = <span class="hljs-string">""</span>)</span><br><span class="line">    curl_download(urls[i], picture_name)</span><br><span class="line">    print(picture_name)</span><br><span class="line">  &#125;</span><br><span class="line">  remDr$close()</span><br><span class="line">&#125;</span><br><span class="line">get_table &lt;- <span class="hljs-keyword">function</span>(url) &#123;</span><br><span class="line">  remDr &lt;- remoteDriver(browserName = <span class="hljs-string">"chrome"</span>)</span><br><span class="line">  remDr$open()</span><br><span class="line">  remDr$navigate(url)</span><br><span class="line">  webpage &lt;- read_html(remDr$getPageSource()[[<span class="hljs-number">1</span>]][<span class="hljs-number">1</span>])</span><br><span class="line">  title &lt;- webpage %&gt;% html_nodes(<span class="hljs-string">"#catalogue #catalogueListWrap ul li a"</span>) %&gt;%</span><br><span class="line">    html_attr(<span class="hljs-string">"title"</span>) %&gt;% special_characters()</span><br><span class="line">  href &lt;- webpage %&gt;% html_nodes(<span class="hljs-string">"#catalogue #catalogueListWrap ul li a"</span>) %&gt;%</span><br><span class="line">    html_attr(<span class="hljs-string">"href"</span>)</span><br><span class="line">  href &lt;- paste(<span class="hljs-string">"http://ac.qq.com"</span>, href, sep = <span class="hljs-string">""</span>)</span><br><span class="line">  remDr$close()</span><br><span class="line">  <span class="hljs-keyword">return</span>(cbind(title, href))</span><br><span class="line">&#125;</span><br><span class="line">url &lt;- <span class="hljs-string">"http://ac.qq.com/ComicView/index/id/505430/cid/1"</span></span><br><span class="line">path &lt;- getwd()</span><br><span class="line">manhua &lt;- get_table(url)</span><br><span class="line"><span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:nrow(manhua)) &#123;</span><br><span class="line">  dir.create(paste(path, manhua[i, <span class="hljs-number">1</span>], sep = <span class="hljs-string">"/"</span>))</span><br><span class="line">  setwd(paste(path, manhua[i, <span class="hljs-number">1</span>], sep = <span class="hljs-string">"/"</span>))</span><br><span class="line">  cat(paste(sprintf(<span class="hljs-string">"正在爬取第[%d]个链接："</span>, i), manhua[i, <span class="hljs-number">1</span>], sep = <span class="hljs-string">""</span>), sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">  get_picture(manhua[i, <span class="hljs-number">2</span>])</span><br><span class="line">  cat(<span class="hljs-string">"\n"</span>)</span><br><span class="line">  setwd(path)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>url &lt;- &quot;http://ac.qq.com/ComicView/index/id/505430/cid/1&quot;</code>里放的是海贼王第一个漫画第一页，然后就会自动把第一集到现在刚更新的全爬下来。</p>
+<p>爬取准备可以参考<a href="https://dwla.github.io/posts/54930/">昨天这篇</a>。</p>
+<p>最后附加天猫一个页面的爬取（自“好奇心研究所”凉了之后，朋友实习的老板又喜欢上了看天猫。）：<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># cmd运行：java -Dwebdriver.chrome.driver="D:\Scripts\chromedriver.exe" -jar "D:\Scripts\selenium-server-standalone-3.13.0.jar"</span></span><br><span class="line">rm(list = ls())</span><br><span class="line"><span class="hljs-keyword">library</span>(rvest)</span><br><span class="line"><span class="hljs-keyword">library</span>(RSelenium)</span><br><span class="line"><span class="hljs-keyword">library</span>(dplyr)</span><br><span class="line"><span class="hljs-keyword">library</span>(stringr)</span><br><span class="line">click &lt;- <span class="hljs-keyword">function</span> () &#123;</span><br><span class="line">  nextpage &lt;- remDr$findElement(using = <span class="hljs-string">'class'</span>, value = <span class="hljs-string">"ui-page-next"</span>)</span><br><span class="line">  nextpage$clickElement()</span><br><span class="line">&#125;</span><br><span class="line">next_page &lt;- <span class="hljs-keyword">function</span> (page, max_page) &#123;</span><br><span class="line">  <span class="hljs-keyword">if</span> (page &lt; max_page) &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span>(<span class="hljs-literal">TRUE</span>)</span><br><span class="line">  &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span>(<span class="hljs-literal">FALSE</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">get_table &lt;- <span class="hljs-keyword">function</span>(data) &#123;</span><br><span class="line">  productPrice &lt;- data %&gt;% html_nodes(<span class="hljs-string">"p.productPrice em"</span>) %&gt;% html_text()</span><br><span class="line">  productTitle &lt;- data %&gt;% html_nodes(<span class="hljs-string">"p.productTitle a"</span>) %&gt;% html_attr(<span class="hljs-string">"title"</span>)</span><br><span class="line">  productShop &lt;- data %&gt;% html_nodes(<span class="hljs-string">"div.productShop a"</span>) %&gt;% html_text() %&gt;%</span><br><span class="line">    gsub(pattern = <span class="hljs-string">"\n"</span>, replacement = <span class="hljs-string">""</span>, fixed = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">  productStatus &lt;- data %&gt;% html_nodes(<span class="hljs-string">"p.productStatus span"</span>) %&gt;%</span><br><span class="line">    html_text() %&gt;% matrix(ncol = <span class="hljs-number">3</span>, byrow = <span class="hljs-literal">TRUE</span>) %&gt;%</span><br><span class="line">    `[`(<span class="hljs-number">1</span>:length(productShop), <span class="hljs-number">1</span>:<span class="hljs-number">2</span>)</span><br><span class="line">  result &lt;- cbind(productPrice, productTitle, productShop, productStatus)</span><br><span class="line">  colnames(result) &lt;- c(<span class="hljs-string">"价格"</span>, <span class="hljs-string">"商品名"</span>, <span class="hljs-string">"商店"</span>, <span class="hljs-string">"月成交"</span>, <span class="hljs-string">"评价"</span>)</span><br><span class="line">  <span class="hljs-keyword">return</span>(result)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">url &lt;- <span class="hljs-string">"https://list.tmall.com/search_product.htm?q=%BB%AA%CE%AA%C8%D9%D2%AB&amp;type=p&amp;spm=a220m.1000858.a2227oh.d100&amp;from=.list.pc_1_searchbutton"</span></span><br><span class="line"></span><br><span class="line">remDr &lt;- remoteDriver(browserName = <span class="hljs-string">"chrome"</span>)</span><br><span class="line">remDr$open()</span><br><span class="line">remDr$navigate(url)</span><br><span class="line">a &lt;- <span class="hljs-number">0</span></span><br><span class="line">page &lt;- <span class="hljs-number">1</span></span><br><span class="line">data_all &lt;- data.frame()</span><br><span class="line"><span class="hljs-keyword">while</span> (a == <span class="hljs-number">0</span>) &#123;</span><br><span class="line">  print(paste(<span class="hljs-string">'第'</span>, page, <span class="hljs-string">'页'</span>))</span><br><span class="line">  webpage &lt;- read_html(remDr$getPageSource()[[<span class="hljs-number">1</span>]][<span class="hljs-number">1</span>])</span><br><span class="line">  <span class="hljs-keyword">if</span> (page == <span class="hljs-number">1</span>) &#123;</span><br><span class="line">    max_page &lt;- webpage %&gt;% html_nodes(<span class="hljs-string">"div.ui-page-wrap"</span>) %&gt;%</span><br><span class="line">      html_text() %&gt;% strsplit(split = <span class="hljs-string">"\n"</span>, fixed = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">    max_page &lt;- str_extract_all(max_page, <span class="hljs-string">"[0-9]+"</span>) %&gt;% unlist() %&gt;%</span><br><span class="line">      as.numeric() %&gt;% max()</span><br><span class="line">  &#125;</span><br><span class="line">  data_temp &lt;- get_table(webpage)</span><br><span class="line">  data_all &lt;- rbind(data_all, data_temp)</span><br><span class="line">  ctn &lt;- next_page(page, max_page)</span><br><span class="line">  <span class="hljs-keyword">if</span> (ctn) &#123;</span><br><span class="line">    click()</span><br><span class="line">    page &lt;- page + <span class="hljs-number">1</span></span><br><span class="line">  &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">    a &lt;- <span class="hljs-number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">View(data_all)</span><br></pre></td></tr></table></figure></p>
+<p>嗯，就这样吧。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/R/">R</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/11805/">
+                <i class="level-item material-icons">←</i>
+                <span class="level-item">JWen数据观（一）</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/54930/">
+                <span class="level-item">银魂爬取again</span>
+                <i class="level-item material-icons">→</i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!-- about页面的时间轴 -->
+
+<!-- about页面的时间轴 -->
+
+
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'Nnd1E5DgoLY80jdfYHWpIeGP-gzGzoHsz',
+        app_key: 'Dkrf5Yuul64yJUJXN3iMXIvl',
+        placeholder: '在这里评论～'
+    });
+</script>
+
+    </div>
+</div>
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        <div class="card widget">
+
+
+  <article class="message is-success">
+    <div class="message-header">
+      敲黑板了！！！
+    </div>
+    <div class="message-body">
+      本博客是在icarus基础上，振兴怒改，JWen小改后完成的。
+    </div>
+  </article>
+
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/虎.svg" alt="JWen">
+                    
+                    <p class="is-size-4 is-block">
+                        JWen
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        求生中
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>中国 · 广州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        87
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/dwla">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/dwla">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-github-alt"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="微信" href="/wechat">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-weixin"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fas fa-rss"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+<div class="content">
+	<div id="aplayer-ynoJwXXs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+		<script>
+
+			var options = {
+				"narrow": false,
+				"autoplay": true,
+				"showlrc":3,
+				"mode": "circulation",
+				"mutex": true,
+				"theme": "#e6d0b2",
+				"preload":"metadata",
+				"listmaxheight": "1013px",
+				"music":[
+
+			<!-- 循环添加音乐 -->
+			
+			
+				{"title":"Dear friends","author":"TRIPLANE","url":"https://dwla.github.io/BM/Dear friends-TRIPLANE.mp3","pic":"https://dwla.github.io/BM/Dear friends-TRIPLANE.jpg","lrc":"https://dwla.github.io/BM/Dear friends-TRIPLANE.lrc"},
+			
+			
+				{"title":"風になる","author":"つじあやの","url":"https://dwla.github.io/BM/風になる-つじあやの.mp3","pic":"https://dwla.github.io/BM/風になる-つじあやの.jpg","lrc":"https://dwla.github.io/BM/風になる-つじあやの.lrc"},
+			
+			
+				{"title":"赴鸿门","author":"CRITTY","url":"https://czxb.github.io/musics/赴鸿门.mp3","pic":"https://czxb.github.io/musics/赴鸿门.jpeg","lrc":"https://czxb.github.io/musics/赴鸿门.lrc"},
+			
+			<!-- 循环添加音乐 -->
+			
+			]};
+					options.element = document.getElementById("aplayer-ynoJwXXs");
+					var ap = new APlayer(options);
+			    	window.aplayers || (window.aplayers = []);
+					window.aplayers.push(ap);
+		</script>
+	</div>
+	</div>
+
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            我的好朋友
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="http://www.czxa.top/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">振兴</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">http://www.czxa.top/</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/振兴/">
+            <span class="level-start">
+                <span class="level-item">振兴</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/明诚堂/">
+            <span class="level-start">
+                <span class="level-item">明诚堂</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/杂货铺/">
+            <span class="level-start">
+                <span class="level-item">杂货铺</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">73</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/杂货铺/网站爬取/">
+            <span class="level-start">
+                <span class="level-item">网站爬取</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/Stata/" style="font-size: 10px;">Stata</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/虎.svg" alt="" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2018 JWen&nbsp;
+                <a href="https://www.jnu.edu.cn/" target="_blank">暨南大学</a> & <a href="https://ec.jnu.edu.cn/" target="_blank">经济学院·经济统计学</a><br>
+                主题：<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Github" href="http://github.com/dwla">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-github"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="微信" href="/wechat">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-weixin"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="RSS" href="/atom.xml">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fas fa-rss"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

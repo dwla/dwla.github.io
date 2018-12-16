@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>数据挖掘随笔 - JWen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="JWen  本想着以后数据挖掘作业就丢这里，可是吧，越往后做越想把这个删掉。因为越到后来越觉得这篇内容是贼菜的。后来经历了很多。体会过编了很久的代码因为各种小错误运行出错，越来越消磨你的耐性，黑色屏幕的warning仿佛是在嘲笑你一般。。。 真是路漫漫其修远兮，这篇就留着吧，当作纪念。">
+<meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据挖掘随笔">
+<meta property="og:url" content="https://dwla.github.io/posts/45440/index.html">
+<meta property="og:site_name" content="JWen">
+<meta property="og:description" content="JWen  本想着以后数据挖掘作业就丢这里，可是吧，越往后做越想把这个删掉。因为越到后来越觉得这篇内容是贼菜的。后来经历了很多。体会过编了很久的代码因为各种小错误运行出错，越来越消磨你的耐性，黑色屏幕的warning仿佛是在嘲笑你一般。。。 真是路漫漫其修远兮，这篇就留着吧，当作纪念。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018031901.jpg?raw=true">
+<meta property="og:updated_time" content="2018-04-28T14:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据挖掘随笔">
+<meta name="twitter:description" content="JWen  本想着以后数据挖掘作业就丢这里，可是吧，越往后做越想把这个删掉。因为越到后来越觉得这篇内容是贼菜的。后来经历了很多。体会过编了很久的代码因为各种小错误运行出错，越来越消磨你的耐性，黑色屏幕的warning仿佛是在嘲笑你一般。。。 真是路漫漫其修远兮，这篇就留着吧，当作纪念。">
+<meta name="twitter:image" content="https://github.com/dwla/BP/blob/master/2018031901.jpg?raw=true">
+
+
+
+
+
+<link rel="icon" href="/images/虎.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 添加赞赏的css -->
+<link rel="stylesheet" href="/css/vdonate.css">
+<!-- 添加赞赏的css -->
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/虎.svg" alt="数据挖掘随笔" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/about">关于</a>
+                
+                <a class="navbar-item" href="/mymusic">音乐</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="我的GitHub" href="http://github.com/dwla">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><!-- about页面的时间轴 -->
+
+             
+
+<!-- about页面的时间轴 -->
+
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-03-24T03:00:00.000Z">2018-03-24</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/杂货铺/">杂货铺</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                数据挖掘随笔
+            
+        </h1>
+
+        <div class="content">
+            <h6 align="center"><a href="https://dwla.github.io/">JWen</a></h6>
+
+<p>本想着以后数据挖掘作业就丢这里，可是吧，越往后做越想把这个删掉。因为越到后来越觉得这篇内容是贼菜的。后来经历了很多。体会过编了很久的代码因为各种小错误运行出错，越来越消磨你的耐性，黑色屏幕的warning仿佛是在嘲笑你一般。。。</p>
+<p>真是路漫漫其修远兮，这篇就留着吧，当作纪念。</p>
+<p><img src="https://github.com/dwla/BP/blob/master/2018031901.jpg?raw=true" alt=""><br><a id="more"></a></p>
+<h3 align="left" id="练习1">练习1</h3>
+
+<h4 align="left" id="练习1.1">练习1.1</h4>
+
+<p>将数据的格式由三维数组转化为数据框，以<code>iris3</code>（为数组格式）和<code>iris</code>（为数据框格式）为例：</p>
+<blockquote>
+<p>注：这个着名的（Fisher’s或Anderson’s）鸢尾花数据集给出了3种鸢尾花各50只花的测量值，单位为厘米，分别为长度和宽度的变化以及花瓣的长度和宽度。 该物种是Iris setosa，versicolor和Virginica。</p>
+</blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">rm(list = ls())</span><br><span class="line">dimnames(iris3)</span><br><span class="line"><span class="hljs-comment"># 数据框的第1列</span></span><br><span class="line">col1 &lt;- rep(<span class="hljs-number">0</span>, <span class="hljs-number">150</span>)</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col1[k] &lt;- iris3[[k]]</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col1[k+<span class="hljs-number">50</span>] &lt;- iris3[[k+<span class="hljs-number">200</span>]]</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col1[k+<span class="hljs-number">100</span>] &lt;- iris3[[k+<span class="hljs-number">400</span>]]</span><br><span class="line"><span class="hljs-comment"># 数据框的第2列</span></span><br><span class="line">col2 &lt;- rep(<span class="hljs-number">0</span>, <span class="hljs-number">150</span>)</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col2[k] &lt;- iris3[[k+<span class="hljs-number">50</span>]]</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col2[k+<span class="hljs-number">50</span>] &lt;- iris3[[k+<span class="hljs-number">200</span>+<span class="hljs-number">50</span>]]</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col2[k+<span class="hljs-number">100</span>] &lt;- iris3[[k+<span class="hljs-number">400</span>+<span class="hljs-number">50</span>]]</span><br><span class="line"><span class="hljs-comment"># 数据框的第3列</span></span><br><span class="line">col3 &lt;- rep(<span class="hljs-number">0</span>, <span class="hljs-number">150</span>)</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col3[k] &lt;- iris3[[k+<span class="hljs-number">50</span>+<span class="hljs-number">50</span>]]</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col3[k+<span class="hljs-number">50</span>] &lt;- iris3[[k+<span class="hljs-number">200</span>+<span class="hljs-number">50</span>+<span class="hljs-number">50</span>]]</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col3[k+<span class="hljs-number">100</span>] &lt;- iris3[[k+<span class="hljs-number">400</span>+<span class="hljs-number">50</span>+<span class="hljs-number">50</span>]]</span><br><span class="line"><span class="hljs-comment"># 数据框的第4列</span></span><br><span class="line">col4 &lt;- rep(<span class="hljs-number">0</span>, <span class="hljs-number">150</span>)</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col4[k] &lt;- iris3[[k+<span class="hljs-number">50</span>+<span class="hljs-number">50</span>+<span class="hljs-number">50</span>]]</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col4[k+<span class="hljs-number">50</span>] &lt;- iris3[[k+<span class="hljs-number">200</span>+<span class="hljs-number">50</span>+<span class="hljs-number">50</span>+<span class="hljs-number">50</span>]]</span><br><span class="line"><span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:<span class="hljs-number">50</span>) col4[k+<span class="hljs-number">100</span>] &lt;- iris3[[k+<span class="hljs-number">400</span>+<span class="hljs-number">50</span>+<span class="hljs-number">50</span>+<span class="hljs-number">50</span>]]</span><br><span class="line"><span class="hljs-comment"># 数据框的第5列</span></span><br><span class="line">col5 &lt;- c(rep(dimnames(iris3)[[<span class="hljs-number">3</span>]][<span class="hljs-number">1</span>], <span class="hljs-number">50</span>), rep(dimnames(iris3)[[<span class="hljs-number">3</span>]][<span class="hljs-number">2</span>], <span class="hljs-number">50</span>), rep(dimnames(iris3)[[<span class="hljs-number">3</span>]][<span class="hljs-number">3</span>], <span class="hljs-number">50</span>))</span><br><span class="line"><span class="hljs-comment"># 将上述5列合并为数据框并对列名称命名</span></span><br><span class="line">iris_temp &lt;- data.frame(col1, col2, col3, col4, col5)</span><br><span class="line">colnames(iris_temp) &lt;- c(dimnames(iris3)[[<span class="hljs-number">2</span>]], <span class="hljs-string">"Species"</span>)</span><br><span class="line">iris_temp</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>当然啦，这是很智障的方法，不需要动什么脑筋。思路就是发现<code>iris3</code>数组中的数据可以通过<code>iris3[[...]]</code>的形式调用。用<code>dim(iris3)</code>命令可以知道<code>iris3</code>数组是<code>50 * 4 * 3</code>的，而且<code>iris3[[...]]</code>调用数据的顺序可以自己摸索出来，从<code>iris3[[1]]</code>到<code>iris3[[200]]</code>是对于第一种鸢尾花Iris setosa的数据，从左到右，从上到下依次调用。另外就是<code>dimnames()</code>命令可以调出<code>iris3</code>鸢尾花的长度和宽度的变化以及花瓣的长度和宽度（共四个变量名称）和Iris setosa，versicolor以及Virginica（共三个种类名称）。下一步我们可以尝试写一个相同类型的三维数组都可以转换成数据框的命令。</p>
+</blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">array_data.frame &lt;- <span class="hljs-keyword">function</span>(x, species = <span class="hljs-string">"Species"</span>) &#123;</span><br><span class="line">  num1 &lt;- dim(x)[<span class="hljs-number">1</span>] <span class="hljs-comment"># iris3数据集中是50，这里是数组块中的行数</span></span><br><span class="line">  num2 &lt;- dim(x)[<span class="hljs-number">2</span>] <span class="hljs-comment"># iris3数据集中是4，这里是数组块的列数</span></span><br><span class="line">  num3 &lt;- dim(x)[<span class="hljs-number">3</span>] <span class="hljs-comment"># iris3数据集中是3，这里是数组块的个数</span></span><br><span class="line">  matrix_temp &lt;- matrix(rep(<span class="hljs-number">0</span>, (num1*num2*num3)), nrow = num1, byrow = <span class="hljs-literal">FALSE</span>)</span><br><span class="line">  <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:(num1*num2*num3)) &#123;matrix_temp[[i]] &lt;- x[[i]]&#125;</span><br><span class="line">  matrix1 &lt;- matrix_temp[<span class="hljs-number">1</span>:num1, <span class="hljs-number">1</span>:num2]</span><br><span class="line">  <span class="hljs-keyword">for</span> (j <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:(num3-<span class="hljs-number">1</span>)) &#123;</span><br><span class="line">    matrix2 &lt;- rbind(matrix1, matrix_temp[<span class="hljs-number">1</span>:num1, (j*num2 + <span class="hljs-number">1</span>):((j+<span class="hljs-number">1</span>)*num2)])</span><br><span class="line">    matrix1 &lt;- matrix2</span><br><span class="line">  &#125;</span><br><span class="line">  col_species1 &lt;- rep(dimnames(x)[[<span class="hljs-number">3</span>]][<span class="hljs-number">1</span>], num1)</span><br><span class="line">  <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">2</span>:num3) &#123;</span><br><span class="line">    col_species2 &lt;- c(col_species1, rep(dimnames(x)[[<span class="hljs-number">3</span>]][i], num1))</span><br><span class="line">    col_species1 &lt;- col_species2</span><br><span class="line">  &#125;</span><br><span class="line">  data_frame_final &lt;- data.frame(matrix1, col_species1)</span><br><span class="line">  colnames(data_frame_final) &lt;- c(dimnames(x)[[<span class="hljs-number">2</span>]], species)</span><br><span class="line">  <span class="hljs-keyword">return</span>(data_frame_final)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>整体上都是用“数组数据 + 最后一列的种类名称 = 数据框”的思路，最后再加上数据框的列名。不同的是上面的命令是直接从数组块层面着手，并且利用了提取每个数组快是从左到右从上到下的“按列提取”，而写入矩阵的时候也是从左到右从上到下的“按列写入”。之后再分割矩阵，利用<code>rbind</code>命令合并矩阵。在stata中也有同样作用的命令<code>append</code>。此外这里函数<code>apply_data.frame</code>函数提供<code>species</code>参数，可以输入字符串如<code>&quot;种类&quot;</code>作为数据种类名称。<br>第二种方法是比第一个快的，可以在整个代码开头加一句<code>ptm &lt;- proc.time()</code>，然后在整个代码结尾加一句<code>proc.time() - ptm</code>，之后运行整段代码看看这整段代码的运行耗时。类似的办法有很多，比如使用如下命令将会把<code>iris3</code>数组变成矩阵格式，再向上面一样设置循环类似处理。</p>
+</blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x1 &lt;- t(iris3[<span class="hljs-number">1</span>,,])</span><br><span class="line"><span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">2</span>:<span class="hljs-number">50</span>) &#123;</span><br><span class="line">  x2 &lt;- rbind(x1, t(iris3[i,,]))</span><br><span class="line">  x1 &lt;- x2</span><br><span class="line">&#125;</span><br><span class="line">x1</span><br></pre></td></tr></table></figure>
+<p>不过也存在缺陷，例如没有考虑含有缺失值的情况，而且在生成种类名称<code>col_species1</code>的向量的循环效率不高，因为扩张一个向量和新创建一个向量的时间一样，在数据量很大的时候对效率影响贼大。而且这里最大的弊端是要求每个种类的数据量是一样的。。。现实中不太可能。</p>
+<h5 align="left" id="傻瓜备注1">傻瓜备注1</h5>
+
+<p>后来上课，灏慈同学展示的代码我才知道自己写的有多傻缺，直接提取再合并就好了。。。而我试验的时候竟然写了12个循环。。。上面的代码就留着惊醒自己吧（长的不像样）。<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- rbind(iris3[,,<span class="hljs-number">1</span>], iris3[,,<span class="hljs-number">2</span>], iris3[,,<span class="hljs-number">3</span>])</span><br><span class="line">col5 &lt;- c(rep(dimnames(iris3)[[<span class="hljs-number">3</span>]][<span class="hljs-number">1</span>], <span class="hljs-number">50</span>), rep(dimnames(iris3)[[<span class="hljs-number">3</span>]][<span class="hljs-number">2</span>], <span class="hljs-number">50</span>), rep(dimnames(iris3)[[<span class="hljs-number">3</span>]][<span class="hljs-number">3</span>], <span class="hljs-number">50</span>))</span><br><span class="line">iris_temp &lt;- data.frame(x, col5)</span><br><span class="line">colnames(iris_temp) &lt;- c(dimnames(iris3)[[<span class="hljs-number">2</span>]], <span class="hljs-string">"Species"</span>)</span><br><span class="line">iris_temp</span><br></pre></td></tr></table></figure></p>
+<p>再后来，看到老师给的代码，有个更强大的<code>memisc</code>包，<code>to.data.frame(iris3)</code>一句话搞定了。所以，有句话真的很对，<strong>了解别人做的工作很重要，免得自己做了重复的工作</strong>（振兴）。</p>
+<h4 align="left" id="练习1.2">练习1.2</h4>
+
+<p>R中绘制词云的包<br>参考<a href="http://blog.csdn.net/sinat_26917383/article/details/51620019" target="_blank" rel="noopener">R语言︱文本挖掘——词云wordcloud2包</a></p>
+<ul>
+<li><p><a href="https://r-forge.r-project.org/R/?group_id=1571" target="_blank" rel="noopener">tmcn包</a>用于统计词频</p>
+</li>
+<li><p><a href="https://r-forge.r-project.org/R/?group_id=1054" target="_blank" rel="noopener">Rwordseg包</a>用于分词</p>
+</li>
+<li><p>wordcloud2（可直接在线下载安装）用于绘制词云。注意安装Rwordseg前需要配置JAVA环境（如何配置JAVA环境可以参考<a href="https://dwla.github.io/posts/63838/">这里</a>）。</p>
+</li>
+</ul>
+<h4 align="left" id="练习1.3">练习1.3</h4>
+
+<p>图片的数字化，转变为R直接可用的数据矩阵格式，参考<a href="http://forum.xitek.com/thread-1226930-1-1-1.html" target="_blank" rel="noopener">这里</a><br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(jpeg)</span><br><span class="line"><span class="hljs-comment"># 返回一个三维矩阵</span></span><br><span class="line">a &lt;- readJPEG(<span class="hljs-string">"../图片名.jpeg"</span>)</span><br><span class="line"><span class="hljs-comment"># 返回行、列和深度，每个像素点都有三维向量（R，G，B）</span></span><br><span class="line">dim(a)</span><br><span class="line"><span class="hljs-comment"># 每个像素点都有一个三维向量(R,G,B)来描述这个像素点，可以用下面命令访问一个像素点</span></span><br><span class="line">a[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, ]</span><br><span class="line"><span class="hljs-comment"># 把原图像中红色通道单独拿出来</span></span><br><span class="line">a[, , <span class="hljs-number">1</span>]</span><br><span class="line"><span class="hljs-comment"># 得到红色通道的直方图</span></span><br><span class="line">hist(a[, , <span class="hljs-number">1</span>])</span><br><span class="line"><span class="hljs-comment"># 这个函数的作用是得到照片的负片形式，是另一个三维矩阵，每个元素都是1-x里相应的元素值</span></span><br><span class="line">b &lt;- <span class="hljs-keyword">function</span>(x) <span class="hljs-keyword">return</span>(<span class="hljs-number">1</span>-x)</span><br><span class="line">writeJPEG(b(a), target = <span class="hljs-string">"../图片名.jpeg"</span>, quality = <span class="hljs-number">1</span>)</span><br><span class="line">writeJPEG(b(a), target = <span class="hljs-string">"../图片名.jpeg"</span>, quality = <span class="hljs-number">0.01</span>)</span><br></pre></td></tr></table></figure></p>
+<p>可以看到上面输出的第二张图画质是贼差的。</p>
+<h5 align="left" id="傻瓜备注2">傻瓜备注2</h5>
+
+<p>可以参考imager包，更加强大。</p>
+<h4 align="left" id="练习2">练习2</h4>
+
+<h5 align="left" id="1 茎叶图">1 茎叶图</h5>
+
+<p>对鸢尾花数据集中的<code>Sepal.Length</code>数据，使用<code>stem(x, scale = 1, width = 80, atom = 1e-08)</code>画茎叶图，后来stem是在是贼难画，于是乎就自己写一个吧<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">data &lt;- sort(iris[,<span class="hljs-string">"Sepal.Length"</span>]*<span class="hljs-number">10</span>, decreasing = <span class="hljs-literal">FALSE</span>)</span><br><span class="line">stem2 &lt;- <span class="hljs-keyword">function</span>(x) &#123;</span><br><span class="line">  cat(<span class="hljs-string">"你的茎叶图在此！"</span>, <span class="hljs-string">"\n"</span>)</span><br><span class="line">  stem.min &lt;- floor(min(x)/<span class="hljs-number">10</span>)</span><br><span class="line">  stem.max &lt;- floor(max(x)/<span class="hljs-number">10</span>)</span><br><span class="line">  <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> (stem.min):(stem.max)) &#123;</span><br><span class="line">    y &lt;- x[floor(x/<span class="hljs-number">10</span>) == i]</span><br><span class="line">    y &lt;- sort(y)</span><br><span class="line">    z &lt;- y-i*<span class="hljs-number">10</span></span><br><span class="line">    cat(i, <span class="hljs-string">":"</span>, z, <span class="hljs-string">"\n"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  cat(<span class="hljs-string">"\n\n"</span>)</span><br><span class="line">  cat(<span class="hljs-string">"啊画错了，是在此！！！"</span>, <span class="hljs-string">"\n"</span>)</span><br><span class="line">  <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> (stem.min):(stem.max)) &#123;</span><br><span class="line">    y &lt;- x[floor(x/<span class="hljs-number">10</span>) == i]</span><br><span class="line">    y &lt;- sort(y)</span><br><span class="line">    z &lt;- y-i*<span class="hljs-number">10</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (length(z[z &lt; <span class="hljs-number">5</span>]) != <span class="hljs-number">0</span>)</span><br><span class="line">      cat(i, <span class="hljs-string">":"</span>, z[z &lt; <span class="hljs-number">5</span>], <span class="hljs-string">"\n"</span>)</span><br><span class="line">    <span class="hljs-keyword">if</span> (length(z[z &gt;= <span class="hljs-number">5</span>]) != <span class="hljs-number">0</span>)</span><br><span class="line">      cat(i, <span class="hljs-string">":"</span>, z[z &gt;= <span class="hljs-number">5</span>], <span class="hljs-string">"\n"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  cat(<span class="hljs-string">"\n\n"</span>)</span><br><span class="line">  cat(<span class="hljs-string">"还不满意？再来一遍！！！！！！"</span>, <span class="hljs-string">"\n"</span>)</span><br><span class="line">  <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> (stem.min):(stem.max)) &#123;</span><br><span class="line">    y &lt;- x[floor(x/<span class="hljs-number">10</span>) == i]</span><br><span class="line">    y &lt;- sort(y)</span><br><span class="line">    z &lt;- y-i*<span class="hljs-number">10</span></span><br><span class="line">    <span class="hljs-keyword">if</span> (length(z[z &lt; <span class="hljs-number">3.3</span>]) != <span class="hljs-number">0</span>)</span><br><span class="line">      cat(i, <span class="hljs-string">":"</span>, z[z &lt; <span class="hljs-number">3.3</span>], <span class="hljs-string">"\n"</span>)</span><br><span class="line">    <span class="hljs-keyword">if</span> (length(z[<span class="hljs-number">3.3</span> &lt;= z &amp; z &lt; <span class="hljs-number">6.6</span>]) != <span class="hljs-number">0</span>)</span><br><span class="line">      cat(i, <span class="hljs-string">":"</span>, z[<span class="hljs-number">3.3</span> &lt;= z &amp; z &lt; <span class="hljs-number">6.6</span>], <span class="hljs-string">"\n"</span>)</span><br><span class="line">    <span class="hljs-keyword">if</span> (length(z[z &gt;= <span class="hljs-number">6.6</span>]) != <span class="hljs-number">0</span>)</span><br><span class="line">      cat(i, <span class="hljs-string">":"</span>, z[z &gt;= <span class="hljs-number">6.6</span>], <span class="hljs-string">"\n"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">stem2(data)</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/R/">R</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/7047/">
+                <i class="level-item material-icons">←</i>
+                <span class="level-item">叔本华：真正独立思考的人，是精神上的君主</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/17658/">
+                <span class="level-item">黄柏炎老师印象记和理综高考动员</span>
+                <i class="level-item material-icons">→</i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!-- about页面的时间轴 -->
+
+<!-- about页面的时间轴 -->
+
+
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'Nnd1E5DgoLY80jdfYHWpIeGP-gzGzoHsz',
+        app_key: 'Dkrf5Yuul64yJUJXN3iMXIvl',
+        placeholder: '在这里评论～'
+    });
+</script>
+
+    </div>
+</div>
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        <div class="card widget">
+
+
+  <article class="message is-success">
+    <div class="message-header">
+      敲黑板了！！！
+    </div>
+    <div class="message-body">
+      本博客是在icarus基础上，振兴怒改，JWen小改后完成的。
+    </div>
+  </article>
+
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/虎.svg" alt="JWen">
+                    
+                    <p class="is-size-4 is-block">
+                        JWen
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        求生中
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>中国 · 广州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        87
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/dwla">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/dwla">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-github-alt"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="微信" href="/wechat">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-weixin"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fas fa-rss"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+<div class="content">
+	<div id="aplayer-ynoJwXXs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+		<script>
+
+			var options = {
+				"narrow": false,
+				"autoplay": true,
+				"showlrc":3,
+				"mode": "circulation",
+				"mutex": true,
+				"theme": "#e6d0b2",
+				"preload":"metadata",
+				"listmaxheight": "1013px",
+				"music":[
+
+			<!-- 循环添加音乐 -->
+			
+			
+				{"title":"Dear friends","author":"TRIPLANE","url":"https://dwla.github.io/BM/Dear friends-TRIPLANE.mp3","pic":"https://dwla.github.io/BM/Dear friends-TRIPLANE.jpg","lrc":"https://dwla.github.io/BM/Dear friends-TRIPLANE.lrc"},
+			
+			
+				{"title":"風になる","author":"つじあやの","url":"https://dwla.github.io/BM/風になる-つじあやの.mp3","pic":"https://dwla.github.io/BM/風になる-つじあやの.jpg","lrc":"https://dwla.github.io/BM/風になる-つじあやの.lrc"},
+			
+			
+				{"title":"赴鸿门","author":"CRITTY","url":"https://czxb.github.io/musics/赴鸿门.mp3","pic":"https://czxb.github.io/musics/赴鸿门.jpeg","lrc":"https://czxb.github.io/musics/赴鸿门.lrc"},
+			
+			<!-- 循环添加音乐 -->
+			
+			]};
+					options.element = document.getElementById("aplayer-ynoJwXXs");
+					var ap = new APlayer(options);
+			    	window.aplayers || (window.aplayers = []);
+					window.aplayers.push(ap);
+		</script>
+	</div>
+	</div>
+
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            我的好朋友
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="http://www.czxa.top/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">振兴</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">http://www.czxa.top/</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/振兴/">
+            <span class="level-start">
+                <span class="level-item">振兴</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/明诚堂/">
+            <span class="level-start">
+                <span class="level-item">明诚堂</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/杂货铺/">
+            <span class="level-start">
+                <span class="level-item">杂货铺</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">73</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/杂货铺/网站爬取/">
+            <span class="level-start">
+                <span class="level-item">网站爬取</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/Stata/" style="font-size: 10px;">Stata</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#练习1">
+        <span class="has-mr-6">1</span>
+        <span>练习1</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#练习1.1">
+        <span class="has-mr-6">1.1</span>
+        <span>练习1.1</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#傻瓜备注1">
+        <span class="has-mr-6">1.1.1</span>
+        <span>傻瓜备注1</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#练习1.2">
+        <span class="has-mr-6">1.2</span>
+        <span>练习1.2</span>
+        </a></li><li>
+        <a class="is-flex" href="#练习1.3">
+        <span class="has-mr-6">1.3</span>
+        <span>练习1.3</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#傻瓜备注2">
+        <span class="has-mr-6">1.3.1</span>
+        <span>傻瓜备注2</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#练习2">
+        <span class="has-mr-6">1.4</span>
+        <span>练习2</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1 茎叶图">
+        <span class="has-mr-6">1.4.1</span>
+        <span>1 茎叶图</span>
+        </a></li></ul></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/虎.svg" alt="" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2018 JWen&nbsp;
+                <a href="https://www.jnu.edu.cn/" target="_blank">暨南大学</a> & <a href="https://ec.jnu.edu.cn/" target="_blank">经济学院·经济统计学</a><br>
+                主题：<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Github" href="http://github.com/dwla">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-github"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="微信" href="/wechat">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-weixin"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="RSS" href="/atom.xml">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fas fa-rss"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>stocktwits crawer Notes - JWen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="“I’m done!”, this sentence fills my brain after an interview yesterday. It’s obvious that I just talk to myself in Chinese first then translate them to English in my head when I speak English. So when">
+<meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stocktwits crawer Notes">
+<meta property="og:url" content="https://dwla.github.io/posts/51141/index.html">
+<meta property="og:site_name" content="JWen">
+<meta property="og:description" content="“I’m done!”, this sentence fills my brain after an interview yesterday. It’s obvious that I just talk to myself in Chinese first then translate them to English in my head when I speak English. So when">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-16T05:24:40.054Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="stocktwits crawer Notes">
+<meta name="twitter:description" content="“I’m done!”, this sentence fills my brain after an interview yesterday. It’s obvious that I just talk to myself in Chinese first then translate them to English in my head when I speak English. So when">
+
+
+
+
+
+<link rel="icon" href="/images/虎.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 添加赞赏的css -->
+<link rel="stylesheet" href="/css/vdonate.css">
+<!-- 添加赞赏的css -->
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/虎.svg" alt="stocktwits crawer Notes" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/about">关于</a>
+                
+                <a class="navbar-item" href="/mymusic">音乐</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="我的GitHub" href="http://github.com/dwla">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><!-- about页面的时间轴 -->
+
+             
+
+<!-- about页面的时间轴 -->
+
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-11-16T05:00:00.000Z">2018-11-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/杂货铺/">杂货铺</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/杂货铺/网站爬取/">网站爬取</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                stocktwits crawer Notes
+            
+        </h1>
+
+        <div class="content">
+            <p>“I’m done!”, this sentence fills my brain after an interview yesterday. It’s obvious that I just talk to myself in Chinese first then translate them to English in my head when I speak English. So when you read this post, you may thought this author is an idiot because this post may has lots of spell mistakes, grammar mistakes etc. However, “I have to learn English sooner or later”, means I have to take this step sooner or later. This is my first post write in English and I think it’s interest if you use the translate tools of Google or Firefox to translate this post into English. Hope you have a good read experience.</p>
+<a id="more"></a>
+<div id="aplayer-ekuNJQcB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+				<pre class="aplayer-lrc-content">[00:02.06]I was seven years old,[00:03.91]when I got my first pair[00:06.31]And I stepped outside[00:08.28]And I was like, Momma,[00:09.96]this air bubble right here,[00:11.81]it's gonna make me fly[00:14.69]I hit back-court, and when I jumped,[00:18.28]I jumped, I swear I got so high[00:21.56]I touched the net,[00:22.96]Momma I touched the net,[00:24.64]this is the best day of my life[00:28.27]Air Max's was next,[00:30.05]That air bubble, that mesh[00:31.98]The box, the smell, the stuffin',[00:34.48]the tread, in school[00:35.83]I was so cool[00:37.00]I knew that I couldn't crease 'em[00:38.68]My friends couldn't afford 'em[00:40.27]Four stripes, some Air-didas[00:41.94]On the court I wasn't the best,[00:43.51]but my kicks were like the pros[00:45.16]Yo, I stick out my tongue[00:46.71]so everyone could see that logo[00:48.88]Nike Air Flight, but bad was so dope[00:51.61]And then my friend Carlos' brother[00:53.47]got murdered for his fours,[00:56.84]whoa[00:58.00]See he just wanted a jump shot,[01:00.24]but they wanted to start a cult though[01:02.25]Didn't wanna get caught,[01:03.20]from Genesee Park to Othello[01:05.28]You could clown for those Probings,[01:06.63]with the velcro[01:07.53]Those were not tight[01:08.79]I was trying to fly[01:10.05]without leaving the ground,[01:11.51]'Cause I wanted to be like Mike, right[01:14.24]Wanted to be him,[01:15.37]I wanted to be that guy,[01:17.08]I wanted to touch the rim[01:18.62]I wanted to be cool,[01:20.25]and I wanted to fit in,[01:21.83]I wanted what he had, America, it begins[01:25.70]I want to fly[01:27.41]Can you take me far away[01:32.15]Give me a star to reach for[01:34.76]Tell me what it takes[01:36.55]And I'll go so high[01:39.10]I'll go so high[01:40.40]My feet won't touch the ground[01:43.27]Stitch my wings[01:44.97]And pull the strings[01:46.37]I bought these dreams[01:48.67]That all fall down[01:50.87]We want what we can't have,[01:52.84]commodity makes us wa[01:54.44]So expensive, damn,[01:56.13]I just got to flaunt it[01:57.42]Got to show 'em, so exclusive,[01:59.48]this that new s**t[02:00.82]A hundred dollars for a pair of shoes[02:03.04]I would never hoop in[02:04.67]Look at me, look at me,[02:06.38]I'm a cool kid[02:07.75]I'm an individual, yea,[02:09.58]but I'm part of a movement[02:11.15]My movement told me be a consumer[02:12.86]and I consumed it[02:14.08]They told me to just do it,[02:15.55]I listened to what that swoosh said[02:17.55]Look at what that swoosh did[02:19.06]See it consumed my thoughts[02:21.21]Are you stupid, don't crease 'em,[02:22.56]just leave 'em in that box[02:24.06]Strangled by these laces,[02:25.26]laces I can barely talk[02:27.25]That's my air bubble[02:28.10]and I'm lost, if it pops[02:30.58]We are what we wear,[02:31.83]we wear what we are[02:32.93]But see I look inside the mirror[02:34.81]and think Phil Knight tricked us all[02:36.69]Will I stand for change,[02:38.44]or stay in my box[02:39.84]These Nikes help me define me,[02:41.47]but I'm trying to take mine, off[03:48.53]I want to fly[03:50.30]Can you take me far away[03:55.17]Give me a star to reach for[03:57.47]Tell me what it takes[03:59.61]And I'll go so high[04:02.01]I'll go so high[04:03.72]My feet won't touch the ground[04:06.24]Stitch my wings[04:07.74]And pull the strings[04:09.62]I bought these dreams[04:11.77]That all fall down[04:26.98]They started out,[04:27.92]with what I wear to school[04:29.47]That first day,[04:30.58]like these are what make you cool[04:32.77]And this pair, this would be my parachute[04:35.90]So much more than just a pair of shoes[04:38.31]Nah, this is what I am[04:39.95]What I wore,[04:40.45]this is the source of my youth[04:42.42]This dream that they sold to you[04:45.38]For a hundred dollars and some change[04:47.56]Consumption is in the veins[04:48.82]And now I see[04:49.85]it's just another pair of shoes</pre>
+			</div>
+			<script>
+				var ap = new APlayer({
+					element: document.getElementById("aplayer-ekuNJQcB"),
+					narrow: false,
+					autoplay: true,
+					showlrc: 2,
+					music: {
+						title: "Wing$",
+						author: "Macklemore & Ryan Lewis",
+						url: "https://dwla.github.io/BM/2018111601.mp3",
+						pic: "https://dwla.github.io/BM/2018111601.jpg",
+					}
+				});
+				window.aplayers || (window.aplayers = []);
+				window.aplayers.push(ap);
+			</script>
+<p>After several busy days, I finally have time trying craw <a href="https://stocktwits.com" target="_blank" rel="noopener">https://stocktwits.com</a>. This task was just used to help Shirong to analysis stocks, thought I don’t know what can be alalysised from this website. Zhenxing said that he saw an task who had done and upload to github, which shows that the pridicted accurancy of the analysis is 57%. Anyway, it’s better than decision by tossing an coin.</p>
+<p>All code is as follows:<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># cmd运行：java -Dwebdriver.chrome.driver="D:\Scripts\chromedriver.exe" -jar "D:\Scripts\selenium-server-standalone-3.13.0.jar"</span></span><br><span class="line">rm(list = ls())</span><br><span class="line"><span class="hljs-keyword">library</span>(rvest)</span><br><span class="line"><span class="hljs-keyword">library</span>(RSelenium)</span><br><span class="line"><span class="hljs-keyword">library</span>(dplyr)</span><br><span class="line"><span class="hljs-keyword">library</span>(curl)</span><br><span class="line">url &lt;- <span class="hljs-string">"https://stocktwits.com/symbol/BTC.X"</span></span><br><span class="line">remDr &lt;- remoteDriver(browserName = <span class="hljs-string">"chrome"</span>)</span><br><span class="line">remDr$open()</span><br><span class="line">remDr$navigate(url)</span><br><span class="line">last_height &lt;- <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">repeat</span> &#123;   </span><br><span class="line">  remDr$executeScript(<span class="hljs-string">"window.scrollTo(0,document.body.scrollHeight);"</span>,</span><br><span class="line">                      list(remDr$findElement(<span class="hljs-string">"css"</span>, <span class="hljs-string">"body"</span>)))</span><br><span class="line">  Sys.sleep(<span class="hljs-number">10</span>)</span><br><span class="line">  new_height = remDr$executeScript(<span class="hljs-string">"return document.body.scrollHeight"</span>,</span><br><span class="line">                                   list(remDr$findElement(<span class="hljs-string">"css"</span>, <span class="hljs-string">"body"</span>)))</span><br><span class="line">  <span class="hljs-keyword">if</span>(unlist(last_height) == unlist(new_height)) &#123;</span><br><span class="line">    <span class="hljs-keyword">break</span></span><br><span class="line">  &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">    last_height = new_height</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">data &lt;- remDr$getPageSource()[[<span class="hljs-number">1</span>]] %&gt;% read_html()</span><br><span class="line"><span class="hljs-comment"># write_html(data, "data.html")</span></span><br><span class="line"></span><br><span class="line">data &lt;- data %&gt;% html_nodes(<span class="hljs-string">"div div article"</span>)</span><br><span class="line">result_name &lt;- c()</span><br><span class="line">result_time &lt;- c()</span><br><span class="line">result_sentence &lt;- c()</span><br><span class="line">result_tag &lt;- c()</span><br><span class="line">n &lt;- length(html_text(data))</span><br><span class="line"><span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:n) &#123;</span><br><span class="line">  name &lt;- data[i] %&gt;% html_nodes(<span class="hljs-string">"a"</span>) %&gt;%</span><br><span class="line">    html_text() %&gt;% `[`(<span class="hljs-number">2</span>)</span><br><span class="line">  time &lt;- data[i] %&gt;% html_nodes(<span class="hljs-string">"a"</span>) %&gt;%</span><br><span class="line">    html_text() %&gt;% `[`(<span class="hljs-number">3</span>)</span><br><span class="line">  sentence &lt;- data[i] %&gt;% html_nodes(<span class="hljs-string">"div div"</span>) %&gt;%</span><br><span class="line">    html_text() %&gt;% `[`(<span class="hljs-number">5</span>) %&gt;%</span><br><span class="line">    gsub(pattern = <span class="hljs-string">"\n"</span>, replacement = <span class="hljs-string">""</span>)</span><br><span class="line">  tag &lt;- data[i] %&gt;% html_nodes(<span class="hljs-string">"span"</span>) %&gt;%</span><br><span class="line">    html_text() %&gt;% `[`(<span class="hljs-number">3</span>)</span><br><span class="line">  result_name &lt;- c(result_name, name)</span><br><span class="line">  result_time &lt;- c(result_time, time)</span><br><span class="line">  result_sentence &lt;- c(result_sentence, sentence)</span><br><span class="line">  result_tag &lt;- c(result_tag, tag)</span><br><span class="line">&#125;</span><br><span class="line">result &lt;- cbind(<span class="hljs-string">"name"</span> = result_name, <span class="hljs-string">"time"</span> = result_time,</span><br><span class="line">                <span class="hljs-string">"sentence"</span> = result_sentence, <span class="hljs-string">"tag"</span> = result_tag)</span><br><span class="line">View(result)</span><br></pre></td></tr></table></figure></p>
+<p>Several points we should pay attentions is as follows:</p>
+<ul>
+<li>You need to do some preliminary preparations about RSelenium. The post <a href="https://dwla.github.io/posts/54930/">银魂爬取again</a> I wrote three months ago may be helpful.</li>
+<li>This code is used to craw the website <code>https://stocktwits.com/symbol/BTC.X</code>, it easy to craw other website of <code>https://stocktwits.com</code> if we imput similar url. The output is a dataframe, which consists of four vectors: <code>name</code>, <code>time</code>, <code>sentence</code> and <code>tag</code>, implies the basic information about the comments.</li>
+<li>The operation of the code depends on your network speed. The statement <code>Sys.sleep(10)</code> is just let our crawer take a good sleep and wait for the webpage to display completely in every iteration. If you are very confident about your fast network speed, you can replace <code>Sys.sleep(10)</code> with <code>Sys.sleep(2)</code>. It’s no doubt that you can delete this command if your network speed is out of the sky.</li>
+<li>Since this webpage seems to be able to pull down infinitely, we have to manually stop it when we repeatedly pull down to a certain extent. This means that after the <code>repeat</code> statement has been running for a certain time, hit the <code>Esc</code> button.</li>
+</ul>
+<blockquote>
+<p>I think one of the really nice thing about statistical research and application is that authors get motivated, because you can see other people not only using it but also caring about it, which is really really cool. I want to bring intuitive, practical and interesting statistics to life, and let more people understand life through statistics.</p>
+<p align="right">——JWen</p>
+</blockquote>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/R/">R</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/17263/">
+                <i class="level-item material-icons">←</i>
+                <span class="level-item">杂谈录（十六）</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/2934/">
+                <span class="level-item">杂谈录（十五）</span>
+                <i class="level-item material-icons">→</i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!-- about页面的时间轴 -->
+
+<!-- about页面的时间轴 -->
+
+
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'Nnd1E5DgoLY80jdfYHWpIeGP-gzGzoHsz',
+        app_key: 'Dkrf5Yuul64yJUJXN3iMXIvl',
+        placeholder: '在这里评论～'
+    });
+</script>
+
+    </div>
+</div>
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        <div class="card widget">
+
+
+  <article class="message is-success">
+    <div class="message-header">
+      敲黑板了！！！
+    </div>
+    <div class="message-body">
+      本博客是在icarus基础上，振兴怒改，JWen小改后完成的。
+    </div>
+  </article>
+
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/虎.svg" alt="JWen">
+                    
+                    <p class="is-size-4 is-block">
+                        JWen
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        求生中
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>中国 · 广州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        87
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/dwla">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/dwla">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-github-alt"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="微信" href="/wechat">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-weixin"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fas fa-rss"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+<div class="content">
+	<div id="aplayer-ynoJwXXs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+		<script>
+
+			var options = {
+				"narrow": false,
+				"autoplay": true,
+				"showlrc":3,
+				"mode": "circulation",
+				"mutex": true,
+				"theme": "#e6d0b2",
+				"preload":"metadata",
+				"listmaxheight": "1013px",
+				"music":[
+
+			<!-- 循环添加音乐 -->
+			
+			
+				{"title":"Dear friends","author":"TRIPLANE","url":"https://dwla.github.io/BM/Dear friends-TRIPLANE.mp3","pic":"https://dwla.github.io/BM/Dear friends-TRIPLANE.jpg","lrc":"https://dwla.github.io/BM/Dear friends-TRIPLANE.lrc"},
+			
+			
+				{"title":"風になる","author":"つじあやの","url":"https://dwla.github.io/BM/風になる-つじあやの.mp3","pic":"https://dwla.github.io/BM/風になる-つじあやの.jpg","lrc":"https://dwla.github.io/BM/風になる-つじあやの.lrc"},
+			
+			
+				{"title":"赴鸿门","author":"CRITTY","url":"https://czxb.github.io/musics/赴鸿门.mp3","pic":"https://czxb.github.io/musics/赴鸿门.jpeg","lrc":"https://czxb.github.io/musics/赴鸿门.lrc"},
+			
+			<!-- 循环添加音乐 -->
+			
+			]};
+					options.element = document.getElementById("aplayer-ynoJwXXs");
+					var ap = new APlayer(options);
+			    	window.aplayers || (window.aplayers = []);
+					window.aplayers.push(ap);
+		</script>
+	</div>
+	</div>
+
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            我的好朋友
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="http://www.czxa.top/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">振兴</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">http://www.czxa.top/</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/振兴/">
+            <span class="level-start">
+                <span class="level-item">振兴</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/明诚堂/">
+            <span class="level-start">
+                <span class="level-item">明诚堂</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/杂货铺/">
+            <span class="level-start">
+                <span class="level-item">杂货铺</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">73</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/杂货铺/网站爬取/">
+            <span class="level-start">
+                <span class="level-item">网站爬取</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/Stata/" style="font-size: 10px;">Stata</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/虎.svg" alt="" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2018 JWen&nbsp;
+                <a href="https://www.jnu.edu.cn/" target="_blank">暨南大学</a> & <a href="https://ec.jnu.edu.cn/" target="_blank">经济学院·经济统计学</a><br>
+                主题：<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Github" href="http://github.com/dwla">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-github"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="微信" href="/wechat">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-weixin"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="RSS" href="/atom.xml">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fas fa-rss"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

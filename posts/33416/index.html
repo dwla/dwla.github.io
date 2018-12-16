@@ -8,7 +8,6 @@
 
 
     <meta name="description" content="这段代码是寒假的时候写的，没想到现在还能运行，可以整理好教务处的排课选课列表然后做一些有趣的数据分析。">
-<meta name="keywords" content="Stata">
 <meta property="og:type" content="article">
 <meta property="og:title" content="暨南大学教务处排课选课表爬取">
 <meta property="og:url" content="https://dwla.github.io/posts/33416/index.html">
@@ -16,7 +15,7 @@
 <meta property="og:description" content="这段代码是寒假的时候写的，没想到现在还能运行，可以整理好教务处的排课选课列表然后做一些有趣的数据分析。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://images.unsplash.com/photo-1524863296271-2f0063cf8ede?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=aab58f469f3300fb5807d15b1caea799&auto=format&fit=crop&w=800&q=60">
-<meta property="og:updated_time" content="2018-12-13T07:14:17.788Z">
+<meta property="og:updated_time" content="2018-12-16T06:02:17.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="暨南大学教务处排课选课表爬取">
 <meta name="twitter:description" content="这段代码是寒假的时候写的，没想到现在还能运行，可以整理好教务处的排课选课列表然后做一些有趣的数据分析。">
@@ -84,8 +83,10 @@
 <link rel="stylesheet" href="/css/vdonate.css">
 <!-- 添加赞赏的css -->
 
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
-<body class="is-3-column">
+<body class="is-2-column">
     <nav class="navbar navbar-main">
     <div class="container">
         <div class="navbar-brand is-flex-center">
@@ -113,7 +114,7 @@
                 
                     
                     
-                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                    <a class="navbar-item" target="_blank" title="我的GitHub" href="http://github.com/dwla">
                         
                         <i class="fab fa-github"></i>
                         
@@ -138,7 +139,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><!-- about页面的时间轴 -->
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><!-- about页面的时间轴 -->
 
              
 
@@ -159,15 +160,9 @@
                 <time class="level-item has-text-grey" datetime="2018-07-22T10:14:00.000Z">2018-07-22</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/网站爬取/">网站爬取</a>
+                <a class="has-link-grey -link" href="/categories/振兴/">振兴</a>
                 </div>
                 
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 分钟 读完 (大约 1825 个字)
-                </span>
                 
             </div>
         </div>
@@ -177,6 +172,7 @@
                 暨南大学教务处排课选课表爬取
             
         </h1>
+
         <div class="content">
             <p>这段代码是寒假的时候写的，没想到现在还能运行，可以整理好教务处的排课选课列表然后做一些有趣的数据分析。<br><a id="more"></a></p>
 <h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>自在是爬取，都分为两步：第一步获得数据，第二步进行数据处理。所以首先需要获取数据。因为需要登入教务处才能看到排课选课列表，所以如果想要直接请求数据的话，需要<code>curl</code>。但是对于这个问题，使用curl是多此一举的。我们首先进入排课选课表：<br><img src="https://czxb.github.io/mr/2018-07-22-18.59.32.png" alt=""><br>注意把每页行数改成总共的行数，不加任何筛选条件的话是3547行。<br>接下来打开检查，找到这个页面：<br><img src="https://czxb.github.io/mr/2018-07-22-19.09.05.png" alt=""><br>选择<code>copy response</code>，然后把copy的内容粘贴到文本文件中保存为csv文件即可。<br>下面这个是我保存的：<br><a href="https://czxb.github.io/mr/paikexuanke.csv" target="_blank" rel="noopener">paikexuanke.csv</a></p>
@@ -190,15 +186,6 @@
 <p><img src="https://czxb.github.io/ar/czxa_2018-12-11_17.50.40.png" alt=""></p>
 <figure class="highlight stata hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">clear</span></span><br><span class="line"><span class="hljs-keyword">input</span> 节 周 选课人数</span><br><span class="line">0 0 .</span><br><span class="line">1 0 .</span><br><span class="line">2 0 .</span><br><span class="line">3 0 .</span><br><span class="line">4 0 .</span><br><span class="line">5 0 .</span><br><span class="line">6 0 .</span><br><span class="line">7 0 .</span><br><span class="line">8 0 .</span><br><span class="line">9 0 .</span><br><span class="line">10 0 .</span><br><span class="line">0 1 .</span><br><span class="line">1 1 .</span><br><span class="line">2 1 .</span><br><span class="line">3 1 .</span><br><span class="line">4 1 .</span><br><span class="line">5 1 .</span><br><span class="line">6 1 .</span><br><span class="line">7 1 .</span><br><span class="line">8 1 .</span><br><span class="line">9 1 .</span><br><span class="line">10 1 .</span><br><span class="line">0 2 .</span><br><span class="line">1 2 .</span><br><span class="line">2 2 .</span><br><span class="line">3 2 .</span><br><span class="line">4 2 .</span><br><span class="line">5 2 .</span><br><span class="line">6 2 .</span><br><span class="line">7 2 .</span><br><span class="line">8 2 .</span><br><span class="line">9 2 .</span><br><span class="line">10 2 .</span><br><span class="line">0 3 .</span><br><span class="line">1 3 .</span><br><span class="line">2 3 .</span><br><span class="line">3 3 .</span><br><span class="line">4 3 .</span><br><span class="line">5 3 .</span><br><span class="line">6 3 .</span><br><span class="line">7 3 .</span><br><span class="line">8 3 .</span><br><span class="line">9 3 .</span><br><span class="line">10 3 .</span><br><span class="line">0 4 .</span><br><span class="line">1 4 .</span><br><span class="line">2 4 .</span><br><span class="line">3 4 .</span><br><span class="line">4 4 .</span><br><span class="line">5 4 .</span><br><span class="line">6 4 .</span><br><span class="line">7 4 .</span><br><span class="line">8 4 .</span><br><span class="line">9 4 .</span><br><span class="line">10 4 .</span><br><span class="line">end</span><br><span class="line"><span class="hljs-keyword">local</span> j = 1</span><br><span class="line"><span class="hljs-keyword">forval</span> <span class="hljs-keyword">n</span> = 1/5&#123;</span><br><span class="line">	<span class="hljs-keyword">foreach</span> <span class="hljs-keyword">m</span> <span class="hljs-keyword">in</span> 1 2 3 4 6 7 8 9 10 11 12&#123;</span><br><span class="line">		<span class="hljs-keyword">replace</span> 选课人数 = A[<span class="hljs-symbol">`m'</span>, <span class="hljs-symbol">`n'</span>] <span class="hljs-keyword">in</span> <span class="hljs-symbol">`j'</span></span><br><span class="line">		<span class="hljs-keyword">local</span> j = <span class="hljs-symbol">`j'</span> + 1</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">save</span> 每节课的选课人数, <span class="hljs-keyword">replace</span></span><br><span class="line"><span class="hljs-keyword">clear</span></span><br><span class="line">jscopy</span><br><span class="line">fw, s <span class="hljs-built_in">h</span>(选课人数的三维柱形图)</span><br><span class="line">lib, b <span class="hljs-built_in">s</span>(vintage)</span><br><span class="line">fw <span class="hljs-string">`"var clss = ['第一节课', '第二节课', '第三节课', '第四节课', '第六节课', '第七节课', '第八节课', '第九节课','第十节课','第十一节课','第十二节课'];"'</span></span><br><span class="line">fw <span class="hljs-string">`"var week = ['周一', '周二', '周三', '周四', '周五'];"'</span></span><br><span class="line">fw <span class="hljs-string">`"var data = ["'</span></span><br><span class="line"><span class="hljs-keyword">use</span> 每节课的选课人数, <span class="hljs-keyword">clear</span></span><br><span class="line"><span class="hljs-keyword">forval</span> i = 1/`=_N'&#123;</span><br><span class="line">	<span class="hljs-keyword">local</span> <span class="hljs-keyword">var</span> <span class="hljs-string">`"[`=节[`i']',`=周[`i']',`=选课人数[`i']'],"'</span></span><br><span class="line">	fw <span class="hljs-string">`"`var'"'</span></span><br><span class="line">&#125;</span><br><span class="line">fw <span class="hljs-string">`"];"'</span></span><br><span class="line">fw <span class="hljs-string">`"option = &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"    visualMap: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"        max: 10000,"'</span></span><br><span class="line">fw <span class="hljs-string">`"        inRange: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"            color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']"'</span></span><br><span class="line">fw <span class="hljs-string">`"        &#125;"'</span></span><br><span class="line">fw <span class="hljs-string">`"    &#125;,"'</span></span><br><span class="line">fw <span class="hljs-string">`"    xAxis3D: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"    	name: '',"'</span></span><br><span class="line">fw <span class="hljs-string">`"        type: 'category',"'</span></span><br><span class="line">fw <span class="hljs-string">`"        data: week"'</span></span><br><span class="line">fw <span class="hljs-string">`"    &#125;,"'</span></span><br><span class="line">fw <span class="hljs-string">`"    yAxis3D: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"    	name: '',"'</span></span><br><span class="line">fw <span class="hljs-string">`"        type: 'category',"'</span></span><br><span class="line">fw <span class="hljs-string">`"        data: clss"'</span></span><br><span class="line">fw <span class="hljs-string">`"    &#125;,"'</span></span><br><span class="line">fw <span class="hljs-string">`"    zAxis3D: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"    	name: '',"'</span></span><br><span class="line">fw <span class="hljs-string">`"        type: 'value'"'</span></span><br><span class="line">fw <span class="hljs-string">`"    &#125;,"'</span></span><br><span class="line">fw <span class="hljs-string">`"    grid3D: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"        boxWidth: 50,"'</span></span><br><span class="line">fw <span class="hljs-string">`"        boxDepth: 100,"'</span></span><br><span class="line">fw <span class="hljs-string">`"        light: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"            main: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"                intensity: 1.2,"'</span></span><br><span class="line">fw <span class="hljs-string">`"                shadow: true"'</span></span><br><span class="line">fw <span class="hljs-string">`"            &#125;,"'</span></span><br><span class="line">fw <span class="hljs-string">`"            ambient: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"                intensity: 0.3"'</span></span><br><span class="line">fw <span class="hljs-string">`"            &#125;"'</span></span><br><span class="line">fw <span class="hljs-string">`"        &#125;"'</span></span><br><span class="line">fw <span class="hljs-string">`"    &#125;,"'</span></span><br><span class="line">fw <span class="hljs-string">`"    series: [&#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"        type: 'bar3D',"'</span></span><br><span class="line">fw <span class="hljs-string">`"        data: data.map(function (item) &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"            return &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"                value: [item[1], item[0], item[2]],"'</span></span><br><span class="line">fw <span class="hljs-string">`"            &#125;"'</span></span><br><span class="line">fw <span class="hljs-string">`"        &#125;),"'</span></span><br><span class="line">fw <span class="hljs-string">`"        shading: 'lambert',"'</span></span><br><span class="line">fw <span class="hljs-string">`"        label: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"            textStyle: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"                fontSize: 16,"'</span></span><br><span class="line">fw <span class="hljs-string">`"                borderWidth: 1"'</span></span><br><span class="line">fw <span class="hljs-string">`"            &#125;"'</span></span><br><span class="line">fw <span class="hljs-string">`"        &#125;,"'</span></span><br><span class="line">fw <span class="hljs-string">`"        emphasis: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"            label: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"                textStyle: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"                    fontSize: 14,"'</span></span><br><span class="line">fw <span class="hljs-string">`"                    color: '#900'"'</span></span><br><span class="line">fw <span class="hljs-string">`"                &#125;"'</span></span><br><span class="line">fw <span class="hljs-string">`"            &#125;,"'</span></span><br><span class="line">fw <span class="hljs-string">`"            itemStyle: &#123;"'</span></span><br><span class="line">fw <span class="hljs-string">`"                color: '#900'"'</span></span><br><span class="line">fw <span class="hljs-string">`"            &#125;"'</span></span><br><span class="line">fw <span class="hljs-string">`"        &#125;"'</span></span><br><span class="line">fw <span class="hljs-string">`"    &#125;]"'</span></span><br><span class="line">fw <span class="hljs-string">`"&#125;"'</span></span><br><span class="line">fw, <span class="hljs-keyword">e</span> t</span><br></pre></td></tr></table></figure>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Stata/">Stata</a>
-                </div>
-            </div>
         </div>
         
         
@@ -215,17 +202,17 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/37106/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">mdx-deck制作幻灯片</span>
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/8170/">
+                <i class="level-item material-icons">←</i>
+                <span class="level-item">我还会回来的</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/posts/7485/">
-                <span class="level-item">如何在Stata绘图中自定义文本旋转角度？</span>
-                <i class="level-item fas fa-chevron-right"></i>
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/59376/">
+                <span class="level-item">烤柿那些事</span>
+                <i class="level-item material-icons">→</i>
             </a>
         </div>
         
@@ -233,28 +220,13 @@
 </div>
 
 
-<!-- about页面的时间轴 -->
 
 <!-- about页面的时间轴 -->
 
-<!-- 添加赞赏 -->
-
-    <div id="donation_div"></div>
-
-<script src="/js/vdonate.js"></script>
-<script>
-var a = new Donate({
-  title: '如果你觉得我的文章非常有趣并且对你有用，请随意打赏！', // 可选参数，打赏标题
-  btnText: '赞赏', // 可选参数，打赏按钮文字
-  el: document.getElementById('donation_div'),
-  wechatImage: '/images/wechatpay.png',
-  wechatGZHImage: '/images/alipay.png'
-});
-</script>
+<!-- about页面的时间轴 -->
 
 
- 
-<!-- 添加赞赏 -->
+
 
 
 <div class="card">
@@ -277,13 +249,28 @@ var a = new Donate({
 
     </div>
 </div>
+
 </div>
                 
 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        <div class="card widget">
+
+
+  <article class="message is-success">
+    <div class="message-header">
+      敲黑板了！！！
+    </div>
+    <div class="message-body">
+      本博客是在icarus基础上，振兴怒改，JWen小改后完成的。
+    </div>
+  </article>
+
+</div>
     
         
 <div class="card widget">
@@ -318,7 +305,7 @@ var a = new Donate({
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        87
                     </p>
                 </div>
             </div>
@@ -328,7 +315,7 @@ var a = new Donate({
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -338,7 +325,7 @@ var a = new Donate({
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        2
                     </p>
                 </div>
             </div>
@@ -371,27 +358,7 @@ var a = new Donate({
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="http://twitter.com">
-                
-                    <!-- 增加社交链接自定义图片 -->
-                    
-                        <i class="fab fa-twitter"></i>
-                    
-                    <!-- 增加社交链接自定义图片 -->
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="http://dribbble.com">
-                
-                    <!-- 增加社交链接自定义图片 -->
-                    
-                        <i class="fab fa-dribbble"></i>
-                    
-                    <!-- 增加社交链接自定义图片 -->
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
                 
                     <!-- 增加社交链接自定义图片 -->
                     
@@ -405,6 +372,131 @@ var a = new Donate({
         
     </div>
 </div>
+    
+        <div class="card widget">
+<div class="content">
+	<div id="aplayer-ynoJwXXs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+		<script>
+
+			var options = {
+				"narrow": false,
+				"autoplay": true,
+				"showlrc":3,
+				"mode": "circulation",
+				"mutex": true,
+				"theme": "#e6d0b2",
+				"preload":"metadata",
+				"listmaxheight": "1013px",
+				"music":[
+
+			<!-- 循环添加音乐 -->
+			
+			
+				{"title":"Dear friends","author":"TRIPLANE","url":"https://dwla.github.io/BM/Dear friends-TRIPLANE.mp3","pic":"https://dwla.github.io/BM/Dear friends-TRIPLANE.jpg","lrc":"https://dwla.github.io/BM/Dear friends-TRIPLANE.lrc"},
+			
+			
+				{"title":"風になる","author":"つじあやの","url":"https://dwla.github.io/BM/風になる-つじあやの.mp3","pic":"https://dwla.github.io/BM/風になる-つじあやの.jpg","lrc":"https://dwla.github.io/BM/風になる-つじあやの.lrc"},
+			
+			
+				{"title":"赴鸿门","author":"CRITTY","url":"https://czxb.github.io/musics/赴鸿门.mp3","pic":"https://czxb.github.io/musics/赴鸿门.jpeg","lrc":"https://czxb.github.io/musics/赴鸿门.lrc"},
+			
+			<!-- 循环添加音乐 -->
+			
+			]};
+					options.element = document.getElementById("aplayer-ynoJwXXs");
+					var ap = new APlayer(options);
+			    	window.aplayers || (window.aplayers = []);
+					window.aplayers.push(ap);
+		</script>
+	</div>
+	</div>
+
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            我的好朋友
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="http://www.czxa.top/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">振兴</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">http://www.czxa.top/</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/振兴/">
+            <span class="level-start">
+                <span class="level-item">振兴</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/明诚堂/">
+            <span class="level-start">
+                <span class="level-item">明诚堂</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/杂货铺/">
+            <span class="level-start">
+                <span class="level-item">杂货铺</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">73</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/杂货铺/网站爬取/">
+            <span class="level-start">
+                <span class="level-item">网站爬取</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/Stata/" style="font-size: 10px;">Stata</a>
+    </div>
+</div>
+
     
         
 <div class="card widget" id="toc">
@@ -439,481 +531,14 @@ var a = new Donate({
 </div>
 
     
-        
-
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            链接
-        </h3>
-        <ul class="menu-list">
-        
-            <li>
-                <a class="level is-mobile" href="https://hexo.io" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">Hexo</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">https://hexo.io</span>
-                    </span>
-                </a>
-            </li>
-        
-            <li>
-                <a class="level is-mobile" href="https://github.com/dwla" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">PPOffice</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">https://github.com/dwla</span>
-                    </span>
-                </a>
-            </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-
-
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                分类
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/推文/">
-            <span class="level-start">
-                <span class="level-item">推文</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/笔记/">
-            <span class="level-start">
-                <span class="level-item">笔记</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/网站爬取/">
-            <span class="level-start">
-                <span class="level-item">网站爬取</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            标签云
-        </h3>
-        <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Stata/" style="font-size: 20px;">Stata</a>
-    </div>
-</div>
-
-    
     
         <div class="column-right-shadow is-hidden-widescreen ">
         
-            <div class="card widget">
-
-
-  <article class="message is-warning">
-    <div class="message-header">
-      敲黑板了！！！
-    </div>
-    <div class="message-body">
-      又是一学期的考试周！计量课上的小伙伴可以在这里下载到我制作的所有讲义：https://www.czxa.top/bklib/Handouts/
-    </div>
-  </article>
-
-</div>
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/posts/20262/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://dwla.github.io/BP/2018120201.jpg" alt="Hexo拓展用法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-03T07:34:00.000Z">2018-11-03</time></div>
-                    <a href="/posts/20262/" class="has-link-black-ter is-size-6">Hexo拓展用法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/posts/37106/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.unsplash.com/photo-1537351847780-8a3d23f02a9c?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=4ab9a9178ada68a5d8b5b4b4e5acf120&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="mdx-deck制作幻灯片">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-19T13:14:00.000Z">2018-09-19</time></div>
-                    <a href="/posts/37106/" class="has-link-black-ter is-size-6">mdx-deck制作幻灯片</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/posts/33416/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.unsplash.com/photo-1524863296271-2f0063cf8ede?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=aab58f469f3300fb5807d15b1caea799&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="暨南大学教务处排课选课表爬取">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-22T10:14:00.000Z">2018-07-22</time></div>
-                    <a href="/posts/33416/" class="has-link-black-ter is-size-6">暨南大学教务处排课选课表爬取</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/网站爬取/">网站爬取</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            归档
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">十一月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/09/">
-                <span class="level-start">
-                    <span class="level-item">九月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/07/">
-                <span class="level-start">
-                    <span class="level-item">七月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/04/">
-                <span class="level-start">
-                    <span class="level-item">四月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <ul class="menu-list">
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Html/">
-                        <span class="level-start">
-                            <span class="level-item">Html</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Markdown/">
-                        <span class="level-start">
-                            <span class="level-item">Markdown</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Stata/">
-                        <span class="level-start">
-                            <span class="level-item">Stata</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-        
         </div>
     
 </div>
 
                 
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
-    
-        <div class="card widget">
-
-
-  <article class="message is-warning">
-    <div class="message-header">
-      敲黑板了！！！
-    </div>
-    <div class="message-body">
-      又是一学期的考试周！计量课上的小伙伴可以在这里下载到我制作的所有讲义：https://www.czxa.top/bklib/Handouts/
-    </div>
-  </article>
-
-</div>
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/posts/20262/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://dwla.github.io/BP/2018120201.jpg" alt="Hexo拓展用法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-03T07:34:00.000Z">2018-11-03</time></div>
-                    <a href="/posts/20262/" class="has-link-black-ter is-size-6">Hexo拓展用法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/posts/37106/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.unsplash.com/photo-1537351847780-8a3d23f02a9c?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=4ab9a9178ada68a5d8b5b4b4e5acf120&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="mdx-deck制作幻灯片">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-19T13:14:00.000Z">2018-09-19</time></div>
-                    <a href="/posts/37106/" class="has-link-black-ter is-size-6">mdx-deck制作幻灯片</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/笔记/">笔记</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/posts/33416/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.unsplash.com/photo-1524863296271-2f0063cf8ede?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=aab58f469f3300fb5807d15b1caea799&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="暨南大学教务处排课选课表爬取">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-22T10:14:00.000Z">2018-07-22</time></div>
-                    <a href="/posts/33416/" class="has-link-black-ter is-size-6">暨南大学教务处排课选课表爬取</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/网站爬取/">网站爬取</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            归档
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">十一月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/09/">
-                <span class="level-start">
-                    <span class="level-item">九月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/07/">
-                <span class="level-start">
-                    <span class="level-item">七月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/04/">
-                <span class="level-start">
-                    <span class="level-item">四月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <ul class="menu-list">
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Html/">
-                        <span class="level-start">
-                            <span class="level-item">Html</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Markdown/">
-                        <span class="level-start">
-                            <span class="level-item">Markdown</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Stata/">
-                        <span class="level-start">
-                            <span class="level-item">Stata</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-    
-</div>
-
             </div>
         </div>
     </section>
@@ -928,7 +553,7 @@ var a = new Donate({
                 </a>
                 <p class="is-size-7">
                 &copy; 2018 JWen&nbsp;
-                <a href="https://www.jnu.edu.cn/" target="_blank">暨南大学</a> & <a href="https://ec.jnu.edu.cn/" target="_blank">经济学院·统计学</a><br>
+                <a href="https://www.jnu.edu.cn/" target="_blank">暨南大学</a> & <a href="https://ec.jnu.edu.cn/" target="_blank">经济学院·经济统计学</a><br>
                 主题：<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 </p>
             </div>
@@ -938,35 +563,35 @@ var a = new Donate({
                 
                 
                 <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
-                        
-                            <!-- 增加社交链接自定义图片 -->
-                            
-                                <i class="fab fa-creative-commons"></i>
-                            
-                            <!-- 增加社交链接自定义图片 -->
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-                        
-                            <!-- 增加社交链接自定义图片 -->
-                            
-                                <i class="fab fa-creative-commons-by"></i>
-                            
-                            <!-- 增加社交链接自定义图片 -->
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                    <a class="button is-white is-large" target="_blank" title="Github" href="http://github.com/dwla">
                         
                             <!-- 增加社交链接自定义图片 -->
                             
                                 <i class="fab fa-github"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="微信" href="/wechat">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-weixin"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="RSS" href="/atom.xml">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fas fa-rss"></i>
                             
                             <!-- 增加社交链接自定义图片 -->
                         

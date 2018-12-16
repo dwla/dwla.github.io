@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>数据挖掘组合分析小记 - JWen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="JWen   我们希望学生的学习成正态分布，但是事实上更多的是伽马分布，只要不是零点的德尔塔分布就行了。 摘自孤狼的空间  今天数据挖掘，雅文老师说的一句：“哪有用UCI跑一下程序就算好的了？”。背后一凉，天哪，被发现了:( 借此警醒一下近来上课在前排钓鱼的自己。">
+<meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据挖掘组合分析小记">
+<meta property="og:url" content="https://dwla.github.io/posts/22076/index.html">
+<meta property="og:site_name" content="JWen">
+<meta property="og:description" content="JWen   我们希望学生的学习成正态分布，但是事实上更多的是伽马分布，只要不是零点的德尔塔分布就行了。 摘自孤狼的空间  今天数据挖掘，雅文老师说的一句：“哪有用UCI跑一下程序就算好的了？”。背后一凉，天哪，被发现了:( 借此警醒一下近来上课在前排钓鱼的自己。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018042801.jpg?raw=true">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018042501.png?raw=true">
+<meta property="og:updated_time" content="2018-12-16T04:59:45.416Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据挖掘组合分析小记">
+<meta name="twitter:description" content="JWen   我们希望学生的学习成正态分布，但是事实上更多的是伽马分布，只要不是零点的德尔塔分布就行了。 摘自孤狼的空间  今天数据挖掘，雅文老师说的一句：“哪有用UCI跑一下程序就算好的了？”。背后一凉，天哪，被发现了:( 借此警醒一下近来上课在前排钓鱼的自己。">
+<meta name="twitter:image" content="https://github.com/dwla/BP/blob/master/2018042801.jpg?raw=true">
+
+
+
+
+
+<link rel="icon" href="/images/虎.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 添加赞赏的css -->
+<link rel="stylesheet" href="/css/vdonate.css">
+<!-- 添加赞赏的css -->
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/虎.svg" alt="数据挖掘组合分析小记" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/about">关于</a>
+                
+                <a class="navbar-item" href="/mymusic">音乐</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="我的GitHub" href="http://github.com/dwla">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><!-- about页面的时间轴 -->
+
+             
+
+<!-- about页面的时间轴 -->
+
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-04-28T09:00:00.000Z">2018-04-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/杂货铺/">杂货铺</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                数据挖掘组合分析小记
+            
+        </h1>
+
+        <div class="content">
+            <h6 align="center"><a href="https://dwla.github.io">JWen</a></h6>
+
+<blockquote>
+<p>我们希望学生的学习成正态分布，但是事实上更多的是伽马分布，只要不是零点的德尔塔分布就行了。</p>
+<h6 align="right">摘自孤狼的空间</h6>
+</blockquote>
+<p>今天数据挖掘，雅文老师说的一句：“<strong>哪有用UCI跑一下程序就算好的了</strong>？”。背后一凉，天哪，被发现了:(</p>
+<p>借此警醒一下近来上课在前排钓鱼的自己。</p>
+<p><img src="https://github.com/dwla/BP/blob/master/2018042801.jpg?raw=true" alt=""><br><a id="more"></a></p>
+<div id="aplayer-SRvwWtor" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+				<pre class="aplayer-lrc-content">[00:01.58]纯音乐，请欣赏</pre>
+			</div>
+			<script>
+				var ap = new APlayer({
+					element: document.getElementById("aplayer-SRvwWtor"),
+					narrow: false,
+					autoplay: true,
+					showlrc: 2,
+					music: {
+						title: "Es ware schon gewesen (It Could Have Been)",
+						author: "Ulli Bögershausen",
+						url: "https://github.com/dwla/BM/blob/master/2018070908.mp3?raw=true",
+						pic: "https://github.com/dwla/BM/blob/master/2018070908.jpg?raw=true",
+					}
+				});
+				window.aplayers || (window.aplayers = []);
+				window.aplayers.push(ap);
+			</script>
+<p>一下任选其一</p>
+<h1 id="任务一"><a href="#任务一" class="headerlink" title="任务一"></a>任务一</h1><h2 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1 问题描述"></a>1 问题描述</h2><p>根据R主页task view中maching learning中包的提示，通过某个示例，完成不少于3种方法的随机森林算法（或bagging，或boosting）比较。</p>
+<p>（略）</p>
+<h1 id="任务二"><a href="#任务二" class="headerlink" title="任务二"></a>任务二</h1><h2 id="1-问题描述-1"><a href="#1-问题描述-1" class="headerlink" title="1 问题描述"></a>1 问题描述</h2><p>根据组合算法的学习，通过实例完成不少于3种单独的分类算法和组合分类器算法的比较。</p>
+<h2 id="2-钞票认证数据集"><a href="#2-钞票认证数据集" class="headerlink" title="2 钞票认证数据集"></a>2 钞票认证数据集</h2><blockquote>
+<p>注：本来想选取<code>rattle</code>包中的<code>audit</code>数据集，但是考虑到书中使用的组合方法的示例都是数值型变量，考虑到使用<code>iris</code>以外的数据集，于是使用<strong>钞票认证数据集</strong>，（后来发现数值型以外的变量也是可以的。）</p>
+</blockquote>
+<p>本文使用<a href="http://archive.ics.uci.edu/ml/datasets/banknote+authentication" target="_blank" rel="noopener">钞票认证数据集</a>（banknote authentication Data Set）数据集实现装袋、提升和随机森林三种算法比较。</p>
+<p>数据是从真正和伪造的钞票样本中提取的图像中提取的。为了数字化，使用通常用于印刷检查的工业相机。最终的图像有400x400像素。由于物镜和距被研究物体的距离，获得分辨率约为660dpi的灰度图像。小波变换工具用于从图像中提取特征。</p>
+<p>该数据集中包含如下五个属性信息：</p>
+<ul>
+<li>variance：小波变换图像的方差（连续）</li>
+<li>skewness：小​​波变换图像的偏度（连续）</li>
+<li>curtosis：小波变换图像（连续）</li>
+<li>entropy：图像熵（连续）</li>
+<li>class：类（整数）</li>
+</ul>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rm(list = ls())</span><br><span class="line">setwd(<span class="hljs-string">"F:/"</span>)</span><br><span class="line">data &lt;- read.table(<span class="hljs-string">"data_banknote_authentication.txt"</span>, sep = <span class="hljs-string">","</span>)</span><br><span class="line">colnames(data) &lt;- c(<span class="hljs-string">"variance"</span>,<span class="hljs-string">"skewness"</span>, <span class="hljs-string">"curtosis"</span>, <span class="hljs-string">"entropy"</span>, <span class="hljs-string">"class"</span>)</span><br><span class="line">data[,<span class="hljs-number">5</span>] &lt;- as.factor(data[,<span class="hljs-number">5</span>]) <span class="hljs-comment"># 将class设为因子</span></span><br><span class="line">set.seed(<span class="hljs-number">1</span>)</span><br><span class="line">sub &lt;- c(sample(<span class="hljs-number">1</span>:nrow(data), nrow(data)*<span class="hljs-number">0.7</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="3-单一决策树分类器"><a href="#3-单一决策树分类器" class="headerlink" title="3 单一决策树分类器"></a>3 单一决策树分类器</h2><p>使用<code>rpart</code>包中的<code>rpart()</code>构建单一决策树分类器：<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(rpart)</span><br><span class="line">rpart1 &lt;- rpart(formula = class ~ ., data = data[sub,],</span><br><span class="line">                control = rpart.control(minsplit = <span class="hljs-number">2</span>, cp = <span class="hljs-number">0</span>, xval = <span class="hljs-number">0</span>))</span><br><span class="line">predrpart1 &lt;- predict(rpart1, data[-sub,])</span><br><span class="line">result1 &lt;- rep(<span class="hljs-number">0</span>, nrow(predrpart1))</span><br><span class="line"><span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:nrow(predrpart1)) &#123;</span><br><span class="line">  <span class="hljs-keyword">if</span> (predrpart1[i,<span class="hljs-number">1</span>] &gt; predrpart1[i,<span class="hljs-number">2</span>]) &#123;</span><br><span class="line">    result1[i] &lt;- <span class="hljs-number">0</span></span><br><span class="line">  &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">    result1[i] &lt;- <span class="hljs-number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">predrpart1 &lt;- result1</span><br></pre></td></tr></table></figure></p>
+<p>使用<code>table(data[-sub,5], predrpart1)</code>可以看到在测试集中错误分类的列联表，可以算得单一决策数据分类器的误差为0.0169903，准确率为$$(216+189)/(216+5+2+189) \approx 0.9830097$$</p>
+<blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; table(data[-sub,<span class="hljs-number">5</span>], predrpart1)</span><br><span class="line">&gt;    predrpart1</span><br><span class="line">&gt;       <span class="hljs-number">0</span>   <span class="hljs-number">1</span></span><br><span class="line">&gt;   <span class="hljs-number">0</span> <span class="hljs-number">216</span>   <span class="hljs-number">5</span></span><br><span class="line">&gt;   <span class="hljs-number">1</span>   <span class="hljs-number">2</span> <span class="hljs-number">189</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="4-装袋"><a href="#4-装袋" class="headerlink" title="4 装袋"></a>4 装袋</h2><h3 id="4-1-ipred包中的ipredbagg-函数"><a href="#4-1-ipred包中的ipredbagg-函数" class="headerlink" title="4.1 ipred包中的ipredbagg()函数"></a>4.1 <code>ipred</code>包中的<code>ipredbagg()</code>函数</h3><p>使用<code>ipred</code>包实行装袋算法如下：<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(ipred)</span><br><span class="line">set.seed(<span class="hljs-number">1</span>) <span class="hljs-comment"># 否则，每次使用结果有差异</span></span><br><span class="line">bagging1 &lt;- ipredbagg(data[,<span class="hljs-number">5</span>], X = data[,<span class="hljs-number">1</span>:<span class="hljs-number">4</span>], nbagg = <span class="hljs-number">25</span>,</span><br><span class="line">                      control = rpart.control(minsplit = <span class="hljs-number">2</span>, cp = <span class="hljs-number">0</span>, xval = <span class="hljs-number">0</span>),</span><br><span class="line">                      comb = <span class="hljs-literal">NULL</span>, coob = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">print(bagging1)</span><br><span class="line">summary(bagging1)</span><br><span class="line">predbagging1 &lt;- predict(bagging1, data[-sub,<span class="hljs-number">1</span>:<span class="hljs-number">4</span>], type = <span class="hljs-string">"class"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>使用<code>table(data[-sub,5], predbagging1)</code>可以看到袋外错误分类的列联表，可以算得此装袋算法的误差为0.0145631，此装袋算法的准确率为$$(217+189)/(217+4+2+189) \approx 0.9854369$$</p>
+<blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; table(data[-sub,<span class="hljs-number">5</span>], predbagging1)</span><br><span class="line">&gt;    predbagging1</span><br><span class="line">&gt;       <span class="hljs-number">0</span>   <span class="hljs-number">1</span></span><br><span class="line">&gt;   <span class="hljs-number">0</span> <span class="hljs-number">217</span>   <span class="hljs-number">4</span></span><br><span class="line">&gt;   <span class="hljs-number">1</span>   <span class="hljs-number">2</span> <span class="hljs-number">189</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="4-2-adabag包中的bagging-函数"><a href="#4-2-adabag包中的bagging-函数" class="headerlink" title="4.2 adabag包中的bagging()函数"></a>4.2 <code>adabag</code>包中的<code>bagging()</code>函数</h3><p>我们也可以使用<code>adabag</code>包实现装袋：<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(adabag)</span><br><span class="line">set.seed(<span class="hljs-number">1</span>) <span class="hljs-comment"># 否则，每次使用结果有差异。</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 而且同为set.seed(1)，这里结果和ipredbagg中结果不同</span></span><br><span class="line"><span class="hljs-comment"># 即便bagging中参数mfinal建立25个模型，但和ipredbagg的结果还是没有可比性的，</span></span><br><span class="line"><span class="hljs-comment"># 不过生成决策树的参数都是一样的minsplit = 2, cp = 0, xval = 0</span></span><br><span class="line">bagging2 &lt;- bagging(class ~ ., data = data[sub,], mfinal = <span class="hljs-number">25</span>,</span><br><span class="line">                    control = rpart.control(minsplit = <span class="hljs-number">2</span>, cp = <span class="hljs-number">0</span>, xval = <span class="hljs-number">0</span>))</span><br><span class="line">bagging2</span><br><span class="line">predbagging2 &lt;- predict.bagging(bagging2, newdata = data[-sub,])</span><br></pre></td></tr></table></figure></p>
+<p>使用<code>bagging2$importance</code>可以看到，构建的袋装算法模型在钞票认证的四个变量中，重要性依次为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">重要性次序</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">变量名</td>
+<td style="text-align:center"><code>variance</code></td>
+<td style="text-align:center"><code>skewness</code></td>
+<td style="text-align:center"><code>curtosis</code></td>
+<td style="text-align:center"><code>entropy</code></td>
+</tr>
+<tr>
+<td style="text-align:center">重要性百分比（%）</td>
+<td style="text-align:center">62.023009</td>
+<td style="text-align:center">22.379616</td>
+<td style="text-align:center">13.608453</td>
+<td style="text-align:center">1.988922</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; names(bagging2)</span><br><span class="line">&gt; [<span class="hljs-number">1</span>] <span class="hljs-string">"formula"</span>    <span class="hljs-string">"trees"</span>      <span class="hljs-string">"votes"</span>      <span class="hljs-string">"prob"</span>       <span class="hljs-string">"class"</span>     </span><br><span class="line">&gt; [<span class="hljs-number">6</span>] <span class="hljs-string">"samples"</span>    <span class="hljs-string">"importance"</span> <span class="hljs-string">"terms"</span>      <span class="hljs-string">"call"</span>      </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>使用<code>predbagging2$error</code>可以看到装袋算法的误差为0.01456311，使用<code>predbagging2$confusion</code>可以看到装袋算法的准确率为$$(217+189)/(217+2+4+189) \approx 0.9854369$$（对比4.1中的预测结果，很有趣的是0误判成1，和1误判成0的个数正好相反。）</p>
+<blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; names(predbagging2)</span><br><span class="line">&gt; [<span class="hljs-number">1</span>] <span class="hljs-string">"formula"</span>   <span class="hljs-string">"votes"</span>     <span class="hljs-string">"prob"</span>      <span class="hljs-string">"class"</span>     <span class="hljs-string">"confusion"</span> <span class="hljs-string">"error"</span>    </span><br><span class="line">&gt; &gt; predbagging2$error</span><br><span class="line">&gt; [<span class="hljs-number">1</span>] <span class="hljs-number">0.01456311</span></span><br><span class="line">&gt; &gt; predbagging2$confusion</span><br><span class="line">&gt;                Observed Class</span><br><span class="line">&gt; Predicted Class   <span class="hljs-number">0</span>   <span class="hljs-number">1</span></span><br><span class="line">&gt;               <span class="hljs-number">0</span> <span class="hljs-number">217</span>   <span class="hljs-number">2</span></span><br><span class="line">&gt;               <span class="hljs-number">1</span>   <span class="hljs-number">4</span> <span class="hljs-number">189</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="5-提升"><a href="#5-提升" class="headerlink" title="5 提升"></a>5 提升</h2><h3 id="5-1-adabag包中的boosting-函数"><a href="#5-1-adabag包中的boosting-函数" class="headerlink" title="5.1 adabag包中的boosting()函数"></a>5.1 <code>adabag</code>包中的<code>boosting()</code>函数</h3><p>使用<code>adabag</code>包中的<code>boosting()</code>实现提升算法：<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(adabag)</span><br><span class="line">set.seed(<span class="hljs-number">1</span>)</span><br><span class="line">boosting1 &lt;- boosting(class ~ ., data = data[sub,], mfinal = <span class="hljs-number">25</span>,</span><br><span class="line">                      boos = <span class="hljs-literal">TRUE</span>, coeflearn = <span class="hljs-string">"Breiman"</span>,</span><br><span class="line">                      control = rpart.control(minsplit = <span class="hljs-number">2</span>, cp = <span class="hljs-number">0</span>, xval = <span class="hljs-number">0</span>))</span><br><span class="line">boosting1</span><br><span class="line"><span class="hljs-comment"># importanceplot(boosting1)可以画出四个变量重要性的条形图</span></span><br><span class="line">predboosting1 &lt;- predict.boosting(boosting1, newdata = data[-sub,])</span><br></pre></td></tr></table></figure></p>
+<p>使用<code>boosting1$importance</code>可以看到，在钞票认证的四个变量中，重要性依次为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">重要性次序</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">变量名</td>
+<td style="text-align:center"><code>variance</code></td>
+<td style="text-align:center"><code>skewness</code></td>
+<td style="text-align:center"><code>curtosis</code></td>
+<td style="text-align:center"><code>entropy</code></td>
+</tr>
+<tr>
+<td style="text-align:center">重要性百分比（%）</td>
+<td style="text-align:center">43.991140</td>
+<td style="text-align:center">31.629805</td>
+<td style="text-align:center">21.354262</td>
+<td style="text-align:center">3.024794</td>
+</tr>
+</tbody>
+</table>
+<p>和前文的<code>bagging()</code>装袋算法相比，提升算法实现结果中四个变量的重要性排序没有改变，不过提升算法考虑<strong>自适应改变训练样本分布，使得基分类器聚焦在那些很难分类的样本上</strong>后，装袋算法有点过分夸大<code>variance</code>变量在钞票认证中的重要性。</p>
+<blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; names(boosting1)</span><br><span class="line">&gt; [<span class="hljs-number">1</span>] <span class="hljs-string">"formula"</span>    <span class="hljs-string">"trees"</span>      <span class="hljs-string">"weights"</span>    <span class="hljs-string">"votes"</span>      <span class="hljs-string">"prob"</span>      </span><br><span class="line">&gt; [<span class="hljs-number">6</span>] <span class="hljs-string">"class"</span>      <span class="hljs-string">"importance"</span> <span class="hljs-string">"terms"</span>      <span class="hljs-string">"call"</span>      </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>使用<code>predboosting1$error</code>可以看到提升算法的误差为0.007281553（低于上文中的装袋误差0.01456311），使用<code>predboosting1$confusion</code>可以看到提升算法的准确率为$$(219+190)/(219+1+2+190) \approx 0.9927184$$<br>（比上文中的装袋算法的准确率0.9854369要高，显然，<strong>提升算法相对于袋装算法，基分类器能聚焦在那些很难分类的样本上</strong>，提升算法过程中越往后的决策树，对难分类的样本分的就越来越准确。）</p>
+<blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; names(predboosting1)</span><br><span class="line">&gt; [<span class="hljs-number">1</span>] <span class="hljs-string">"formula"</span>   <span class="hljs-string">"votes"</span>     <span class="hljs-string">"prob"</span>      <span class="hljs-string">"class"</span>     <span class="hljs-string">"confusion"</span> <span class="hljs-string">"error"</span>    </span><br><span class="line">&gt; &gt; predboosting1$error</span><br><span class="line">&gt; [<span class="hljs-number">1</span>] <span class="hljs-number">0.007281553</span></span><br><span class="line">&gt; &gt; predboosting1$confusion</span><br><span class="line">&gt;                Observed Class</span><br><span class="line">&gt; Predicted Class   <span class="hljs-number">0</span>   <span class="hljs-number">1</span></span><br><span class="line">&gt;               <span class="hljs-number">0</span> <span class="hljs-number">219</span>   <span class="hljs-number">1</span></span><br><span class="line">&gt;               <span class="hljs-number">1</span>   <span class="hljs-number">2</span> <span class="hljs-number">190</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="6-随机森林"><a href="#6-随机森林" class="headerlink" title="6 随机森林"></a>6 随机森林</h2><h3 id="6-1-randmForest包中的randmForest-函数"><a href="#6-1-randmForest包中的randmForest-函数" class="headerlink" title="6.1 randmForest包中的randmForest()函数"></a>6.1 <code>randmForest</code>包中的<code>randmForest()</code>函数</h3><p>使用<code>randmForest</code>包中的<code>randmForest()</code>实现随机森林算法：<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(randomForest)</span><br><span class="line">set.seed(<span class="hljs-number">1</span>)</span><br><span class="line">randomForest1 &lt;- randomForest(class ~ ., data = data[sub,], ntree=<span class="hljs-number">500</span>,</span><br><span class="line">                              importance = <span class="hljs-literal">TRUE</span>, proximity = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">randomForest1</span><br><span class="line"><span class="hljs-comment"># varImpPlot(randomForest1)作出变量重要性柱形图</span></span><br><span class="line">predrandomForest1 &lt;- predict(randomForest1, data[-sub,<span class="hljs-number">1</span>:<span class="hljs-number">4</span>], type = <span class="hljs-string">"class"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>使用<code>table(data[-sub,5], predrandomForest1)</code>可以看到测试集错误分类的列联表，可以算得此随机森林算法的误差为0.01456311，此随机森林算法的准确率为$$(219+190)/(219+2+1+190) \approx 0.9927184$$<br>（和上文中的提升算法的准确率一样，对比5.1中的预测结果，很有趣的是0误判成1，和1误判成0的个数正好相反。）</p>
+<blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; table(data[-sub,<span class="hljs-number">5</span>], predrandomForest1)</span><br><span class="line">&gt;    predrandomForest1</span><br><span class="line">&gt;       <span class="hljs-number">0</span>   <span class="hljs-number">1</span></span><br><span class="line">&gt;   <span class="hljs-number">0</span> <span class="hljs-number">219</span>   <span class="hljs-number">2</span></span><br><span class="line">&gt;   <span class="hljs-number">1</span>   <span class="hljs-number">1</span> <span class="hljs-number">190</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>这里训练集中的得出的随机森林算法还有很多有趣结果。使用<code>randomForest1$confusion</code>可以看出对于<code>0</code>类的分类错误率要高于<code>1</code>类（也可能是因为训练集中<code>0</code>类个数多于<code>1</code>类个数）。使用<code>randomForest1$importance</code>可以看出重要程度排序从大到小为<code>variance</code>、<code>skewness</code>、<code>curtosis</code>、<code>entropy</code>。使用<code>randomForest1$importanceSD</code>看出，从<code>MeanDecreaseAccuracy</code>角度，<code>skewness</code>的重要程度标准差大于<code>variance</code>。</p>
+<blockquote>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; names(randomForest1)</span><br><span class="line">&gt;  [<span class="hljs-number">1</span>] <span class="hljs-string">"call"</span>            <span class="hljs-string">"type"</span>            <span class="hljs-string">"predicted"</span>       <span class="hljs-string">"err.rate"</span>       </span><br><span class="line">&gt;  [<span class="hljs-number">5</span>] <span class="hljs-string">"confusion"</span>       <span class="hljs-string">"votes"</span>           <span class="hljs-string">"oob.times"</span>       <span class="hljs-string">"classes"</span>        </span><br><span class="line">&gt;  [<span class="hljs-number">9</span>] <span class="hljs-string">"importance"</span>      <span class="hljs-string">"importanceSD"</span>    <span class="hljs-string">"localImportance"</span> <span class="hljs-string">"proximity"</span>      </span><br><span class="line">&gt; [<span class="hljs-number">13</span>] <span class="hljs-string">"ntree"</span>           <span class="hljs-string">"mtry"</span>            <span class="hljs-string">"forest"</span>          <span class="hljs-string">"y"</span>              </span><br><span class="line">&gt; [<span class="hljs-number">17</span>] <span class="hljs-string">"test"</span>            <span class="hljs-string">"inbag"</span>           <span class="hljs-string">"terms"</span>          </span><br><span class="line">&gt; &gt; randomForest1$confusion</span><br><span class="line">&gt;     <span class="hljs-number">0</span>   <span class="hljs-number">1</span> class.error</span><br><span class="line">&gt; <span class="hljs-number">0</span> <span class="hljs-number">535</span>   <span class="hljs-number">6</span> <span class="hljs-number">0.011090573</span></span><br><span class="line">&gt; <span class="hljs-number">1</span>   <span class="hljs-number">3</span> <span class="hljs-number">416</span> <span class="hljs-number">0.007159905</span></span><br><span class="line">&gt; &gt; randomForest1$importance</span><br><span class="line">&gt;                   <span class="hljs-number">0</span>         <span class="hljs-number">1</span> MeanDecreaseAccuracy MeanDecreaseGini</span><br><span class="line">&gt; variance <span class="hljs-number">0.23468886</span> <span class="hljs-number">0.4103750</span>           <span class="hljs-number">0.31108829</span>        <span class="hljs-number">262.60130</span></span><br><span class="line">&gt; skewness <span class="hljs-number">0.17063153</span> <span class="hljs-number">0.2898289</span>           <span class="hljs-number">0.22239481</span>        <span class="hljs-number">110.80420</span></span><br><span class="line">&gt; curtosis <span class="hljs-number">0.10500149</span> <span class="hljs-number">0.1277492</span>           <span class="hljs-number">0.11483402</span>         <span class="hljs-number">72.68459</span></span><br><span class="line">&gt; entropy  <span class="hljs-number">0.03002106</span> <span class="hljs-number">0.0486109</span>           <span class="hljs-number">0.03806804</span>         <span class="hljs-number">25.77540</span></span><br><span class="line">&gt; &gt; randomForest1$importanceSD</span><br><span class="line">&gt;                    <span class="hljs-number">0</span>           <span class="hljs-number">1</span> MeanDecreaseAccuracy</span><br><span class="line">&gt; variance <span class="hljs-number">0.002396135</span> <span class="hljs-number">0.003078341</span>          <span class="hljs-number">0.002190501</span></span><br><span class="line">&gt; skewness <span class="hljs-number">0.003146420</span> <span class="hljs-number">0.003745599</span>          <span class="hljs-number">0.002732676</span></span><br><span class="line">&gt; curtosis <span class="hljs-number">0.001949425</span> <span class="hljs-number">0.002052367</span>          <span class="hljs-number">0.001414219</span></span><br><span class="line">&gt; entropy  <span class="hljs-number">0.001827963</span> <span class="hljs-number">0.002253897</span>          <span class="hljs-number">0.001545552</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7 总结"></a>7 总结</h2><p>决策树分类器与三种组合方法的准确率比较</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">决策树（%）</th>
+<th style="text-align:center">装袋（%）</th>
+<th style="text-align:center">提升（%）</th>
+<th style="text-align:center">随机森林（%）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0.9830097</td>
+<td style="text-align:center">0.9854369</td>
+<td style="text-align:center">0.9927184</td>
+<td style="text-align:center">0.9927184</td>
+</tr>
+</tbody>
+</table>
+<h2 id="附注"><a href="#附注" class="headerlink" title="附注"></a>附注</h2><ul>
+<li>交叉验证的次数可以在<code>control = rpart.control(minsplit = 2, cp = 0, xval = 0)</code>中的<code>xval</code>调控。</li>
+<li>本文决策树、装袋、提升和随机森林都没有进行参数的优化，相当于固定参数前提下，比较四种算法的优劣。</li>
+<li><code>adabag</code>包中的<code>plot.margins()</code>和<code>plot.errorevol</code>使用如下：<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">windows()</span><br><span class="line">par(mfcol = c(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>))</span><br><span class="line"><span class="hljs-comment"># 装袋算法</span></span><br><span class="line">bagging2.margins &lt;- margins(bagging2, data[sub,])</span><br><span class="line">predbagging2.margins &lt;- margins(predbagging2, data[-sub,])</span><br><span class="line">plot.margins(predbagging2.margins, bagging2.margins) <span class="hljs-comment"># 修改一下plot.margins函数的源代码，原来的标题实在是太大了</span></span><br><span class="line"></span><br><span class="line">bagging2.evol.train &lt;- errorevol(bagging2, data[sub,])</span><br><span class="line">bagging2.evol.test &lt;- errorevol(bagging2, data[-sub,])</span><br><span class="line">plot.errorevol(bagging2.evol.test, bagging2.evol.train)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 提升算法</span></span><br><span class="line">boosting1.margins &lt;- margins(boosting1, data[sub,])</span><br><span class="line">predboosting1.margins &lt;- margins(predboosting1, data[-sub,])</span><br><span class="line">plot.margins(predboosting1.margins, boosting1.margins)</span><br><span class="line"></span><br><span class="line">boosting1.evol.train &lt;- errorevol(boosting1, data[sub,])</span><br><span class="line">boosting1.evol.test &lt;- errorevol(boosting1, data[-sub,])</span><br><span class="line">plot.errorevol(boosting1.evol.test, boosting1.evol.train)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://github.com/dwla/BP/blob/master/2018042501.png?raw=true" alt="图片"></p>
+<blockquote>
+<p>误差图是看两条线的一致性和稳定性，而边际图的话只是看两条线是不是趋势相近（可以看出对训练集拟合的模型泛化性能如何），两个边际图相比较好像没啥意义。两个误差图是可以比较的，单个误差图是指25个树（横轴），累计的误差变化，随着树的个数增加，误差是否会减小，比如左下的图，随着树的增加误差是变动很大的，几乎没有下降，而右下的图，随着树的增加，误差有明显的下降趋势。</p>
+</blockquote>
+<blockquote>
+<p>左下方是装袋，误差的变化不是很稳定。而右下方是提升，误差就有一段明显的下降趋势。左下方，其实装袋方法是随着个数越多应该是更准才对的，可是个数为25时误差仍层次不齐，粗略解释为解：上面的装袋并没有学习到数据的特征，树设置的精细一些，cp惩罚不要太大，树的长度更长一些。</p>
+</blockquote>
+<ul>
+<li>对于<code>adabag</code>包中的<code>bagging.cv()</code>和<code>boosting.cv()</code>的使用，可以针对训练数据集，参数设置一个循环，用<code>bagging.cv()</code>和<code>boosting.cv()</code>的结果<code>error</code>最小来选择较好的参数，然后用于训练数据集的建模中，之后再应用在测试集上。（未完待续）</li>
+</ul>
+<h1 id="任务三"><a href="#任务三" class="headerlink" title="任务三"></a>任务三</h1><h2 id="1-问题描述-2"><a href="#1-问题描述-2" class="headerlink" title="1 问题描述"></a>1 问题描述</h2><p>自己编写bagging或boosting的抽样算法，并将其运用到其他单独分类器上，以构造组合分类器。</p>
+<p>（略）</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/R/">R</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/26477/">
+                <i class="level-item material-icons">←</i>
+                <span class="level-item">杂谈录（二）</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/22065/">
+                <span class="level-item">苦练七十二变，笑对八十一难——感悟西游文化</span>
+                <i class="level-item material-icons">→</i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!-- about页面的时间轴 -->
+
+<!-- about页面的时间轴 -->
+
+
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'Nnd1E5DgoLY80jdfYHWpIeGP-gzGzoHsz',
+        app_key: 'Dkrf5Yuul64yJUJXN3iMXIvl',
+        placeholder: '在这里评论～'
+    });
+</script>
+
+    </div>
+</div>
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        <div class="card widget">
+
+
+  <article class="message is-success">
+    <div class="message-header">
+      敲黑板了！！！
+    </div>
+    <div class="message-body">
+      本博客是在icarus基础上，振兴怒改，JWen小改后完成的。
+    </div>
+  </article>
+
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/虎.svg" alt="JWen">
+                    
+                    <p class="is-size-4 is-block">
+                        JWen
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        求生中
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>中国 · 广州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        87
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/dwla">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/dwla">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-github-alt"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="微信" href="/wechat">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-weixin"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fas fa-rss"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+<div class="content">
+	<div id="aplayer-ynoJwXXs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+		<script>
+
+			var options = {
+				"narrow": false,
+				"autoplay": true,
+				"showlrc":3,
+				"mode": "circulation",
+				"mutex": true,
+				"theme": "#e6d0b2",
+				"preload":"metadata",
+				"listmaxheight": "1013px",
+				"music":[
+
+			<!-- 循环添加音乐 -->
+			
+			
+				{"title":"Dear friends","author":"TRIPLANE","url":"https://dwla.github.io/BM/Dear friends-TRIPLANE.mp3","pic":"https://dwla.github.io/BM/Dear friends-TRIPLANE.jpg","lrc":"https://dwla.github.io/BM/Dear friends-TRIPLANE.lrc"},
+			
+			
+				{"title":"風になる","author":"つじあやの","url":"https://dwla.github.io/BM/風になる-つじあやの.mp3","pic":"https://dwla.github.io/BM/風になる-つじあやの.jpg","lrc":"https://dwla.github.io/BM/風になる-つじあやの.lrc"},
+			
+			
+				{"title":"赴鸿门","author":"CRITTY","url":"https://czxb.github.io/musics/赴鸿门.mp3","pic":"https://czxb.github.io/musics/赴鸿门.jpeg","lrc":"https://czxb.github.io/musics/赴鸿门.lrc"},
+			
+			<!-- 循环添加音乐 -->
+			
+			]};
+					options.element = document.getElementById("aplayer-ynoJwXXs");
+					var ap = new APlayer(options);
+			    	window.aplayers || (window.aplayers = []);
+					window.aplayers.push(ap);
+		</script>
+	</div>
+	</div>
+
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            我的好朋友
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="http://www.czxa.top/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">振兴</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">http://www.czxa.top/</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/振兴/">
+            <span class="level-start">
+                <span class="level-item">振兴</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/明诚堂/">
+            <span class="level-start">
+                <span class="level-item">明诚堂</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/杂货铺/">
+            <span class="level-start">
+                <span class="level-item">杂货铺</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">73</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/杂货铺/网站爬取/">
+            <span class="level-start">
+                <span class="level-item">网站爬取</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/Stata/" style="font-size: 10px;">Stata</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#任务一">
+        <span class="has-mr-6">1</span>
+        <span>任务一</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-问题描述">
+        <span class="has-mr-6">1.1</span>
+        <span>1 问题描述</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#任务二">
+        <span class="has-mr-6">2</span>
+        <span>任务二</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-问题描述-1">
+        <span class="has-mr-6">2.1</span>
+        <span>1 问题描述</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-钞票认证数据集">
+        <span class="has-mr-6">2.2</span>
+        <span>2 钞票认证数据集</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-单一决策树分类器">
+        <span class="has-mr-6">2.3</span>
+        <span>3 单一决策树分类器</span>
+        </a></li><li>
+        <a class="is-flex" href="#4-装袋">
+        <span class="has-mr-6">2.4</span>
+        <span>4 装袋</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#4-1-ipred包中的ipredbagg-函数">
+        <span class="has-mr-6">2.4.1</span>
+        <span>4.1 ipred包中的ipredbagg()函数</span>
+        </a></li><li>
+        <a class="is-flex" href="#4-2-adabag包中的bagging-函数">
+        <span class="has-mr-6">2.4.2</span>
+        <span>4.2 adabag包中的bagging()函数</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#5-提升">
+        <span class="has-mr-6">2.5</span>
+        <span>5 提升</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#5-1-adabag包中的boosting-函数">
+        <span class="has-mr-6">2.5.1</span>
+        <span>5.1 adabag包中的boosting()函数</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#6-随机森林">
+        <span class="has-mr-6">2.6</span>
+        <span>6 随机森林</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#6-1-randmForest包中的randmForest-函数">
+        <span class="has-mr-6">2.6.1</span>
+        <span>6.1 randmForest包中的randmForest()函数</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#7-总结">
+        <span class="has-mr-6">2.7</span>
+        <span>7 总结</span>
+        </a></li><li>
+        <a class="is-flex" href="#附注">
+        <span class="has-mr-6">2.8</span>
+        <span>附注</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#任务三">
+        <span class="has-mr-6">3</span>
+        <span>任务三</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-问题描述-2">
+        <span class="has-mr-6">3.1</span>
+        <span>1 问题描述</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/虎.svg" alt="" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2018 JWen&nbsp;
+                <a href="https://www.jnu.edu.cn/" target="_blank">暨南大学</a> & <a href="https://ec.jnu.edu.cn/" target="_blank">经济学院·经济统计学</a><br>
+                主题：<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Github" href="http://github.com/dwla">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-github"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="微信" href="/wechat">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-weixin"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="RSS" href="/atom.xml">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fas fa-rss"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

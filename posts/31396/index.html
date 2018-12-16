@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>快看漫画爬取记（二） - JWen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快看漫画爬取记（二）">
+<meta property="og:url" content="https://dwla.github.io/posts/31396/index.html">
+<meta property="og:site_name" content="JWen">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018061901.jpg?raw=true">
+<meta property="og:updated_time" content="2018-12-16T04:45:34.774Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="快看漫画爬取记（二）">
+<meta name="twitter:image" content="https://github.com/dwla/BP/blob/master/2018061901.jpg?raw=true">
+
+
+
+
+
+<link rel="icon" href="/images/虎.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 添加赞赏的css -->
+<link rel="stylesheet" href="/css/vdonate.css">
+<!-- 添加赞赏的css -->
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/虎.svg" alt="快看漫画爬取记（二）" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/about">关于</a>
+                
+                <a class="navbar-item" href="/mymusic">音乐</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="我的GitHub" href="http://github.com/dwla">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><!-- about页面的时间轴 -->
+
+             
+
+<!-- about页面的时间轴 -->
+
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-06-19T14:00:00.000Z">2018-06-19</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/杂货铺/">杂货铺</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/杂货铺/网站爬取/">网站爬取</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                快看漫画爬取记（二）
+            
+        </h1>
+
+        <div class="content">
+            <p><img src="https://github.com/dwla/BP/blob/master/2018061901.jpg?raw=true" alt=""><br><a id="more"></a></p>
+<p>对上一篇文章<a href="https://dwla.github.io/posts/47633/">快看漫画爬取记</a>补充三点：</p>
+<ol>
+<li><p>命令还是分开运行的好，避免停了之后运行到哪都不知道。我这级别写的命令，不能封装的“太好”了。</p>
+</li>
+<li><p>由于文件夹和文件命名的问题，增加了函数修改那些不能用于文件夹和文件命名的字符：</p>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">library</span>(dplyr)</span><br><span class="line"><span class="hljs-keyword">library</span>(curl)</span><br><span class="line"><span class="hljs-keyword">library</span>(rvest)</span><br><span class="line"></span><br><span class="line">setwd(<span class="hljs-string">"F:/"</span>) <span class="hljs-comment"># 设定工作目录</span></span><br><span class="line">url &lt;- <span class="hljs-string">"http://www.kuaikanmanhua.com/web/topic/1338/"</span> <span class="hljs-comment"># 输入要爬取的漫画页面</span></span><br><span class="line"></span><br><span class="line">special_characters &lt;- <span class="hljs-keyword">function</span>(text) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span> (j <span class="hljs-keyword">in</span> c(<span class="hljs-string">'/'</span>, <span class="hljs-string">':'</span>, <span class="hljs-string">'*'</span>, <span class="hljs-string">'?'</span>, <span class="hljs-string">'"'</span>, <span class="hljs-string">'&lt;'</span>, <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'|'</span>, <span class="hljs-string">'•'</span>, <span class="hljs-string">"！"</span>, <span class="hljs-string">"▪"</span>)) &#123;</span><br><span class="line">    text &lt;- gsub(pattern = j, replacement = <span class="hljs-string">'_'</span>, text, fixed = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span>(text)</span><br><span class="line">&#125;</span><br><span class="line">picture_download &lt;- <span class="hljs-keyword">function</span>(url) &#123;</span><br><span class="line">  picture_warnings &lt;- data.frame()</span><br><span class="line">  data &lt;- url %&gt;% read_html(encoding = <span class="hljs-string">"utf-8"</span>)</span><br><span class="line">  picture_url_temp &lt;- data %&gt;% html_nodes(<span class="hljs-string">"div div img"</span>) %&gt;%</span><br><span class="line">    html_attr(<span class="hljs-string">"data-kksrc"</span>)</span><br><span class="line">  picture_url_temp &lt;- picture_url_temp[!is.na(picture_url_temp)]</span><br><span class="line">  <span class="hljs-keyword">for</span> (k <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>:length(picture_url_temp)) &#123;</span><br><span class="line">    picture_url &lt;- picture_url_temp[k]</span><br><span class="line">    picture_name &lt;- data %&gt;% html_nodes(<span class="hljs-string">"div div img"</span>) %&gt;%</span><br><span class="line">      html_attr(<span class="hljs-string">"title"</span>) %&gt;% `[`(<span class="hljs-number">2</span>)</span><br><span class="line">    <span class="hljs-keyword">tryCatch</span>(&#123;</span><br><span class="line">      curl_download(url = picture_url, destfile = special_characters(paste(picture_name, <span class="hljs-string">"（第"</span>, k, <span class="hljs-string">"页）.jpg"</span>, sep = <span class="hljs-string">""</span>)))</span><br><span class="line">      cat(sprintf(<span class="hljs-string">"正在怒处理任务[%d] :) :) :)"</span>, k), sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">      Sys.sleep(runif(<span class="hljs-number">1</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">1.5</span>))</span><br><span class="line">    &#125;, error = <span class="hljs-keyword">function</span>(e) &#123;</span><br><span class="line">      cat(sprintf(<span class="hljs-string">"任务[%d]处理失败! :( :( :("</span>, K), sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">      picture_warnings &lt;- cbind(url = picture_url, destfile = paste(picture_name, <span class="hljs-string">"（第"</span>, k, <span class="hljs-string">"页）.jpg"</span>, sep = <span class="hljs-string">""</span>)) %&gt;% rbind(picture_warnings, .)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span>(picture_warnings)</span><br><span class="line">&#125;</span><br><span class="line">picture_list &lt;- <span class="hljs-keyword">function</span>(url) &#123;</span><br><span class="line">  data &lt;- url %&gt;% read_html(encoding = <span class="hljs-string">"utf-8"</span>)</span><br><span class="line">  file_name &lt;- data %&gt;% html_nodes(<span class="hljs-string">"div div div img"</span>) %&gt;% `[`(<span class="hljs-number">2</span>) %&gt;% html_attr(<span class="hljs-string">"alt"</span>)</span><br><span class="line">  file_picture &lt;- data %&gt;% html_nodes(<span class="hljs-string">"div div div img"</span>) %&gt;% `[`(<span class="hljs-number">2</span>) %&gt;% html_attr(<span class="hljs-string">"src"</span>)</span><br><span class="line">  img &lt;- data %&gt;% html_nodes(<span class="hljs-string">"div div table tbody tr td a img"</span>) %&gt;%</span><br><span class="line">    html_attr(<span class="hljs-string">"src"</span>)</span><br><span class="line">  title &lt;- data %&gt;% html_nodes(<span class="hljs-string">"div div table tbody tr td a"</span>) %&gt;%</span><br><span class="line">    html_attr(<span class="hljs-string">"title"</span>) %&gt;% unique()</span><br><span class="line">  href &lt;- data %&gt;% html_nodes(<span class="hljs-string">"div div table tbody tr td a"</span>) %&gt;%</span><br><span class="line">    html_attr(<span class="hljs-string">"href"</span>) %&gt;% unique()</span><br><span class="line">  result &lt;- list(file_name, file_picture, cbind(img, title, href))</span><br><span class="line">  <span class="hljs-keyword">return</span>(result)</span><br><span class="line">&#125;</span><br><span class="line">warnings &lt;- data.frame()</span><br><span class="line"></span><br><span class="line">path &lt;- getwd()</span><br><span class="line">result &lt;- picture_list(url)</span><br><span class="line">dir.create(paste(path, result[[<span class="hljs-number">1</span>]][<span class="hljs-number">1</span>], sep = <span class="hljs-string">"/"</span>))</span><br><span class="line">setwd(paste(path, result[[<span class="hljs-number">1</span>]][<span class="hljs-number">1</span>], sep = <span class="hljs-string">"/"</span>))</span><br><span class="line">path1 &lt;- getwd()</span><br><span class="line"><span class="hljs-keyword">tryCatch</span>(&#123;</span><br><span class="line">  cat(sprintf(<span class="hljs-string">"正在爬取第[%d]个漫画 :)"</span>, <span class="hljs-number">1</span>), sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">  curl_download(url = result[[<span class="hljs-number">2</span>]][<span class="hljs-number">1</span>], destfile = special_characters(paste(result[[<span class="hljs-number">1</span>]][<span class="hljs-number">1</span>], <span class="hljs-string">".jpg"</span>, sep = <span class="hljs-string">""</span>)))</span><br><span class="line">&#125;, error = <span class="hljs-keyword">function</span>(e) &#123;</span><br><span class="line">  cat(sprintf(<span class="hljs-string">"第[%d]个漫画示例图片爬取失败"</span>, <span class="hljs-number">1</span>), sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">  warnings &lt;- cbind(url = result[[<span class="hljs-number">2</span>]][<span class="hljs-number">1</span>], destfile = paste(result[[<span class="hljs-number">1</span>]][<span class="hljs-number">1</span>], <span class="hljs-string">".jpg"</span>, sep = <span class="hljs-string">""</span>)) %&gt;% rbind(warnings, .)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> (j <span class="hljs-keyword">in</span> nrow(result[[<span class="hljs-number">3</span>]]):<span class="hljs-number">1</span>) &#123;</span><br><span class="line">  dir.create(paste(path1, result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"title"</span>], sep = <span class="hljs-string">"/"</span>))</span><br><span class="line">  setwd(paste(path1, result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"title"</span>], sep = <span class="hljs-string">"/"</span>))</span><br><span class="line">  <span class="hljs-keyword">tryCatch</span>(&#123;</span><br><span class="line">    curl_download(url = result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"img"</span>], destfile = special_characters(paste(result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"title"</span>], <span class="hljs-string">"（第0页）.jpg"</span>, sep = <span class="hljs-string">""</span>)))</span><br><span class="line">    cat(<span class="hljs-string">"\n"</span>)</span><br><span class="line">    cat(sprintf(<span class="hljs-string">"正在爬取第[%d]个子漫画 :) :)"</span>, j), sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">  &#125;, error = <span class="hljs-keyword">function</span>(e) &#123;</span><br><span class="line">    cat(sprintf(<span class="hljs-string">"第[%d]集漫画示例图片爬取失败"</span>, j), sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">    warnings &lt;- cbind(url = result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"img"</span>], destfile = paste(result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"title"</span>], <span class="hljs-string">".jpg"</span>, sep = <span class="hljs-string">""</span>)) %&gt;% rbind(warnings, .)</span><br><span class="line">  &#125;)</span><br><span class="line">  picture_warnings &lt;- picture_download(paste(<span class="hljs-string">"http://www.kuaikanmanhua.com"</span>, result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"href"</span>], sep = <span class="hljs-string">""</span>))</span><br><span class="line">  warnings &lt;- rbind(warnings, picture_warnings)</span><br><span class="line">  setwd(path1)</span><br><span class="line">&#125;</span><br><span class="line">setwd(path)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果出现以下问题：</p>
+</li>
+</ol>
+<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Error <span class="hljs-keyword">in</span> open.connection(x, <span class="hljs-string">"rb"</span>) :</span><br><span class="line">  Timeout was reached: Connection timed out after <span class="hljs-number">10016</span> milliseconds</span><br></pre></td></tr></table></figure>
+<p>这问题还没解决，继续运行下面命令即可：<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">setwd(paste(path, result[[<span class="hljs-number">1</span>]][<span class="hljs-number">1</span>], sep = <span class="hljs-string">"/"</span>))</span><br><span class="line">unlink(paste(path1, result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"title"</span>], sep = <span class="hljs-string">"/"</span>), recursive = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">n &lt;- j</span><br><span class="line"><span class="hljs-keyword">for</span> (j <span class="hljs-keyword">in</span> n:<span class="hljs-number">1</span>) &#123;</span><br><span class="line">  dir.create(paste(path1, special_characters(result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"title"</span>]), sep = <span class="hljs-string">"/"</span>))</span><br><span class="line">  setwd(paste(path1, special_characters(result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"title"</span>]), sep = <span class="hljs-string">"/"</span>))</span><br><span class="line">  <span class="hljs-keyword">tryCatch</span>(&#123;</span><br><span class="line">    curl_download(url = result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"img"</span>], destfile = special_characters(paste(result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"title"</span>], <span class="hljs-string">"（第0页）.jpg"</span>, sep = <span class="hljs-string">""</span>)))</span><br><span class="line">    cat(<span class="hljs-string">"\n"</span>)</span><br><span class="line">    cat(sprintf(<span class="hljs-string">"正在爬取第[%d]个子漫画 :) :)"</span>, j), sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">  &#125;, error = <span class="hljs-keyword">function</span>(e) &#123;</span><br><span class="line">    cat(sprintf(<span class="hljs-string">"第[%d]集漫画示例图片爬取失败"</span>, j), sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">    warnings &lt;- cbind(url = result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"img"</span>], destfile = paste(result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"title"</span>], <span class="hljs-string">".jpg"</span>, sep = <span class="hljs-string">""</span>)) %&gt;% rbind(warnings, .)</span><br><span class="line">  &#125;)</span><br><span class="line">  picture_warnings &lt;- picture_download(paste(<span class="hljs-string">"http://www.kuaikanmanhua.com"</span>, result[[<span class="hljs-number">3</span>]][j, <span class="hljs-string">"href"</span>], sep = <span class="hljs-string">""</span>))</span><br><span class="line">  warnings &lt;- rbind(warnings, picture_warnings)</span><br><span class="line">  setwd(path1)</span><br><span class="line">&#125;</span><br><span class="line">setwd(path)</span><br></pre></td></tr></table></figure></p>
+<p>如果出现：<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error <span class="hljs-keyword">in</span> sprintf(<span class="hljs-string">"任务[%d]处理失败! :( :( :("</span>, K) : object <span class="hljs-string">'K'</span> not found</span><br></pre></td></tr></table></figure></p>
+<p>则检查创建的文件夹中不能用于文件命名的字符，将字符加在第2点命令的<code>c(&#39;/&#39;, &#39;:&#39;, &#39;*&#39;, &#39;?&#39;, &#39;&quot;&#39;, &#39;&lt;&#39;, &#39;&gt;&#39;, &#39;|&#39;, &#39;•&#39;, &quot;！&quot;, &quot;▪&quot;)</code>向量里面，重新按照第2点一样运行（<code>&#39;•&#39;, &quot;！&quot;, &quot;▪&quot;</code>都是在下载海贼的过程中加上去的。。。不知还会碰到什么幺蛾子字符，或许有个字符库会方便一点。）<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">special_characters &lt;- <span class="hljs-keyword">function</span>(text) &#123;</span><br><span class="line">  <span class="hljs-keyword">for</span> (j <span class="hljs-keyword">in</span> c(<span class="hljs-string">'/'</span>, <span class="hljs-string">':'</span>, <span class="hljs-string">'*'</span>, <span class="hljs-string">'?'</span>, <span class="hljs-string">'"'</span>, <span class="hljs-string">'&lt;'</span>, <span class="hljs-string">'&gt;'</span>, <span class="hljs-string">'|'</span>, <span class="hljs-string">'•'</span>, <span class="hljs-string">"！"</span>, <span class="hljs-string">"▪"</span>)) &#123;</span><br><span class="line">    text &lt;- gsub(pattern = j, replacement = <span class="hljs-string">'_'</span>, text, fixed = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span>(text)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/R/">R</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/25349/">
+                <i class="level-item material-icons">←</i>
+                <span class="level-item">“保险”心得和pcomic爬取记</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/47633/">
+                <span class="level-item">快看漫画爬取记</span>
+                <i class="level-item material-icons">→</i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!-- about页面的时间轴 -->
+
+<!-- about页面的时间轴 -->
+
+
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'Nnd1E5DgoLY80jdfYHWpIeGP-gzGzoHsz',
+        app_key: 'Dkrf5Yuul64yJUJXN3iMXIvl',
+        placeholder: '在这里评论～'
+    });
+</script>
+
+    </div>
+</div>
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        <div class="card widget">
+
+
+  <article class="message is-success">
+    <div class="message-header">
+      敲黑板了！！！
+    </div>
+    <div class="message-body">
+      本博客是在icarus基础上，振兴怒改，JWen小改后完成的。
+    </div>
+  </article>
+
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/虎.svg" alt="JWen">
+                    
+                    <p class="is-size-4 is-block">
+                        JWen
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        求生中
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>中国 · 广州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        87
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/dwla">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/dwla">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-github-alt"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="微信" href="/wechat">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-weixin"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fas fa-rss"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+<div class="content">
+	<div id="aplayer-ynoJwXXs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+		<script>
+
+			var options = {
+				"narrow": false,
+				"autoplay": true,
+				"showlrc":3,
+				"mode": "circulation",
+				"mutex": true,
+				"theme": "#e6d0b2",
+				"preload":"metadata",
+				"listmaxheight": "1013px",
+				"music":[
+
+			<!-- 循环添加音乐 -->
+			
+			
+				{"title":"Dear friends","author":"TRIPLANE","url":"https://dwla.github.io/BM/Dear friends-TRIPLANE.mp3","pic":"https://dwla.github.io/BM/Dear friends-TRIPLANE.jpg","lrc":"https://dwla.github.io/BM/Dear friends-TRIPLANE.lrc"},
+			
+			
+				{"title":"風になる","author":"つじあやの","url":"https://dwla.github.io/BM/風になる-つじあやの.mp3","pic":"https://dwla.github.io/BM/風になる-つじあやの.jpg","lrc":"https://dwla.github.io/BM/風になる-つじあやの.lrc"},
+			
+			
+				{"title":"赴鸿门","author":"CRITTY","url":"https://czxb.github.io/musics/赴鸿门.mp3","pic":"https://czxb.github.io/musics/赴鸿门.jpeg","lrc":"https://czxb.github.io/musics/赴鸿门.lrc"},
+			
+			<!-- 循环添加音乐 -->
+			
+			]};
+					options.element = document.getElementById("aplayer-ynoJwXXs");
+					var ap = new APlayer(options);
+			    	window.aplayers || (window.aplayers = []);
+					window.aplayers.push(ap);
+		</script>
+	</div>
+	</div>
+
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            我的好朋友
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="http://www.czxa.top/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">振兴</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">http://www.czxa.top/</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/振兴/">
+            <span class="level-start">
+                <span class="level-item">振兴</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/明诚堂/">
+            <span class="level-start">
+                <span class="level-item">明诚堂</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/杂货铺/">
+            <span class="level-start">
+                <span class="level-item">杂货铺</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">73</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/杂货铺/网站爬取/">
+            <span class="level-start">
+                <span class="level-item">网站爬取</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/Stata/" style="font-size: 10px;">Stata</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            
+        </div>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/虎.svg" alt="" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2018 JWen&nbsp;
+                <a href="https://www.jnu.edu.cn/" target="_blank">暨南大学</a> & <a href="https://ec.jnu.edu.cn/" target="_blank">经济学院·经济统计学</a><br>
+                主题：<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Github" href="http://github.com/dwla">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-github"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="微信" href="/wechat">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-weixin"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="RSS" href="/atom.xml">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fas fa-rss"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>杂谈录（一） - JWen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="JWen   西方有个谚语“The devil is in the details.”，意即“魔鬼就在细节中”（比如，对于一份冠冕堂皇的合同，可能让你以后吃尽苦头的正式那些合同附录中的小字部分。）套用到计量经济学上来，或许可以说“The devil is in the error term.”，意即魔鬼就在扰动项中。计量经济学的很多玄妙之处就在于扰动项。参考《高级计量经济学及Stata应用（第二版">
+<meta property="og:type" content="article">
+<meta property="og:title" content="杂谈录（一）">
+<meta property="og:url" content="https://dwla.github.io/posts/63254/index.html">
+<meta property="og:site_name" content="JWen">
+<meta property="og:description" content="JWen   西方有个谚语“The devil is in the details.”，意即“魔鬼就在细节中”（比如，对于一份冠冕堂皇的合同，可能让你以后吃尽苦头的正式那些合同附录中的小字部分。）套用到计量经济学上来，或许可以说“The devil is in the error term.”，意即魔鬼就在扰动项中。计量经济学的很多玄妙之处就在于扰动项。参考《高级计量经济学及Stata应用（第二版">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-16T04:01:51.061Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="杂谈录（一）">
+<meta name="twitter:description" content="JWen   西方有个谚语“The devil is in the details.”，意即“魔鬼就在细节中”（比如，对于一份冠冕堂皇的合同，可能让你以后吃尽苦头的正式那些合同附录中的小字部分。）套用到计量经济学上来，或许可以说“The devil is in the error term.”，意即魔鬼就在扰动项中。计量经济学的很多玄妙之处就在于扰动项。参考《高级计量经济学及Stata应用（第二版">
+
+
+
+
+
+<link rel="icon" href="/images/虎.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 添加赞赏的css -->
+<link rel="stylesheet" href="/css/vdonate.css">
+<!-- 添加赞赏的css -->
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/虎.svg" alt="杂谈录（一）" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/about">关于</a>
+                
+                <a class="navbar-item" href="/mymusic">音乐</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="我的GitHub" href="http://github.com/dwla">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><!-- about页面的时间轴 -->
+
+             
+
+<!-- about页面的时间轴 -->
+
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-03-01T16:00:00.000Z">2018-03-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/杂货铺/">杂货铺</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                杂谈录（一）
+            
+        </h1>
+
+        <div class="content">
+            <h6 align="center"><a href="https://dwla.github.io/">JWen</a></h6>
+
+<blockquote>
+<p>西方有个谚语“The devil is in the details.”，意即“魔鬼就在细节中”（比如，对于一份冠冕堂皇的合同，可能让你以后吃尽苦头的正式那些合同附录中的小字部分。）套用到计量经济学上来，或许可以说“The devil is in the error term.”，意即魔鬼就在扰动项中。计量经济学的很多玄妙之处就在于扰动项。<br>参考《高级计量经济学及Stata应用（第二版）》陈强</p>
+</blockquote>
+<p>振兴问我“你认为扰动项服从正态分布的意义是什么？”<br><a id="more"></a><br>我第一反应是一句生涩的：“扰动项服从正态分布就可以估计出模型的系数。”。对于考试角度，刚考完试的我回答成这样不好，因为计量教材中列了五点（这里不一一列出，可参考《计量经济学基础》古扎拉蒂4.2节）。后来细想，书中是兜了一个大圈也没有讲明扰动项最根本的意义。扰动项从何而来？引进扰动项的目的是什么？</p>
+<p>计量教材列出了七点（可参考《计量经济学基础》古扎拉蒂2.5节），理论的含糊、数据的欠缺、错误的函数形式···等。计量里面对扰动项的性质分析这类东西是最不缺的了，可是从何而来讲得却是模糊的很。<strong>在下面一个情境中</strong>：要估计孩子的身高，我会想到孩子身高受父母身高的影响，于是父母的身高和孩子的身高做一个回归。当扰动项服从正态分布的时候，我就可以很好估计这个回归的系数，这样这个因果关系可以较为清晰的摸索出。因为影响孩子身高的因素太多太多（孩子的运动量、饮食等）如果我就是不断的从扰动项中抠出这些因素，直到什么都抠不出来了，这个时候其实因果关系的整体已经一清二楚了，扰动项已经什么都不剩了，换句话说扰动项已经没了，可是因为人认知的局限，不可能找到全部的影响因素。所以仍然会有扰动项（<strong>这就是扰动项从何而来，而且无可避免</strong>），但对于扰动项服从的分布，为什么是正态分布？</p>
+<p><strong>试想下面一个情境</strong>，在一个赌博问题中，如果你赢和输的概率都是0.5，那么你现在最好的操作策略是什么？如果赢的概率大于输的概率，显然我会加注；如果输的概率大于赢的概率，我会减注。所以如果输赢概率一样，我应该是按兵不动。可这样推导出来的是正态分布，如果全部股民都这么做，这无疑是正态分布的（也暗含我们掌握了所有股民选择的情况，可我们掌握的是稳定状态，窥探到因果信息链），因为此时股市处于平稳的状态，我们建模也只是能得到时间趋势而已，除此之外什么都得不到。在金融建模中，认为股票的波动不是服从正态分布，而是尖峰厚尾的，尾巴比正态分布要厚，也就是极端值发生的概率（相比正态分布）较大，波动（相比正态分布）较大。正因为众多股民的影响因素不尽相同，所以这才有金融建模。比如：用昨天的消费<code>$c_{t-1}$</code>来预测今天的股价<code>$$y_t$$</code>，可是今天的消费<code>$$c_t$$</code>对今天的股价也有影响，今天的消费<code>$$c_t$$</code>也受到昨天的消费<code>$c_{t-1}$</code>的影响···最后极端的建模处理情况，昨天的影响今天股价的诸多因素，我们直接用昨天的股价<code>$y_{t-1}$</code>来代替，就是说我们直接用昨天的股价<code>$y_{t-1}$</code>来预测今天的股价<code>$$y_t$$</code>。这时还有扰动项吗？还有的，这模型中扰动项是正态分布了，因为影响今天股价的最重要因素（昨天的股价）已从扰动项中抠出来。剩下的都是乱炖的因素但整体对建模影响不大。</p>
+<p>正态分布是什么情况？是巨多的势均力敌的因素混杂的情况，也是从扰动项中已经完全得不到因果关系信息链了的情况。换句话说，扰动项正态分布，在建模中即扰动项是空状态，什么都没巨多因素势均力敌已经什么都不重要了；而建模角度看，扰动项正态分布又代表“除扰动项以外的建模部分是因果关系整体的全部”，因为扰动项是正态分布知道了就能估计出回归系数，也就知道了因果信息链。</p>
+<p>所以其实正态分布得看针对的是什么东西，股票本身不是正态分布的，<strong>上文第二个情境中</strong>，可以用昨天的股价<code>$y_{t-1}$</code>来预测今天的股价<code>$$y_t$$</code>，这时候扰动项是正态分布，代表空，扰动项代表空因而窥探到了信息链。<strong>而第一个情境</strong>，扰动项是正态分布</p>
+<p>所以正态分布根本是一切杂乱无章的势均力敌的东西，但是这个整体我们又知道他们对建模其余部分的影响是不大的，从而在建模中我们窥探到了除开扰动项的因果关系信息链。所以如果我们关心的是<code>y</code>，如果我们窥探到了<code>y</code>，那么<code>y</code>本身就是正态的，我们知道了全部因果关系信息链，可是无从下手赚钱，所以又是空（我们知道这个没意义）。倘若我们我们知道的是部分主要信息链，那么剩余的扰动项势均力敌是正态分布，从扰动项角度我们反而又是掌握了因果关系信息链，虽然我们没有掌握扰动项的信息，可是扰动项的信息这个整体是空，相对扰动项我们知道的部分信息链又是“全部”。</p>
+<p>所以在建模中扰动项不是正态分布时我们人为的认为他是正态分布也就得出了错误的结论，从而有了建模模型的好坏之分，所建模型有拟合好坏之分。我们无法知道最好的拟合是多少，我们无法知道我们感兴趣的<code>y</code>是什么分布的，我们不可能知道，但是我们可以通过让扰动项为正态分布这个“空”，来预测<code>y</code>，因为这时我们似乎窥探到了<code>y</code>的信息链。但我们不是完全知道<code>y</code>，因为当我们完全知道<code>y</code>的时候正态的时候，空的时候，是没有任何意义的时候。<strong>所以扰动项源于我们认知的局限，我们想尽量让扰动项为“空”，这时我们窥探到因果信息流，然而当扰动项真正为“空”的时候，那是我们“什么都知道”的时候，也是我们“什么都不知道”的时候（“什么都知道”已经没有了意义）。而比较建模好坏，源于让“扰动项为空”这个理想演绎的孰优孰劣，现实中这可以转化为金钱是因为摸到信息流（不可能完全摸清）和没摸到信息流的差异。</strong></p>
+<blockquote>
+<p>注：写作源于和振兴一次杂谈，后续有待修改。“扰动项”这玩意儿，第一次让我感觉到自己认知大厦的崩塌，知识若没了情境，只是空中楼阁（硬要联系上我这经济统计专业，可以说统计没了经济也是空中楼阁）。振兴称之为哲学，我在这思考人生般的写作中，更像是在思考“我是谁?我从哪里来?我要到哪里去?”这类的话题——“扰动项是谁?扰动项从哪里来?扰动项要到哪里去?”</p>
+</blockquote>
+
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/27327/">
+                <i class="level-item material-icons">←</i>
+                <span class="level-item">Data Mining with Rattle and R(一)</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/posts/2532/">
+                <span class="level-item">R的.Rhistory文件和Stata的log文件随笔</span>
+                <i class="level-item material-icons">→</i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!-- about页面的时间轴 -->
+
+<!-- about页面的时间轴 -->
+
+
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'Nnd1E5DgoLY80jdfYHWpIeGP-gzGzoHsz',
+        app_key: 'Dkrf5Yuul64yJUJXN3iMXIvl',
+        placeholder: '在这里评论～'
+    });
+</script>
+
+    </div>
+</div>
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left ">
+    
+        <div class="card widget">
+
+
+  <article class="message is-success">
+    <div class="message-header">
+      敲黑板了！！！
+    </div>
+    <div class="message-body">
+      本博客是在icarus基础上，振兴怒改，JWen小改后完成的。
+    </div>
+  </article>
+
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/虎.svg" alt="JWen">
+                    
+                    <p class="is-size-4 is-block">
+                        JWen
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        求生中
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>中国 · 广州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        87
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/dwla">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/dwla">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-github-alt"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="微信" href="/wechat">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fab fa-weixin"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                    <!-- 增加社交链接自定义图片 -->
+                    
+                        <i class="fas fa-rss"></i>
+                    
+                    <!-- 增加社交链接自定义图片 -->
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+<div class="content">
+	<div id="aplayer-ynoJwXXs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+		<script>
+
+			var options = {
+				"narrow": false,
+				"autoplay": true,
+				"showlrc":3,
+				"mode": "circulation",
+				"mutex": true,
+				"theme": "#e6d0b2",
+				"preload":"metadata",
+				"listmaxheight": "1013px",
+				"music":[
+
+			<!-- 循环添加音乐 -->
+			
+			
+				{"title":"Dear friends","author":"TRIPLANE","url":"https://dwla.github.io/BM/Dear friends-TRIPLANE.mp3","pic":"https://dwla.github.io/BM/Dear friends-TRIPLANE.jpg","lrc":"https://dwla.github.io/BM/Dear friends-TRIPLANE.lrc"},
+			
+			
+				{"title":"風になる","author":"つじあやの","url":"https://dwla.github.io/BM/風になる-つじあやの.mp3","pic":"https://dwla.github.io/BM/風になる-つじあやの.jpg","lrc":"https://dwla.github.io/BM/風になる-つじあやの.lrc"},
+			
+			
+				{"title":"赴鸿门","author":"CRITTY","url":"https://czxb.github.io/musics/赴鸿门.mp3","pic":"https://czxb.github.io/musics/赴鸿门.jpeg","lrc":"https://czxb.github.io/musics/赴鸿门.lrc"},
+			
+			<!-- 循环添加音乐 -->
+			
+			]};
+					options.element = document.getElementById("aplayer-ynoJwXXs");
+					var ap = new APlayer(options);
+			    	window.aplayers || (window.aplayers = []);
+					window.aplayers.push(ap);
+		</script>
+	</div>
+	</div>
+
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            我的好朋友
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="http://www.czxa.top/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">振兴</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">http://www.czxa.top/</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/振兴/">
+            <span class="level-start">
+                <span class="level-item">振兴</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/明诚堂/">
+            <span class="level-start">
+                <span class="level-item">明诚堂</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/杂货铺/">
+            <span class="level-start">
+                <span class="level-item">杂货铺</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">73</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/杂货铺/网站爬取/">
+            <span class="level-start">
+                <span class="level-item">网站爬取</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/R/" style="font-size: 20px;">R</a> <a href="/tags/Stata/" style="font-size: 10px;">Stata</a>
+    </div>
+</div>
+
+    
+        
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/虎.svg" alt="" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2018 JWen&nbsp;
+                <a href="https://www.jnu.edu.cn/" target="_blank">暨南大学</a> & <a href="https://ec.jnu.edu.cn/" target="_blank">经济学院·经济统计学</a><br>
+                主题：<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Github" href="http://github.com/dwla">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-github"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="微信" href="/wechat">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fab fa-weixin"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="RSS" href="/atom.xml">
+                        
+                            <!-- 增加社交链接自定义图片 -->
+                            
+                                <i class="fas fa-rss"></i>
+                            
+                            <!-- 增加社交链接自定义图片 -->
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
