@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018092301.png?raw=true">
 <meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018092302.png?raw=true">
 <meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018092303.png?raw=true">
-<meta property="og:updated_time" content="2018-12-16T05:15:35.173Z">
+<meta property="og:updated_time" content="2018-12-16T15:33:37.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爱奇艺爬取记">
 <meta name="twitter:description" content="这图还是爬东西时随意收集的。">
@@ -174,12 +174,12 @@
         <div class="content">
             <p>这图还是爬东西时随意收集的。<br><img src="https://github.com/dwla/BP/blob/master/2018092301.jpg?raw=true" alt=""></p>
 <a id="more"></a>
-<div id="aplayer-BwxcoCuu" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-FGHpDhSm" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[00:00.00] 作曲 : 氏原ワタル[00:01.00] 作词 : 氏原ワタル[00:17.54]編曲：DOES[00:19.54][00:21.54][00:23.54]鉛の空重く垂れ込み[00:28.54]真白に澱んだ太陽が砕けて[00:35.44]耳鳴りを尖らせる[00:41.60][00:43.70]ひゅるりひゅるり低いツバメが[00:48.70]8の字なぞってビルの谷を翔る[00:55.66]もうじきに夕立が来る[01:03.92]曇天の道を傘を忘れて[01:09.64]歩く彼女は雨に怯えてる[01:14.73]ので僕も弱虫ぶら下げて[01:21.09]空を仰ぐ[01:26.31][01:28.09]あちらこちらあんよは上手[01:33.12]珈琲屋に寄って一休み極めたら[01:40.00]帰れない帰らない[01:46.50][01:48.19]曇天の道をぶらりぶらぶら[01:54.06]歩く二人は足軽のごとく[01:59.00]危険好きの誰かのふりをする[02:05.35]小心物共[02:11.66][02:28.16]曇天の道を傘を忘れて[02:33.82]歩く彼女は雨に怯えてる[02:38.91]ので僕も弱虫ぶら下げて[02:45.19]空を仰ぐ[02:52.71][03:00.56]</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-BwxcoCuu"),
+					element: document.getElementById("aplayer-FGHpDhSm"),
 					narrow: false,
 					autoplay: true,
 					showlrc: 2,
@@ -196,7 +196,7 @@
 <p>又是一个激动人心的夜晚，最后也算是和爬取爱奇艺沾边，准确来说这爬取不是全自动的，而是半自动的（说白了，我这是在吃老底啊，没学新函数，还是那三板斧）。刚好是两个月前这篇文章：<a href="https://dwla.github.io/posts/8170/">我还会回来的</a>，写的是半自动爬优酷（源于想爬银魂），这次半自动爬爱奇艺，则是源于想爬灌篮高手。</p>
 <p>其中最关键的是在检查中检索<code>f4v</code>从而发现视频网址的前半部分：<code>https://data.video.iqiyi.com/videos/</code>。如下图所示：<br><img src="https://github.com/dwla/BP/blob/master/2018092301.png?raw=true" alt=""></p>
 <blockquote>
-<p>备注：一开始找着个前半部分，是看随便一个视频解析网站比如：<code>http://www.sonimei.cn/?url=https://www.iqiyi.com/v_19rronibdc.html</code>。可惜失败了，不过这里到发现，这些视频解析网站背后视频是一小段一小段的，时间分的很细。如下图所示：<br><img src="https://github.com/dwla/BP/blob/master/2018092302.png?raw=true" alt="图片"></p>
+<p>备注：一开始找着个前半部分，是看随便一个视频解析网站比如：<code>http://www.sonimei.cn/?url=https://www.iqiyi.com/v_19rronibdc.html</code>。可惜失败了，不过这里到发现，这些视频解析网站背后视频是一小段一小段的，时间分的很细。如下图所示：<br><img src="https://github.com/dwla/BP/blob/master/2018092302.png?raw=true" alt=""></p>
 </blockquote>
 <p>而后半部分，从检索<code>dash</code>发现的JS文件的response找到，其中<code>bid=500</code>表示的是<code>720p</code>（这是没有会员能看到的最高画质了。。。当然啦，<code>bid=300</code>是<code>高清</code>、<code>bid=200</code>是<code>流畅</code>、<code>bid=100</code>是<code>极速</code>，至于<code>1080p</code>等我有个会员再做实验。），如下图所示：<br><img src="https://github.com/dwla/BP/blob/master/2018092303.png?raw=true" alt=""></p>
 <blockquote>
@@ -336,7 +336,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        87
+                        88
                     </p>
                 </div>
             </div>
@@ -494,7 +494,7 @@
                 <span class="level-item">明诚堂</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/杂货铺/">
