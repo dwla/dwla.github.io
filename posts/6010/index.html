@@ -180,12 +180,12 @@
         <div class="content">
             <p>这图还是爬东西时随意收集的。<br><img src="https://github.com/dwla/BP/blob/master/2018092301.jpg?raw=true" alt=""></p>
 <a id="more"></a>
-<div id="aplayer-aIkyzbtx" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-wdGZsRyQ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[00:00.00] 作曲 : 氏原ワタル[00:01.00] 作词 : 氏原ワタル[00:17.54]編曲：DOES[00:19.54][00:21.54][00:23.54]鉛の空重く垂れ込み[00:28.54]真白に澱んだ太陽が砕けて[00:35.44]耳鳴りを尖らせる[00:41.60][00:43.70]ひゅるりひゅるり低いツバメが[00:48.70]8の字なぞってビルの谷を翔る[00:55.66]もうじきに夕立が来る[01:03.92]曇天の道を傘を忘れて[01:09.64]歩く彼女は雨に怯えてる[01:14.73]ので僕も弱虫ぶら下げて[01:21.09]空を仰ぐ[01:26.31][01:28.09]あちらこちらあんよは上手[01:33.12]珈琲屋に寄って一休み極めたら[01:40.00]帰れない帰らない[01:46.50][01:48.19]曇天の道をぶらりぶらぶら[01:54.06]歩く二人は足軽のごとく[01:59.00]危険好きの誰かのふりをする[02:05.35]小心物共[02:11.66][02:28.16]曇天の道を傘を忘れて[02:33.82]歩く彼女は雨に怯えてる[02:38.91]ので僕も弱虫ぶら下げて[02:45.19]空を仰ぐ[02:52.71][03:00.56]</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-aIkyzbtx"),
+					element: document.getElementById("aplayer-wdGZsRyQ"),
 					narrow: false,
 					autoplay: true,
 					showlrc: 2,
@@ -212,7 +212,7 @@
 <p>最后，本来是想用RSelenium实现全自动的，可是以下面的视频网址为例：<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">https://cache.video.iqiyi.com/jp/dash?tvid=<span class="hljs-number">380581700</span>&amp;bid=<span class="hljs-number">500</span>&amp;vid=06c8a80109f402f4fc8af706b3cf4791&amp;src=<span class="hljs-number">01010031010000000000</span>&amp;vt=<span class="hljs-number">0</span>&amp;rs=<span class="hljs-number">1</span>&amp;uid=&amp;ori=pcw&amp;ps=<span class="hljs-number">0</span>&amp;</span><br><span class="line">tm=<span class="hljs-number">1537646544638</span></span><br><span class="line">&amp;qd_v=<span class="hljs-number">1</span>&amp;k_uid=631771771d025f6b46d4ab9c5e2d5b28&amp;pt=<span class="hljs-number">0</span>&amp;d=<span class="hljs-number">0</span>&amp;s=&amp;lid=&amp;cf=&amp;ct=&amp;</span><br><span class="line">authKey=d0b86bfa622efd84953278ab23214276</span><br><span class="line">&amp;k_tag=<span class="hljs-number">1</span>&amp;ost=<span class="hljs-number">0</span>&amp;ppt=<span class="hljs-number">0</span>&amp;dfp=a0ef80cae3deb446c9aeb876cac0a78e6ee10d836383a0e2bcdb9c7c6ccd58f248&amp;locale=zh_cn&amp;prio=%7B%22ff%<span class="hljs-number">22</span>%3A%22f4v%<span class="hljs-number">22</span>%2C%22code%<span class="hljs-number">22</span>%3A2%7D&amp;pck=&amp;k_err_retries=<span class="hljs-number">0</span>&amp;k_ft1=<span class="hljs-number">549755813888</span>&amp;bop=%7B%22version%<span class="hljs-number">22</span>%3A%<span class="hljs-number">227.0</span>%<span class="hljs-number">22</span>%2C%22dfp%<span class="hljs-number">22</span>%3A%22a0ef80cae3deb446c9aeb876cac0a78e6ee10d836383a0e2bcdb9c7c6ccd58f248%<span class="hljs-number">22</span>%7D&amp;callback=Q838114a04d5d4d3adb265513f3244a36&amp;ut=<span class="hljs-number">0</span>&amp;</span><br><span class="line">vf=ce7f6fade9aa841585ee7d31250fec13</span><br></pre></td></tr></table></figure></p>
 <p>其中空行开来的三个参数：<code>tm</code>、<code>authKey</code>和<code>vf</code>无法通过<code>remDr$getPageSource()[[1]][1]</code>找到，唉，说到底还是我技术不行。不过，我还是相信“所见即可爬”，这三个参数可能会返回本地文件，如果能找到就好了。另外，我还异想天开着，如果可以检查一个网页的检查（说到底就是一个网页的检查是怎么实现的），那就更猛了。不过，连续收集<code>.txt</code>文件过程中，只要第一个是<code>720p</code>的，通过点击<code>下一集</code>，或是在播放列表中点击其他集都保持是<code>720p</code>的，总算是没那么麻烦，不然“半自动”都算不上了。此外，如果要全自动实现，每一集从<code>http://www.iqiyi.com/a_19rrhb244t.html</code>可能会方便点，毕竟播放界面的列表实在太皮了，又要点击又要下拉的。</p>
 <p>送上一段（流畅版。。。）灌篮高手第一集：<code>天才篮球员诞生!?</code>，嘿嘿（关掉上面的音乐再打开吧，没设自动播放了。）</p>
-<div id="dplayer3" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer3"),"theme":"#FADFA3","loop":true,"video":{"url":"https://github.com/dwla/BM/blob/master/2018092302.mp4?raw=true"},"danmaku":{"api":"https://api.prprpr.me/dplayer/","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<div id="dplayer2" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer2"),"theme":"#FADFA3","loop":true,"video":{"url":"https://github.com/dwla/BM/blob/master/2018092302.mp4?raw=true"},"danmaku":{"api":"https://api.prprpr.me/dplayer/","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 
         </div>
         
@@ -738,20 +738,5 @@
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
