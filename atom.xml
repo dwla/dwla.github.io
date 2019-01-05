@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-01-05T03:48:06.929Z</updated>
+  <updated>2019-01-05T03:53:43.591Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -21,39 +21,11 @@
     <link href="https://dwla.github.io/posts/30328/"/>
     <id>https://dwla.github.io/posts/30328/</id>
     <published>2019-01-05T03:00:00.000Z</published>
-    <updated>2019-01-05T03:48:06.929Z</updated>
+    <updated>2019-01-05T03:53:43.591Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; class=&quot;aplayer-secondary-script-marker&quot;&gt;&lt;/script&gt;&lt;script class=&quot;meting-secondary-script-marker&quot; src=&quot;\assets\js\Meting.min.js&quot;&gt;&lt;/script&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;aplayer-wOZHcIrh&quot; class=&quot;aplayer aplayer-tag-marker&quot; style=&quot;margin-bottom: 20px;&quot;&gt;
-				&lt;pre class=&quot;aplayer-lrc-content&quot;&gt;[00:01.58]纯音乐，请欣赏&lt;/pre&gt;
-			&lt;/div&gt;
-			&lt;script&gt;
-				var ap = new APlayer({
-					element: document.getElementById(&quot;aplayer-wOZHcIrh&quot;),
-					narrow: false,
-					autoplay: true,
-					showlrc: 2,
-					music: {
-						title: &quot;With An Orchid&quot;,
-						author: &quot;Yanni&quot;,
-						url: &quot;https://dwla.github.io/BM/Inspire-Capo Productions.mp3&quot;,
-						pic: &quot;https://dwla.github.io/BM/Inspire-Capo Productions.jpg&quot;,
-					}
-				});
-				window.aplayers || (window.aplayers = []);
-				window.aplayers.push(ap);
-			&lt;/script&gt;
-&lt;p&gt;这是随便写的&lt;a href=&quot;https://www.ximalaya.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;喜马拉雅听书网&lt;/a&gt;爬取代码，可以爬取该网站里免费听的音乐专辑。看来除了爬图片，这些音乐视频还是爬链接就好，然后用迅雷下载再重命名文件，比R里的下载命令快多了。&lt;/p&gt;
-&lt;p&gt;以&lt;a href=&quot;https://www.ximalaya.com/youshengshu/284484/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;南渡北归&lt;/a&gt;为例：&lt;/p&gt;
-&lt;figure class=&quot;highlight r hljs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span
-        
-      
+      &lt;p&gt;这是随便写的&lt;a href=&quot;https://www.ximalaya.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;喜马拉雅听书网&lt;/a&gt;爬取代码，可以爬取该网站里免费听的音乐专辑。看来除了爬图片，这些音乐视频还是爬链接就好，然后用迅雷下载再重命名文件，比R里的下载命令快多了。&lt;/p&gt;
     
     </summary>
     
@@ -1922,9 +1894,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
-    
       <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
+    
+      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
     
   </entry>
   
