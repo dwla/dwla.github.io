@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-01-05T09:23:37.599Z</updated>
+  <updated>2019-01-06T03:23:43.044Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://dwla.github.io/posts/30328/"/>
     <id>https://dwla.github.io/posts/30328/</id>
     <published>2019-01-05T03:00:00.000Z</published>
-    <updated>2019-01-05T09:23:37.599Z</updated>
+    <updated>2019-01-06T03:23:43.044Z</updated>
     
     <summary type="html">
     
@@ -1894,9 +1894,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
-    
       <category term="R" scheme="https://dwla.github.io/tags/R/"/>
+    
+      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
     
   </entry>
   
