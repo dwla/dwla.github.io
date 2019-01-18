@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-01-06T03:23:43.044Z</updated>
+  <updated>2019-01-18T08:42:12.332Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从《陶哲轩试分析》说起</title>
+    <link href="https://dwla.github.io/posts/7828/"/>
+    <id>https://dwla.github.io/posts/7828/</id>
+    <published>2019-01-18T06:00:00.000Z</published>
+    <updated>2019-01-18T08:42:12.332Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://dwla.github.io/BP/2019011701.png&quot; alt=&quot;历史上的画图&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是JWen第一次王八拳式画图（这图振兴是不能入眼的），将中国精算师协会网上的&lt;a href=&quot;http://www.e-caa.org.cn/recruitment/position&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;招聘信息&lt;/a&gt;爬取后画成，横轴是招聘所需技能，纵轴是计数。在16年6月到19年3月整体来看，精算同仁都用office居多啊。。。不过说office的技能相当于没说（振兴）。而很多时候是几个技能一起要求，比如sql，access和probhet等，而且过后今年这图的中心说不定会左移。总的来说，这图是没什么用的。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="杂货铺二期" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA%E4%BA%8C%E6%9C%9F/"/>
+    
+      <category term="数学" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA%E4%BA%8C%E6%9C%9F/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>喜马拉雅爬取记</title>
@@ -228,7 +251,7 @@
     <link href="https://dwla.github.io/posts/17263/"/>
     <id>https://dwla.github.io/posts/17263/</id>
     <published>2018-11-17T18:00:00.000Z</published>
-    <updated>2018-12-16T05:25:07.671Z</updated>
+    <updated>2019-01-06T08:44:30.763Z</updated>
     
     <summary type="html">
     
@@ -1894,9 +1917,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
-    
       <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
+    
+      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
     
   </entry>
   
