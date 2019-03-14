@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-03-14T10:03:23.440Z</updated>
+  <updated>2019-03-14T10:11:49.258Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -17,17 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>人心难测，老鼠心好测</title>
+    <title>杂谈录（十九）</title>
     <link href="https://dwla.github.io/posts/20684/"/>
     <id>https://dwla.github.io/posts/20684/</id>
     <published>2019-03-14T09:00:00.000Z</published>
-    <updated>2019-03-14T10:03:23.440Z</updated>
+    <updated>2019-03-14T10:11:49.258Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;https://dwla.github.io/BP/2019031401.jpg&quot; alt=&quot;我作诗也有批判性的&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="杂货铺二期" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA%E4%BA%8C%E6%9C%9F/"/>
     
     
   </entry>
@@ -1992,9 +1994,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
-    
       <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
+    
+      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
     
   </entry>
   
