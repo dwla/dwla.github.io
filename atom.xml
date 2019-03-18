@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-03-15T20:52:58.606Z</updated>
+  <updated>2019-03-18T15:13:45.094Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>广仁曰</title>
+    <link href="https://dwla.github.io/posts/61731/"/>
+    <id>https://dwla.github.io/posts/61731/</id>
+    <published>2019-03-18T14:00:00.000Z</published>
+    <updated>2019-03-18T15:13:45.094Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;广仁曰&lt;/strong&gt;：OLS估计和MLS估计的本质区别何在？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;难得在离开大学之前被老师怒骂了一顿，上次写&lt;a href=&quot;https://dwla.github.io/posts/20684/&quot;&gt;杂谈录（十九）&lt;/a&gt;还以为自己总结的很好，现在看来我是本末倒置了，方法之间的本质差别不在于&lt;strong&gt;好的性质&lt;/strong&gt;和&lt;strong&gt;目的&lt;/strong&gt;，而在于&lt;strong&gt;定义&lt;/strong&gt;，在于&lt;strong&gt;前提条件&lt;/strong&gt;，这才是最本质的区别（&lt;font color=&quot;#8B0000&quot;&gt;你们（我）的统计真是白学了&lt;/font&gt;）。你们都没有好好想想定义，里面大有文章。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="杂货铺二期" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA%E4%BA%8C%E6%9C%9F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>國學（第十二講）</title>
@@ -43,7 +64,7 @@
     <link href="https://dwla.github.io/posts/20684/"/>
     <id>https://dwla.github.io/posts/20684/</id>
     <published>2019-03-14T09:00:00.000Z</published>
-    <updated>2019-03-16T14:35:55.857Z</updated>
+    <updated>2019-03-18T14:27:43.697Z</updated>
     
     <summary type="html">
     
@@ -2016,9 +2037,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
-    
       <category term="R" scheme="https://dwla.github.io/tags/R/"/>
+    
+      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
     
   </entry>
   
