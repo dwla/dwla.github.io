@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-03-18T15:13:45.094Z</updated>
+  <updated>2019-03-20T09:26:09.495Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -17,11 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>國學（第十三講）</title>
+    <link href="https://dwla.github.io/posts/4912/"/>
+    <id>https://dwla.github.io/posts/4912/</id>
+    <published>2019-03-20T07:00:00.000Z</published>
+    <updated>2019-03-20T09:26:09.495Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当我回看我所记的国学笔记，一个个片段重回脑海，却也压抑觉得自己真正悟到的也就文中一点点，一点点而已。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="明诚堂" scheme="https://dwla.github.io/categories/%E6%98%8E%E8%AF%9A%E5%A0%82/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>广仁曰</title>
     <link href="https://dwla.github.io/posts/61731/"/>
     <id>https://dwla.github.io/posts/61731/</id>
     <published>2019-03-18T14:00:00.000Z</published>
-    <updated>2019-03-18T15:13:45.094Z</updated>
+    <updated>2019-03-19T15:46:30.953Z</updated>
     
     <summary type="html">
     
@@ -2037,9 +2055,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
-    
       <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
+    
+      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
     
   </entry>
   
