@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-03-20T09:49:24.316Z</updated>
+  <updated>2019-03-28T17:50:27.459Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>孤狼曰（二）</title>
+    <link href="https://dwla.github.io/posts/60297/"/>
+    <id>https://dwla.github.io/posts/60297/</id>
+    <published>2019-03-28T18:00:00.000Z</published>
+    <updated>2019-03-28T17:50:27.459Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;　　所謂致知在格物者，言欲致吾之知，在即物而窮其理也。蓋人心之靈莫不有知，而天下之物莫不有理，惟於理有未窮，故其知有不盡也。&lt;strong&gt;是以大學始教，必使學者即凡天下之物，莫不因其已知之理而益窮之，以求至乎其極。至於用力之久，而一旦豁然貫通焉，則眾物之表裏精粗無不到，而吾心之全體大用無不明矣&lt;/strong&gt;。此謂物格，此謂知之至也。（朱子補傳）&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="杂货铺二期" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA%E4%BA%8C%E6%9C%9F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>國學（第十四講）</title>
+    <link href="https://dwla.github.io/posts/36685/"/>
+    <id>https://dwla.github.io/posts/36685/</id>
+    <published>2019-03-28T17:00:00.000Z</published>
+    <updated>2019-03-28T17:59:43.841Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;時隔兩日，尚成此文，稍覺疲憊，期間雖不如自己讀書“不亦說乎”，亦算得上“不亦樂乎”。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="明诚堂" scheme="https://dwla.github.io/categories/%E6%98%8E%E8%AF%9A%E5%A0%82/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>國學（第十三講）</title>
@@ -2055,9 +2093,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
-    
       <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
+    
+      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
     
   </entry>
   
