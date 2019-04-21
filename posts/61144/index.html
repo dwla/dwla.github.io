@@ -175,12 +175,12 @@
         <div class="content">
             <p><img src="https://github.com/dwla/BP/blob/master/2018070402.jpg?raw=true" alt=""></p>
 <a id="more"></a>
-<div id="aplayer-fQZBtYtD" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-XLyGrYpW" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[00:01.58]纯音乐，请欣赏</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-fQZBtYtD"),
+					element: document.getElementById("aplayer-XLyGrYpW"),
 					narrow: false,
 					autoplay: true,
 					showlrc: 2,
@@ -199,12 +199,12 @@
 <p>命令为：<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">aplayerlrc &lt;- <span class="hljs-keyword">function</span>(url) &#123;</span><br><span class="line">  <span class="hljs-keyword">require</span>(dplyr)</span><br><span class="line">  <span class="hljs-keyword">require</span>(httr)</span><br><span class="line">  <span class="hljs-keyword">require</span>(XML)</span><br><span class="line">  <span class="hljs-keyword">require</span>(RCurl)</span><br><span class="line">  <span class="hljs-keyword">require</span>(stringi)</span><br><span class="line">  lyrics_adjust &lt;- <span class="hljs-keyword">function</span>(url) &#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (length(grep(<span class="hljs-string">"www.kugou.com"</span>, url)) == <span class="hljs-number">1</span> | length(grep(<span class="hljs-string">"www.xiami.com"</span>, url)) == <span class="hljs-number">1</span> | length(grep(<span class="hljs-string">"music.migu.cn"</span>, url)) == <span class="hljs-number">1</span>) &#123;</span><br><span class="line">      <span class="hljs-keyword">return</span>(<span class="hljs-string">"\r\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span> (length(grep(<span class="hljs-string">"music.163.com"</span>, url)) == <span class="hljs-number">1</span> | length(grep(<span class="hljs-string">"y.qq.com"</span>, url)) == <span class="hljs-number">1</span> | length(grep(<span class="hljs-string">"www.kuwo.cn"</span>, url)) == <span class="hljs-number">1</span> | length(grep(<span class="hljs-string">"music.baidu.com"</span>, url)) == <span class="hljs-number">1</span> | length(grep(<span class="hljs-string">"www.1ting.com"</span>, url)) == <span class="hljs-number">1</span>) &#123;</span><br><span class="line">      <span class="hljs-keyword">return</span>(<span class="hljs-string">"\n"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  baseurl &lt;- <span class="hljs-string">'http://www.guqiankun.com/tools/music/'</span></span><br><span class="line">  headers &lt;- c(</span><br><span class="line">    <span class="hljs-string">'Accept'</span> = <span class="hljs-string">'application/json, text/javascript, */*; q=0.01'</span>,</span><br><span class="line">    <span class="hljs-string">'Accept-Encoding'</span> = <span class="hljs-string">'gzip, deflate'</span>,</span><br><span class="line">    <span class="hljs-string">'Accept-Language'</span> = <span class="hljs-string">'zh-CN,zh;q=0.9'</span>,</span><br><span class="line">    <span class="hljs-string">'Connection'</span> = <span class="hljs-string">'keep-alive'</span>,</span><br><span class="line">    <span class="hljs-string">'Content-Type'</span> = <span class="hljs-string">'application/x-www-form-urlencoded; charset=UTF-8'</span>,</span><br><span class="line">    <span class="hljs-string">'Cookie'</span> = <span class="hljs-string">'Hm_lvt_36843be285fe5d24cceaa31fbabc12ca=1530543353,1530633381; Hm_lpvt_36843be285fe5d24cceaa31fbabc12ca=1530650492'</span>,</span><br><span class="line">    <span class="hljs-string">'Host'</span> = <span class="hljs-string">'www.guqiankun.com'</span>,</span><br><span class="line">    <span class="hljs-string">'Origin'</span> = <span class="hljs-string">'http://www.guqiankun.com'</span>,</span><br><span class="line">    <span class="hljs-string">'Referer'</span> = paste(<span class="hljs-string">"http://www.guqiankun.com/tools/music/?url="</span>, url, sep = <span class="hljs-string">""</span>),</span><br><span class="line">    <span class="hljs-string">'User-Agent'</span> = <span class="hljs-string">'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'</span>,</span><br><span class="line">    <span class="hljs-string">'X-Requested-With'</span> = <span class="hljs-string">'XMLHttpRequest'</span></span><br><span class="line">  )</span><br><span class="line">  payload &lt;- list(</span><br><span class="line">    <span class="hljs-string">'input'</span> = url,</span><br><span class="line">    <span class="hljs-string">'filter'</span> = <span class="hljs-string">'url'</span>,</span><br><span class="line">    <span class="hljs-string">'type'</span> = <span class="hljs-string">'_'</span>,</span><br><span class="line">    <span class="hljs-string">'page'</span> = <span class="hljs-string">'1'</span></span><br><span class="line">  )</span><br><span class="line">  r &lt;- POST(baseurl, add_headers(.headers = headers), body = payload, encode = <span class="hljs-string">'form'</span>)</span><br><span class="line">  temp &lt;- r %&gt;% content() %&gt;% strsplit(split = <span class="hljs-string">'\",\"'</span>, fixed = <span class="hljs-literal">TRUE</span>) %&gt;%</span><br><span class="line">    unlist() %&gt;% strsplit(split = <span class="hljs-string">"\":\""</span>, fixed = <span class="hljs-literal">TRUE</span>) %&gt;%</span><br><span class="line">    unlist() %&gt;% strsplit(split = <span class="hljs-string">"\":[&#123;\""</span>, fixed = <span class="hljs-literal">TRUE</span>) %&gt;%</span><br><span class="line">    unlist() %&gt;% strsplit(split = <span class="hljs-string">"\"&#125;],\""</span>, fixed = <span class="hljs-literal">TRUE</span>) %&gt;%</span><br><span class="line">    unlist()</span><br><span class="line">  song_name &lt;- temp %&gt;% `[`(which(temp == <span class="hljs-string">"title"</span>)+<span class="hljs-number">1</span>) %&gt;%</span><br><span class="line">    stri_unescape_unicode()</span><br><span class="line">  author_name &lt;- temp %&gt;% `[`(which(temp == <span class="hljs-string">"author"</span>)+<span class="hljs-number">1</span>) %&gt;%</span><br><span class="line">    stri_unescape_unicode()</span><br><span class="line">  play_url &lt;- temp %&gt;% `[`(which(temp == <span class="hljs-string">"url"</span>)+<span class="hljs-number">1</span>) %&gt;%</span><br><span class="line">    gsub(pattern = <span class="hljs-string">"\\"</span>, replacement = <span class="hljs-string">""</span>, fixed = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">  img &lt;- temp %&gt;% `[`(which(temp == <span class="hljs-string">"pic"</span>)+<span class="hljs-number">1</span>) %&gt;%</span><br><span class="line">    gsub(pattern = <span class="hljs-string">"\\"</span>, replacement = <span class="hljs-string">""</span>, fixed = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">  lyrics &lt;- temp %&gt;% `[`(which(temp == <span class="hljs-string">"lrc"</span>)+<span class="hljs-number">1</span>) %&gt;%</span><br><span class="line">    stri_unescape_unicode() %&gt;% gsub(pattern = lyrics_adjust(url), replacement = <span class="hljs-string">""</span>, fixed = <span class="hljs-literal">TRUE</span>)</span><br><span class="line">  cat(paste(<span class="hljs-string">'&#123;% aplayerlrc "'</span>, song_name, <span class="hljs-string">'" "'</span>, author_name, <span class="hljs-string">'" "'</span>, play_url, <span class="hljs-string">'" "'</span>, img, <span class="hljs-string">'" "autoplay" %&#125;'</span>, sep = <span class="hljs-string">""</span>), sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">  cat(lyrics, sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">  cat(<span class="hljs-string">'&#123;% endaplayerlrc %&#125;'</span>, sep = <span class="hljs-string">"\n"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>只需要拿下面这一堆命令测试一下就好了。。。我只弄了<code>网易</code>、<code>QQ</code>、<code>酷狗</code>、<code>酷我</code>、<code>虾米</code>、<code>百度</code>、<code>一听</code>和<code>咪咕</code>，后来觉得后面的我也不怎么会拿来查音乐，也就没继续弄了（毕竟我不会写推文给大家插一段喜马拉雅电台）。如果你们想加的话只要调整命令的歌词部分<code>lyrics_adjust</code>返回是<code>\r\n</code>还是<code>\n</code>就好了。<br><figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">url &lt;- <span class="hljs-string">"http://music.163.com/#/song?id=25906124"</span></span><br><span class="line">aplayerlrc(url)</span><br><span class="line"></span><br><span class="line">url &lt;- <span class="hljs-string">"http://y.qq.com/n/yqq/song/002B2EAA3brD5b.html"</span></span><br><span class="line">aplayerlrc(url)</span><br><span class="line"></span><br><span class="line">url &lt;- <span class="hljs-string">"http://www.kugou.com/song/#hash=08228af3cb404e8a4e7e9871bf543ff6"</span></span><br><span class="line">aplayerlrc(url)</span><br><span class="line"></span><br><span class="line">url &lt;- <span class="hljs-string">"http://www.kuwo.cn/yinyue/7149583?catalog=yueku2016"</span></span><br><span class="line">aplayerlrc(url)</span><br><span class="line"></span><br><span class="line">url &lt;- <span class="hljs-string">"http://www.xiami.com/song/2113248"</span></span><br><span class="line">aplayerlrc(url)</span><br><span class="line"></span><br><span class="line">url &lt;- <span class="hljs-string">"http://music.baidu.com/song/266069"</span></span><br><span class="line">aplayerlrc(url)</span><br><span class="line"></span><br><span class="line">url &lt;- <span class="hljs-string">"http://www.1ting.com/player/b6/player_357838.html"</span></span><br><span class="line">aplayerlrc(url)</span><br><span class="line"></span><br><span class="line">url &lt;- <span class="hljs-string">"http://music.migu.cn/v2/music/song/1109969375"</span></span><br><span class="line">aplayerlrc(url)</span><br></pre></td></tr></table></figure></p>
 <p>然后运行结果复制到md文档就能变成下面的啦（我去掉了<code>&quot;autoplay&quot;</code>，免得全在这自动播放了。。。）。如果查询结果有缺失，再运行几次（下面的《告白气球》我就运行了三次），还是一样的话只能是你找的那首歌本来就缺东西（没有歌词啥的。。。），一般不会有这个问题，网易缺了就去QQ找嘛。下面的是没救了，手动改吧。。。封面可以自己换，因为从<a href="http://www.guqiankun.com/tools/music/" target="_blank" rel="noopener">http://www.guqiankun.com/tools/music/</a>请求回来的是作者封面，嗯，文章开头的封面本是作者大叔。</p>
-<div id="aplayer-qawPJvzo" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-qlYgICwF" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[by:Taynochan][ti:不要说话][ar:陈奕迅][al:博儿Lrc试练][by:博儿][00:00.00] 作曲 : 小柯[00:01.00] 作词 : 小柯 　　[00:18.77]深色的海面布满白色的月光[00:24.51][00:25.11]我出神望着海 心不知飞哪去[00:31.64]听到她在告诉你[00:35.28]说她真的喜欢你[00:39.48]我不知该 躲哪里[00:47.17]爱一个人是不是应该有默契[00:54.15]我以为你懂得每当我看着你[01:00.07]我藏起来的秘密[01:03.67]在每一天清晨里[01:07.60]暖成咖啡 安静的拿给你[01:14.33]愿意 用一支黑色的铅笔[01:18.81]画一出沉默舞台剧[01:22.95]灯光再亮 也抱住你[01:28.53]愿意 在角落唱沙哑的歌[01:33.06]再大声也都是给你[01:37.24]请用心听 不要说话[01:51.54]爱一个人是不是应该要默契[01:58.36]我以为你懂得每当我看着你[02:04.34]我藏起来的秘密[02:08.22]在每一天清晨里[02:11.47]暖成咖啡 安静的拿给你[02:18.49]愿意 用一支黑色的铅笔[02:22.92]画一出沉默舞台剧[02:27.31]灯光再亮 也抱住你[02:33.04]愿意 在角落唱沙哑的歌[02:37.33]再大声也都是给你[02:41.46]请用心听 不要说话[03:15.81]愿意 用一支黑色的铅笔[03:19.95]画一出沉默舞台剧[03:24.43]灯光再亮 也抱住你[03:29.82]愿意 在角落唱沙哑的歌[03:34.19]再大声也都是给你[03:38.48]请原谅我 不会说话[03:44.11]愿意 用一支黑色的铅笔[03:48.55]画一出沉默舞台剧[03:52.68]灯光再亮 也抱住你[03:58.35]愿意 在角落唱沙哑的歌[04:02.84]再大声也都是给你[04:06.97]爱是用心吗 不要说话</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-qawPJvzo"),
+					element: document.getElementById("aplayer-qlYgICwF"),
 					narrow: false,
 					autoplay: false,
 					showlrc: 2,
@@ -218,12 +218,12 @@
 				window.aplayers || (window.aplayers = []);
 				window.aplayers.push(ap);
 			</script>
-<div id="aplayer-RqkcihUi" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-SwwrHtxe" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[ti:不要说话][ar:陈奕迅][al:不想放手][by:][offset:0][00:01.27]不要说话 (《时尚先生》电影主题曲) - 陈奕迅 (Eason Chan)[00:02.79]词：小柯[00:03.68]曲：小柯[00:04.36][00:18.25]深色的海面布满白色的月光[00:23.69][00:25.39]我出神望着海心不知飞哪去[00:31.23]听到她在告诉你[00:35.03]说她真的喜欢你[00:38.35]我不知该 躲哪里[00:43.69][00:46.90]爱一个人是不是应该有默契[00:52.31][00:54.01]我以为你懂得每当我看着你[00:59.87]我藏起来的秘密[01:03.69]在每一天清晨里[01:07.04]暖成咖啡 安静的拿给你[01:14.16]愿意 用一支黑色的铅笔[01:18.67]画一出沉默舞台剧[01:22.41][01:22.92]灯光再亮 也抱住你[01:26.90][01:28.49]愿意 在角落唱沙哑的歌[01:33.00]再大声也都是给你[01:36.60][01:37.27]请用心听 不要说话[01:40.96][01:51.38]爱一个人是不是应该有默契[01:56.83][01:58.53]我以为你懂得每当我看着你[02:04.32]我藏起来的秘密[02:08.20]在每一天清晨里[02:11.48]暖成咖啡 安静的拿给你[02:18.67]愿意 用一支黑色的铅笔[02:23.11]画一出沉默舞台剧[02:26.80][02:27.39]灯光再亮 也抱住你[02:31.15][02:32.98]愿意 在角落唱沙哑的歌[02:37.52]再大声也都是给你[02:41.58]请用心听 不要说话[02:45.62][03:16.05]愿意 用一支黑色的铅笔[03:20.41]画一出沉默舞台剧[03:24.18][03:24.71]灯光再亮 也抱住你[03:28.46][03:30.30]愿意 在角落唱沙哑的歌[03:34.78]再大声也都是给你[03:38.85]请原谅我 不会说话[03:42.93][03:44.67]愿意 用一支黑色的铅笔[03:49.11]画一出沉默舞台剧[03:53.16]灯光再亮 也抱住你[03:57.52][03:58.93]愿意 在角落唱沙哑的歌[04:03.43]再大声也都是给你[04:07.55]爱是用心吗 不要说话</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-RqkcihUi"),
+					element: document.getElementById("aplayer-SwwrHtxe"),
 					narrow: false,
 					autoplay: false,
 					showlrc: 2,
@@ -237,12 +237,12 @@
 				window.aplayers || (window.aplayers = []);
 				window.aplayers.push(ap);
 			</script>
-<div id="aplayer-NXJHssZW" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-VLWqebHS" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[00:00.77]陈奕迅 - 不要说话[00:01.93]词：小柯[00:02.54]曲：小柯[00:18.26]深色的海面布满白色的月光[00:25.47]我出神望着海心不知飞哪去[00:31.27]听到他在告诉你[00:35.17]说他真的喜欢你[00:38.42]我不知该 躲哪里[00:46.90]爱一个人是不是应该有默契[00:54.10]我以为你懂得每当我看着你[00:59.89]我藏起来的秘密[01:03.79]在每一天清晨里[01:07.00]暖成咖啡 安静的拿给你[01:14.25]愿意 用一支黑色的铅笔[01:18.68]画一出沉默舞台剧[01:22.93]灯光再亮 也抱住你[01:28.47]愿意 在角落唱沙哑的歌[01:32.99]再大声也都是给你[01:37.30]请用心听 不要说话[01:51.41]爱一个人是不是应该有默契[01:58.56]我以为你懂得每当我看着你[02:04.30]我藏起来的秘密[02:08.12]在每一天清晨里[02:11.42]暖成咖啡 安静的拿给你[02:18.70]愿意 用一支黑色的铅笔[02:23.17]画一出沉默舞台剧[02:27.43]灯光再亮 也抱住你[02:32.99]愿意 在角落唱沙哑的歌[02:37.41]再大声也都是给你[02:41.57]请用心听 不要说话[03:16.12]愿意 用一支黑色的铅笔[03:20.44]画一出沉默舞台剧[03:24.82]灯光再亮 也抱住你[03:30.25]愿意 在角落唱沙哑的歌[03:34.77]再大声也都是给你[03:38.88]请原谅我 不会说话[03:44.62]愿意 用一支黑色的铅笔[03:49.14]画一出沉默舞台剧[03:53.25]灯光再亮 也抱住你[03:58.99]愿意 在角落唱沙哑的歌[04:03.34]再大声也都是给你[04:07.50]爱是用心吗 不要说话</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-NXJHssZW"),
+					element: document.getElementById("aplayer-VLWqebHS"),
 					narrow: false,
 					autoplay: false,
 					showlrc: 2,
@@ -256,12 +256,12 @@
 				window.aplayers || (window.aplayers = []);
 				window.aplayers.push(ap);
 			</script>
-<div id="aplayer-RlEOSSTb" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-EApvCHWx" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[00:0.73]告白气球 - 周杰伦[00:3.17]词：方文山[00:5.03]曲：周杰伦[00:23.56]塞纳河畔  左岸的咖啡[00:26.28]我手一杯  品尝你的美[00:29.27]留下唇印的嘴[00:34.08]花店玫瑰  名字写错谁[00:36.8]告白气球  风吹到对街[00:39.86]微笑在天上飞[00:44.03]你说你有点难追[00:46.66]想让我知难而退[00:49.32]礼物不需挑最贵[00:51.53]只要香榭的落叶[00:54.48]喔～营造浪漫的约会[00:56.81]不害怕搞砸一切[00:59.56]拥有你就拥有  全世界[01:08.23]亲爱的  爱上你  从那天起[01:18.82]甜蜜的很轻易[01:26.02]亲爱的  别任性  你的眼睛[01:36.67]在说我愿意[01:81.3]塞纳河畔  左岸的咖啡[01:85.72]我手一杯  品尝你的美[01:91.35]留下唇印的嘴[01:99.05]花店玫瑰  名字写错谁[02:03.35]告白气球  风吹到对街[02:08.68]微笑在天上飞[02:15.57]你说你有点难追[02:19.53]想让我知难而退[02:23.88]礼物不需挑最贵[02:28.12]只要香榭的落叶[02:32.68]喔～营造浪漫的约会[02:36.92]不害怕搞砸一切[02:41.53]拥有你就拥有  全世界[02:50.4]亲爱的  爱上你  从那天起[02:61.22]甜蜜的很轻易[02:68.22]亲爱的  别任性  你的眼睛[02:78.9]在说我愿意[02:86.02]亲爱的  爱上你  恋爱日记[02:96.87]飘香水的回忆[03:03.82]一整瓶  的梦境  全都有你[03:14.73]搅拌在一起[03:21.42]亲爱的别任性  你的眼睛[03:35.28]在说我愿意</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-RlEOSSTb"),
+					element: document.getElementById("aplayer-EApvCHWx"),
 					narrow: false,
 					autoplay: false,
 					showlrc: 2,
@@ -275,12 +275,12 @@
 				window.aplayers || (window.aplayers = []);
 				window.aplayers.push(ap);
 			</script>
-<div id="aplayer-VxLmzJGd" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-KfnbnfGY" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">﻿[ti:不要说话][ar:陈奕迅][al:][ly:小柯][mu:小柯][ma:][pu:][by:ttpod][total:285387][offset:0][00:00.070]不要说话 - 陈奕迅[00:00.190]作词：小柯[00:00.280]作曲：小柯[00:00.340][00:18.255]深色的海面布满白色的月光[00:25.395]我出神望着海心不知飞哪去[00:31.235]听到她在告诉你[00:35.035]说她真的喜欢你[00:38.355]我不知该 躲哪里[00:46.905]爱一个人是不是应该有默契[00:54.015]我以为你懂得每当我看着你[00:59.875]我藏起来的秘密[01:03.694]在每一天清晨里[01:07.043]暖成咖啡 安静的拿给你[01:14.163]愿意 用一支黑色的铅笔[01:18.673]画一出沉默舞台剧[01:22.923]灯光再亮 也抱住你[01:28.493]愿意 在角落唱沙哑的歌[01:33.003]再大声也都是给你[01:37.272]请用心听 不要说话[01:40.962][01:51.382]爱一个人是不是应该有默契[01:58.532]我以为你懂得每当我看着你[02:04.322]我藏起来的秘密[02:08.202]在每一天清晨里[02:11.482]暖成咖啡 安静的拿给你[02:18.672]愿意 用一支黑色的铅笔[02:23.112]画一出沉默舞台剧[02:27.392]灯光再亮 也抱住你[02:32.982]愿意 在角落唱沙哑的歌[02:37.522]再大声也都是给你[02:41.582]请用心听 不要说话[02:45.622][03:16.050]愿意 用一支黑色的铅笔[03:20.410]画一出沉默舞台剧[03:24.710]灯光再亮 也抱住你[03:30.300]愿意 在角落唱沙哑的歌[03:34.780]再大声也都是给你[03:38.850]请原谅我 不会说话[03:44.670]愿意 用一支黑色的铅笔[03:49.110]画一出沉默舞台剧[03:53.160]灯光再亮 也抱住你[03:58.930]愿意 在角落唱沙哑的歌[04:03.430]再大声也都是给你[04:07.550]爱是用心吗 不要说话</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-VxLmzJGd"),
+					element: document.getElementById("aplayer-KfnbnfGY"),
 					narrow: false,
 					autoplay: false,
 					showlrc: 2,
@@ -294,12 +294,12 @@
 				window.aplayers || (window.aplayers = []);
 				window.aplayers.push(ap);
 			</script>
-<div id="aplayer-fKsqvhJb" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-XMOAkNns" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[ti:][ar:][al:][by:][offset:0][00:01.48]不要说话[00:03.93]作词:小柯[00:05.98]作曲:小柯[00:08.18]演唱:陈奕迅[00:10.78][00:20.92]深色的海面扑满 白色的月光[00:27.99]我出神望着海 心不知飞哪去[00:33.69]听到她在告诉你[00:37.52]说她真的喜欢你[00:40.84]我不知该 躲哪里[00:46.41][00:49.52]爱一个人是不是应该有默契[00:56.50]我以为你懂得每当我看着你[01:02.38]我藏起来的秘密[01:06.23]在每一天清晨里[01:09.60]暖成咖啡 安静的拿给你[01:16.35][01:16.61]愿意 用一支黑色的铅笔[01:21.04]画一出沉默舞台剧[01:25.45]灯光再亮 也抱住你[01:30.95]愿意 在角落唱沙哑的歌[01:35.34]再大声也都是给你[01:39.71]请用心听 不要说话[01:44.97][01:54.15]爱一个人是不是应该要默契[02:00.94]我以为你懂得每当我看着你[02:06.84]我藏起来的秘密[02:10.92]在每一天清晨里[02:13.92]暖成咖啡 安静的拿给你[02:20.88][02:21.11]愿意 用一支黑色的铅笔[02:25.44]画一出沉默舞台剧[02:29.91]灯光再亮 也抱住你[02:35.41]愿意 在角落唱沙哑的歌[02:39.80]再大声也都是给你[02:44.01]请用心听 不要说话[02:50.19][03:18.51]愿意 用一支黑色的铅笔[03:22.67]画一出沉默舞台剧[03:27.35]灯光再亮 也抱住你[03:32.67]愿意 在角落唱沙哑的歌[03:37.16]再大声也都是给你[03:41.32]请原谅我 不会说话[03:45.97][03:47.44]愿意 用一支黑色的铅笔[03:51.33]画一出沉默舞台剧[03:55.58]灯光再亮 也抱住你[04:01.33]愿意 在角落唱沙哑的歌[04:05.81]再大声也都是给你[04:09.88]爱是用心吗 不要说话[04:15.31]</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-fKsqvhJb"),
+					element: document.getElementById("aplayer-XMOAkNns"),
 					narrow: false,
 					autoplay: false,
 					showlrc: 2,
@@ -313,12 +313,12 @@
 				window.aplayers || (window.aplayers = []);
 				window.aplayers.push(ap);
 			</script>
-<div id="aplayer-fVsnVmFX" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-gTQEVdLc" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[ti:不要说话][ar:刘科][al:缘起缘灭 DSD][00:00.00]不要说话[00:03.00]演唱：刘科[00:06.00]词曲: 小柯[00:15.00][00:18.03]深色的海面扑满 白色的月光[00:33.47]我出神望着海 心不知飞哪去[00:39.59]听到她在告诉你[00:43.24]说她真的喜欢你[00:46.57]我不知该 躲哪里[00:52.39][02:00.10][00:54.88]爱一个人是不是应该有默契[02:06.63][01:02.19]我以为你懂得每当我看着你[02:12.49][01:08.01]我藏起来的秘密[02:16.38][01:12.00]在每一天清晨里[02:19.62][01:15.27]暖成咖啡 安静的拿给你[02:26.38][01:22.14][03:53.08][03:24.59][02:26.86][01:22.63]愿意 用一支黑色的铅笔[03:57.55][03:28.90][02:31.67][01:27.27]画一出沉默舞台剧[04:01.18][03:32.51][02:35.29][01:30.73]灯光再亮 也抱住你[04:07.39][03:38.51][02:41.24][01:36.98]愿意 在角落唱沙哑的歌[04:11.76][03:43.13][02:45.56][01:41.58]再大声也都是给你[02:49.55][01:45.10]请用心听 不要说话[04:20.46][03:51.69][02:54.46][01:49.99][03:46.95]请原谅我 不会说话[04:15.53]爱是用心吗 不要说话</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-fVsnVmFX"),
+					element: document.getElementById("aplayer-gTQEVdLc"),
 					narrow: false,
 					autoplay: false,
 					showlrc: 2,
@@ -332,12 +332,12 @@
 				window.aplayers || (window.aplayers = []);
 				window.aplayers.push(ap);
 			</script>
-<div id="aplayer-xqNLhtwN" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<div id="aplayer-IDVXksfR" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[ti:纸短情长(抖音最火版)][ar:烟把儿乐队][00:00.00]歌曲名 纸短情长(抖音最火版)[00:00.00]歌手名 烟把儿乐队[00:00.00]作词：言寺[00:00.00]作曲：言寺[00:00.64]编曲：张梓洋[00:01.53]制作人：张梓洋[00:02.68]你陪我步入蝉夏[00:05.18]越过城市喧嚣[00:07.12]歌声还在游走[00:09.32]你榴花般的双眸[00:11.91]不见你的温柔[00:14.06]丢失花间欢笑[00:16.75]岁月无法停留[00:19.14]流云的等候[00:32.96]我真的好想你[00:35.06]在每一个雨季[00:37.40]你选择遗忘的[00:39.85]是我最不舍的[00:42.39]纸短情长啊[00:44.59]道不尽太多涟漪[00:47.63]我的故事都是关于你呀[00:51.97]怎么会爱上了她[00:54.17]并决定跟她回家[00:56.61]放弃了我的所有我的一切无所谓[01:01.75]纸短情长啊[01:03.74]诉不完当时年少[01:06.89]我的故事还是关于你呀[01:28.19]我真的好想你[01:30.28]在每一个雨季[01:32.68]你选择遗忘的[01:35.02]是我最不舍的[01:37.87]纸短情长啊[01:39.81]道不尽太多涟漪[01:42.85]我的故事都是关于你呀[01:47.00]怎么会爱上了她[01:49.44]并决定跟她回家[01:51.88]放弃了我的所有我的一切无所谓[01:56.67]纸短情长啊[01:59.02]诉不完当时年少[02:02.01]我的故事还是关于你呀[02:07.05]我的故事还是关于你呀</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-xqNLhtwN"),
+					element: document.getElementById("aplayer-IDVXksfR"),
 					narrow: false,
 					autoplay: false,
 					showlrc: 2,
@@ -484,7 +484,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        106
+                        107
                     </p>
                 </div>
             </div>
@@ -636,7 +636,7 @@
                 <span class="level-item">明诚堂</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">21</span>
+                <span class="level-item tag">22</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/杂货铺/">
