@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-05-14T09:41:26.134Z</updated>
+  <updated>2019-05-19T09:56:18.251Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -17,11 +17,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>國學（第二十一講）</title>
+    <link href="https://dwla.github.io/posts/448/"/>
+    <id>https://dwla.github.io/posts/448/</id>
+    <published>2019-05-14T15:00:00.000Z</published>
+    <updated>2019-05-19T09:56:18.251Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;听音乐酝酿了很久，从罗大佑的《童年》，到李叔同的《送别》，再到朴树的《那些花儿》···最后还是用夏威的《致老朋友》吧。貌似更中正平和一点，童年送别那些感情形容这些过或不及，纯音乐更是如此。当我把明诚堂的笔记从头看到尾，那这歌甚是应景，若读者从头看到尾，应能体会我此时写的感触，這歌也就此時真開始有效應，而在内容上，“&lt;strong&gt;這些記錄對老師的講課意涵，愧不能表達多少，對文化內容的意涵，更愧不能表達萬一，若讀者讀到若干真實處，是您們自己的感情印象之真實&lt;/strong&gt;”。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="明诚堂" scheme="https://dwla.github.io/categories/%E6%98%8E%E8%AF%9A%E5%A0%82/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>國學（第二十講）</title>
     <link href="https://dwla.github.io/posts/9726/"/>
     <id>https://dwla.github.io/posts/9726/</id>
     <published>2019-05-12T06:00:00.000Z</published>
-    <updated>2019-05-14T09:41:26.134Z</updated>
+    <updated>2019-05-15T00:56:30.418Z</updated>
     
     <summary type="html">
     
@@ -2205,9 +2223,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
-    
       <category term="R" scheme="https://dwla.github.io/tags/R/"/>
+    
+      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
     
   </entry>
   
