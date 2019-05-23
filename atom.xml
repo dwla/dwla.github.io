@@ -57,7 +57,7 @@
     <link href="https://dwla.github.io/posts/56997/"/>
     <id>https://dwla.github.io/posts/56997/</id>
     <published>2019-04-24T16:15:00.000Z</published>
-    <updated>2019-05-23T16:03:07.361Z</updated>
+    <updated>2019-05-23T16:15:33.914Z</updated>
     
     <summary type="html">
     
@@ -2259,9 +2259,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
-    
       <category term="R" scheme="https://dwla.github.io/tags/R/"/>
+    
+      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
     
   </entry>
   
