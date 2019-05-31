@@ -2,21 +2,18 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>杂谈录（十九） - JWen</title>
+<title>归档: 2019 - JWen</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="article">
-<meta property="og:title" content="杂谈录（十九）">
-<meta property="og:url" content="https://dwla.github.io/posts/20684/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="JWen">
+<meta property="og:url" content="https://dwla.github.io/archives/2019/page/2/index.html">
 <meta property="og:site_name" content="JWen">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://dwla.github.io/BP/2019031401.jpg">
-<meta property="og:updated_time" content="2019-03-18T14:27:43.697Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杂谈录（十九）">
-<meta name="twitter:image" content="https://dwla.github.io/BP/2019031401.jpg">
+<meta name="twitter:title" content="JWen">
 
 
 
@@ -95,7 +92,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/虎.svg" alt="杂谈录（十九）" height="28">
+                <img src="/images/虎.svg" alt="JWen" height="28">
             
             </a>
         </div>
@@ -138,133 +135,58 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><!-- about页面的时间轴 -->
-
-             
-
-<!-- about页面的时间轴 -->
-
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-14T09:00:00.000Z">2019-03-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/杂货铺二期/">杂货铺二期</a>
-                </div>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                杂谈录（十九）
-            
-        </h1>
-
-        <div class="content">
-            <p><img src="https://dwla.github.io/BP/2019031401.jpg" alt="我作诗也有批判性的"></p>
-<a id="more"></a>
-<div id="aplayer-vEQUOQcc" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-				<pre class="aplayer-lrc-content">[00:01.58]纯音乐，请欣赏</pre>
-			</div>
-			<script>
-				var ap = new APlayer({
-					element: document.getElementById("aplayer-vEQUOQcc"),
-					narrow: false,
-					autoplay: true,
-					showlrc: 2,
-					music: {
-						title: "光、出でよ、汝グランゾート",
-						author: "田中公平",
-						url: "https://dwla.github.io/BM/光、出でよ、汝グランゾート-田中公平.mp3",
-						pic: "https://dwla.github.io/BM/光、出でよ、汝グランゾート-田中公平.jpg",
-					}
-				});
-				window.aplayers || (window.aplayers = []);
-				window.aplayers.push(ap);
-			</script>
-<p>随机变量是什么？随机变量是从样本空间到闭区间$[0, 1]$的实值函数。理想中，当我们着眼于随机变量的分布（或密度函数），现实却是，该样本点有两重性：其一，在这个总体分布出现有一定的概率；其二，既然这样本点已经出现了，就应该是概率为$1$的。所以统计是干啥呢？我想了很久觉得都可以用下面这句话解释：我们做统计是希望现实中的样本分布，和我们理想中的随机变量分布相差不大。所以这里应该有个“分布差”（我自己这么叫的。。。）来形容现实样本分布与理想随机变量分布的差异，如果我们在直角坐标系随便画俩分布线，那么我们可以很简单的将俩函数相减取绝对值，然后再在闭区间$[0, 1]$上积分，就可以刻画“分布差”。但是绝对值不好处理，我们可以改成取平方，然后在闭区间$[0, 1]$上积分，这和前面是没差的，只不过分布间的细小差异被放大了（相比取绝对值）。而我们样本又是有限的，所以只好将有限的样本和“既定的”“我们希望如此的”随机变量分布的有限个“实现”相减取平方，然后在闭区间$[0, 1]$上求和。如果我们的既定随机变量是很好描述这些样本的，那么我们就自以为窥探到了规律了，我们自以为我们的样本就是来这个“既定的”“我们希望如此的”随机变量的分布了。我说窥探到规律，只是因为，我们所有的模型，就好比经济上的，如果$Y = X + Z + \epsilon$，这只是把随机变量分解而已，说白了就是，用几个已知分布的随机变量（例如上式的$X$，$Z$和$\epsilon$）来构建$Y$这个随机变量，如果在这些有限样本的测试中，我们发现，哟，还不错，相差无几，这时候我们就自以为窥探到了规律。</p>
-<p>所以按上面整一段这么想之后得出什么结论呢？就是构建“模型”本质上，还是在说“要让样本分布和随机变量分布的分布差”很小很小。在这里我是有两个疑问的：其一，纵然这俩分布差小的不能在小，即使为$0$，也不能说明样本分布和随机变量分布相等（这随机变量分布，也就是总体分布，一样是“既定的”“我们希望如此的”）；其二，就是如果我们把这个看成最小化分布差的优化问题，有限来看，我们是对有限求和优化，就遇到其一的问题，即便为$0$也不能说明···，而若从无限来看，这就是对闭区间$[0, 1]$积分，这里根据黎曼积分可以去掉有限个间断点，我们仍当俩分布是一样样的（在概率论的书里把这个叫做“概率论的魅力所在”。。。），但既然都有有限个点在俩分布取值上造成差异了，怎么能因为积分处理看不出来，就忽略这种差异，而觉得样本分布和随机变量分布相等呢？（<font color="#8B0000">后来想想这里应该分离散和连续两种情况，在连续情况下，有限个间断点对黎曼积分不影响，和概率的可列可加性，很是对应。<strong>而我后来想，很关键的一个地方是连接离散和连续，我们用离散的样本点来绘制连续随机变量的分布，是很需要考虑的。而我们把样本量趋于无穷，或许就是连接离散和连续的桥梁吧。</strong></font>）</p>
-<p>对这两个问题我是没想到怎么办的，甚至让我感觉会不会没办法解决啊？不过中国有句古话，叫“死马当活马医”。于是我们就让样本量趋于无穷吧（忽略掉有些间断点吧，想想概率论的魅力，其实准确来说恐怕不是概率论的魅力，而是黎曼积分的魅力。。。），于是对于样本的平均值和随机变量分布体现的“均值”相比较，就是大数定律。而一个“既定的”“我们希望如此的”分布和一堆“既定的”“我们希望如此的”分布加减乘除捣鼓一下，再相比较，就是中心极限定理。</p>
-<p>大数定律就是说，样本量趋于无穷大，从这“点”来看（例如，均值），嗯，样本分布和随机变量分布在这“点”的意义上是等价的啦，样本和随机变量通了家。。。</p>
-<p>中心极限定理就是说，一个随机变量$A$和一堆随机变量运算后结果$\sum B$，通了家。。。（这就是发现规律吧，也就是经济学里的建模吧，让扰动项$\epsilon$成正态分布了，你看，一堆随机变量运算后结果$\sum B$是一个分布，我们原来备着的那一个随机变量$A$是一个分布，然后我们多出了个扰动项$\epsilon$的分布。我们发现规律$A = \sum B + \epsilon$，这不就是$A$的分布，可以用一堆分布运算结果$\sum B$和扰动项$\epsilon$的和来刻画吗？）中心极限定理就是说，一个分布，怎么用另外一堆（这个堆字，就是那一个分布本身，此时扰动为正态。。。）分布的运算结果来刻画。</p>
-<p>看中心极限定理一个简单的试验就是“独立正态分布有限和仍为正态分布”，我们把一个正态给拆分成有限个正态，然后拖出一个称之为“扰动项”。。。这不就是我们建模干的事吗？或者，把一个正态，拆成无限个均匀分布之和，在加上一个正态（扰动项），这不也是可行的吗？所以书上利用中心极限定理近似，就是相当于丢掉扰动项（而这个扰动项我们丢掉了多少呢？就像前面均匀分布那个例子，我们的均匀分布加到无限，我们就并未丢掉扰动项，这里我觉得扰动项也已经可以再用一个均匀分布加到无限来看了；而如果我们的均匀分布加的不够多，有限情况下都还不够多，那么就是贼大的误差，且丢掉了扰动项。）经济的建模中的求系数无非就是说把$X$看成随机变量还是把$2X$看成随机变量，所以本质上还是检验左右是否相等，所以当我们说$A = \sum B + \epsilon$，其实就是误差的分布不管，这些误差无限求和成了正态的扰动项，而$A = \sum B$就是我们发现的规律，也就是上一段说的“就是那一个分布本身”</p>
-<p>中心极限定理最大的贡献，我看就是“误差的分布不管，这些误差无限求和成了正态的扰动项”这句。这样我们建模时专注剥离扰动项，剩下那一个分布本身（剩下那，一堆分布运算的结果）。由于样本可能是巧合的数字，所以这丝毫不算找到规律，找到规则，它的前提条件就是中心极限定理成立的前提条件。统计改变诸多学科，关键并非在中心极限定理引导它们发现规律规则（那些规律规则是其他学科本来就有，暂未发现吧了），而是沟通“始终算是有限的”样本和“既定的”“我们希望如此的”随机变量，误差皆来自于未发现真的规律，未发现$\sum B$就是$A$<strong>本身</strong>；未把模型右侧剥离的剩下正态扰动项（无论误差分布，所有误差在样本趋于无穷时，近似正正态。这也提供了检验方法，检验残差是否正态判断你是否剥离完全）。</p>
-<p>“人心难测，老鼠心好测。”相比经济统计，还是生物统计更让人省心的，因为自然科学的扰动项是更好剥离的，而且老鼠心可以测多几次，更近似满足“趋于无穷”的要求的。</p>
-<p>总的来看，用“协方差矩阵检验和估计”的例子，检验，就是像大数定律说的事；而估计需要建模，建模就是中心极限定理说的事。这两个是统计对世界很大的贡献，在我看来。（机器学习就是把样本量弄大，自行搭建$\sum B$用于解释$A$本身，降低惩罚的样子就是放宽扰动项正态的要求，跟计算机说：我可以给你放水放几个样本点哦。）</p>
-
-        </div>
-        
-        
-        
-        <div class="social-share"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
-<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
-        
-    </div>
-</div>
-
-
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/posts/51940/">
-                <i class="level-item material-icons">←</i>
-                <span class="level-item">國學（第十二講）</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/posts/5033/">
-                <span class="level-item">國學（第十一講）</span>
-                <i class="level-item material-icons">→</i>
-            </a>
-        </div>
-        
-    </div>
-</div>
-
-
-
-<!-- about页面的时间轴 -->
-
-<!-- about页面的时间轴 -->
-
-
-
-
-
-<div class="card">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="card widget">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        <h3 class="tag is-link">
+        2019
+        </h3>
+        <div class="timeline">
         
-<div id="valine-thread"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: true,
-        verify: false,
-        app_id: 'Nnd1E5DgoLY80jdfYHWpIeGP-gzGzoHsz',
-        app_key: 'Dkrf5Yuul64yJUJXN3iMXIvl',
-        placeholder: '在这里怒评论（请在上面怒填您的昵称和邮箱）～',
-        avatar: 'monsterid',
-        avatar_cdn: 'https://gravatar.loli.net/avatar/',
-        pageSize: '10'
-    });
-</script>
-
+            <article class="media">
+                
+                <div class="media-content">
+                    <div class="content">
+                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-01-05T03:00:00.000Z">2019-01-05</time>
+                        <a href="/posts/30328/" class="has-link-black-ter is-size-6">喜马拉雅爬取记</a>
+                        <div class="level article-meta is-mobile">
+                            <div class="level-left">
+                                
+                                <div class="level-item is-size-7 is-uppercase">
+                                <a class="has-link-grey -link" href="/categories/杂货铺二期/">杂货铺二期</a> / <a class="has-link-grey -link" href="/categories/杂货铺二期/网站爬取/">网站爬取</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        
+        </div>
     </div>
 </div>
 
+
+
+
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/archives/2019/">上一页</a>
+        </div>
+        <div class="pagination-next is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/archives/2019/page/3/">下一页</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/archives/2019/">1</a></li>
+            
+            <li><a class="pagination-link is-current" href="/archives/2019/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
+</div>
 </div>
                 
 

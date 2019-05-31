@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-05-21T13:15:44.996Z</updated>
+  <updated>2019-05-31T07:27:48.159Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>没有围墙的校园（二）</title>
+    <link href="https://dwla.github.io/posts/37516/"/>
+    <id>https://dwla.github.io/posts/37516/</id>
+    <published>2019-05-31T06:00:00.000Z</published>
+    <updated>2019-05-31T07:27:48.159Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写这篇文章的契机在于几个月前，小巴上约堂笑说“你看古金也可以写一个。”有句话很准，小时候看的是“侠”，长大了看的是“情”，问世间情为何物？我还没想清楚，在专业学习回炉重造之前，趁机记下五月份看的《神雕侠侣》、《倚天屠龙记》和《笑傲江湖》，写写几个人。功力不如王怜花，相比《古金兵器谱》我这定是一锅乱炖。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="杂货铺二期" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA%E4%BA%8C%E6%9C%9F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>國學（第二十一講）</title>
@@ -57,7 +75,7 @@
     <link href="https://dwla.github.io/posts/56997/"/>
     <id>https://dwla.github.io/posts/56997/</id>
     <published>2019-04-24T16:15:00.000Z</published>
-    <updated>2019-05-23T16:15:33.914Z</updated>
+    <updated>2019-05-23T16:18:16.914Z</updated>
     
     <summary type="html">
     
@@ -2259,9 +2277,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
-    
       <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
+    
+      <category term="R" scheme="https://dwla.github.io/tags/R/"/>
     
   </entry>
   
