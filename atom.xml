@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-10-04T05:49:58.697Z</updated>
+  <updated>2019-10-19T05:26:07.772Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Okie Dokie 2</title>
+    <link href="https://dwla.github.io/posts/53557/"/>
+    <id>https://dwla.github.io/posts/53557/</id>
+    <published>2019-10-18T09:20:00.000Z</published>
+    <updated>2019-10-19T05:26:07.772Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;1950年前的数学你都还是能找到路径的，都可解释动机是什么。但从那往后的数学你很难读到动机是什么，因为战后数学的智慧堆叠了这么厚厚的一层（Tam用手比划着），突然爆发出来，你除非真是天才聪明得站在那些数学家之上，你就能看出他们做的数学的道理是什么。否则，但看教科书也不能真的明白的。···丘成桐在这里只认识两个人哦，一个是···，还有一个就是我啦。···呢，啊我们这有位老先生真是很厉害的，在我眼里他是真的喜欢数学的，而我喜欢的程度只有他的一半不到。不过这位老先生是“痴痴癫癫”的（粤语），他的博士是很难拿的，他的学生也是读得“痴痴癫癫”。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="杂货铺二期" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA%E4%BA%8C%E6%9C%9F/"/>
+    
+      <category term="数学" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA%E4%BA%8C%E6%9C%9F/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Okie Dokie</title>
@@ -2394,9 +2416,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
-    
       <category term="R" scheme="https://dwla.github.io/tags/R/"/>
+    
+      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
     
   </entry>
   
