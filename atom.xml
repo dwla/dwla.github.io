@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dwla.github.io/"/>
-  <updated>2019-12-31T07:18:24.552Z</updated>
+  <updated>2020-01-13T14:03:03.893Z</updated>
   <id>https://dwla.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>没有围墙的校园（四）</title>
+    <link href="https://dwla.github.io/posts/61492/"/>
+    <id>https://dwla.github.io/posts/61492/</id>
+    <published>2020-01-13T09:00:00.000Z</published>
+    <updated>2020-01-13T14:03:03.893Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://dwla.github.io/BP/2020011301.jpg&quot; alt=&quot;“中書君”“管城子”都是“筆”的別稱。“管錐編”“圍城”二書作者的筆名是“中書君”——绛注&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="杂货铺二期" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA%E4%BA%8C%E6%9C%9F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>又是豪兴不浅（三）</title>
@@ -153,6 +171,25 @@
     <summary type="html">
     
       &lt;p&gt;在这里闲聊一下各种语录，特别是老师的语录，几天前我想起泛函分析老师的话，“从前的数学家都没有手机的，他们没什么事干，只好学数学。”然后想起自己很久没有听数学课了，没有数学交流，没有记一些语录。这篇文章的motivation有两个，一个是记一些好玩的东西，还有一个，就是，记下自己第一次体会到“在如今学术考评机制下，达到考评的【最低要求】，然后好好读书。”&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="杂货铺二期" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA%E4%BA%8C%E6%9C%9F/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>没有围墙的校园（三）</title>
+    <link href="https://dwla.github.io/posts/40693/"/>
+    <id>https://dwla.github.io/posts/40693/</id>
+    <published>2019-07-31T13:00:00.000Z</published>
+    <updated>2019-08-30T12:57:05.661Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;“难得空闲”的时间结束了，看完《鹿鼎记》，这是我对韦小宝最浓缩的印象了：&lt;/p&gt;
+&lt;p&gt;找老婆上不婆妈，在官场和江湖间的&lt;strong&gt;当机立断&lt;/strong&gt;，出于天性，&lt;strong&gt;理由简单&lt;/strong&gt;，这种世故圆滑不惹人烦，&lt;strong&gt;有着起码的底线&lt;/strong&gt;，或许是义气，&lt;strong&gt;若最后逼得紧了，那“老子不干了”&lt;/strong&gt;。&lt;/p&gt;
     
     </summary>
     
@@ -2463,9 +2500,9 @@
       <category term="杂货铺" scheme="https://dwla.github.io/categories/%E6%9D%82%E8%B4%A7%E9%93%BA/"/>
     
     
-      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
-    
       <category term="R" scheme="https://dwla.github.io/tags/R/"/>
+    
+      <category term="Stata" scheme="https://dwla.github.io/tags/Stata/"/>
     
   </entry>
   
