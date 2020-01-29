@@ -15,12 +15,12 @@
 <meta property="og:site_name" content="JWen">
 <meta property="og:description" content="“保险”心得昨天和鱼油同学聊到随机过程中的马尔科夫，这玩意真是，在统计预测和决策里面有，在非寿险的NCD系统里面也有。不过我目前只能学到“$\pi$来$\pi$去”的程度，这是随机过程自己挖的坑，只能以后自己填补。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018062101.jpg?raw=true">
-<meta property="og:updated_time" content="2018-12-16T05:01:15.593Z">
+<meta property="og:image" content="https://dwla.github.io/BP/2018062101.jpg">
+<meta property="og:updated_time" content="2020-01-29T03:13:07.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="“保险”心得和pcomic爬取记">
 <meta name="twitter:description" content="“保险”心得昨天和鱼油同学聊到随机过程中的马尔科夫，这玩意真是，在统计预测和决策里面有，在非寿险的NCD系统里面也有。不过我目前只能学到“$\pi$来$\pi$去”的程度，这是随机过程自己挖的坑，只能以后自己填补。">
-<meta name="twitter:image" content="https://github.com/dwla/BP/blob/master/2018062101.jpg?raw=true">
+<meta name="twitter:image" content="https://dwla.github.io/BP/2018062101.jpg">
 
 
 
@@ -189,7 +189,7 @@
 <p>在保险也中的监管制度也和FDA监管食品和药物类似。保险中如果过度的风险细分，反而会延迟险种的更新。也会有类似的“保险滞后”和“保险缺失”的问题，所以保险的发展也是要兼顾两个方面的平衡。</p>
 <p>类似的比较有趣的是上课说的，生死合险“生”和“死”一起卖，保险人风险降低了：$$Var(Z) = Var(Z_1) + Var(Z_2) - 2E(Z_1)E(Z_2)$$所以，在保险发展中，我们是先细分了“生”和“死”之后，才发现“生死合险”是更能降低保险人风险的。我们本以为细分了“生死”会更好，最后结果还不如“生死”合在一起。</p>
 <h2 id="pcomic爬取记"><a href="#pcomic爬取记" class="headerlink" title="pcomic爬取记"></a>pcomic爬取记</h2><p>为了保证前面“保险”心得的严肃性，嗯，这里再像以前一样插图片。</p>
-<p><img src="https://github.com/dwla/BP/blob/master/2018062101.jpg?raw=true" alt=""></p>
+<p><img src="https://dwla.github.io/BP/2018062101.jpg" alt=""></p>
 <p>真像打球，很多时候说不打，最后还是去打了；先前说漫画爬取收工，结果还是写来玩玩满足自己的收藏欲。。。这是目前写的最清晰的一次漫画爬取，除了对振兴同学来说他可能还会把<code>get_picture()</code>再拆分成小命令。爬取的是<a href="https://www.pcomic.net/" target="_blank" rel="noopener">https://www.pcomic.net/</a>，只需要在下面这个地方：</p>
 <figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url &lt;- <span class="hljs-string">"https://www.pcomic.net/comic/56/chapter.html"</span></span><br></pre></td></tr></table></figure>
 <p>将具体漫画的目录界面的网址赋值给<code>url</code>，好比这个：<code>https://www.pcomic.net/comic/1/chapter.html</code>，就能爬取这个漫画目录里的所有漫画了。</p>

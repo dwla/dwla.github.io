@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="JWen">
 <meta property="og:description" content="JWen   我们希望学生的学习成正态分布，但是事实上更多的是伽马分布，只要不是零点的德尔塔分布就行了。 摘自孤狼的空间  今天数据挖掘，雅文老师说的一句：“哪有用UCI跑一下程序就算好的了？”。背后一凉，天哪，被发现了:( 借此警醒一下近来上课在前排钓鱼的自己。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018042801.jpg?raw=true">
-<meta property="og:image" content="https://github.com/dwla/BP/blob/master/2018042501.png?raw=true">
-<meta property="og:updated_time" content="2018-12-16T04:59:45.416Z">
+<meta property="og:image" content="https://dwla.github.io/BP/2018042801.jpg">
+<meta property="og:image" content="https://dwla.github.io/BP/2018042501.png">
+<meta property="og:updated_time" content="2020-01-29T03:18:33.710Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据挖掘组合分析小记">
 <meta name="twitter:description" content="JWen   我们希望学生的学习成正态分布，但是事实上更多的是伽马分布，只要不是零点的德尔塔分布就行了。 摘自孤狼的空间  今天数据挖掘，雅文老师说的一句：“哪有用UCI跑一下程序就算好的了？”。背后一凉，天哪，被发现了:( 借此警醒一下近来上课在前排钓鱼的自己。">
-<meta name="twitter:image" content="https://github.com/dwla/BP/blob/master/2018042801.jpg?raw=true">
+<meta name="twitter:image" content="https://dwla.github.io/BP/2018042801.jpg">
 
 
 
@@ -184,21 +184,21 @@
 </blockquote>
 <p>今天数据挖掘，雅文老师说的一句：“<strong>哪有用UCI跑一下程序就算好的了</strong>？”。背后一凉，天哪，被发现了:(</p>
 <p>借此警醒一下近来上课在前排钓鱼的自己。</p>
-<p><img src="https://github.com/dwla/BP/blob/master/2018042801.jpg?raw=true" alt=""><br><a id="more"></a></p>
-<div id="aplayer-aMJzfWmz" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+<p><img src="https://dwla.github.io/BP/2018042801.jpg" alt=""><br><a id="more"></a></p>
+<div id="aplayer-ASvSusve" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
 				<pre class="aplayer-lrc-content">[00:01.58]纯音乐，请欣赏</pre>
 			</div>
 			<script>
 				var ap = new APlayer({
-					element: document.getElementById("aplayer-aMJzfWmz"),
+					element: document.getElementById("aplayer-ASvSusve"),
 					narrow: false,
 					autoplay: true,
 					showlrc: 2,
 					music: {
 						title: "Es ware schon gewesen (It Could Have Been)",
 						author: "Ulli Bögershausen",
-						url: "https://github.com/dwla/BM/blob/master/2018070908.mp3?raw=true",
-						pic: "https://github.com/dwla/BM/blob/master/2018070908.jpg?raw=true",
+						url: "https://dwla.github.io/BM/2018070908.mp3",
+						pic: "https://dwla.github.io/BM/2018070908.jpg",
 					}
 				});
 				window.aplayers || (window.aplayers = []);
@@ -339,7 +339,7 @@
 <li><code>adabag</code>包中的<code>plot.margins()</code>和<code>plot.errorevol</code>使用如下：<figure class="highlight r hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">windows()</span><br><span class="line">par(mfcol = c(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>))</span><br><span class="line"><span class="hljs-comment"># 装袋算法</span></span><br><span class="line">bagging2.margins &lt;- margins(bagging2, data[sub,])</span><br><span class="line">predbagging2.margins &lt;- margins(predbagging2, data[-sub,])</span><br><span class="line">plot.margins(predbagging2.margins, bagging2.margins) <span class="hljs-comment"># 修改一下plot.margins函数的源代码，原来的标题实在是太大了</span></span><br><span class="line"></span><br><span class="line">bagging2.evol.train &lt;- errorevol(bagging2, data[sub,])</span><br><span class="line">bagging2.evol.test &lt;- errorevol(bagging2, data[-sub,])</span><br><span class="line">plot.errorevol(bagging2.evol.test, bagging2.evol.train)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 提升算法</span></span><br><span class="line">boosting1.margins &lt;- margins(boosting1, data[sub,])</span><br><span class="line">predboosting1.margins &lt;- margins(predboosting1, data[-sub,])</span><br><span class="line">plot.margins(predboosting1.margins, boosting1.margins)</span><br><span class="line"></span><br><span class="line">boosting1.evol.train &lt;- errorevol(boosting1, data[sub,])</span><br><span class="line">boosting1.evol.test &lt;- errorevol(boosting1, data[-sub,])</span><br><span class="line">plot.errorevol(boosting1.evol.test, boosting1.evol.train)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="https://github.com/dwla/BP/blob/master/2018042501.png?raw=true" alt="图片"></p>
+<p><img src="https://dwla.github.io/BP/2018042501.png" alt="图片"></p>
 <blockquote>
 <p>误差图是看两条线的一致性和稳定性，而边际图的话只是看两条线是不是趋势相近（可以看出对训练集拟合的模型泛化性能如何），两个边际图相比较好像没啥意义。两个误差图是可以比较的，单个误差图是指25个树（横轴），累计的误差变化，随着树的个数增加，误差是否会减小，比如左下的图，随着树的增加误差是变动很大的，几乎没有下降，而右下的图，随着树的增加，误差有明显的下降趋势。</p>
 </blockquote>
