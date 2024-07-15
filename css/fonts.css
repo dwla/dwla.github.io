@@ -1,0 +1,20 @@
+body {
+    font-family: Optima, 'Lucida Sans', Calibri, Candara, Arial, 'source-han-serif-sc', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif TC', 'Source Han Serif TW', 'Source Han Serif', 'Noto Serif CJK SC', 'Songti SC', 'Microsoft YaHei', sans-serif;
+    font-size: 105%;
+}
+/* body { */
+/*     font-family: 'Encode Sans', sans-serif; */
+/*     font-optical-sizing: auto; */
+/*     font-weight: 100; */
+/*     font-style: normal; */
+/*     font-variation-settings: */
+/*         "wdth" 100; */
+/*     /\* font-size: 110%; *\/ */
+/*     font-size: 105%; */
+/* } */
+code {
+    font-family: "Lucida Console", 'Andale Mono', 'STKaiti', 'KaiTi', 'SimKai', monospace;
+}
+pre code {
+    font-family: Consolas, "Lucida Console", Monaco, 'STKaiti', 'KaiTi', 'SimKai', monospace;
+}
