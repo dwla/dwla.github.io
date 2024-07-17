@@ -6,10 +6,17 @@
     <description>Recent content in Hugo on JWen&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dwla.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Build a Blog using Hugo</title>
+      <title>Write Hugo Posts with OrgMode and ox-hugo</title>
+      <link>https://dwla.github.io/en/2024/07/write-hugo-blog/</link>
+      <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/en/2024/07/write-hugo-blog/</guid>
+      <description>Table of Contents Why I want to write a blog? OrgMode + ox-hugo Other references unrelated to &amp;ldquo;OrgMode + ox-hugo&amp;rdquo; Why I want to write a blog? Writing a blog is not the thing that most people would do. I have never thought of it, even though I get lots of valuable information from blogs written by other people. Such information cover various aspects, including courage if you encounter career</description>
+    </item>
+    <item>
+      <title>Build a Blog with Hugo</title>
       <link>https://dwla.github.io/en/2024/07/build-hugo-blog/</link>
       <pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/en/2024/07/build-hugo-blog/</guid>

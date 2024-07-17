@@ -6,14 +6,21 @@
     <description>Recent content in Homepage on JWen&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dwla.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Write Hugo Posts with OrgMode and ox-hugo</title>
+      <link>https://dwla.github.io/en/2024/07/write-hugo-blog/</link>
+      <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/en/2024/07/write-hugo-blog/</guid>
+      <description>Table of Contents Why I want to write a blog? OrgMode + ox-hugo Other references unrelated to &amp;ldquo;OrgMode + ox-hugo&amp;rdquo; Why I want to write a blog? Writing a blog is not the thing that most people would do. I have never thought of it, even though I get lots of valuable information from blogs written by other people. Such information cover various aspects, including courage if you encounter career</description>
+    </item>
     <item>
       <title>雨</title>
       <link>https://dwla.github.io/cn/2024/07/rain/</link>
       <pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/cn/2024/07/rain/</guid>
-      <description>对雨，我很多时候是“局外人”，即便被淋到了，我仍然是“局外人”。雨跟我没什么关系，只 是恰巧在我刚才的路上下来而已，而我选择走在路上的原因可以</description>
+      <description>对雨，我很多时候是个“局外人”，即便被淋到了，仍然是“局外人”。因为雨跟我没什么关系，只是恰巧在我刚才走在路上的时候下来而已，而我选择走在路</description>
     </item>
     <item>
       <title>《深度工作力》读书心得</title>
@@ -23,7 +30,7 @@
       <description>海阳—留下来的理由 赵照 海鸥海鸥 海浪海浪 海边的小姑娘 海上的船长 海风海风 海阳海阳 远处的灯塔 和星星一样亮 海鸥海鸥 海浪海浪 九天的白月光 照在沙滩上 海风</description>
     </item>
     <item>
-      <title>Build a Blog using Hugo</title>
+      <title>Build a Blog with Hugo</title>
       <link>https://dwla.github.io/en/2024/07/build-hugo-blog/</link>
       <pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/en/2024/07/build-hugo-blog/</guid>
