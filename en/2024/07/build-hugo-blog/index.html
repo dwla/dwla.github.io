@@ -94,6 +94,8 @@
   
   <li><a href="/en/vitae/">Vitae</a></li>
   
+  <li><a href="/technote/">TechNote</a></li>
+  
   <li><a href="/todo/">Todo</a></li>
   
   <li><a href="/cn/">中文</a></li>
@@ -124,7 +126,7 @@
 
 <ul>
 <li>OS: macOS Ventura 13.2.1</li>
-<li>Hugo site directory: <strong><strong>~/Desktop/blog</strong></strong></li>
+<li>Hugo site directory: <strong>~/Desktop/blog</strong></li>
 <li>Hugo theme: <a href="https://github.com/yihui/hugo-ivy">hugo-ivy</a></li>
 </ul>
 <h2 id="hugo-getting-started"><a href="https://gohugo.io/getting-started/quick-start/">Hugo - getting started</a></h2>
@@ -149,8 +151,8 @@
 <li>
 <p>View and configure the site</p>
 <ul>
-<li>Copy the <a href="https://gohugo.io/getting-started/configuration/">configuration file</a> <strong><strong>config.yaml</strong></strong> (in my case) and the folder <strong><strong>content</strong></strong> from
-<strong><strong>themes/hugo-ivy/exampleSite</strong></strong> to the Hugo site directory (<a href="https://stackoverflow.com/questions/8488253">Ref1</a>, <a href="https://unix.stackexchange.com/questions/68455">Ref2</a>)
+<li>Copy the <a href="https://gohugo.io/getting-started/configuration/">configuration file</a> <strong>config.yaml</strong> (in my case) and the folder <strong>content</strong> from
+<strong>themes/hugo-ivy/exampleSite</strong> to the Hugo site directory (<a href="https://stackoverflow.com/questions/8488253">Ref1</a>, <a href="https://unix.stackexchange.com/questions/68455">Ref2</a>)
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rm hugo.toml
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">\c</span>p -r themes/hugo-ivy/exampleSite/config.yaml themes/hugo-ivy/exampleSite/content ./
 </span></span></code></pre></div></li>
@@ -158,22 +160,22 @@
 running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo server -D -F --navigateToChanged
 </span></span></code></pre></div></li>
-<li>Play with the <strong><strong>config.yaml</strong></strong> to see what would happen in your site</li>
+<li>Play with the <strong>config.yaml</strong> to see what would happen in your site</li>
 </ul>
 </li>
 <li>
 <p>Add new pages</p>
-<p>Play with the <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> files in the <strong><strong>content</strong></strong> directory</p>
+<p>Play with the <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> files in the <strong>content</strong> directory</p>
 </li>
 <li>
 <p>Publish the site using <a href="https://github.com/dwla">Github</a></p>
 <ul>
-<li>Create a new repository in Github with name <strong><strong>&lt;user&gt;.github.io</strong></strong> (in my case, <strong><strong>dwla.github.io</strong></strong>)</li>
-<li>Change the <strong><strong>baseurl</strong></strong> in <strong><strong>config.yaml</strong></strong> with value <strong><strong>&lt;user&gt;.github.io</strong></strong></li>
-<li>Create the entire static site in the <strong><strong>public</strong></strong> directory
+<li>Create a new repository in Github with name <strong>&lt;user&gt;.github.io</strong> (in my case, <strong>dwla.github.io</strong>)</li>
+<li>Change the <strong>baseurl</strong> in <strong>config.yaml</strong> with value <strong>&lt;user&gt;.github.io</strong></li>
+<li>Create the entire static site in the <strong>public</strong> directory
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo
 </span></span></code></pre></div></li>
-<li>Deploy it to Github (in your case, change <strong><strong>dwla</strong></strong> to <strong><strong>&lt;user&gt;</strong></strong>)
+<li>Deploy it to Github (in your case, change <strong>dwla</strong> to <strong>&lt;user&gt;</strong>)
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd public
 </span></span><span style="display:flex;"><span>git init
 </span></span><span style="display:flex;"><span>git add .
@@ -190,7 +192,7 @@ running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref"
 <li>
 <p>Add &ldquo;copy to clipboard&rdquo; buttons to code blocks (<a href="https://logfetch.com/hugo-add-copy-to-clipboard-button/">Ref1</a>, <a href="https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/">Ref2</a>)</p>
 <ul>
-<li>Store this script in <strong><strong>themes/hugo-ivy/static/js/clipboard.js</strong></strong>
+<li>Store this script in <strong>themes/hugo-ivy/static/js/clipboard.js</strong>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">svgCopy</span> <span style="color:#f92672">=</span>
 </span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;&lt;svg aria-hidden=&#34;true&#34; height=&#34;16&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; data-view-component=&#34;true&#34;&gt;&lt;path fill-rule=&#34;evenodd&#34; d=&#34;M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z&#34;&gt;&lt;/path&gt;&lt;path fill-rule=&#34;evenodd&#34; d=&#34;M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#39;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">svgCheck</span> <span style="color:#f92672">=</span>
@@ -232,7 +234,7 @@ running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref"
 </span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></li>
-<li>Store this script in <strong><strong>themes/hugo-ivy/static/css/clipboard.css</strong></strong>
+<li>Store this script in <strong>themes/hugo-ivy/static/css/clipboard.css</strong>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">clipboard-button</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">0</span>;
@@ -272,12 +274,12 @@ running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref"
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">0.2</span><span style="color:#66d9ef">s</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></li>
-<li>Add this script in <strong><strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong></strong>
+<li>Add this script in <strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if (findRE &#34;&lt;<span style="color:#f92672">pre</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Content</span> <span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">}}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/clipboard.css&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>{{ end }}
 </span></span></code></pre></div></li>
-<li>Add this script in <strong><strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong></strong>
+<li>Add this script in <strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if (findRE &#34;&lt;<span style="color:#f92672">pre</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Content</span> <span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">}}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/clipboard.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>{{ end }}
@@ -288,7 +290,7 @@ running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref"
 <p>Display nice notice (<a href="https://guanqr.com/tech/website/hugo-shortcodes-customization/#notice">Ref1</a>, <a href="https://github.com/martignoni/hugo-notice">Ref2</a>)</p>
 <ul>
 <li>
-<p>Store this script in <strong><strong>layouts/shortcodes/notice.html</strong></strong></p>
+<p>Store this script in <strong>layouts/shortcodes/notice.html</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{- $noticeType := .Get 0 -}}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{{- $raw := (markdownify .Inner | chomp) -}}
@@ -301,7 +303,7 @@ running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref"
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
 </span></span></code></pre></div></li>
 <li>
-<p>Store this script in <strong><strong>static/css/notice.css</strong></strong></p>
+<p>Store this script in <strong>static/css/notice.css</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">2.5</span><span style="color:#66d9ef">em</span>;
@@ -349,7 +351,7 @@ running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref"
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></li>
 <li>
-<p>Store this script in <strong><strong>data/SVG.toml</strong></strong></p>
+<p>Store this script in <strong>data/SVG.toml</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># Notice Icon</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">notice-warning</span> = <span style="color:#e6db74">&#39;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path d=&#34;M570 440c18 32-5 72-42 72H48c-37 0-60-40-42-72L246 24c19-32 65-32 84 0l240 416zm-282-86a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">notice-info</span> = <span style="color:#e6db74">&#39;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M256 8a248 248 0 100 496 248 248 0 000-496zm0 110a42 42 0 110 84 42 42 0 010-84zm56 254c0 7-5 12-12 12h-88c-7 0-12-5-12-12v-24c0-7 5-12 12-12h12v-64h-12c-7 0-12-5-12-12v-24c0-7 5-12 12-12h64c7 0 12 5 12 12v100h12c7 0 12 5 12 12v24z&#34;/&gt;&lt;/svg&gt;&#39;</span>
@@ -357,7 +359,7 @@ running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref"
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">notice-tip</span> = <span style="color:#e6db74">&#39;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M504 256a248 248 0 11-496 0 248 248 0 01496 0zM227 387l184-184c7-6 7-16 0-22l-22-23c-7-6-17-6-23 0L216 308l-70-70c-6-6-16-6-23 0l-22 23c-7 6-7 16 0 22l104 104c6 7 16 7 22 0z&#34;/&gt;&lt;/svg&gt;&#39;</span>
 </span></span></code></pre></div></li>
 <li>
-<p>Example in the <strong><strong>.md</strong></strong> file</p>
+<p>Example in the <strong>.md</strong> file</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">notice</span> <span style="color:#a6e22e">notice-warning</span> &gt;}}
 </span></span><span style="display:flex;"><span>    Perhaps the most valuable result of all education is the ability to make yourself do the thing you have to do, when it ought to be done, whether you like it or not. It is the first lesson that ought to be learned and however early a man&#39;s training begins, it is probably the last lesson that he learns thoroughly. --- Thomas Henry Huxley
 </span></span><span style="display:flex;"><span>{{&lt; /<span style="color:#f92672">notice</span> &gt;}}
@@ -385,7 +387,7 @@ running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref"
 <hr>
 <ol>
 <li id="fn:1">
-<p>Damn, took me 3 hours to find the <strong><strong>-F</strong></strong> flag (<a href="https://github.com/gohugoio/hugo/issues/3977">Ref1</a>, <a href="https://gohugo.io/commands/hugo/#options">Ref2</a>)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Damn, took me 3 hours to find the <strong>-F</strong> flag (<a href="https://github.com/gohugoio/hugo/issues/3977">Ref1</a>, <a href="https://gohugo.io/commands/hugo/#options">Ref2</a>)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>

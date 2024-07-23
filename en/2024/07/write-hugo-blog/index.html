@@ -88,6 +88,8 @@
   
   <li><a href="/en/vitae/">Vitae</a></li>
   
+  <li><a href="/technote/">TechNote</a></li>
+  
   <li><a href="/todo/">Todo</a></li>
   
   <li><a href="/cn/">中文</a></li>
@@ -201,14 +203,14 @@ writing. If you want to say something to me, feel free send an email to
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(with-eval-after-load &#39;ox
 </span></span><span style="display:flex;"><span>  (require &#39;ox-hugo))
 </span></span></code></pre></div><p>Then we can play with the <a href="https://ox-hugo.scripter.co/doc/quick-start/">quick start of ox-hugo</a> and <a href="https://github.com/kaushalmodi/ox-hugo/tree/main/test/site/content-org">these example org files</a>.</p>
-<p>Remark: <strong><strong>org-publish-project-alist</strong></strong>, learned from <a href="https://youtu.be/ecRYNWtCvbs?list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&amp;t=208">Rainer&rsquo;s video</a>, is a
-variable defined in <strong><strong>ox-publish.el</strong></strong>. We cannot <code>(require &quot;ox-publish&quot;)</code> once
+<p>Remark: <strong>org-publish-project-alist</strong>, learned from <a href="https://youtu.be/ecRYNWtCvbs?list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&amp;t=208">Rainer&rsquo;s video</a>, is a
+variable defined in <strong>ox-publish.el</strong>. We cannot <code>(require &quot;ox-publish&quot;)</code> once
 we use ox-hugo. Otherwise, C-c C-e will not show the H option built in the
 ox-hugo pkg.</p>
 </li>
 <li>
 <p><a href="https://emacs-china.org/t/ox-hugo-auto-fill-mode-markdown/9547/17">Deal with unexpected spaces in Asian Language</a></p>
-<p>If <strong><strong>auto-fill-mode</strong></strong> is on (insert new line when the number of characters in
+<p>If <strong>auto-fill-mode</strong> is on (insert new line when the number of characters in
 one line reach a limit), without any tweak, the following in org file</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>中午
 </span></span><span style="display:flex;"><span>吃啥
@@ -240,8 +242,8 @@ one line reach a limit), without any tweak, the following in org file</p>
 <ol>
 <li>
 <p><a href="https://discourse.gohugo.io/t/ox-hugo-go-org/21254">ox-hugo or go-org?</a></p>
-<p><a href="https://github.com/niklasfasching/go-org">go-org</a> kind of translates Org to HTML. Install it as follows: (my <strong><strong>~/bin</strong></strong>
-is in the PATH, <a href="https://stackoverflow.com/questions/71349626">Ref</a>)</p>
+<p><a href="https://github.com/niklasfasching/go-org">go-org</a> kind of translates Org to HTML. Install it as follows: (my <strong>~/bin</strong> is
+in the PATH, <a href="https://stackoverflow.com/questions/71349626">Ref</a>)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/niklasfasching/go-org
 </span></span><span style="display:flex;"><span>cd go-org
 </span></span><span style="display:flex;"><span>go build .

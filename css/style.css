@@ -90,7 +90,15 @@ pre code {
 
 code {
     /* background: rgb(128,128,128); */
-    background: rgb(161,120,106);
+    /* background: rgb(0,128,128); */
+    /* background: rgb(165,42,42); */
+    /* background: rgb(161,120,106); */
+    background: rgb(39,50,60);
+    border: 1px solid rgb(240,248,255);
+    border-radius: 4px;
+    font-size: .9em;
+    padding-left: .2em;
+    padding-right: .2em;
 }
 
 pre code {
