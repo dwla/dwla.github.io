@@ -138,11 +138,25 @@ asking question and find your own taste. I always wonder which is better for me,
 ivy</em></a> from DuckDuckGo, and both of them are adopted in my current Emacs
 config. Now I use Ivy for almost all of the completion and remain Helm installed
 for the basic helm-apropos <code>C-x c a</code>.</p>
+<h2 id="jul-25-2024">Jul 25, 2024</h2>
+<p>Pull all-nighters working on the problem of <a href="https://github.com/company-mode/company-mode/tree/8bd34f8e73957bb7d5234564a45175c171016e63">company-20240719.2038</a> installed from
+<a href="https://melpa.org/#/company">MELPA</a>. Problem solved by replacing the MELPA&rsquo;s company with the <a href="https://elpa.gnu.org/">GNU ELPA</a>&rsquo;s
+version <a href="https://elpa.gnu.org/packages/company.html">company-0.10.2</a>. I met the problem, that completion works well at the
+beginning and suddenly don&rsquo;t when the typed content becomes long (around 3
+lines&hellip;), when I edited this org. The problem still occur if I re-start the
+EMacs. I spent 2-3 hours searching the solution but failed, and the idea of
+using GNU ELPA&rsquo;s version instead of MELPA&rsquo;s came to my mind when I laid on the
+bed (remained awake, staring to the ceiling). Therefore, <strong>I re-install all the
+packages that are available on the GNU ELPA, and only turn to MELPA if the
+former has too many warnings</strong> (e.g. use <a href="https://github.com/Fuco1/smartparens/tree/c7519a1b69f196050a13e2230b7532893b077086">smartparens-20240713.1002</a> from MELPA).</p>
+<p>Now all features I temporarily need have settled down. It&rsquo;s time to stop
+configuring and start preparing for TOEFL.</p>
 <h2 id="todo">Todo</h2>
 <ol>
 <li>C++
 <ul>
 <li><a href="https://oremacs.com/2017/03/28/emacs-cpp-ide/">Using Emacs as a C++ IDE</a> by abo-abo, the author of Ivy</li>
+<li><a href="https://cachestocaches.com/2015/8/c-completion-emacs/">C/C++ completion in Emacs</a> using irony</li>
 </ul>
 </li>
 <li>Python
