@@ -34,6 +34,9 @@
 
 
 
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/atelier-forest.dark.css" />
 
@@ -57,6 +60,8 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     
+    <link rel="stylesheet" href="/css/clipboard.css">
+
 
   </head>
   <body class="technote">
@@ -151,6 +156,25 @@ packages that are available on the GNU ELPA, and only turn to MELPA if the
 former has too many warnings</strong> (e.g. use <a href="https://github.com/Fuco1/smartparens/tree/c7519a1b69f196050a13e2230b7532893b077086">smartparens-20240713.1002</a> from MELPA).</p>
 <p>Now all features I temporarily need have settled down. It&rsquo;s time to stop
 configuring and start preparing for TOEFL.</p>
+<h2 id="jul-31-2024">Jul 31, 2024</h2>
+<p>I&rsquo;m learning elisp. Following the tutorial of <a href="https://www.youtube.com/watch?v=nq-gqNGmayI&amp;list=PLEoMzSkcN8oPQtn7FQEF3D7sroZbXuPZ7&amp;index=6&amp;t=3643s">creating symbolic link</a>, I am
+confused about the symbolic link created by</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>(<span style="color:#a6e22e">make-symbolic-link</span> <span style="color:#e6db74">&#34;~/.../.dotfiles/.files/.config/guix&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;~/.../demo-output/.config/guix&#34;</span>)
+</span></span></code></pre></div><p>Because such symbolic link displays ugly in my Dired with color
+<code>dired-broken-symlink</code>, and if I visit it, the Message buffer tells me</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>dired-get-file-for-visit: File is a symlink to a nonexistent target
+</span></span></code></pre></div><p>After several mins of searching in Google, including StackExchange,
+StackOverflow etc, I finally find these website useless and solve the problem by
+myself through reading the help page: <code>M-x make-symbolic-link</code> (&ldquo;It works&rdquo;
+level). Then I find the best solution from <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Quoted-File-Names.html">the Manual</a>.</p>
+<p>This story tells us what a great program and community would look like. They
+offer you useful information on the HelpPage and Manual. Everytime you meet
+problems you can rely on these information and try to solve the problems on your
+own, with courage and prudence.</p>
+<p>This story also tell us how important the taste is. For a programing language
+with poor Help information and unfriendly community, studying it is just a waste
+of life. You would spend lots of time but benefit a little.</p>
 <h2 id="todo">Todo</h2>
 <ol>
 <li>C++
@@ -205,8 +229,18 @@ do not have much to do with my productivity.&#160;<a href="#fnref:1" class="foot
 
   <footer>
   
+    <script src="/js/clipboard.js"></script>
+
 
   
+
+
+
+
+
+
+
+
 
   
   <hr>
