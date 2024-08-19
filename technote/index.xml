@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technotes on JWen&#39;s Blog</title>
+    <link>https://dwla.github.io/technote/</link>
+    <description>Recent content in Technotes on JWen&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dwla.github.io/technote/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes of Emacs Lisp</title>
+      <link>https://dwla.github.io/technote/emacs-lisp/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/technote/emacs-lisp/</guid>
+      <description>With the support of these powerful tools, I believe I am able to overcome the barrier of knowledge and have the freedom to pursue what I really want (doing research while less subjected to the presure of life).&#xA;Jul 18 - 23, 2024 To learn Emacs Lisp, I started reading the GNU Emacs Lisp Reference Manual, which was suggested by Andy Stewart in his blog. As a newbie, I dreaded this manual pouring too much dry notations to me without any toy application or practice.</description>
+    </item>
+  </channel>
+</rss>

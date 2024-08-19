@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Write Hugo Posts with OrgMode and ox-hugo - JWen&#39;s Blog</title>
+    <meta property="og:title" content="Write Hugo Posts with OrgMode and ox-hugo - JWen&#39;s Blog">
+    
+
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Writing a blog is not the thing that most people would do. I have never thought of it, even though I get lots of valuable information from blogs written by other people. Such information cover various &amp;hellip;">
+      <meta property="og:description" content="Writing a blog is not the thing that most people would do. I have never thought of it, even though I get lots of valuable information from blogs written by other people. Such information cover various &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/atelier-forest.dark.css" />
+
+
+
+
+
+
+<script>
+   var preTags = document.getElementsByTagName('pre');
+   var size = preTags.length;
+   for (var i=0; i < size; i++) {
+       preTags[i].innerHTML = '<code>'+preTags[i].innerHTML+'</code>'; 
+   }
+   hljs.highlightAll(); 
+</script>
+
+
+<link rel="stylesheet" href="/css/notice.css">
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+    <link rel="stylesheet" href="/css/clipboard.css">
+
+
+  </head>
+  <body class="en">
+    <header class="masthead">
+      <h1><a href="/">JWen&#39;s Blog</a></h1>
+
+<p class="tagline">Personal website of JWen 丁文亮的个人网站</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/en/about/">About</a></li>
+  
+  <li><a href="/en/">Blog</a></li>
+  
+  <li><a href="/en/vitae/">Vitae</a></li>
+  
+  <li><a href="/technote/">TechNote</a></li>
+  
+  <li><a href="/todo/">Todo</a></li>
+  
+  <li><a href="/cn/">中文</a></li>
+  
+  
+
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+        
+<h1>Write Hugo Posts with OrgMode and ox-hugo</h1>
+
+
+<h3>2024-07-17</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<div class="ox-hugo-toc toc">
+<div class="heading">Table of Contents</div>
+<ul>
+<li><a href="#why-i-want-to-write-a-blog">Why I want to write a blog?</a></li>
+<li><a href="#orgmode-plus-ox-hugo">OrgMode + ox-hugo</a></li>
+<li><a href="#other-references-unrelated-to-orgmode-plus-ox-hugo">Other references unrelated to &ldquo;OrgMode + ox-hugo&rdquo;</a></li>
+</ul>
+</div>
+<!--endtoc-->
+
+
+<link rel="stylesheet" href="/css/Aplayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+<script>
+  var meting_api='https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+</script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script><meting-js server="netease" type="song" id="486310963" theme="#2980b9" autoplay="true"></meting-js>
+<h2 id="why-i-want-to-write-a-blog">Why I want to write a blog?</h2>
+<p>Writing a blog is not the thing that most people would do. I have never thought
+of it, even though I get lots of valuable information from blogs written by
+other people. Such information cover various aspects, including <a href="https://yihui.org/en/2018/02/career-crisis/">courage</a> if you
+encounter career crisis, <a href="https://ox-hugo.scripter.co">curiosity</a> when you find somebody else have tried
+something cool making live easier, or just simple happiness related to your
+life.</p>
+<p>At the beginning, I wrote the blog for myself. It&rsquo;s more accurate to call it
+&ldquo;note&rdquo; instead of &ldquo;blog&rdquo;. The notes contain the knowledge I learned from
+high-quality blogs, classic books and courses. The notes are well-(organized,
+categorized, and tagged), stored in folders, and can only be viewed in &ldquo;folder&rdquo;
+version if I havn&rsquo;t used tools to generate a &ldquo;website&rdquo; version of them. Even
+though I generate a &ldquo;website&rdquo; version of these notes, I can treat them only for
+personal use and choose not to publish them.</p>
+<p>My mind changed when I learned about <a href="https://www.gnu.org">GNU</a>.</p>
+<blockquote>
+<p>&ldquo;As we enjoy great advantages from the inventions of others, we should be glad of an opportunity to serve others by any invention of ours, and this we should do freely and generously.&rdquo;
+&mdash; Benjamin Franklin</p>
+</blockquote>
+<p>I rethink the bad education experience I have been given by most of the
+teachers. Such education is cheap (has a price) and of low quality. I recall the
+few teachers who once told me the true knowledge (a priceless treasure) and
+helped me without hesitation when I felt down. They did so utterly out of their
+goodness and kindness, and this had nothing to do with the salary they got paid
+or something else. I start to use <a href="https://www.gnu.org/software/emacs/">Emacs</a> to:</p>
+<ul>
+<li>write <a href="https://www.r-project.org">R</a> program with &ldquo;Emacs + <a href="https://ess.r-project.org">ess</a>&rdquo; instead of RStudio<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>/SublimeText</li>
+<li>write <a href="https://www.latex-project.org">LaTex</a> with &ldquo;Emacs + <a href="https://www.gnu.org/software/auctex/">auctex</a>&rdquo; instead of TeXstudio/WinEdt/SublimeText</li>
+<li>build blog with &ldquo;<a href="https://gohugo.io">Hugo</a> + Emacs + <a href="https://orgmode.org">OrgMode</a> + <a href="https://ox-hugo.scripter.co">ox-hugo</a>&rdquo; instead of &ldquo;Hexo +
+SublimeText + Markdown&rdquo;</li>
+</ul>
+<p>I start to publish the notes on the blog. Two main reasons are as follows:</p>
+<ol>
+<li>
+<p>&ldquo;How much you are willing to pay for the knowledge?&rdquo;, &ldquo;What&rsquo;s the just and
+reasonable price for the knowledge?&rdquo;, I have asked myself these kind of
+questions several times. My current answer is: it depends on what kind of
+knowledge we are discussed.</p>
+<ul>
+<li>If the knowledge is fundamental, it&rsquo;s discovered several decades ago, and
+highly related to human&rsquo;s normal happiness. It should be free.</li>
+<li>If the knowledge is at the forefront of academic, it&rsquo;s should be priced
+justly and reasonablely by rational society.</li>
+<li>If the knowledge is in the middle of the above situation, I don&rsquo;t know. But
+if we discover the knowledge, we should be humble and kind, as we are
+standing on the shoulders of giants.</li>
+</ul>
+<p>What I post on blog is the fundamental knowledge I learned for free from
+other great blogs or websites. I try my best tidying them and expressing my
+own understanding. I hope somebody could find my post helpful when he meet
+the same problem I met before.</p>
+</li>
+<li>
+<p>Writing blog is my way of <a href="https://www.youtube.com/watch?v=HsDqBAKuvbw">participating in public life</a> and breaking down the
+barriers of knowledge. Compared with writing posts on WeChat or ZhiHu,
+building personal blog has the highest flexibility and customization, thus is
+time-consuming at the beginning. To me, I already get a huge payoff of being
+able to write these posts.</p>
+</li>
+</ol>
+<p>For those who read the above content carefully, please forgive my poor
+writing. If you want to say something to me, feel free send an email to
+<a href="mailto:jwenfight@163.com">jwenfight@163.com</a>.</p>
+<h2 id="orgmode-plus-ox-hugo">OrgMode + ox-hugo</h2>
+<ul>
+<li>
+<p><a href="https://orgmode.org/manual/Installation.html">Org</a> is included in distributions of GNU Emacs</p>
+<p>Useful links:
+<a href="https://orgmode.org/worg/">Hello Worg, the Org-Mode Community!</a> =&gt; <a href="https://orgmode.org/worg/org-tutorials/index.html">Org-mode Tutorials</a> =&gt; <a href="https://www.youtube.com/playlist?list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE">Rainer König video tutorials</a></p>
+</li>
+<li>
+<p>Install <a href="https://ox-hugo.scripter.co/#installation">ox-hugo</a>, adding the follows to config file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(with-eval-after-load &#39;ox
+</span></span><span style="display:flex;"><span>  (require &#39;ox-hugo))
+</span></span></code></pre></div><p>Then we can play with the <a href="https://ox-hugo.scripter.co/doc/quick-start/">quick start of ox-hugo</a> and <a href="https://github.com/kaushalmodi/ox-hugo/tree/main/test/site/content-org">these example org files</a>.</p>
+<p>Remark: <strong>org-publish-project-alist</strong>, learned from <a href="https://youtu.be/ecRYNWtCvbs?list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE&amp;t=208">Rainer&rsquo;s video</a>, is a
+variable defined in <strong>ox-publish.el</strong>. We cannot <code>(require &quot;ox-publish&quot;)</code> once
+we use ox-hugo. Otherwise, C-c C-e will not show the H option built in the
+ox-hugo pkg.</p>
+</li>
+<li>
+<p><a href="https://emacs-china.org/t/ox-hugo-auto-fill-mode-markdown/9547/17">Deal with unexpected spaces in Asian Language</a></p>
+<p>If <strong>auto-fill-mode</strong> is on (insert new line when the number of characters in
+one line reach a limit), without any tweak, the following in org file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>中午
+</span></span><span style="display:flex;"><span>吃啥
+</span></span></code></pre></div><p>will lead to</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>中午
+</span></span><span style="display:flex;"><span>吃啥
+</span></span></code></pre></div><p>in the Markdown file through <a href="https://github.com/kaushalmodi/ox-hugo?tab=readme-ov-file#export-bindings">ox-hugo export bindings</a>, and become</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;中午
+</span></span><span style="display:flex;"><span>吃啥&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>in the HTML file exported by <a href="https://next--gohugoio.netlify.app/documentation/getting-started/configuration-markup/#blackfriday">Blackfriday of Hugo</a>, and end up with the ugly</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>中午 吃啥
+</span></span></code></pre></div><p>with a white blank in the middle.</p>
+<p>With the keyword setting:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#+hugo_locale: zh
+</span></span></code></pre></div><p>the following in org file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>中午
+</span></span><span style="display:flex;"><span>吃啥
+</span></span></code></pre></div><p>will lead to</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>中午吃啥
+</span></span></code></pre></div><p>in the Markdown file, and become</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;中午吃啥&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>in the HTML file, and end up with the beautiful</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>中午吃啥
+</span></span></code></pre></div><p>BTW, I am so impressive that the author of ox-hugo once went to the
+<a href="https://emacs-china.org/t/ox-hugo-auto-fill-mode-markdown/9547/7">Emacs China</a>, the largest Emacs forum in China, and solved this issues.</p>
+</li>
+</ul>
+<h2 id="other-references-unrelated-to-orgmode-plus-ox-hugo">Other references unrelated to &ldquo;OrgMode + ox-hugo&rdquo;</h2>
+<ol>
+<li>
+<p><a href="https://discourse.gohugo.io/t/ox-hugo-go-org/21254">ox-hugo or go-org?</a></p>
+<p><a href="https://github.com/niklasfasching/go-org">go-org</a> kind of translates Org to HTML. Install it as follows: (my <strong>~/bin</strong> is
+in the PATH, <a href="https://stackoverflow.com/questions/71349626">Ref</a>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone https://github.com/niklasfasching/go-org
+</span></span><span style="display:flex;"><span>cd go-org
+</span></span><span style="display:flex;"><span>go build .
+</span></span><span style="display:flex;"><span>mv go-org ~/bin
+</span></span></code></pre></div></li>
+<li>
+<p>The Asian Language issue <a href="https://github.com/niklasfasching/go-org/issues/56">also occurs</a> in go-org and the solution is (<a href="https://niklasfasching.github.io/go-org/#east_asian_line_breaks.org">Ref</a>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#+options: ealb:t
+</span></span></code></pre></div><p>Line breaks between multi-byte characters are omitted when the ealb option is
+set.</p>
+<p>The example is also insightful, <a href="https://pandoc.org/MANUAL.html#extension-east_asian_line_breaks">east_asian_line_breaks in pandoc</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>jwen@MacBook-Pro content-org % cat test.org
+</span></span><span style="display:flex;"><span>你
+</span></span><span style="display:flex;"><span>好
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>你好
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Hello
+</span></span><span style="display:flex;"><span>World
+</span></span><span style="display:flex;"><span>jwen@MacBook-Pro content-org % pandoc -t html -o test.html test.org; cat test.html
+</span></span><span style="display:flex;"><span>&lt;p&gt;你 好&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;你好&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;Hello World&lt;/p&gt;
+</span></span><span style="display:flex;"><span>jwen@MacBook-Pro content-org % pandoc -f org+east_asian_line_breaks -t html -o test.html test.org; cat test.html
+</span></span><span style="display:flex;"><span>&lt;p&gt;你好&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;你好&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;Hello World&lt;/p&gt;
+</span></span><span style="display:flex;"><span>jwen@MacBook-Pro content-org % go-org render test.org html
+</span></span><span style="display:flex;"><span>&lt;p&gt;你
+</span></span><span style="display:flex;"><span>好&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;
+</span></span><span style="display:flex;"><span>你好&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;
+</span></span><span style="display:flex;"><span>Hello
+</span></span><span style="display:flex;"><span>World&lt;/p&gt;
+</span></span><span style="display:flex;"><span>jwen@MacBook-Pro content-org % cat test.org
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#+options: ealb:t</span>
+</span></span><span style="display:flex;"><span>你
+</span></span><span style="display:flex;"><span>好
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>你好
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Hello
+</span></span><span style="display:flex;"><span>World
+</span></span><span style="display:flex;"><span>jwen@MacBook-Pro content-org % go-org render test.org html
+</span></span><span style="display:flex;"><span>&lt;p&gt;
+</span></span><span style="display:flex;"><span>你好&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;
+</span></span><span style="display:flex;"><span>你好&lt;/p&gt;
+</span></span><span style="display:flex;"><span>&lt;p&gt;
+</span></span><span style="display:flex;"><span>Hello
+</span></span><span style="display:flex;"><span>World&lt;/p&gt;
+</span></span></code></pre></div></li>
+<li>
+<p>What&rsquo;s the relation between go-org (translates org to html) and C-c C-e h h?
+(todo)</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=AfkrzFodoNw">Build blog with &ldquo;Emacs + OrgMode + ox-publish&rdquo;</a>, an excellent video, another
+choice.</p>
+</li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>I hate RStudio. Let me quote two paragraphs from the great book <a href="https://learnpythonthehardway.org/python3/">Learn
+Python 3 the Hard Way</a>, which I think is suitable for the beginner of any
+language:</p>
+<ul>
+<li>
+<p>&ldquo;Anyone trying to hide knowledge from you, or worse, make you get it from them
+instead of through your own efforts, is trying to make you depend on them for
+your skills. Don’t listen to them, and do the exercises anyway so that you
+learn how to educate yourself.&rdquo;</p>
+</li>
+<li>
+<p>&ldquo;Relying on an IDE means that you can’t work with new programming languages
+until some company decides to sell you an IDE for that language. This means
+you can’t use that new language until the language is large enough to justify
+a lucrative customer base. If you are confident you can work with only a
+programmer’s text editor (like Vim, Emacs, Atom, etc.) then you don’t have to
+wait for a third party. IDEs are nice in some situations (such as working with
+a giant existing code base) but being addicted to them will limit your
+future.&rdquo;</p>
+</li>
+</ul>
+&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></li>
+</ol>
+</div>
+
+
+
+  <footer>
+  
+    <script src="/js/clipboard.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Wenliang Ding</a> 2018 - 2024</div>
+  
+  </footer>
+  </article>
+  
+  
+
+
+  </body>
+</html>
+

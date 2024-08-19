@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Notes of Emacs Lisp - JWen&#39;s Blog</title>
+    <meta property="og:title" content="Notes of Emacs Lisp - JWen&#39;s Blog">
+    
+
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="With the support of these powerful tools, I believe I am able to overcome the barrier of knowledge and have the freedom to pursue what I really want (doing research while less subjected to the presure &amp;hellip;">
+      <meta property="og:description" content="With the support of these powerful tools, I believe I am able to overcome the barrier of knowledge and have the freedom to pursue what I really want (doing research while less subjected to the presure &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/atelier-forest.dark.css" />
+
+
+
+
+
+
+<script>
+   var preTags = document.getElementsByTagName('pre');
+   var size = preTags.length;
+   for (var i=0; i < size; i++) {
+       preTags[i].innerHTML = '<code>'+preTags[i].innerHTML+'</code>'; 
+   }
+   hljs.highlightAll(); 
+</script>
+
+
+<link rel="stylesheet" href="/css/notice.css">
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+    <link rel="stylesheet" href="/css/clipboard.css">
+
+
+  </head>
+  <body class="technote">
+    <header class="masthead">
+      <h1><a href="/">JWen&#39;s Blog</a></h1>
+
+<p class="tagline">Personal website of JWen 丁文亮的个人网站</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/en/about/">About</a></li>
+  
+  <li><a href="/en/">Blog</a></li>
+  
+  <li><a href="/cn/about/">关于</a></li>
+  
+  <li><a href="/cn/">日志</a></li>
+  
+  <li><a href="/categories/">Categories / 分类</a></li>
+  
+  <li><a href="/tags/">Tags / 标签</a></li>
+  
+  
+
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+        
+<h1>Notes of Emacs Lisp</h1>
+
+
+<h3>2024-07-18</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<div class="notice notice-note" >
+    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z"/></svg></div><p>With the support of these powerful tools, I believe I am able to overcome the barrier of knowledge and have the freedom to pursue what I really want (doing research while less subjected to the presure of life).</p></div>
+
+<h2 id="jul-18-23-2024">Jul 18 - 23, 2024</h2>
+<p>To learn Emacs Lisp, I started reading the <a href="https://www.gnu.org/software/emacs/manual/elisp.html">GNU Emacs Lisp Reference Manual</a>,
+which was suggested by <em>Andy Stewart</em> <a href="https://manateelazycat.github.io/2018/07/24/my-recommand-books/">in his blog</a>. As a newbie, I dreaded this
+manual pouring too much dry notations to me without any toy application or
+practice. Maybe I took a wrong reading method to it, as I did find it helpful
+when I searched for some Emacs built-in variables or functions from the
+website. Anyway, I stop at Sec 2.4.5 and turn to the YouTube series <a href="https://www.youtube.com/playlist?list=PLEoMzSkcN8oPQtn7FQEF3D7sroZbXuPZ7">Learning
+Emacs Lisp</a> by <em>System Crafters</em>. At least his first video teach me <strong>treating the
+elisp code as data (in a list form) to be sent to the interpreter</strong>. I will take
+notes of these video first and maybe back to the manual in the future.</p>
+<p>Meanwhile, after dropping by <a href="https://ianyepan.github.io/posts/setting-up-use-package/">the Quick Start of use-package</a> and so many Emacs
+config on Github (e.g. <a href="https://github.com/purcell/emacs.d">Purcell&rsquo;s</a> and <a href="https://github.com/ianyepan/yay-evil-emacs">Ian&rsquo;s</a>), I started to transform my Emacs
+config into &ldquo;use-package&rdquo; version<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Before then, my Emacs had heavy loaded
+packages I dunno and various code blocks copied from here and there. Now I know
+exactly why I want to use these packages and how to settle them down in a neat
+way. This change brings me lots of benefits. First, search information from
+<strong>official website or high-quality blogs</strong> of the package you are interested in,
+instead of from various second-hand and low-quality resources. Second, keep
+asking question and find your own taste. I always wonder which is better for me,
+<a href="https://github.com/emacs-helm/helm">Helm</a> or <a href="https://github.com/abo-abo/swiper">Ivy</a>? I find <a href="https://lambdaland.org/posts/2019-12-13-switching-to-ivy-from-helm/"><em>Switching from Helm to Ivy</em></a> from Google and <a href="https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/"><em>From helm, to
+ivy</em></a> from DuckDuckGo, and both of them are adopted in my current Emacs
+config. Now I use Ivy for almost all of the completion and remain Helm installed
+for the basic helm-apropos <code>C-x c a</code>.</p>
+<h2 id="jul-25-2024">Jul 25, 2024</h2>
+<p>Pull all-nighters working on the problem of <a href="https://github.com/company-mode/company-mode/tree/8bd34f8e73957bb7d5234564a45175c171016e63">company-20240719.2038</a> installed from
+<a href="https://melpa.org/#/company">MELPA</a>. Problem solved by replacing the MELPA&rsquo;s company with the <a href="https://elpa.gnu.org/">GNU ELPA</a>&rsquo;s
+version <a href="https://elpa.gnu.org/packages/company.html">company-0.10.2</a>. I met the problem, that completion works well at the
+beginning and suddenly don&rsquo;t when the typed content becomes long (around 3
+lines&hellip;), when I edited this org. The problem still occur if I re-start the
+EMacs. I spent 2-3 hours searching the solution but failed, and the idea of
+using GNU ELPA&rsquo;s version instead of MELPA&rsquo;s came to my mind when I laid on the
+bed (remained awake, staring to the ceiling). Therefore, <strong>I re-install all the
+packages that are available on the GNU ELPA, and only turn to MELPA if the
+former has too many warnings</strong> (e.g. use <a href="https://github.com/Fuco1/smartparens/tree/c7519a1b69f196050a13e2230b7532893b077086">smartparens-20240713.1002</a> from MELPA).</p>
+<p>Now all features I temporarily need have settled down. It&rsquo;s time to stop
+configuring and start preparing for TOEFL.</p>
+<h2 id="jul-31-2024">Jul 31, 2024</h2>
+<p>I&rsquo;m learning elisp. Following the tutorial of <a href="https://www.youtube.com/watch?v=nq-gqNGmayI&amp;list=PLEoMzSkcN8oPQtn7FQEF3D7sroZbXuPZ7&amp;index=6&amp;t=3643s">creating symbolic link</a>, I am
+confused about the symbolic link created by</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>(<span style="color:#a6e22e">make-symbolic-link</span> <span style="color:#e6db74">&#34;~/.../.dotfiles/.files/.config/guix&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;~/.../demo-output/.config/guix&#34;</span>)
+</span></span></code></pre></div><p>Because such symbolic link displays ugly in my Dired with color
+<code>dired-broken-symlink</code>, and if I visit it, the Message buffer tells me</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>dired-get-file-for-visit: File is a symlink to a nonexistent target
+</span></span></code></pre></div><p>After several mins of searching in Google, including StackExchange,
+StackOverflow etc, I finally find these website useless and solve the problem by
+myself through reading the help page: <code>M-x make-symbolic-link</code> (&ldquo;It works&rdquo;
+level). Then I find the best solution from <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Quoted-File-Names.html">the Manual</a>.</p>
+<p>This story tells us what a great program and community would look like. They
+offer you useful information on the HelpPage and Manual. Everytime you meet
+problems you can rely on these information and try to solve the problems on your
+own, with courage and prudence.</p>
+<p>This story also tells us how important the taste is. For a programing language
+with poor Help information and unfriendly community, studying it is just a waste
+of life. You would spend lots of time but benefit a little.</p>
+<h2 id="todo">Todo</h2>
+<ol>
+<li>C++
+<ul>
+<li><a href="https://oremacs.com/2017/03/28/emacs-cpp-ide/">Using Emacs as a C++ IDE</a> by abo-abo, the author of Ivy</li>
+<li><a href="https://cachestocaches.com/2015/8/c-completion-emacs/">C/C++ completion in Emacs</a> using irony</li>
+</ul>
+</li>
+<li>Python
+<ul>
+<li>Using Emacs as a Python IDE</li>
+</ul>
+</li>
+<li>Org
+<ul>
+<li>org-roam
+<ul>
+<li><a href="https://oremacs.com/2020/12/31/happy-new-year/">Intro of Org-roam</a> by abo-abo</li>
+<li><a href="https://www.youtube.com/watch?v=AyhPmypHDEw">Getting Started with Org Roam</a> by System Crafters</li>
+</ul>
+</li>
+<li>ob-R
+<ul>
+<li><a href="https://orgmode.org/worg/org-contrib/babel/languages/index.html">Babel: Languages</a> =&gt; <a href="https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-R.html">R Source Code Blocks in Org Mode</a></li>
+<li><a href="https://github.com/erikriverson/org-mode-R-tutorial/blob/master/org-mode-R-tutorial.org">Org-mode and R: An Introduction</a></li>
+<li><a href="https://github.com/sam217pa/emacs-config/blob/develop/org.el">Config of ob-R</a></li>
+</ul>
+</li>
+<li>ob-Python
+<ul>
+<li><a href="https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html">Python Source Code Blocks in Org Mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Yasnippet</li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Admittedly, skimming Emacs config is still time-consuming. Without the
+bedrock of Elisp, I can only put simple and theme-related packages to my config,
+e.g. <a href="https://github.com/topics/emacs-configuration">emacs-configuration</a> =&gt; <a href="https://github.com/MatthewZMD/.emacs.d">MatthewZMD&rsquo;s .emacs.d</a> =&gt; <a href="https://github.com/MatthewZMD/.emacs.d?tab=readme-ov-file#doom-modeline">Doom Modeline</a>. I have to
+remind myself that &ldquo;doom-modeline&rdquo;-type packages do make me in a good mood but
+do not have much to do with my productivity.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+  <footer>
+  
+    <script src="/js/clipboard.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Wenliang Ding</a> 2018 - 2024</div>
+  
+  </footer>
+  </article>
+  
+  
+
+
+  </body>
+</html>
+

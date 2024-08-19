@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Build a Blog with Hugo - JWen&#39;s Blog</title>
+    <meta property="og:title" content="Build a Blog with Hugo - JWen&#39;s Blog">
+    
+
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Install Hugo from Homebrew
+[&amp;hellip;] brew install hugo hugo version Create a site skeleton
+[&amp;hellip;] cd ~/Desktop hugo new site blog Get a theme met your taste
+[&amp;hellip;] cd blog git clone &amp;hellip;">
+      <meta property="og:description" content="Install Hugo from Homebrew
+[&amp;hellip;] brew install hugo hugo version Create a site skeleton
+[&amp;hellip;] cd ~/Desktop hugo new site blog Get a theme met your taste
+[&amp;hellip;] cd blog git clone &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/atelier-forest.dark.css" />
+
+
+
+
+
+
+<script>
+   var preTags = document.getElementsByTagName('pre');
+   var size = preTags.length;
+   for (var i=0; i < size; i++) {
+       preTags[i].innerHTML = '<code>'+preTags[i].innerHTML+'</code>'; 
+   }
+   hljs.highlightAll(); 
+</script>
+
+
+<link rel="stylesheet" href="/css/notice.css">
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+    <link rel="stylesheet" href="/css/clipboard.css">
+
+
+  </head>
+  <body class="en">
+    <header class="masthead">
+      <h1><a href="/">JWen&#39;s Blog</a></h1>
+
+<p class="tagline">Personal website of JWen 丁文亮的个人网站</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/en/about/">About</a></li>
+  
+  <li><a href="/en/">Blog</a></li>
+  
+  <li><a href="/en/vitae/">Vitae</a></li>
+  
+  <li><a href="/technote/">TechNote</a></li>
+  
+  <li><a href="/todo/">Todo</a></li>
+  
+  <li><a href="/cn/">中文</a></li>
+  
+  
+
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+        
+<h1>Build a Blog with Hugo</h1>
+
+
+<h3>2024-07-13</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<ul>
+<li>OS: macOS Ventura 13.2.1</li>
+<li>Hugo site directory: <strong>~/Desktop/blog</strong></li>
+<li>Hugo theme: <a href="https://github.com/yihui/hugo-ivy">hugo-ivy</a></li>
+</ul>
+<h2 id="hugo-getting-started"><a href="https://gohugo.io/getting-started/quick-start/">Hugo - getting started</a></h2>
+<ol>
+<li>
+<p>Install Hugo from <a href="https://brew.sh">Homebrew</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew install hugo
+</span></span><span style="display:flex;"><span>hugo version
+</span></span></code></pre></div></li>
+<li>
+<p>Create a <a href="https://gohugo.io/getting-started/directory-structure/">site skeleton</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd ~/Desktop
+</span></span><span style="display:flex;"><span>hugo new site blog
+</span></span></code></pre></div></li>
+<li>
+<p>Get a theme met your taste</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd blog
+</span></span><span style="display:flex;"><span>git clone https://github.com/yihui/hugo-ivy themes/hugo-ivy
+</span></span></code></pre></div><p>To <a href="https://stackoverflow.com/questions/73835561">view the exampleSite</a> (if it exists) of your selected theme</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo server --source themes/hugo-ivy/exampleSite --themesDir ../../
+</span></span></code></pre></div></li>
+<li>
+<p>View and configure the site</p>
+<ul>
+<li>Copy the <a href="https://gohugo.io/getting-started/configuration/">configuration file</a> <strong>config.yaml</strong> (in my case) and the folder <strong>content</strong> from
+<strong>themes/hugo-ivy/exampleSite</strong> to the Hugo site directory (<a href="https://stackoverflow.com/questions/8488253">Ref1</a>, <a href="https://unix.stackexchange.com/questions/68455">Ref2</a>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rm hugo.toml
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">\c</span>p -r themes/hugo-ivy/exampleSite/config.yaml themes/hugo-ivy/exampleSite/content ./
+</span></span></code></pre></div></li>
+<li>Nevigate the address <a href="http://localhost:1313/">http://localhost:1313/</a> in your browser after
+running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo server -D -F --navigateToChanged
+</span></span></code></pre></div></li>
+<li>Play with the <strong>config.yaml</strong> to see what would happen in your site</li>
+</ul>
+</li>
+<li>
+<p>Add new pages</p>
+<p>Play with the <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> files in the <strong>content</strong> directory</p>
+</li>
+<li>
+<p>Publish the site using <a href="https://github.com/dwla">Github</a></p>
+<ul>
+<li>Create a new repository in Github with name <strong>&lt;user&gt;.github.io</strong> (in my case, <strong>dwla.github.io</strong>)</li>
+<li>Change the <strong>baseurl</strong> in <strong>config.yaml</strong> with value <strong>&lt;user&gt;.github.io</strong></li>
+<li>Create the entire static site in the <strong>public</strong> directory
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo
+</span></span></code></pre></div></li>
+<li>Deploy it to Github (in your case, change <strong>dwla</strong> to <strong>&lt;user&gt;</strong>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd public
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>
+</span></span><span style="display:flex;"><span>git branch -M main
+</span></span><span style="display:flex;"><span>git remote add origin git@github.com:dwla/dwla.github.io.git
+</span></span><span style="display:flex;"><span>git push -u origin main
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h2 id="useful-shortcodes-excluded-in-hugo-ivy">Useful <a href="https://hugo-docs.netlify.app/en/content-management/shortcodes/">shortcodes</a> excluded in hugo-ivy</h2>
+<ol>
+<li>
+<p>Add &ldquo;copy to clipboard&rdquo; buttons to code blocks (<a href="https://logfetch.com/hugo-add-copy-to-clipboard-button/">Ref1</a>, <a href="https://www.dannyguo.com/blog/how-to-add-copy-to-clipboard-buttons-to-code-blocks-in-hugo/">Ref2</a>)</p>
+<ul>
+<li>Store this script in <strong>themes/hugo-ivy/static/js/clipboard.js</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">svgCopy</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;&lt;svg aria-hidden=&#34;true&#34; height=&#34;16&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; data-view-component=&#34;true&#34;&gt;&lt;path fill-rule=&#34;evenodd&#34; d=&#34;M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z&#34;&gt;&lt;/path&gt;&lt;path fill-rule=&#34;evenodd&#34; d=&#34;M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">svgCheck</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;&lt;svg aria-hidden=&#34;true&#34; height=&#34;16&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; data-view-component=&#34;true&#34;&gt;&lt;path fill-rule=&#34;evenodd&#34; fill=&#34;rgb(63, 185, 80)&#34; d=&#34;M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">addCopyButtons</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">clipboard</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 1. Look for pre &gt; code elements in the DOM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;pre &gt; code&#34;</span>).<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">codeBlock</span>) =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 2. Create a button that will trigger a copy operation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;button&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;clipboard-button&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;button&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">svgCopy</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">clipboard</span>.<span style="color:#a6e22e">writeText</span>(<span style="color:#a6e22e">codeBlock</span>.<span style="color:#a6e22e">innerText</span>).<span style="color:#a6e22e">then</span>(
+</span></span><span style="display:flex;"><span>                () =&gt; {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">blur</span>();
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">svgCheck</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">setTimeout</span>(() =&gt; (<span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">svgCopy</span>), <span style="color:#ae81ff">2000</span>);
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>                (<span style="color:#a6e22e">error</span>) =&gt; (<span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Error&#34;</span>)
+</span></span><span style="display:flex;"><span>            );
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 3. Append the button directly before the pre tag
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pre</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">codeBlock</span>.<span style="color:#a6e22e">parentNode</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pre</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">button</span>, <span style="color:#a6e22e">pre</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">navigator</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">clipboard</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">addCopyButtons</span>(<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">clipboard</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">script</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;script&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.7.0/clipboard-polyfill.promise.js&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">integrity</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sha256-waClS2re9NUbXRsryKoof+F9qc1gjjIhc2eT7ZbIv94=&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">crossOrigin</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;anonymous&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">script</span>.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">addCopyButtons</span>(<span style="color:#a6e22e">clipboard</span>);
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">script</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>Store this script in <strong>themes/hugo-ivy/static/css/clipboard.css</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">clipboard-button</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* padding: 2px 7px 5px 7px; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* color: #767676; */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-color</span>: <span style="color:#ae81ff">#767676</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#ededed</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">6</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">0.8</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">0.1</span><span style="color:#66d9ef">s</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">clipboard-button</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">svg</span> {
+</span></span><span style="display:flex;"><span>    fill: <span style="color:#ae81ff">#767676</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">clipboard-button</span>:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-color</span>: <span style="color:#ae81ff">#696969</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#e0e0e0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">clipboard-button</span>:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">svg</span> {
+</span></span><span style="display:flex;"><span>    fill: <span style="color:#ae81ff">#696969</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">clipboard-button</span>:<span style="color:#a6e22e">focus</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">outline</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">highlight</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">highlight</span>:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">&gt;</span> .<span style="color:#a6e22e">clipboard-button</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">0.2</span><span style="color:#66d9ef">s</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>Add this script in <strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if (findRE &#34;&lt;<span style="color:#f92672">pre</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Content</span> <span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">}}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/clipboard.css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div></li>
+<li>Add this script in <strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if (findRE &#34;&lt;<span style="color:#f92672">pre</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Content</span> <span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">}}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/clipboard.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Display nice notice (<a href="https://guanqr.com/tech/website/hugo-shortcodes-customization/#notice">Ref1</a>, <a href="https://github.com/martignoni/hugo-notice">Ref2</a>)</p>
+<ul>
+<li>
+<p>Store this script in <strong>layouts/shortcodes/notice.html</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{- $noticeType := .Get 0 -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- $raw := (markdownify .Inner | chomp) -}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{- $block := findRE &#34;(?is)^<span style="color:#960050;background-color:#1e0010">&lt;</span>(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b&#34; $raw 1 -}}
+</span></span><span style="display:flex;"><span>{{ $icon := (replace (index $.Site.Data.SVG $noticeType) &#34;icon&#34; &#34;icon notice-icon&#34;) }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;notice {{ $noticeType }}&#34;</span> <span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">if</span> <span style="color:#a6e22e">len</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Params</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">eq</span> <span style="color:#a6e22e">2</span> <span style="color:#960050;background-color:#1e0010">}}</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Get 1 }}&#34;</span> <span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">end</span> <span style="color:#960050;background-color:#1e0010">}}</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;notice-title&#34;</span>&gt;{{ $icon | safeHTML }}&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    {{- if or $block (not $raw) }}{{ $raw }}{{ else }}&lt;<span style="color:#f92672">p</span>&gt;{{ $raw }}&lt;/<span style="color:#f92672">p</span>&gt;{{ end -}}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div></li>
+<li>
+<p>Store this script in <strong>static/css/notice.css</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">2.5</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* border-radius: 4px; */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span> <span style="color:#f92672">p</span>:<span style="color:#a6e22e">last-child</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span> .<span style="color:#a6e22e">notice-title</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0.8</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span> .<span style="color:#a6e22e">notice-title</span> .<span style="color:#a6e22e">notice-icon</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">1.2</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">1.2</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span>.<span style="color:#a6e22e">notice-warning</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: hsla(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">0.15</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-left</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> hsl(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span>.<span style="color:#a6e22e">notice-warning</span> .<span style="color:#a6e22e">notice-title</span> {
+</span></span><span style="display:flex;"><span>    fill: hsl(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span>.<span style="color:#a6e22e">notice-info</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: hsla(<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">80</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">70</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">0.15</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-left</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> hsl(<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">80</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">70</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span>.<span style="color:#a6e22e">notice-info</span> .<span style="color:#a6e22e">notice-title</span> {
+</span></span><span style="display:flex;"><span>    fill: hsl(<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">80</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">70</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span>.<span style="color:#a6e22e">notice-note</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: hsla(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">0.15</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-left</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> hsl(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span>.<span style="color:#a6e22e">notice-note</span> .<span style="color:#a6e22e">notice-title</span> {
+</span></span><span style="display:flex;"><span>    fill: hsl(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span>.<span style="color:#a6e22e">notice-tip</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>: hsla(<span style="color:#ae81ff">140</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">0.15</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-left</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> hsl(<span style="color:#ae81ff">140</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">notice</span>.<span style="color:#a6e22e">notice-tip</span> .<span style="color:#a6e22e">notice-title</span> {
+</span></span><span style="display:flex;"><span>    fill: hsl(<span style="color:#ae81ff">140</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">65</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>Store this script in <strong>data/SVG.toml</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># Notice Icon</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">notice-warning</span> = <span style="color:#e6db74">&#39;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path d=&#34;M570 440c18 32-5 72-42 72H48c-37 0-60-40-42-72L246 24c19-32 65-32 84 0l240 416zm-282-86a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">notice-info</span> = <span style="color:#e6db74">&#39;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M256 8a248 248 0 100 496 248 248 0 000-496zm0 110a42 42 0 110 84 42 42 0 010-84zm56 254c0 7-5 12-12 12h-88c-7 0-12-5-12-12v-24c0-7 5-12 12-12h12v-64h-12c-7 0-12-5-12-12v-24c0-7 5-12 12-12h64c7 0 12 5 12 12v100h12c7 0 12 5 12 12v24z&#34;/&gt;&lt;/svg&gt;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">notice-note</span> = <span style="color:#e6db74">&#39;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">notice-tip</span> = <span style="color:#e6db74">&#39;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M504 256a248 248 0 11-496 0 248 248 0 01496 0zM227 387l184-184c7-6 7-16 0-22l-22-23c-7-6-17-6-23 0L216 308l-70-70c-6-6-16-6-23 0l-22 23c-7 6-7 16 0 22l104 104c6 7 16 7 22 0z&#34;/&gt;&lt;/svg&gt;&#39;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Example in the <strong>.md</strong> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">notice</span> <span style="color:#a6e22e">notice-warning</span> &gt;}}
+</span></span><span style="display:flex;"><span>    Perhaps the most valuable result of all education is the ability to make yourself do the thing you have to do, when it ought to be done, whether you like it or not. It is the first lesson that ought to be learned and however early a man&#39;s training begins, it is probably the last lesson that he learns thoroughly. --- Thomas Henry Huxley
+</span></span><span style="display:flex;"><span>{{&lt; /<span style="color:#f92672">notice</span> &gt;}}
+</span></span></code></pre></div>
+<div class="notice notice-warning" >
+    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 576 512"><path d="M570 440c18 32-5 72-42 72H48c-37 0-60-40-42-72L246 24c19-32 65-32 84 0l240 416zm-282-86a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z"/></svg></div><p>&ldquo;Perhaps the most valuable result of all education is the ability to make yourself do the thing you have to do, when it ought to be done, whether you like it or not. It is the first lesson that ought to be learned and however early a man&rsquo;s training begins, it is probably the last lesson that he learns thoroughly.&rdquo; &mdash; Thomas Henry Huxley</p></div>
+
+
+<div class="notice notice-info" >
+    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M256 8a248 248 0 100 496 248 248 0 000-496zm0 110a42 42 0 110 84 42 42 0 010-84zm56 254c0 7-5 12-12 12h-88c-7 0-12-5-12-12v-24c0-7 5-12 12-12h12v-64h-12c-7 0-12-5-12-12v-24c0-7 5-12 12-12h64c7 0 12 5 12 12v100h12c7 0 12 5 12 12v24z"/></svg></div><p>&ldquo;Perhaps the most valuable result of all education is the ability to make yourself do the thing you have to do, when it ought to be done, whether you like it or not. It is the first lesson that ought to be learned and however early a man&rsquo;s training begins, it is probably the last lesson that he learns thoroughly.&rdquo; &mdash; Thomas Henry Huxley</p></div>
+
+
+<div class="notice notice-note" >
+    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z"/></svg></div><p>&ldquo;Perhaps the most valuable result of all education is the ability to make yourself do the thing you have to do, when it ought to be done, whether you like it or not. It is the first lesson that ought to be learned and however early a man&rsquo;s training begins, it is probably the last lesson that he learns thoroughly.&rdquo; &mdash; Thomas Henry Huxley</p></div>
+
+
+<div class="notice notice-tip" >
+    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zM227 387l184-184c7-6 7-16 0-22l-22-23c-7-6-17-6-23 0L216 308l-70-70c-6-6-16-6-23 0l-22 23c-7 6-7 16 0 22l104 104c6 7 16 7 22 0z"/></svg></div><p>&ldquo;Perhaps the most valuable result of all education is the ability to make yourself do the thing you have to do, when it ought to be done, whether you like it or not. It is the first lesson that ought to be learned and however early a man&rsquo;s training begins, it is probably the last lesson that he learns thoroughly.&rdquo; &mdash; Thomas Henry Huxley</p></div>
+
+</li>
+</ul>
+</li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Damn, took me 3 hours to find the <strong>-F</strong> flag (<a href="https://github.com/gohugoio/hugo/issues/3977">Ref1</a>, <a href="https://gohugo.io/commands/hugo/#options">Ref2</a>)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+  <footer>
+  
+    <script src="/js/clipboard.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Wenliang Ding</a> 2018 - 2024</div>
+  
+  </footer>
+  </article>
+  
+  
+
+
+  </body>
+</html>
+

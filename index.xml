@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homepage on JWen&#39;s Blog</title>
+    <link>https://dwla.github.io/</link>
+    <description>Recent content in Homepage on JWen&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 02 Aug 2024 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://dwla.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>万能青年旅店</title>
+      <link>https://dwla.github.io/cn/2024/08/omnipotent-youth-society/</link>
+      <pubDate>Fri, 02 Aug 2024 00:00:00 +0800</pubDate>
+      <guid>https://dwla.github.io/cn/2024/08/omnipotent-youth-society/</guid>
+      <description>《那些梦想还万能的日子》 --- 姬赓 一个职业妓女该怎样开始她的自我介绍？17岁那年的雨季，人面兽心的远房亲戚，还是惟利是图的老鸨？凡此种种无疑会被</description>
+    </item>
+    <item>
+      <title>Notes of Emacs Lisp</title>
+      <link>https://dwla.github.io/technote/emacs-lisp/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/technote/emacs-lisp/</guid>
+      <description>With the support of these powerful tools, I believe I am able to overcome the barrier of knowledge and have the freedom to pursue what I really want (doing research while less subjected to the presure of life).&#xA;Jul 18 - 23, 2024 To learn Emacs Lisp, I started reading the GNU Emacs Lisp Reference Manual, which was suggested by Andy Stewart in his blog. As a newbie, I dreaded this manual pouring too much dry notations to me without any toy application or practice.</description>
+    </item>
+    <item>
+      <title>Write Hugo Posts with OrgMode and ox-hugo</title>
+      <link>https://dwla.github.io/en/2024/07/write-hugo-blog/</link>
+      <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/en/2024/07/write-hugo-blog/</guid>
+      <description>Table of Contents Why I want to write a blog? OrgMode + ox-hugo Other references unrelated to &amp;ldquo;OrgMode + ox-hugo&amp;rdquo; Why I want to write a blog? Writing a blog is not the thing that most people would do. I have never thought of it, even though I get lots of valuable information from blogs written by other people. Such information cover various aspects, including courage if you encounter career</description>
+    </item>
+    <item>
+      <title>《深度工作力》读书心得</title>
+      <link>https://dwla.github.io/cn/2024/07/deep-work/</link>
+      <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/cn/2024/07/deep-work/</guid>
+      <description>海阳—留下来的理由 赵照 海鸥海鸥 海浪海浪 海边的小姑娘 海上的船长 海风海风 海阳海阳 远处的灯塔 和星星一样亮 海鸥海鸥 海浪海浪 九天的白月光 照在沙滩上 海风</description>
+    </item>
+    <item>
+      <title>Build a Blog with Hugo</title>
+      <link>https://dwla.github.io/en/2024/07/build-hugo-blog/</link>
+      <pubDate>Sat, 13 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/en/2024/07/build-hugo-blog/</guid>
+      <description>OS: macOS Ventura 13.2.1 Hugo site directory: ~/Desktop/blog Hugo theme: hugo-ivy Hugo - getting started Install Hugo from Homebrew&#xA;brew install hugo hugo version Create a site skeleton&#xA;cd ~/Desktop hugo new site blog Get a theme met your taste&#xA;cd blog git clone https://github.com/yihui/hugo-ivy themes/hugo-ivy To view the exampleSite (if it exists) of your selected theme&#xA;hugo server --source themes/hugo-ivy/exampleSite --themesDir ../../ View and configure the site&#xA;Copy the configuration file config.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://dwla.github.io/en/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/en/about/</guid>
+      <description>Hello About</description>
+    </item>
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>https://dwla.github.io/en/vitae/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/en/vitae/</guid>
+      <description>Hello Curriculum Vitae</description>
+    </item>
+    <item>
+      <title>关于</title>
+      <link>https://dwla.github.io/cn/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/cn/about/</guid>
+      <description>你好关于 关于我 你好关于我 关于气量 我目前对气量最信服的认识，是源自庞檬缘小姐。在一次对金庸《鹿鼎记》里的韦小宝的讨论中，我从原著和王怜花《古金</description>
+    </item>
+    <item>
+      <title>简历</title>
+      <link>https://dwla.github.io/cn/vitae/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/cn/vitae/</guid>
+      <description>你好，简历</description>
+    </item>
+  </channel>
+</rss>
