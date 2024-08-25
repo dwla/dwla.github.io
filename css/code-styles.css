@@ -1,0 +1,21 @@
+.highlight-wrapper {
+    position: relative;
+    /* border: 1px solid #ddd; */
+    padding: 0;
+}
+
+.highlight-wrapper .highlight pre {
+    /* margin-top: -2px; */
+    /* margin-bottom: -2px; */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.highlight-link {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 120%;
+    font-style: italic;
+    /* border: 1px solid #ddd; */
+}
