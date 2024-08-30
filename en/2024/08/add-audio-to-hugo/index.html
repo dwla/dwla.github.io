@@ -67,6 +67,16 @@
     <link rel="stylesheet" href="/css/clipboard.css">
 
 
+
+    <link rel="stylesheet" href="/css/Aplayer.min.css">
+    <script src="https://fastly.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <script>
+      
+      var meting_api='https://v.iarc.top/?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+    </script>
+    <script src="https://fastly.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+
+
   </head>
   <body class="en">
     <header class="masthead">
@@ -134,7 +144,11 @@
 <div class="heading">Table of Contents</div>
 <ul>
 <li><a href="#make-code-block-collapsible-in-hugo">Make code block collapsible in Hugo</a></li>
-<li><a href="#add-an-audio-to-hugo-with-metingjs">Add an audio to Hugo with MetingJS</a></li>
+<li><a href="#add-an-audio-to-hugo-with-metingjs">Add an audio to Hugo with MetingJS</a>
+<ul>
+<li><a href="#debug-about-add-self-hosted-media">Debug <span class="timestamp-wrapper"><span class="timestamp">[2024-08-30 Fri]</span></span>: about &ldquo;add self-hosted media&rdquo;</a></li>
+</ul>
+</li>
 <li><a href="#byproducts-of-web-searching">Byproducts of web searching</a></li>
 </ul>
 </div>
@@ -1243,7 +1257,26 @@ site, for <strong>.md</strong> file, we use</p>
 </ul>
 </li>
 </ol>
-<h2 id="byproducts-of-web-searching">Byproducts of web searching</h2>
+<h3 id="debug-about-add-self-hosted-media">Debug <span class="timestamp-wrapper"><span class="timestamp">[2024-08-30 Fri]</span></span>: about &ldquo;add self-hosted media&rdquo;</h3>
+<p>In this post, we demonstrated that using meting-js directly can put a
+self-hosted media in a post. It works well in this post, however, doesn&rsquo;t work
+in those post using meting-js only! (E.g. <a href="https://dwla.github.io/cn/2024/08/laoya/">老鸭 | 一时不足一刻</a>) The reason is
+that, a shortcode of &ldquo;music.html&rdquo; is used in this post, and the required <code>CSS</code>
+and <code>JS</code> files are already included in the shortcode. If we use meting-js only
+in a post, then the shortcode &ldquo;music.html&rdquo; isn&rsquo;t run, therefore the required
+<code>CSS</code> and <code>JS</code> are not included in such post. To make sure these files are
+included in those posts (had meting-js only, without shortcode &ldquo;music&rdquo;), we put
+the following script in <strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if (findRE &#34;&lt;<span style="color:#f92672">meting-js</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Content</span> <span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">}}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/Aplayer.min.css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://fastly.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// var meting_api=&#39;https://api.injahow.cn/meting/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">meting_api</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://v.iarc.top/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r&#39;</span>;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://fastly.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div><h2 id="byproducts-of-web-searching">Byproducts of web searching</h2>
 <ul>
 <li><a href="https://tianheg.co/posts/hugo-toc-conflicts-with-aplayer/">Hugo 目录和音乐播放器 APlayer 的冲突问题</a> =&gt; <a href="https://read.tianheg.org/">书帮助我思考 | book help me think</a> =&gt; <a href="https://read.tianheg.org/non-book/wang-xiaowei-zhexue-richang-shencha">王小伟：一个哲学视角的日常审查</a></li>
 <li><a href="https://www.iarc.top/149.html">MetingApi 接口</a> =&gt; <a href="https://uain.cc/archives/1722006287427">JetBrains 全家桶激活</a></li>
