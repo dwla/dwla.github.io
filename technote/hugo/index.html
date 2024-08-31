@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Notes of Hugo - JWen&#39;s Blog</title>
+    <meta property="og:title" content="Notes of Hugo - JWen&#39;s Blog">
+    
+
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Reference
+[&amp;hellip;] The page variable date is required in every post that is further collected in a list (e.g. Blog, 日志, and TechNote). Take the hugo-ivy theme I currently used as an example, the &amp;hellip;">
+      <meta property="og:description" content="Reference
+[&amp;hellip;] The page variable date is required in every post that is further collected in a list (e.g. Blog, 日志, and TechNote). Take the hugo-ivy theme I currently used as an example, the &amp;hellip;">
+      
+    
+
+    
+    
+    
+    <meta name="twitter:image" content="https://pbs.twimg.com/media/FMs5vvrX0AMh2JP?format=jpg&amp;name=large">
+    
+    
+
+    
+
+    
+    
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/lisp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/latex.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/atelier-forest.dark.css" />
+
+
+
+
+<script>
+   var preTags = document.getElementsByTagName('pre');
+   var size = preTags.length;
+   for (var i=0; i < size; i++) {
+       preTags[i].innerHTML = '<code>'+preTags[i].innerHTML+'</code>'; 
+   }
+   hljs.highlightAll(); 
+</script>
+
+
+<link rel="stylesheet" href="/css/notice.css">
+
+
+<script src="/js/code-scripts.js"></script>
+<link rel="stylesheet" href="/css/code-styles.css" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+    <link rel="stylesheet" href="/css/clipboard.css">
+
+
+
+
+  </head>
+  <body class="technote">
+    <header class="masthead">
+      <h1><a href="/">JWen&#39;s Blog</a></h1>
+
+<p class="tagline">Personal website of JWen 丁文亮的个人网站</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/en/about/">About</a></li>
+  
+  <li><a href="/en/">Blog</a></li>
+  
+  <li><a href="/cn/about/">关于</a></li>
+  
+  <li><a href="/cn/">日志</a></li>
+  
+  <li><a href="/categories/">Categories / 分类</a></li>
+  
+  <li><a href="/tags/">Tags / 标签</a></li>
+  
+  
+
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+        
+<h1>Notes of Hugo</h1>
+
+
+<h3>
+  
+  
+
+  
+  
+  
+
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<div class="ox-hugo-toc toc">
+<div class="heading">Table of Contents</div>
+<ul>
+<li><a href="#aug-26-2024-set-a-page-variable-showthedate">Aug 26 2024: Set a page variable &ldquo;showthedate&rdquo;</a></li>
+<li><a href="#aug-30-2024-highlight-the-lisp-code-block-using-highlight-dot-js">Aug 30 2024: Highlight the LISP code block using highlight.js</a></li>
+<li><a href="#todo">Todo</a></li>
+</ul>
+</div>
+<!--endtoc-->
+<center><figure>
+<img src="https://pbs.twimg.com/media/FMs5vvrX0AMh2JP?format=jpg&name=large" width="400px" height="auto" />
+<figcaption>From https://x.com/MoghaddamKarimi/status/1498354800928374794</figcaption>
+</figure></center>
+<h2 id="aug-26-2024-set-a-page-variable-showthedate">Aug 26 2024: Set a page variable &ldquo;showthedate&rdquo;</h2>
+<p>Reference</p>
+<ul>
+<li><a href="https://gohugo.io/getting-started/configuration/">Configure Hugo</a></li>
+<li><a href="https://discourse.gohugo.io/t/content-is-it-same-for-page-and-post-and-how-to-hide-date/2246/3">Content: is it same for Page and Post? And how to hide date</a></li>
+<li><a href="https://discourse.gohugo.io/t/how-to-check-if-dynamically-named-variable-exists-in-context/14715/3">How to check if dynamically-named variable exists in context?</a></li>
+</ul>
+<p>The page variable <code>date</code> is required in every post that is further collected in
+a list (e.g. <a href="https://dwla.github.io/en/">Blog</a>, <a href="https://dwla.github.io/cn/">日志</a>, and <a href="https://dwla.github.io/technote/">TechNote</a>). Take the <a href="https://github.com/yihui/hugo-ivy">hugo-ivy</a> theme I currently used
+as an example, the appearance of the date in each page (in list) is controlled
+by the file <strong>themes/hugo-ivy/layouts/partials/meta.html</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if not .IsHome }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    {{ with .Params.subtitle }}&lt;<span style="color:#f92672">h1</span>&gt;&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;subtitle&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">h2</span>&gt;{{ end }}
+</span></span><span style="display:flex;"><span>    {{ if .IsPage }}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>        {{ with or (or .Params.author (index .Site.Params.author .Section)) &#34;&#34; }}{{  print . &#34; / &#34; }}{{ end }}
+</span></span><span style="display:flex;"><span>        {{ if .Params.date }}{{ .Date.Format &#34;2006-01-02&#34; }}{{ end }}
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>    {{ end }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">hr</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div><p>Let&rsquo;s make a slight modification</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if not .IsHome }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    {{ with .Params.subtitle }}&lt;<span style="color:#f92672">h1</span>&gt;&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;subtitle&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">h2</span>&gt;{{ end }}
+</span></span><span style="display:flex;"><span>    {{ if .IsPage }}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>        {{ with or (or .Params.author (index .Site.Params.author .Section)) &#34;&#34; }}{{  print . &#34; / &#34; }}{{ end }}
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- {{ if .Params.date }}{{ .Date.Format &#34;2006-01-02&#34; }}{{ end }} --&gt;</span>
+</span></span><span style="display:flex;"><span>        {{ if isset .Params &#34;showthedate&#34; }}
+</span></span><span style="display:flex;"><span>                {{ if eq .Params.showthedate true }}
+</span></span><span style="display:flex;"><span>                        {{ if .Params.date }}{{ .Date.Format &#34;2006-01-02&#34; }}{{ end }}
+</span></span><span style="display:flex;"><span>                {{ end }}
+</span></span><span style="display:flex;"><span>        {{ else }}
+</span></span><span style="display:flex;"><span>                {{ if .Params.date }}{{ .Date.Format &#34;2006-01-02&#34; }}{{ end }}
+</span></span><span style="display:flex;"><span>        {{ end }}
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>    {{ end }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">hr</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div><p>We have the following three cases (for the <a href="https://github.com/yihui/hugo-ivy">hugo-ivy</a> theme)</p>
+<ol>
+<li>
+<p>In the <strong>.md</strong> or <strong>.org</strong> file, we don&rsquo;t have the page variable <code>showthedate</code>,
+then the date will show in the posts (in list).</p>
+</li>
+<li>
+<p>If we define the page variable <code>showthedate</code> in the <strong>.md</strong> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>showthedate = true
+</span></span><span style="display:flex;"><span>+++
+</span></span></code></pre></div><p>or in the <strong>.org</strong> file (using <a href="https://ox-hugo.scripter.co/">ox-hugo</a>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#+hugo_custom_front_matter: :showthedate true
+</span></span></code></pre></div><p>then the date will show in the posts (in list).</p>
+</li>
+<li>
+<p>If we define the page variable <code>showthedate</code> in the <strong>.md</strong> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>showthedate = false
+</span></span><span style="display:flex;"><span>+++
+</span></span></code></pre></div><p>or in the <strong>.org</strong> file (using <a href="https://ox-hugo.scripter.co/">ox-hugo</a>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#+hugo_custom_front_matter: :showthedate false
+</span></span></code></pre></div><p>then the date will NOT show in the posts (in list).</p>
+</li>
+</ol>
+<h2 id="aug-30-2024-highlight-the-lisp-code-block-using-highlight-dot-js">Aug 30 2024: Highlight the LISP code block using <a href="https://highlightjs.org/">highlight.js</a></h2>
+<p>Reference</p>
+<ul>
+<li><a href="https://www.eddymens.com/blog/how-to-highlight-syntax-in-pre-tags-using-highlightjs">How To Highlight Syntax In Pre Tags Using Highlight.js</a></li>
+<li><a href="https://highlightjs.org/">highlight.js</a> =&gt; <a href="https://github.com/highlightjs/highlight.js">Github page of highlight.js</a> =&gt; <a href="https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md">Supported Languages</a></li>
+<li><a href="https://github.com/highlightjs/highlight.js?tab=readme-ov-file#cdnjs-link">cdnjs-link</a> =&gt; <a href="https://cdnjs.com/libraries/highlight.js">libraries of highlight.js</a></li>
+</ul>
+<p>Add this script to <strong>themes/hugo-ivy/layouts/partials/head_highlightjs.html</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/lisp.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/atelier-forest.dark.css&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">preTags</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;pre&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">size</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">preTags</span>.<span style="color:#a6e22e">length</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">size</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">preTags</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;code&gt;&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">preTags</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">innerHTML</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&lt;/code&gt;&#39;</span>; <span style="color:#75715e">// wrap content of pre tag in code tag
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hljs</span>.<span style="color:#a6e22e">highlightAll</span>(); <span style="color:#75715e">// apply highlighting
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>Suppose we want to highlight the <code>latex</code> code block in the posts, we only need
+to search the necessary <code>JS</code> file from the <a href="https://cdnjs.com/libraries/highlight.js">libraries of highlight.js</a>, and add it
+to the above script in <strong>themes/hugo-ivy/layouts/partials/head_highlightjs.html</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/latex.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h2 id="todo">Todo</h2>
+<ul>
+<li>Read the <a href="https://gohugo.io/documentation/">Hugo Documentation</a> carefully</li>
+<li>Learn to write the shortcode</li>
+<li>Figure out the differences between
+<ul>
+<li>the folders <strong>layouts</strong> and <strong>themes/hugo-ivy/layouts</strong></li>
+<li>the folders <strong>static</strong> and <strong>themes/hugo-ivy/static</strong></li>
+</ul>
+</li>
+<li>Change the font of blog</li>
+</ul>
+
+
+
+  <footer>
+  
+    <script src="/js/clipboard.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Wenliang Ding</a> 2018 - 2024</div>
+  
+  </footer>
+  </article>
+  
+  
+
+
+  </body>
+</html>
+

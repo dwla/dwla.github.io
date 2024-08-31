@@ -6,8 +6,15 @@
     <description>Recent content in Technotes on JWen&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dwla.github.io/technote/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes of Hugo</title>
+      <link>https://dwla.github.io/technote/hugo/</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/technote/hugo/</guid>
+      <description>Table of Contents Aug 26 2024: Set a page variable &amp;ldquo;showthedate&amp;rdquo; Aug 30 2024: Highlight the LISP code block using highlight.js Todo From https://x.com/MoghaddamKarimi/status/1498354800928374794 Aug 26 2024: Set a page variable &amp;ldquo;showthedate&amp;rdquo; Reference Configure Hugo Content: is it same for Page and Post? And how to hide date How to check if dynamically-named variable exists in context? The page variable date is required in every post that is further collected</description>
+    </item>
     <item>
       <title>Notes of Emacs Lisp</title>
       <link>https://dwla.github.io/technote/emacs-lisp/</link>

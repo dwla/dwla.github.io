@@ -43,10 +43,12 @@
 
 
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/lisp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/latex.min.js"></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/atelier-forest.dark.css" />
-
-
 
 
 
@@ -288,12 +290,12 @@ running<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref"
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">0.2</span><span style="color:#66d9ef">s</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div></li>
-<li>Add this script in <strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong>
+<li>Add this script to <strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if (findRE &#34;&lt;<span style="color:#f92672">pre</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Content</span> <span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">}}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/clipboard.css&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>{{ end }}
 </span></span></code></pre></div></li>
-<li>Add this script in <strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong>
+<li>Add this script to <strong>themes/hugo-ivy/layouts/partials/head_custom.html</strong>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ if (findRE &#34;&lt;<span style="color:#f92672">pre</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Content</span> <span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">}}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/clipboard.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span><span style="display:flex;"><span>{{ end }}
