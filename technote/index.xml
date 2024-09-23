@@ -13,7 +13,7 @@
       <link>https://dwla.github.io/technote/hugo/</link>
       <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/technote/hugo/</guid>
-      <description>Table of Contents Aug 26 2024: Set a page variable &amp;ldquo;showthedate&amp;rdquo; Aug 30 2024: Highlight the LISP code block using highlight.js Todo From https://x.com/MoghaddamKarimi/status/1498354800928374794 Aug 26 2024: Set a page variable &amp;ldquo;showthedate&amp;rdquo; Reference Configure Hugo Content: is it same for Page and Post? And how to hide date How to check if dynamically-named variable exists in context? The page variable date is required in every post that is further collected</description>
+      <description>Table of Contents Aug 26 2024: Set a page variable &amp;ldquo;showthedate&amp;rdquo; Aug 30 2024: Highlight the LISP code block using highlight.js Todo From https://x.com/MoghaddamKarimi/status/1498354800928374794 Aug 26 2024: Set a page variable &amp;ldquo;showthedate&amp;rdquo; References Configure Hugo Content: is it same for Page and Post? And how to hide date How to check if dynamically-named variable exists in context? The page variable date is required in every post that is further collected</description>
     </item>
     <item>
       <title>Notes of Emacs Lisp</title>

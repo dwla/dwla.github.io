@@ -6,8 +6,15 @@
     <description>Recent content in Code on JWen&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dwla.github.io/categories/code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add Search to Hugo with Pagefind</title>
+      <link>https://dwla.github.io/en/2024/09/add-search-to-hugo/</link>
+      <pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/en/2024/09/add-search-to-hugo/</guid>
+      <description>[00:00.00]谁能明白我 - 刘德华 (Andy Lau)[00:03.80]词：郑国江[00:04.49]曲：林子祥[00:05.17]编曲：温浩昊</description>
+    </item>
     <item>
       <title>Add an Audio to Hugo with MetingJS</title>
       <link>https://dwla.github.io/en/2024/08/add-audio-to-hugo/</link>

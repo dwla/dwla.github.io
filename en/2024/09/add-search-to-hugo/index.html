@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Add Search to Hugo with Pagefind - JWen&#39;s Blog</title>
+    <meta property="og:title" content="Add Search to Hugo with Pagefind - JWen&#39;s Blog">
+    
+
+    <meta name="twitter:card" content="summary">
+
+    
+    
+      
+    
+
+    
+      
+      <meta property="description" content=" [00:00.00]谁能明白我 - 刘德华 (Andy Lau)[00:03.80]词：郑国江[00:04.49]曲：林子祥[00:05.17]编曲：温浩昊[00:06.03]监制：陈德建[00:22.21]昂然踏着前路去 追赶理想旅途上[00:30.17]前行步步怀自信 风吹雨打不退让[00:38.18]无论我去到那方 心里梦想不变样[00:45.94]是新生 是醒觉 梦想永远在世 &amp;hellip;">
+      <meta property="og:description" content=" [00:00.00]谁能明白我 - 刘德华 (Andy Lau)[00:03.80]词：郑国江[00:04.49]曲：林子祥[00:05.17]编曲：温浩昊[00:06.03]监制：陈德建[00:22.21]昂然踏着前路去 追赶理想旅途上[00:30.17]前行步步怀自信 风吹雨打不退让[00:38.18]无论我去到那方 心里梦想不变样[00:45.94]是新生 是醒觉 梦想永远在世 &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/lisp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/latex.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/atelier-forest.dark.css" />
+
+
+
+
+<script>
+   var preTags = document.getElementsByTagName('pre');
+   var size = preTags.length;
+   for (var i=0; i < size; i++) {
+       preTags[i].innerHTML = '<code>'+preTags[i].innerHTML+'</code>'; 
+   }
+   hljs.highlightAll(); 
+</script>
+
+
+<link rel="stylesheet" href="/css/notice.css">
+
+
+<script src="/js/code-scripts.js"></script>
+<link rel="stylesheet" href="/css/code-styles.css" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+    <link rel="stylesheet" href="/css/clipboard.css">
+
+
+
+    <link rel="stylesheet" href="/css/Aplayer.min.css">
+    <script src="https://fastly.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <script>
+      
+      var meting_api='https://v.iarc.top/?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+    </script>
+    <script src="https://fastly.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+
+
+  </head>
+  <body class="en">
+    <header class="masthead">
+      <h1><a href="/">JWen&#39;s Blog</a></h1>
+
+<p class="tagline">Personal website of JWen 丁文亮的个人网站</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/">Home</a></li>
+  
+  <li><a href="/en/about/">About</a></li>
+  
+  <li><a href="/en/">Blog</a></li>
+  
+  <li><a href="/en/vitae/">Vitae</a></li>
+  
+  <li><a href="/cn/">中文</a></li>
+  
+  
+
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+        
+<h1>Add Search to Hugo with Pagefind</h1>
+
+
+<h3>
+  
+  
+
+  
+  2024-09-23
+  
+
+</h3>
+
+<hr>
+
+
+      </header>
+
+
+
+
+
+<meting-js name="谁能明白我" artist="刘德华" url="https://github.com/dwla/BM/blob/master/刘德华-谁能明白我.mp3?raw=true" cover="https://github.com/dwla/BM/blob/master/刘德华-谁能明白我.jpeg?raw=true" autoplay=true>
+<pre hidden>
+[00:00.00]谁能明白我 - 刘德华 (Andy Lau)[00:03.80]词：郑国江[00:04.49]曲：林子祥[00:05.17]编曲：温浩昊[00:06.03]监制：陈德建[00:22.21]昂然踏着前路去 追赶理想旅途上[00:30.17]前行步步怀自信 风吹雨打不退让[00:38.18]无论我去到那方 心里梦想不变样[00:45.94]是新生 是醒觉 梦想永远在世上[00:54.24]前路那怕远只要自强[00:58.12]我继续独自寻路向[01:02.17]常为以往梦想发狂[01:06.15]耐心摸索路途上[01:10.09]怀自信我永不怕夜航[01:14.10]到困倦我自弹自唱[01:18.07]掌声我向梦想里寻[01:22.07]尽管一切是狂想[01:26.21]途人路上回望我 只因我的怪模样[01:34.12]途人谁能明白我 今天眼睛多雪亮[01:42.16]人是各有各理想 奔向目标不退让[01:50.01]用歌声 用欢笑 来博知音的赞赏[02:15.14]怀自信我永不怕夜航[02:18.86]到困倦我自弹自唱[02:23.04]掌声我向梦想里寻[02:27.01]尽管一切是狂想[02:30.99]昂然踏着前路去 追赶理想旅途上[02:38.99]前行步步怀自信[02:42.63]依照心中那正确方向[02:47.15]怀着爱与恕的心 充满梦想的笑匠[02:55.09]用歌声 用欢笑 来博知音的赞赏[03:03.04]用歌声 用欢笑 来博知音的赞
+</pre>
+</meting-js>
+<p>References</p>
+<ul>
+<li><a href="https://mudan.me/post/original/2024/06/12/%E5%9F%BA%E4%BA%8EPagefind%E5%AE%9E%E7%8E%B0%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2.html">基于Pagefind实现静态博客站内搜索</a></li>
+<li><a href="https://gohugo.io/tools/search/">Search tools</a></li>
+<li><a href="https://patford12.medium.com/add-search-to-hugo-with-page-find-4e78c9b37541">Add search to Hugo with Pagefind</a></li>
+</ul>
+<!--listend-->
+<ol>
+<li>
+<p>Install pagefind via <a href="https://pagefind.app/docs/installation/">npx</a> (or download a <a href="https://github.com/CloudCannon/pagefind/releases">precompiled release</a> from GitHub)</p>
+<p>Note that specialized languages are only supported in Pagefind’s extended
+release, which is the default when running <code>npx pagefind</code>. (<a href="https://pagefind.app/docs/multilingual/#specialized-languages">Ref</a>)</p>
+</li>
+<li>
+<p>In the Hugo site directory (for me, <strong>~/Desktop/blog</strong>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo
+</span></span><span style="display:flex;"><span>npx pagefind --site <span style="color:#e6db74">&#34;public&#34;</span>
+</span></span><span style="display:flex;"><span>hugo server -N -F
+</span></span></code></pre></div></li>
+<li>
+<p>Add a search page. E.g. write a <strong>content/search.md</strong> file as follows</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>title = &#34;Search&#34;
+</span></span><span style="display:flex;"><span>draft = false
+</span></span><span style="display:flex;"><span>slug = &#34;search&#34;
+</span></span><span style="display:flex;"><span>+++
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/pagefind/pagefind-ui.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/pagefind.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/pagefind/pagefind-ui.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;search&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;DOMContentLoaded&#39;</span>, (<span style="color:#a6e22e">event</span>) =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PagefindUI</span>({ <span style="color:#a6e22e">element</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;#search&#34;</span>, <span style="color:#a6e22e">showSubResults</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> });
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div></li>
+<li>
+<p>Customize the style of Pagefind UI (<a href="https://pagefind.app/docs/ui-usage/#adding-the-pagefind-ui-to-a-page">Ref</a>). I already add</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/pagefind.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>&gt;
+</span></span></code></pre></div><p>to <strong>content/search.md</strong>, what remains is to store the script in
+<strong>static/css/pagefind.css</strong> and tweak it to fit your theme.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">body</span> {
+</span></span><span style="display:flex;"><span>    --pagefind-ui-scale: <span style="color:#ae81ff">.8</span>;
+</span></span><span style="display:flex;"><span>    --pagefind-ui-primary: rgb(<span style="color:#ae81ff">30</span>,<span style="color:#ae81ff">144</span>,<span style="color:#ae81ff">255</span>);
+</span></span><span style="display:flex;"><span>    --pagefind-ui-text: rgb(<span style="color:#ae81ff">240</span>,<span style="color:#ae81ff">248</span>,<span style="color:#ae81ff">255</span>);
+</span></span><span style="display:flex;"><span>    --pagefind-ui-background: <span style="color:#ae81ff">#181B20</span>;
+</span></span><span style="display:flex;"><span>    --pagefind-ui-border: rgb(<span style="color:#ae81ff">240</span>,<span style="color:#ae81ff">248</span>,<span style="color:#ae81ff">255</span>);
+</span></span><span style="display:flex;"><span>    --pagefind-ui-tag: rgb(<span style="color:#ae81ff">30</span>,<span style="color:#ae81ff">144</span>,<span style="color:#ae81ff">255</span>);
+</span></span><span style="display:flex;"><span>    --pagefind-ui-border-width: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    --pagefind-ui-border-radius: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    --pagefind-ui-image-border-radius: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    --pagefind-ui-image-box-ratio: <span style="color:#ae81ff">3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    --pagefind-ui-font: <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>Open a browser with the address <a href="http://localhost:1313/search/">http://localhost:1313/search/</a> and try Search!</p>
+</li>
+<li>
+<p>For a better experience of Chinese searching, we can use the <a href="https://pagefind.app/docs/config-options/#force-language">Force Language</a>
+Flag (see also <a href="https://pagefind.app/docs/multilingual/">Ref1</a> and <a href="https://github.com/CloudCannon/pagefind/issues/659">Ref2</a>) in Step 2</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>npx pagefind --site <span style="color:#e6db74">&#34;public&#34;</span> --force-language <span style="color:#e6db74">&#34;zh&#34;</span>
+</span></span></code></pre></div><p>If we have downloaded the precompiled release of <code>pagefind_extended</code> and
+added/linked it to the PATH, the following is faster</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pagefind_extended --site <span style="color:#e6db74">&#34;public&#34;</span> --force-language <span style="color:#e6db74">&#34;zh&#34;</span>
+</span></span></code></pre></div></li>
+</ol>
+
+
+
+  <footer>
+  
+    <script src="/js/clipboard.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="/">Wenliang Ding</a> 2018 - 2024</div>
+  
+  </footer>
+  </article>
+  
+  
+
+
+  </body>
+</html>
+

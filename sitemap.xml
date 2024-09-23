@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://dwla.github.io/en/2024/09/add-search-to-hugo/</loc>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dwla.github.io/categories/</loc>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dwla.github.io/categories/code/</loc>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://dwla.github.io/</loc>
-    <lastmod>2024-09-20T00:00:00+08:00</lastmod>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dwla.github.io/tags/hugo/</loc>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dwla.github.io/en/</loc>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://dwla.github.io/tags/</loc>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dwla.github.io/cn/2024/09/the-man-in-the-case/</loc>
     <lastmod>2024-09-20T00:00:00+08:00</lastmod>
@@ -13,9 +31,6 @@
   </url><url>
     <loc>https://dwla.github.io/cn/2024/09/mid-autumn-2024/</loc>
     <lastmod>2024-09-17T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://dwla.github.io/categories/</loc>
-    <lastmod>2024-09-13T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://dwla.github.io/categories/music-/-%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2024-09-13T00:00:00+08:00</lastmod>
@@ -50,18 +65,6 @@
     <loc>https://dwla.github.io/en/2024/08/add-audio-to-hugo/</loc>
     <lastmod>2024-08-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dwla.github.io/categories/code/</loc>
-    <lastmod>2024-08-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dwla.github.io/tags/hugo/</loc>
-    <lastmod>2024-08-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dwla.github.io/en/</loc>
-    <lastmod>2024-08-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dwla.github.io/tags/</loc>
-    <lastmod>2024-08-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://dwla.github.io/cn/2024/08/omnipotent-youth-society/</loc>
     <lastmod>2024-08-02T00:00:00+08:00</lastmod>
   </url><url>
@@ -80,6 +83,8 @@
     <loc>https://dwla.github.io/en/about/</loc>
   </url><url>
     <loc>https://dwla.github.io/en/vitae/</loc>
+  </url><url>
+    <loc>https://dwla.github.io/search/</loc>
   </url><url>
     <loc>https://dwla.github.io/todo/</loc>
   </url><url>

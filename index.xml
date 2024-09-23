@@ -6,8 +6,15 @@
     <description>Recent content in Homepage on JWen&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Sep 2024 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dwla.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add Search to Hugo with Pagefind</title>
+      <link>https://dwla.github.io/en/2024/09/add-search-to-hugo/</link>
+      <pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/en/2024/09/add-search-to-hugo/</guid>
+      <description>[00:00.00]谁能明白我 - 刘德华 (Andy Lau)[00:03.80]词：郑国江[00:04.49]曲：林子祥[00:05.17]编曲：温浩昊</description>
+    </item>
     <item>
       <title>从《套中人》说起</title>
       <link>https://dwla.github.io/cn/2024/09/the-man-in-the-case/</link>
@@ -48,28 +55,28 @@
       <link>https://dwla.github.io/cn/2024/08/zhou-yunpeng/</link>
       <pubDate>Sat, 31 Aug 2024 00:00:00 +0800</pubDate>
       <guid>https://dwla.github.io/cn/2024/08/zhou-yunpeng/</guid>
-      <description>Table of Contents 木石535 | 海子诗歌欣赏——《九月》 One Kayak | 纪念张慧生逝世二十周年 胡续冬 | 关于张慧生的琐忆 马齿民谣 | 那些逝去的人是美丽的——关于张慧生 Reference</description>
+      <description>Table of Contents 木石535 | 海子诗歌欣赏——《九月》 One Kayak | 纪念张慧生逝世二十周年 胡续冬 | 关于张慧生的琐忆 马齿民谣 | 那些逝去的人是美丽的——关于张慧生 References</description>
     </item>
     <item>
       <title>Notes of Hugo</title>
       <link>https://dwla.github.io/technote/hugo/</link>
       <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/technote/hugo/</guid>
-      <description>Table of Contents Aug 26 2024: Set a page variable &amp;ldquo;showthedate&amp;rdquo; Aug 30 2024: Highlight the LISP code block using highlight.js Todo From https://x.com/MoghaddamKarimi/status/1498354800928374794 Aug 26 2024: Set a page variable &amp;ldquo;showthedate&amp;rdquo; Reference Configure Hugo Content: is it same for Page and Post? And how to hide date How to check if dynamically-named variable exists in context? The page variable date is required in every post that is further collected</description>
+      <description>Table of Contents Aug 26 2024: Set a page variable &amp;ldquo;showthedate&amp;rdquo; Aug 30 2024: Highlight the LISP code block using highlight.js Todo From https://x.com/MoghaddamKarimi/status/1498354800928374794 Aug 26 2024: Set a page variable &amp;ldquo;showthedate&amp;rdquo; References Configure Hugo Content: is it same for Page and Post? And how to hide date How to check if dynamically-named variable exists in context? The page variable date is required in every post that is further collected</description>
     </item>
     <item>
       <title>老鸭 | 一时不足一刻</title>
       <link>https://dwla.github.io/cn/2024/08/laoya/</link>
       <pubDate>Fri, 30 Aug 2024 00:00:00 +0800</pubDate>
       <guid>https://dwla.github.io/cn/2024/08/laoya/</guid>
-      <description>Table of Contents 求发老鸭的歌曲 [2024-08-30 Fri] 石桥 | 老鸭，山东 再见栾雨 | 怀念老鸭 Reference 老鸭的小站（豆瓣音乐人） 老鸭的专辑 | 一时不足一刻 求发老鸭的歌曲 [2024-08-30 Fri] 第一次知道老鸭</description>
+      <description>Table of Contents 求发老鸭的歌曲 [2024-08-30 Fri] 石桥 | 老鸭，山东 再见栾雨 | 怀念老鸭 References 老鸭的小站（豆瓣音乐人） 老鸭的专辑 | 一时不足一刻 求发老鸭的歌曲 [2024-08-30 Fri] 第一次知道老鸭</description>
     </item>
     <item>
       <title>王小伟 | 一个哲学视角的日常审查</title>
       <link>https://dwla.github.io/cn/2024/08/wang-xiaowei/</link>
       <pubDate>Mon, 26 Aug 2024 00:00:00 +0800</pubDate>
       <guid>https://dwla.github.io/cn/2024/08/wang-xiaowei/</guid>
-      <description>Table of Contents 通勤：一种无意义的损耗 外卖：难吃，却不得不吃 手机：蚕食一切身体性体验 夺回日常 Reference https://mp.weixin.qq.com/s/VjWwgzvzkQuzDAhK1o5X-A https://yixi.tv/#/speech/detail?id=1252 大家好，我是小伟，我在一所大学里讲科学技术哲学。 为什</description>
+      <description>Table of Contents 通勤：一种无意义的损耗 外卖：难吃，却不得不吃 手机：蚕食一切身体性体验 夺回日常 References https://mp.weixin.qq.com/s/VjWwgzvzkQuzDAhK1o5X-A https://yixi.tv/#/speech/detail?id=1252 大家好，我是小伟，我在一所大学里讲科学技术哲学。 为什</description>
     </item>
     <item>
       <title>Add an Audio to Hugo with MetingJS</title>
@@ -121,6 +128,13 @@
       <description>Hello Curriculum Vitae</description>
     </item>
     <item>
+      <title>Search</title>
+      <link>https://dwla.github.io/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/search/</guid>
+      <description>TIPS：中文低频词组用空格分隔会有更好匹配，比如输入名字「李宗元」改为「李 宗 元」。</description>
+    </item>
+    <item>
       <title>Todo</title>
       <link>https://dwla.github.io/todo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -132,7 +146,7 @@
       <link>https://dwla.github.io/cn/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/cn/about/</guid>
-      <description>你好关于 有意思的博客 Yihui Xie, ManateeLazyCat 有意思的音乐 李志, 五条人, 罗大佑</description>
+      <description>你好关于 有意思的博客 Yihui Xie, ManateeLazyCat, 立泉 有意思的音乐 李志, 五条人, 罗大佑</description>
     </item>
     <item>
       <title>简历</title>
