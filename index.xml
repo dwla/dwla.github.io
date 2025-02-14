@@ -160,7 +160,7 @@
       <link>https://dwla.github.io/todo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/todo/</guid>
-      <description>[2024-09-03 Tue] Project Emacs Dictionary Motivation: using Emacs to collect new word for TOEFL preparatioin Note: google-translate is great except unusable in Mainland China (I don&amp;rsquo;t know how to tweak it). Phonetic transcription of Google Translate usually make me confused. bing-dict works in Mainland China, but provided information is too limited (in minibuffer). Phonetic transcription of bing-dict is okay. When I read the code of bing-dict, the following idea comes</description>
+      <description>search engine for full text search in local files [2025-02-14 Fri]&#xA;Emacs Dictionary [2024-09-03 Tue] Motivation: using Emacs to collect new word for TOEFL preparatioin&#xA;Note:&#xA;google-translate is great except unusable in Mainland China (I don&amp;rsquo;t know how to tweak it). Phonetic transcription of Google Translate usually make me confused. bing-dict works in Mainland China, but provided information is too limited (in minibuffer). Phonetic transcription of bing-dict is okay. When I read the code of bing-dict, the following idea comes to my mind.</description>
     </item>
     <item>
       <title>关于</title>
