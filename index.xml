@@ -6,15 +6,8 @@
     <description>Recent content in Homepage on JWen&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Dec 2024 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://dwla.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>自省录</title>
-      <link>https://dwla.github.io/cn/2025/02/introspections/</link>
-      <pubDate>Tue, 25 Feb 2025 00:00:00 +0800</pubDate>
-      <guid>https://dwla.github.io/cn/2025/02/introspections/</guid>
-      <description>&lt;h2 id=&#34;dce70d&#34;&gt;&lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2025-02-25 Tue]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&#xA;&lt;p&gt;跟文仪有个相当激烈的争吵。我的眼中是她断断续续看手机，没听清我讲话。她的眼中是她忙着工作赚钱、学业、还有很多额外琐事；而且她还在感冒。&lt;/p&gt;&#xA;&lt;p&gt;我现在感冒了，开始几天感冒刚起来的时候很严重，严重到眼困想睡觉。我就想起跟文仪的争吵。我很后悔。&lt;/p&gt;</description>
-    </item>
     <item>
       <title>爱情之死</title>
       <link>https://dwla.github.io/cn/2024/12/novel-death-of-love.org/</link>
@@ -167,7 +160,7 @@
       <link>https://dwla.github.io/todo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/todo/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; search engine for full text search in local files&#xA;&lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2025-02-14 Fri]&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Emacs Dictionary &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2024-09-03 Tue] &lt;/span&gt;&lt;/span&gt; &lt;br /&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Motivation: using Emacs to collect new word for TOEFL preparatioin&lt;br /&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Note:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/atykhonov/google-translate&#34;&gt;google-translate&lt;/a&gt; is great except unusable in Mainland China (I don&amp;rsquo;t know&#xA;how to tweak it). Phonetic transcription of Google Translate usually make&#xA;me confused.&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/cute-jumper/bing-dict.el&#34;&gt;bing-dict&lt;/a&gt; works in Mainland China, but provided information is too limited&#xA;(in minibuffer). Phonetic transcription of bing-dict is okay.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;When I read the code of bing-dict, the following idea comes to my mind.&lt;/p&gt;</description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 做包子 + 高福利 + 科技&lt;/p&gt;&#xA;&lt;p&gt;能不能筛选(高学历需要休息)或者(真正需要这个钱的教育家庭)作为员工？但如果做包子流程自动化，跟麦当劳有何区别？小型包子机？小型的早餐机器组合？健康约束？杂粮选择？收集数据分析客户群体？&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于</title>
@@ -188,7 +181,7 @@
       <link>https://dwla.github.io/recipe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/recipe/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://bau.com.hk/article/2020-11/30/content_926247723702775808.html&#34;&gt;竹芋&lt;/a&gt;粉葛胡萝卜汤，加蜜枣，慢炖一小时，加猪展肉，再炖半小时。&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://bau.com.hk/article/2020-11/30/content_926247723702775808.html&#34;&gt;竹芋&lt;/a&gt;粉葛胡萝卜汤，加蜜枣，慢炖一小时，加猪展肉，再炖半小时。&lt;/li&gt;&#xA;&lt;li&gt;四方莲(&lt;a href=&#34;https://zhongyibaike.com/wiki/%E5%9B%9B%E6%96%B9%E8%8E%B2&#34;&gt;Ref1&lt;/a&gt;, &lt;a href=&#34;https://data.cndoct.com/tcm/info-52318.html&#34;&gt;Ref2&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
