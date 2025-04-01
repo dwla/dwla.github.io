@@ -6,14 +6,14 @@
     <description>Recent content in Homepage on JWen&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 01 Apr 2025 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://dwla.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>篮球笔记</title>
-      <link>https://dwla.github.io/cn/2025/03/basketball/</link>
-      <pubDate>Tue, 18 Mar 2025 00:00:00 +0800</pubDate>
-      <guid>https://dwla.github.io/cn/2025/03/basketball/</guid>
-      <description>&lt;h2 id=&#34;fa05fc&#34;&gt;&lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2025-03-17 Mon]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&#xA;&lt;p&gt;愤怒。这次打篮球的影响延伸到第二天早上。&lt;/p&gt;&#xA;&lt;p&gt;如果只讲篮球(场1:队友H红，L1蓝；对手P1胖1，P2胖2，S瘦)，那这不舒服的来源绝大多是因为H使得整个队伍运作不流畅。H在左侧肘区接球后，停球过久，没有任何进攻；也没有等待队友跑位后传球。本质上H是个很严重的拖后腿。对方的防守策略就是，直接放空H，给我和L1造成很大的压力。&lt;/p&gt;</description>
+      <title>圆月弯刀</title>
+      <link>https://dwla.github.io/cn/2025/04/yuanyue-wandao/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0800</pubDate>
+      <guid>https://dwla.github.io/cn/2025/04/yuanyue-wandao/</guid>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;https://dwla.github.io/css/Aplayer.min.css&#34;&gt;&#xA;&#xA;&lt;script src=&#34;https://fastly.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&#34;&gt;&lt;/script&gt;&#xA;&#xA;&lt;script&gt;&#xA;  &#xA;  var meting_api=&#39;https://v.iarc.top/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r&#39;;&#xA;&lt;/script&gt;&#xA;&lt;script src=&#34;https://fastly.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&#34;&gt;&lt;/script&gt;&lt;meting-js server=&#34;netease&#34; type=&#34;song&#34; id=&#34;125401&#34; theme=&#34;#2980b9&#34;&gt;&lt;/meting-js&gt;&#xA;&lt;p&gt;看完圆月弯刀电视剧(&lt;a href=&#34;https://movie.douban.com/subject/3546595/&#34;&gt;豆瓣&lt;/a&gt;, &lt;a href=&#34;https://movie.douban.com/review/1522953/&#34;&gt;豆瓣评论&lt;/a&gt; ,&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%9C%93%E6%9C%88%E5%BD%8E%E5%88%80_(%E9%9B%BB%E8%A6%96%E5%8A%87)&#34;&gt;Wiki&lt;/a&gt;)，我仍然喜欢古龙对“一招鲜吃遍天”的武功的描述，我模仿一下：天外流星，快得如同月光洒在你的身上，当你意识到剑招直指你身体的要害，再去寻找出招的人，再抬头去看月亮何处，已经迟了。现实当中，因为信息闭塞，“一招鲜吃遍天”的活法，还少吗？现实当中，见得许多后，“一招鲜吃遍天”的活法，&lt;a href=&#34;https://www.bilibili.com/video/BV1cN4y1g7rS/?t=3312&#34;&gt;岂能久乎&lt;/a&gt;？&lt;/p&gt;&#xA;&lt;p&gt;严肃来说，故事中很多人的理想和行为，我是不敢苟同：丁鹏，很长时间想要名扬天下，开无命山庄才知道自己要什么(但是躲得开吗？魔教最后不还是找上门？)；青青，最后好不容易医好眼睛，为什么要在“父亲和丁鹏的两难中”死在丁鹏刀下。故事中有很多矛盾的人：忘忧岛上，是纯朴的村民，回到中原，是拥护野心的教众。故事中也有我很喜欢的一个人，他的存在我就很喜欢：荆无命，每天被打一拳收一钱，收五钱去吃面；武功招式全是看来得，自我分析自我成长；靠诗歌活着的人(这个设定是多么的惊喜，被柳若松借此利用又多么无语)。现实当中，我能想象，生活中因诗歌而精彩的人，是多么的难得；当然，荆无命这种被诗歌挟持的，还是太肤浅。&lt;/p&gt;</description>
     </item>
     <item>
       <title>爱情之死</title>
@@ -167,7 +167,7 @@
       <link>https://dwla.github.io/todo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/todo/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 辅导时间 + 统计&lt;/p&gt;&#xA;&lt;p&gt;记录收入和付出时间，和心理劳累程度。用来数据分析。目标是，可以减少自己的劳累，增加收入，改善产品。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 做包子 + 高福利 + 科技&lt;/p&gt;&#xA;&lt;p&gt;能不能筛选(高学历需要休息)或者(真正需要这个钱的教育家庭)作为员工？但如果做包子流程自动化，跟麦当劳有何区别？小型包子机？小型的早餐机器组合？健康约束？杂粮选择？收集数据分析客户群体？&lt;/p&gt;</description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; calculate food calories using R or Julia&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 辅导时间 + 统计&lt;/p&gt;&#xA;&lt;p&gt;记录收入和付出时间，和心理劳累程度。用来数据分析。目标是，可以减少自己的劳累，增加收入，改善产品。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 做包子 + 高福利 + 科技&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于</title>
@@ -188,7 +188,7 @@
       <link>https://dwla.github.io/recipe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/recipe/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://bau.com.hk/article/2020-11/30/content_926247723702775808.html&#34;&gt;竹芋&lt;/a&gt;粉葛胡萝卜汤，加蜜枣，慢炖一小时，加猪展肉，再炖半小时。&lt;/li&gt;&#xA;&lt;li&gt;四方莲(&lt;a href=&#34;https://zhongyibaike.com/wiki/%E5%9B%9B%E6%96%B9%E8%8E%B2&#34;&gt;Ref1&lt;/a&gt;, &lt;a href=&#34;https://data.cndoct.com/tcm/info-52318.html&#34;&gt;Ref2&lt;/a&gt;)、小柴胡999快克、金银花野菊花。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;瘦肉苦瓜&#34;&gt;瘦肉苦瓜 &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2025-03-17 Mon]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&#xA;&lt;p&gt;猪展肉(生粉，盐，花生油腌2小时)，苦瓜切片先炒(中途放盐)捞出，瘦肉炒香后，放入苦瓜一起炒后，加水盖锅盖(可重复)至变色。&lt;/p&gt;&#xA;&lt;h2 id=&#34;肉包子&#34;&gt;肉包子 &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2025-03-17 Mon]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;老饭骨&#34;&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1PM4y1L7Go/&#34;&gt;老饭骨&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;一个大盆：低筋面粉(能攥成型)1斤/500g + 糖2勺/15g(发酵更均匀) + 泡打粉10g&lt;/p&gt;</description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://bau.com.hk/article/2020-11/30/content_926247723702775808.html&#34;&gt;竹芋&lt;/a&gt;粉葛胡萝卜汤，加蜜枣，慢炖一小时，加猪展肉，再炖半小时。&lt;/li&gt;&#xA;&lt;li&gt;四方莲(&lt;a href=&#34;https://zhongyibaike.com/wiki/%E5%9B%9B%E6%96%B9%E8%8E%B2&#34;&gt;Ref1&lt;/a&gt;, &lt;a href=&#34;https://data.cndoct.com/tcm/info-52318.html&#34;&gt;Ref2&lt;/a&gt;)、小柴胡999感冒灵快克、金银花野菊花。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;瘦肉苦瓜&#34;&gt;瘦肉苦瓜 &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2025-03-17 Mon]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&#xA;&lt;p&gt;猪展肉(生粉，盐，花生油腌2小时)，苦瓜切片先炒(中途放盐)捞出，瘦肉炒香后，放入苦瓜一起炒后，加水盖锅盖(可重复)至变色。&lt;/p&gt;&#xA;&lt;h2 id=&#34;肉包子&#34;&gt;肉包子 &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2025-03-17 Mon]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;老饭骨&#34;&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1PM4y1L7Go/&#34;&gt;老饭骨&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;一个大盆：低筋面粉(能攥成型)1斤/500g + 糖2勺/15g(发酵更均匀) + 泡打粉10g&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
