@@ -167,7 +167,7 @@
       <link>https://dwla.github.io/todo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/todo/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; calculate food calories using R or Julia&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 辅导时间 + 统计&lt;/p&gt;&#xA;&lt;p&gt;记录收入和付出时间，和心理劳累程度。用来数据分析。目标是，可以减少自己的劳累，增加收入，改善产品。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 做包子 + 高福利 + 科技&lt;/p&gt;</description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 超市卖菜系统，个人买菜系统&lt;/p&gt;&#xA;&lt;p&gt;一个人有1块钱，要买1汤2肉，最大化卡路里，买什么菜？这里还需要有一个食谱系统。如果菜市场体系，有很多个供应商，1个人1块钱，要500卡路里，1汤2肉，会有那几个最优选择？&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于</title>
@@ -182,6 +182,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://dwla.github.io/cn/vitae/</guid>
       <description>&lt;p&gt;你好，简历&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>菜园子</title>
+      <link>https://dwla.github.io/planting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://dwla.github.io/planting/</guid>
+      <description>&lt;h2 id=&#34;蓝莓&#34;&gt;蓝莓 - &lt;span class=&#34;timestamp-wrapper&#34;&gt;&lt;span class=&#34;timestamp&#34;&gt;[2025-04-24 Thu]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;</description>
     </item>
     <item>
       <title>菜谱</title>
