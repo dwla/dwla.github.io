@@ -6,8 +6,15 @@
     <description>Recent content in Categories on JWen&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Jun 2025 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://dwla.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reading / 阅读</title>
+      <link>https://dwla.github.io/categories/reading-/-%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0800</pubDate>
+      <guid>https://dwla.github.io/categories/reading-/-%E9%98%85%E8%AF%BB/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Code</title>
       <link>https://dwla.github.io/categories/code/</link>
@@ -20,13 +27,6 @@
       <link>https://dwla.github.io/categories/music-/-%E9%9F%B3%E4%B9%90/</link>
       <pubDate>Fri, 13 Sep 2024 00:00:00 +0800</pubDate>
       <guid>https://dwla.github.io/categories/music-/-%E9%9F%B3%E4%B9%90/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Reading / 阅读</title>
-      <link>https://dwla.github.io/categories/reading-/-%E9%98%85%E8%AF%BB/</link>
-      <pubDate>Mon, 26 Aug 2024 00:00:00 +0800</pubDate>
-      <guid>https://dwla.github.io/categories/reading-/-%E9%98%85%E8%AF%BB/</guid>
       <description></description>
     </item>
   </channel>

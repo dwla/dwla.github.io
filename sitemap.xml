@@ -2,13 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dwla.github.io/</loc>
-    <lastmod>2025-04-01T00:00:00+08:00</lastmod>
+    <loc>https://dwla.github.io/categories/</loc>
+    <lastmod>2025-06-10T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://dwla.github.io/cn/2025/04/yuanyue-wandao/</loc>
-    <lastmod>2025-04-01T00:00:00+08:00</lastmod>
+    <loc>https://dwla.github.io/</loc>
+    <lastmod>2025-06-10T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://dwla.github.io/categories/reading-/-%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2025-06-10T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://dwla.github.io/cn/2025/06/xianni/</loc>
+    <lastmod>2025-06-10T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://dwla.github.io/cn/</loc>
+    <lastmod>2025-06-10T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://dwla.github.io/cn/2025/04/yuanyue-wandao/</loc>
     <lastmod>2025-04-01T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://dwla.github.io/cn/2024/12/novel-death-of-love.org/</loc>
@@ -24,9 +33,6 @@
     <lastmod>2024-09-26T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://dwla.github.io/en/2024/09/add-search-to-hugo/</loc>
-    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dwla.github.io/categories/</loc>
     <lastmod>2024-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://dwla.github.io/categories/code/</loc>
@@ -67,9 +73,6 @@
   </url><url>
     <loc>https://dwla.github.io/cn/2024/08/laoya/</loc>
     <lastmod>2024-08-30T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://dwla.github.io/categories/reading-/-%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2024-08-26T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://dwla.github.io/cn/2024/08/wang-xiaowei/</loc>
     <lastmod>2024-08-26T00:00:00+08:00</lastmod>
